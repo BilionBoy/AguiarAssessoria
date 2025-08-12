@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :g_tipo_usuarios
   root 'admin#index'
   get 'admin/index'
   get 'admin/new'
@@ -8,6 +7,7 @@ Rails.application.routes.draw do
   get 'home/index'
 
   # Rotas Scaffold
+  resources :g_tipo_usuarios
 
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get 'up' => 'rails/health#show', as: :rails_health_check
