@@ -13,21 +13,16 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*
-/log/development.log
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-/tmp/cache/bootsnap/*
+
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
 !/tmp/pids/
 !/tmp/pids/.keep
-# Ignora toda a pasta de cache exceto o marcador .keep
 /tmp/cache/*
 !/tmp/cache/.keep
-# Ignora especificamente o bootsnap
-/tmp/cache/bootsnap/
-
 
 
 # Ignore storage (uploaded files in development and any SQLite databases).

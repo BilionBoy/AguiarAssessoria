@@ -11,21 +11,9 @@ pt-BR:
 
   activerecord:
     models:
-      funcao:
-        one: "Função"
-        other: "Funções"
-      estabelecimento:
-        one: "Estabelecimento"
-        other: "Estabelecimentos"
-      user_estabelecimento:
-        one: "Usuário Estabelecimento"
-        other: "Usuários Estabelecimentos"
-      categoria:
-        one: "Categoria"
-        other: "Categorias"
-      produto:
-        one: "Produto"
-        other: "Produtos"
+      g_tipo_usuario:
+        one: "Tipo de Usuario"
+        other: "Tipo de Usuarios"
     attributes:
       funcao:
         nome: "Nome"
