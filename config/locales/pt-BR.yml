@@ -14,27 +14,14 @@ pt-BR:
       g_tipo_usuario:
         one: "Tipo de Usuario"
         other: "Tipo de Usuarios"
+      g_sexo:
+        one: "Sexo"
+        other: "Sexos"
     attributes:
-      funcao:
-        nome: "Nome"
+      g_tipo_usuario:
         descricao: "Descrição"
-      estabelecimento:
-        nome: "Nome"
-        cnpj: "CNPJ"
-        endereco: "Endereço"
-        telefone: "Telefone"
-      user_estabelecimento:
-        nome: "Usuário"
-        estabelecimento: "Estabelecimento"
-      categoria:
-        nome: "Nome"
-        descricao: "Descrição"
-      produto:
-        nome: "Nome"
-        descricao: "Descrição"
-        preco: "Preço"
-        categoria: "Categoria"
-        quantidade_estoque: "Quantidade em Estoque"
+      g_sexo:
+        descricao: "Sexo"
     errors:
       messages:
         record_invalid: "A validação falhou: %{errors}"
