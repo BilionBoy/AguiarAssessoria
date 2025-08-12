@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :g_estados
   root 'admin#index'
   get 'admin/index'
   get 'admin/new'

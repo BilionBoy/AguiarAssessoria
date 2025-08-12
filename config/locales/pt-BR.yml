@@ -17,11 +17,22 @@ pt-BR:
       g_sexo:
         one: "Sexo"
         other: "Sexos"
+      g_estado:
+        one: "Estado"
+        other: "Estados"
+      g_cidade:
+        one: "Cidade"
+        other: "Cidades"
     attributes:
       g_tipo_usuario:
         descricao: "Descrição"
       g_sexo:
         descricao: "Sexo"
+      g_estado:
+        nome_fantasia: "Nome Fantasia"
+        sigla: "Sigla"
+      g_cidade:
+        nome_fantasia: "Nome Fantasia"
     errors:
       messages:
         record_invalid: "A validação falhou: %{errors}"

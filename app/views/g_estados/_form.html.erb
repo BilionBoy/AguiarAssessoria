@@ -1,0 +1,29 @@
+<%= render "shared/context_nav", title: t("activerecord.models.#{GEstado.model_name.i18n_key}.other") do  %>
+  <span class="breadcrumb-item"><%= link_to t("activerecord.models.#{GEstado.model_name.i18n_key}.other"), g_estados_path, class: "text-dark" %></span>
+  <span class="breadcrumb-item active"><%= t("helpers.submit.#{params[:action]}") %></span>
+<% end %>
+<%= simple_form_for(@g_estado) do |f| %>
+  <div class="card">
+    <div class="card-header">
+      <h5 class="my-0">
+        <%= @g_estado.new_record? ? "Incluir " : "Editar " %><%= t("activerecord.models.#{GEstado.model_name.i18n_key}.one") %>
+      </h5>
+    </div>
+    <div class="card-body">
+      <%= f.error_notification %>
+      <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+      <div class="row">
+        <div class="col-7">
+          <%= f.input :nome_fantasia, input_html: { class: "capitalize"}, placeholder: "Nome fantasia"  %>
+        </div>
+        <div class="col-5">
+          <%= f.input :sigla, input_html: { class: "capitalize"}, placeholder: "Sigla"  %>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <%= btn_submit(f) %>
+      <%= link_to "Voltar", g_estados_path, class: "btn btn-light" %>
+    </div>
+  </div>
+<% end %>
