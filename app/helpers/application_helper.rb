@@ -10,6 +10,10 @@ module ApplicationHelper
     end
   end
 
+  def uppercase(text)
+    text.to_s.upcase
+  end
+
   def formatar_boolean_xlsx(value)
     value ? 'Sim' : 'Não'
   end

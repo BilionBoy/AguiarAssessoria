@@ -915,3 +915,23 @@ abbr {
   background: var(--error);
   color: white;
 }
+
+.h4,
+h4 {
+  color: black;
+  font-size: 1.25rem;
+}
+.h5,
+h5 {
+  color: black;
+
+  font-size: 1.125rem;
+}
+.ph-arrow-circle-left::before {
+  color: black !important;
+  content: "\f262";
+}
+[class^="swal2"] {
+  -webkit-tap-highlight-color: transparent;
+  color: black;
+}
