@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class GEstadosController < ApplicationController
   before_action :set_g_estado, only: %i[show edit update destroy]
 
@@ -39,18 +40,20 @@ class GEstadosController < ApplicationController
       redirect_to g_estados_url, notice: t('messages.deleted_successfully')
     else
       redirect_to g_estados_url, alert: t('messages.delete_failed_due_to_dependencies')
-    end   
+    end
   end
 
   private
 
   def set_g_estado
     @g_estado = GEstado.find_by(id: params[:id])
-    return redirect_to g_estados_path, alert: t('messages.not_found') unless @g_estado
+    redirect_to g_estados_path, alert: t('messages.not_found') unless @g_estado
   end
 
   def g_estado_params
-    permitted_attributes = GEstado.column_names.reject { |col| ['deleted_at', 'created_by', 'updated_by'].include?(col) }
+    permitted_attributes = GEstado.column_names.reject do |col|
+      %w[deleted_at created_by updated_by].include?(col)
+    end
     params.require(:g_estado).permit(permitted_attributes.map(&:to_sym))
   end
 

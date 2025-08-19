@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-class GSexo < ApplicationRecord
+class GCidade < ApplicationRecord
   # Adicione aqui quaisquer métodos ou validações padrão para seus modelos
-  #
+  belongs_to :g_estado
 
-  validates :descricao, presence: true
+  validates :nome_fantasia, presence: true
 end

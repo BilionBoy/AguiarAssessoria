@@ -8,28 +8,58 @@
         </button>
       </div>
     </div>
-    <!-- Navegação -->
+    <!-- Menu -->
     <div class="sidebar-section">
-      <ul class="nav nav-sidebar" data-nav-type="accordion" id="sidebar-items">
+      <ul class="nav nav-sidebar" data-nav-type="collapsible" id="sidebar-items">
         <% sidebar_items = [
-          { path: root_path,                        icon: 'bi-house-fill me-2 fs-5',              label: 'Home' },
-          { path: g_tipo_usuarios_path,             icon: 'bi bi-person-lines-fill me-2 fs-5',  label: 'Usuários' },
-          { path: admin_clientes_path,              icon: 'bi-person-badge-fill me-2 fs-5',       label: 'Clientes' },
-          { path: admin_contratos_path,             icon: 'bi-file-earmark-text-fill me-2 fs-5',  label: 'Contratos' },
-          { path: '#',                              icon: 'bi-bank me-2 fs-5',                    label: 'Bancos' }
-        ] %>
+    { path: root_path,                    icon: 'bi-house-fill me-2 fs-5',              label: 'Home' },
+    { path: g_tipo_usuarios_path,         icon: 'bi bi-person-lines-fill me-2 fs-5',    label: 'Usuários' },
+    { path: admin_clientes_path,          icon: 'bi-person-badge-fill me-2 fs-5',       label: 'Clientes' },
+    { path: admin_contratos_path,         icon: 'bi-file-earmark-text-fill me-2 fs-5',  label: 'Contratos' },
+    { path: '#',                          icon: 'bi-bank me-2 fs-5',                    label: 'Bancos' },
+
+    # Itens novos para bairros e cidades
+
+    # Submenu com itens no formato normal
+    { icon: 'bi bi-list-columns-reverse me-2 fs-5', label: 'Tabelas referenciais', submenu: [
+      { path: g_sexos_path,   icon: 'bi-gender-ambiguous me-2 fs-5', label: 'Sexos' },
+      { path: g_estados_path, icon: 'bi-geo-alt-fill me-2 fs-5',     label: 'Estados' },
+      { path: g_cidades_path, icon: 'bi-building me-2 fs-5', label: 'Cidades' },
+      { path: g_bairros_path, icon: 'bi-geo-alt me-2 fs-5', label: 'Bairros' },
+    ]}
+  ] %>
         <% sidebar_items.each do |item| %>
-          <li class="nav-item">
-            <%= link_to item[:path], class: "nav-link custom-link" do %>
-              <i class="<%= item[:icon] %>"></i>
-              <span><%= item[:label] %></span>
-            <% end %>
-          </li>
+          <% if item[:submenu] %>
+            <li class="nav-item nav-item-submenu">
+              <a href="#" class="nav-link custom-link">
+                <i class="<%= item[:icon] %>"></i>
+                <span><%= item[:label] %></span>
+              </a>
+              <ul class="nav nav-group-sub collapse" style="flex-direction: column;">
+                <% item[:submenu].each do |sub| %>
+                  <li class="nav-item">
+                    <%= link_to sub[:path], class: "nav-link custom-link" do %>
+                      <i class="<%= sub[:icon] %>"></i>
+                      <span><%= sub[:label] %></span>
+                    <% end %>
+                  </li>
+                <% end %>
+              </ul>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to item[:path], class: "nav-link custom-link" do %>
+                <i class="<%= item[:icon] %>"></i>
+                <span><%= item[:label] %></span>
+              <% end %>
+            </li>
+          <% end %>
         <% end %>
       </ul>
     </div>
   </div>
 </div>
+<!-- Script de filtro -->
 <script>
   function filterSidebar() {
     const input = document.getElementById('sidebar-search-input');
@@ -51,4 +81,3 @@
     });
   }
 </script>
-<style></style>

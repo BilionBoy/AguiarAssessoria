@@ -23,6 +23,9 @@ pt-BR:
       g_cidade:
         one: "Cidade"
         other: "Cidades"
+      g_bairro:
+        one: "Bairro"
+        other: "Bairros"
     attributes:
       g_tipo_usuario:
         descricao: "Descrição"
@@ -33,6 +36,9 @@ pt-BR:
         sigla: "Sigla"
       g_cidade:
         nome_fantasia: "Nome Fantasia"
+      g_bairro:
+        descricao: "Descriçao"
+        g_cidade_id: "Cidade"
     errors:
       messages:
         record_invalid: "A validação falhou: %{errors}"
