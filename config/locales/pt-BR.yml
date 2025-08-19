@@ -29,6 +29,9 @@ pt-BR:
       g_orgao:
         one: "Órgão"
         other: "Órgãos"
+      g_margem_tipo:
+        one: "Tipo de Margem"
+        other: "Tipos de Margem"
     attributes:
       g_tipo_usuario:
         descricao: "Descrição"
@@ -42,7 +45,9 @@ pt-BR:
       g_bairro:
         descricao: "Descriçao"
         g_cidade_id: "Cidade"
-      g_orgoa:
+      g_orgao:
+        descricao: "Descrição"
+      g_margem_tipo:
         descricao: "Descrição"
     errors:
       messages:

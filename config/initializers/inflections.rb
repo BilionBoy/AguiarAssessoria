@@ -7,4 +7,5 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.irregular 'g_estado',         'g_estados'
   inflect.irregular 'g_bairro',         'g_bairros'
   inflect.irregular 'g_orgao',          'g_orgaos'
+  inflect.irregular 'g_margem_tipo',    'g_margem_tipos'
 end

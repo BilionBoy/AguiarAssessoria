@@ -1,0 +1,2 @@
+module GMargemTiposHelper
+end
