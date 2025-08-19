@@ -9,4 +9,5 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.irregular 'g_orgao',          'g_orgaos'
   inflect.irregular 'g_margem_tipo',    'g_margem_tipos'
   inflect.irregular 'g_tipo_beneficio', 'g_tipo_beneficios'
+  inflect.irregular 'g_tipo_operacao',  'g_tipo_operacoes'
 end

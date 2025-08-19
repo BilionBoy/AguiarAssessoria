@@ -32,6 +32,12 @@ pt-BR:
       g_margem_tipo:
         one: "Tipo de Margem"
         other: "Tipos de Margem"
+      g_tipo_beneficio:
+        one: "Tipo de Benefício"
+        other: "Tipos de Benefício"
+      g_tipo_operacao:
+        one: "Tipo de Operação"
+        other: "Tipos de Operação"
     attributes:
       g_tipo_usuario:
         descricao: "Descrição"
@@ -48,6 +54,10 @@ pt-BR:
       g_orgao:
         descricao: "Descrição"
       g_margem_tipo:
+        descricao: "Descrição"
+      g_tipo_beneficio:
+        descricao: "Descrição"
+      g_tipo_operacao:
         descricao: "Descrição"
     errors:
       messages:

@@ -12,22 +12,23 @@
     <div class="sidebar-section">
       <ul class="nav nav-sidebar" data-nav-type="collapsible" id="sidebar-items">
         <% sidebar_items = [
-    { path: root_path,                    icon: 'bi-house-fill me-2 fs-5',              label: 'Home' },
-    { path: g_tipo_usuarios_path,         icon: 'bi bi-person-lines-fill me-2 fs-5',    label: 'Usuários' },
-    { path: admin_clientes_path,          icon: 'bi-person-badge-fill me-2 fs-5',       label: 'Clientes' },
-    { path: admin_contratos_path,         icon: 'bi-file-earmark-text-fill me-2 fs-5',  label: 'Contratos' },
-    { path: '#',                          icon: 'bi-bank me-2 fs-5',                    label: 'Bancos' },
-
-    # Itens novos para bairros e cidades
-
-    # Submenu com itens no formato normal
-    { icon: 'bi bi-list-columns-reverse me-2 fs-5', label: 'Tabelas referenciais', submenu: [
-      { path: g_sexos_path,   icon: 'bi-gender-ambiguous me-2 fs-5', label: 'Sexos' },
-      { path: g_estados_path, icon: 'bi-geo-alt-fill me-2 fs-5',     label: 'Estados' },
-      { path: g_cidades_path, icon: 'bi-building me-2 fs-5', label: 'Cidades' },
-      { path: g_bairros_path, icon: 'bi-geo-alt me-2 fs-5', label: 'Bairros' },
-    ]}
-  ] %>
+          { path: root_path,                    icon: 'bi-house-fill me-2 fs-5',              label: 'Home' },
+          { path: g_tipo_usuarios_path,         icon: 'bi bi-person-lines-fill me-2 fs-5',    label: 'Usuários' },
+          { path: admin_clientes_path,          icon: 'bi-person-badge-fill me-2 fs-5',       label: 'Clientes' },
+          { path: admin_contratos_path,         icon: 'bi-file-earmark-text-fill me-2 fs-5',  label: 'Contratos' },
+          { path: '#',                          icon: 'bi-bank me-2 fs-5',                    label: 'Bancos' },
+        
+          # Submenu com itens no formato normal
+          { icon: 'bi bi-list-columns-reverse me-2 fs-5', label: 'Tabelas referenciais', submenu: [
+            { path: g_sexos_path,               icon: 'bi-gender-ambiguous me-2 fs-5',        label: 'Sexos' },
+            { path: g_estados_path,             icon: 'bi-geo-alt-fill me-2 fs-5',            label: 'Estados' },
+            { path: g_cidades_path,             icon: 'bi-building me-2 fs-5',                label: 'Cidades' },
+            { path: g_bairros_path,             icon: 'bi-geo-alt me-2 fs-5',                 label: 'Bairros' },
+            { path: g_orgaos_path,              icon: 'bi-shield-fill me-2 fs-5',             label: 'Órgãos' },
+            { path: g_margem_tipos_path,        icon: 'bi-diagram-3 me-2 fs-5',               label: 'Tipos de Margem' },
+            { path: g_tipo_beneficios_path,     icon: 'bi-collection-fill me-2 fs-5',         label: 'Tipo Benefícios' },
+          ]}
+        ] %>
         <% sidebar_items.each do |item| %>
           <% if item[:submenu] %>
             <li class="nav-item nav-item-submenu">
