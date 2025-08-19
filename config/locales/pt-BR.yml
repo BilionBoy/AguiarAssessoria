@@ -26,6 +26,9 @@ pt-BR:
       g_bairro:
         one: "Bairro"
         other: "Bairros"
+      g_orgao:
+        one: "Órgão"
+        other: "Órgãos"
     attributes:
       g_tipo_usuario:
         descricao: "Descrição"
@@ -39,6 +42,8 @@ pt-BR:
       g_bairro:
         descricao: "Descriçao"
         g_cidade_id: "Cidade"
+      g_orgoa:
+        descricao: "Descrição"
     errors:
       messages:
         record_invalid: "A validação falhou: %{errors}"
