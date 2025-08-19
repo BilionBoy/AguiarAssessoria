@@ -30684,3 +30684,58 @@ Completed 200 OK in 44ms (Views: 13.0ms | ActiveRecord: 1.6ms (2 queries, 0 cach
   [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
   [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(1121794573135366305)[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/g_tipo_operacoes" for ::1 at 2025-08-19 15:16:49 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GTipoOperacoesController#index as HTML
+  [1m[36mGTipoOperacao Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_operacoes"[0m
+  ↳ app/controllers/g_tipo_operacoes_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_operacoes/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mGTipoOperacao Load (0.4ms)[0m  [1m[34mSELECT "g_tipo_operacoes".* FROM "g_tipo_operacoes" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_operacoes/index.html.erb:25
+  Rendered g_tipo_operacoes/index.html.erb within layouts/application (Duration: 12.9ms | GC: 7.8ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | GC: 8.5ms)
+Completed 200 OK in 30ms (Views: 20.7ms | ActiveRecord: 2.3ms (2 queries, 0 cached) | GC: 8.5ms)
+
+
+Started GET "/admin/clientes" for ::1 at 2025-08-19 15:16:57 -0400
+Processing by AdminController#clientes as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/clientes.html.erb within layouts/application
+  Rendered admin/clientes.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | GC: 0.3ms)
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/g_estados" for ::1 at 2025-08-19 15:16:59 -0400
+Processing by GEstadosController#index as HTML
+  [1m[36mGEstado Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_estados"[0m
+  ↳ app/controllers/g_estados_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_estados/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGEstado Load (0.1ms)[0m  [1m[34mSELECT "g_estados".* FROM "g_estados" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_estados/index.html.erb:23
+  Rendered g_estados/index.html.erb within layouts/application (Duration: 10.3ms | GC: 0.2ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | GC: 0.4ms)
+Completed 200 OK in 23ms (Views: 13.2ms | ActiveRecord: 4.2ms (2 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/admin/contratos" for ::1 at 2025-08-19 15:17:00 -0400
+Processing by AdminController#contratos as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering admin/contratos.html.erb within layouts/application
+  Rendered admin/contratos.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | GC: 0.8ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.8ms)
+
+
