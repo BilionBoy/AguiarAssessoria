@@ -38,6 +38,9 @@ pt-BR:
       g_tipo_operacao:
         one: "Tipo de Operação"
         other: "Tipos de Operação"
+      g_status_cliente:
+        one: "Status do Cliente"
+        other: "Status dos Clientes"
     attributes:
       g_tipo_usuario:
         descricao: "Descrição"
@@ -58,6 +61,8 @@ pt-BR:
       g_tipo_beneficio:
         descricao: "Descrição"
       g_tipo_operacao:
+        descricao: "Descrição"
+      g_status_cliente:
         descricao: "Descrição"
     errors:
       messages:

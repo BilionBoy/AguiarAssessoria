@@ -1,0 +1,2 @@
+module GStatusClientesHelper
+end
