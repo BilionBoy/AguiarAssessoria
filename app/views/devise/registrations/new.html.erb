@@ -18,51 +18,34 @@
         <!-- Credenciais -->
         <div class="row g-3 mb-3">
           <div class="col-md-6">
-            <%= f.input :email, required: true, autofocus: true, label: "Email",
-                        input_html: { class: "form-control form-control-lg", autocomplete: "email" } %>
+            <%= f.input :email, required: true, autofocus: true, label: "Email",input_html: { class: "form-control form-control-lg", autocomplete: "email" } %>
           </div>
           <div class="col-md-6">
-            <%= f.input :nome_completo, required: true, label: "Nome completo",
-                        input_html: { placeholder: "Ex: João da Silva", class: "form-control form-control-lg" } %>
+            <%= f.input :nome_completo, required: true, label: "Nome completo",input_html: { placeholder: "Ex: João da Silva", class: "form-control form-control-lg" } %>
           </div>
           <div class="col-md-6">
-            <%= f.input :password, required: true, label: "Senha",
-                        hint: ("Mínimo #{@minimum_password_length} caracteres" if @minimum_password_length),
-                        input_html: { class: "form-control form-control-lg", autocomplete: "new-password" } %>
+            <%= f.input :password, required: true, label: "Senha", hint: ("Mínimo #{@minimum_password_length} caracteres" if @minimum_password_length),input_html: { class: "form-control form-control-lg", autocomplete: "new-password" } %>
           </div>
           <div class="col-md-6">
-            <%= f.input :password_confirmation, required: true, label: "Confirme a senha",
-                        input_html: { class: "form-control form-control-lg", autocomplete: "new-password" } %>
+            <%= f.input :password_confirmation, required: true, label: "Confirme a senha",input_html: { class: "form-control form-control-lg", autocomplete: "new-password" } %>
           </div>
         </div>
         <!-- Dados pessoais -->
         <div class="row g-3 mb-3">
           <div class="col-md-6">
-            <%= f.input :cpf, required: true, label: "CPF",
-                        input_html: { maxlength: 11, placeholder: "Somente números", class: "form-control form-control-lg" } %>
+            <%= f.input :cpf, required: true, label: "CPF",input_html: { maxlength: 11, placeholder: "Somente números", class: "form-control form-control-lg" } %>
           </div>
           <div class="col-md-6">
-            <%= f.input :telefone, required: true, label: "Telefone",
-                        input_html: { placeholder: "(99) 99999-9999", class: "form-control form-control-lg" } %>
+            <%= f.input :telefone, required: true, label: "Telefone",input_html: { placeholder: "(99) 99999-9999", class: "form-control form-control-lg" } %>
           </div>
         </div>
         <!-- Informações corporativas -->
         <div class="row g-3 mb-4">
           <div class="col-md-6">
-            <%= f.input :g_tipo_usuario_id, required: true, label: "Tipo de Usuário",
-                        collection: GTipoUsuario.all,
-                        prompt: "Selecione o tipo de usuário",
-                        label_method: :descricao,
-                        value_method: :id,
-                        input_html: { class: "form-select form-select-lg" } %>
+            <%= f.input :g_tipo_usuario_id, required: true, label: "Tipo de Usuário",collection: GTipoUsuario.all, prompt: "Selecione o tipo de usuário", label_method: :descricao, value_method: :id,input_html: { class: "form-select form-select-lg" } %>
           </div>
           <div class="col-md-6">
-            <%= f.input :e_empresa_id, required: true, label: "Empresa",
-                        collection: EEmpresa.all,
-                        prompt: "Selecione a empresa",
-                        label_method: :razao_social,
-                        value_method: :id,
-                        input_html: { class: "form-select form-select-lg" } %>
+            <%= f.input :e_empresa_id, required: true, label: "Empresa", collection: EEmpresa.all,prompt: "Selecione a empresa", label_method: :razao_social, value_method: :id, input_html: { class: "form-select form-select-lg" } %>
           </div>
         </div>
         <!-- Botão -->

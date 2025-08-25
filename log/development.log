@@ -33931,3 +33931,61 @@ Started GET "/layout/assets/js/vendor/notifications/noty.min.js.map" for ::1 at 
   
 ActionController::RoutingError (No route matches [GET] "/layout/assets/js/vendor/notifications/noty.min.js.map"):
   
+Started GET "/admin/clientes" for ::1 at 2025-08-25 19:34:31 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdminController#clientes as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/clientes.html.erb within layouts/application
+  Rendered admin/clientes.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 2.0ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 2.1ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 190.9ms | GC: 24.4ms)
+Completed 200 OK in 368ms (Views: 194.2ms | ActiveRecord: 68.5ms (1 query, 0 cached) | GC: 87.2ms)
+
+
+Started GET "/" for ::1 at 2025-08-25 19:34:36 -0400
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 46.5ms | GC: 0.0ms)
+Completed 200 OK in 67ms (Views: 47.5ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/" for ::1 at 2025-08-25 19:34:52 -0400
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 2.3ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 4.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | GC: 1.0ms)
+Completed 200 OK in 78ms (Views: 45.3ms | ActiveRecord: 8.1ms (1 query, 0 cached) | GC: 24.4ms)
+
+
+Started POST "/?class=btn+btn-logout" for ::1 at 2025-08-25 19:34:57 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/" for ::1 at 2025-08-25 19:35:08 -0400
+Processing by AdminController#index as HTML
+Completed 401 Unauthorized in 13ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-08-25 19:35:08 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 53.7ms | GC: 3.7ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 81.9ms | GC: 7.0ms)
+Completed 200 OK in 117ms (Views: 85.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 38.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/logo_simpliconsig_white.png"):
+  
