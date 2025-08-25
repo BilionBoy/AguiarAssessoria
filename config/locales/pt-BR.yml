@@ -44,6 +44,9 @@ pt-BR:
       g_status_contrato:
         one: "Status do Contrato"
         other: "Status dos Contratos"
+      e_empresa:
+        one: "Empresa"
+        other: "Empresas"
     attributes:
       g_tipo_usuario:
         descricao: "Descrição"
@@ -69,6 +72,14 @@ pt-BR:
         descricao: "Descrição"
       g_status_contrato:
         descricao: "Descrição"
+      e_empresa:
+        razao_social: "Razão Social"
+        cnpj: "CNPJ"
+        endereco: "Endereço"
+        email: "E-mail"
+        telefone: "Telefone"
+        g_cidade_id: "Cidade"
+
     errors:
       messages:
         record_invalid: "A validação falhou: %{errors}"

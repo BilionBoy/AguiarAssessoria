@@ -10,9 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_08_25_053421) do
+ActiveRecord::Schema[7.2].define(version: 2025_08_25_054334) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "e_empresas", force: :cascade do |t|
+    t.string "razao_social"
+    t.string "cnpj"
+    t.string "endereco"
+    t.string "email"
+    t.string "telefone"
+    t.bigint "g_cidade_id"
+    t.string "created_by"
+    t.string "updated_by"
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["g_cidade_id"], name: "index_e_empresas_on_g_cidade_id"
+  end
 
   create_table "g_bairros", force: :cascade do |t|
     t.string "descricao"
@@ -118,6 +133,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_08_25_053421) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "e_empresas", "g_cidades"
   add_foreign_key "g_bairros", "g_cidades"
   add_foreign_key "g_cidades", "g_estados"
 end
