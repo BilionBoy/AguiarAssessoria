@@ -935,3 +935,6 @@ h5 {
   -webkit-tap-highlight-color: transparent;
   color: black;
 }
+.action-btn.dropdown-toggle::after {
+  display: none;
+}

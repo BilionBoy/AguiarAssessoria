@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
-  
+
   root 'admin#index'
   get  'admin/index'
   get  'admin/new'
   get  'admin/clientes'
   get  'admin/contratos'
   get  'home/index'
-  
+
   # Rotas Scaffold
   resources :g_tipo_usuarios
   resources :g_sexos
