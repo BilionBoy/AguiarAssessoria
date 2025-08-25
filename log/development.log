@@ -31272,3 +31272,19 @@ Processing by GStatusContratosController#index as HTML
 Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.8ms)
 
 
+Started GET "/g_status_contratos" for ::1 at 2025-08-25 01:39:43 -0400
+Processing by GStatusContratosController#index as HTML
+  [1m[36mGStatusContrato Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_status_contratos"[0m
+  ↳ app/controllers/g_status_contratos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_status_contratos/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mGStatusContrato Load (0.1ms)[0m  [1m[34mSELECT "g_status_contratos".* FROM "g_status_contratos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_status_contratos/index.html.erb:22
+  Rendered g_status_contratos/index.html.erb within layouts/application (Duration: 3.1ms | GC: 0.2ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | GC: 0.3ms)
+Completed 200 OK in 14ms (Views: 8.2ms | ActiveRecord: 1.1ms (2 queries, 0 cached) | GC: 0.8ms)
+
+
