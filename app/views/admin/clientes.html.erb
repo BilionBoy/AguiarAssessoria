@@ -461,7 +461,6 @@
           <i data-lucide="users" style="width: 20px; height: 20px;"></i>
           Lista de Clientes
         </h5>
-        <!-- CORREÇÃO: Espaçamento adequado entre botões -->
         <div class="card-actions">
           <button class="btn-export">
             <i data-lucide="download" style="width: 16px; height: 16px;"></i>
@@ -480,13 +479,13 @@
               <th style="width: 50px;">
                 <input type="checkbox" id="selectAll" style="width: 16px; height: 16px;">
               </th>
+              <th style="width: 50px; text-align: center;">Ações</th>
               <th>Cliente</th>
               <th>CPF</th>
               <th>Telefone</th>
               <th>Cidade</th>
               <th>Status</th>
               <th>Cadastro</th>
-              <th style="text-align: center;">Ações</th>
             </tr>
           </thead>
           <tbody>
@@ -494,11 +493,31 @@
               <td>
                 <input type="checkbox" class="client-checkbox" style="width: 16px; height: 16px;">
               </td>
+              <td style="text-align: center;">
+                <div class="dropdown">
+                  <button type="button" class="action-btn dropdown-toggle" data-bs-toggle="dropdown">
+                    <i data-lucide="more-horizontal" style="width: 16px; height: 16px;"></i>
+                  </button>
+                  <div class="dropdown-menu">
+                    <a href="#" class="dropdown-item">
+                      <i data-lucide="eye" style="width: 16px; height: 16px;"></i> Visualizar
+                    </a>
+                    <a href="#" class="dropdown-item">
+                      <i data-lucide="edit" style="width: 16px; height: 16px;"></i> Editar
+                    </a>
+                    <a href="#" class="dropdown-item">
+                      <i data-lucide="file-text" style="width: 16px; height: 16px;"></i> Contratos
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item text-danger">
+                      <i data-lucide="trash-2" style="width: 16px; height: 16px;"></i> Excluir
+                    </a>
+                  </div>
+                </div>
+              </td>
               <td>
                 <div class="d-flex align-items-center">
-                  <div class="client-avatar" style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);">
-                    CO
-                  </div>
+                  <div class="client-avatar" style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);">CO</div>
                   <div>
                     <div style="font-weight: 600; color: var(--neutral-900); margin-bottom: 2px;">Carlos Oliveira</div>
                     <div style="color: var(--neutral-500); font-size: 13px;">carlos@email.com</div>
@@ -510,6 +529,11 @@
               <td style="color: var(--neutral-600);">São Paulo, SP</td>
               <td><span class="client-status active">Ativo</span></td>
               <td style="color: var(--neutral-600);">15/01/2024</td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox" class="client-checkbox" style="width: 16px; height: 16px;">
+              </td>
               <td style="text-align: center;">
                 <div class="dropdown">
                   <button type="button" class="action-btn dropdown-toggle" data-bs-toggle="dropdown">
@@ -517,35 +541,24 @@
                   </button>
                   <div class="dropdown-menu">
                     <a href="#" class="dropdown-item">
-                      <i data-lucide="eye" style="width: 16px; height: 16px;"></i>
-                      Visualizar
+                      <i data-lucide="eye" style="width: 16px; height: 16px;"></i> Visualizar
                     </a>
                     <a href="#" class="dropdown-item">
-                      <i data-lucide="edit" style="width: 16px; height: 16px;"></i>
-                      Editar
+                      <i data-lucide="edit" style="width: 16px; height: 16px;"></i> Editar
                     </a>
                     <a href="#" class="dropdown-item">
-                      <i data-lucide="file-text" style="width: 16px; height: 16px;"></i>
-                      Contratos
+                      <i data-lucide="file-text" style="width: 16px; height: 16px;"></i> Contratos
                     </a>
                     <div class="dropdown-divider"></div>
                     <a href="#" class="dropdown-item text-danger">
-                      <i data-lucide="trash-2" style="width: 16px; height: 16px;"></i>
-                      Excluir
+                      <i data-lucide="trash-2" style="width: 16px; height: 16px;"></i> Excluir
                     </a>
                   </div>
                 </div>
               </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="checkbox" class="client-checkbox" style="width: 16px; height: 16px;">
-              </td>
               <td>
                 <div class="d-flex align-items-center">
-                  <div class="client-avatar" style="background: linear-gradient(135deg, var(--success) 0%, #34D399 100%);">
-                    FL
-                  </div>
+                  <div class="client-avatar" style="background: linear-gradient(135deg, var(--success) 0%, #34D399 100%);">FL</div>
                   <div>
                     <div style="font-weight: 600; color: var(--neutral-900); margin-bottom: 2px;">Fernanda Lima</div>
                     <div style="color: var(--neutral-500); font-size: 13px;">fernanda@email.com</div>
@@ -557,6 +570,11 @@
               <td style="color: var(--neutral-600);">Rio de Janeiro, RJ</td>
               <td><span class="client-status active">Ativo</span></td>
               <td style="color: var(--neutral-600);">12/01/2024</td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox" class="client-checkbox" style="width: 16px; height: 16px;">
+              </td>
               <td style="text-align: center;">
                 <div class="dropdown">
                   <button type="button" class="action-btn dropdown-toggle" data-bs-toggle="dropdown">
@@ -564,35 +582,24 @@
                   </button>
                   <div class="dropdown-menu">
                     <a href="#" class="dropdown-item">
-                      <i data-lucide="eye" style="width: 16px; height: 16px;"></i>
-                      Visualizar
+                      <i data-lucide="eye" style="width: 16px; height: 16px;"></i> Visualizar
                     </a>
                     <a href="#" class="dropdown-item">
-                      <i data-lucide="edit" style="width: 16px; height: 16px;"></i>
-                      Editar
+                      <i data-lucide="edit" style="width: 16px; height: 16px;"></i> Editar
                     </a>
                     <a href="#" class="dropdown-item">
-                      <i data-lucide="file-text" style="width: 16px; height: 16px;"></i>
-                      Contratos
+                      <i data-lucide="file-text" style="width: 16px; height: 16px;"></i> Contratos
                     </a>
                     <div class="dropdown-divider"></div>
                     <a href="#" class="dropdown-item text-danger">
-                      <i data-lucide="trash-2" style="width: 16px; height: 16px;"></i>
-                      Excluir
+                      <i data-lucide="trash-2" style="width: 16px; height: 16px;"></i> Excluir
                     </a>
                   </div>
                 </div>
               </td>
-            </tr>
-            <tr>
-              <td>
-                <input type="checkbox" class="client-checkbox" style="width: 16px; height: 16px;">
-              </td>
               <td>
                 <div class="d-flex align-items-center">
-                  <div class="client-avatar" style="background: linear-gradient(135deg, var(--neutral-400) 0%, var(--neutral-500) 100%);">
-                    RS
-                  </div>
+                  <div class="client-avatar" style="background: linear-gradient(135deg, var(--neutral-400) 0%, var(--neutral-500) 100%);">RS</div>
                   <div>
                     <div style="font-weight: 600; color: var(--neutral-900); margin-bottom: 2px;">Roberto Silva</div>
                     <div style="color: var(--neutral-500); font-size: 13px;">roberto@email.com</div>
@@ -604,52 +611,27 @@
               <td style="color: var(--neutral-600);">Belo Horizonte, MG</td>
               <td><span class="client-status inactive">Inativo</span></td>
               <td style="color: var(--neutral-600);">08/01/2024</td>
-              <td style="text-align: center;">
-                <div class="dropdown">
-                  <button type="button" class="action-btn dropdown-toggle" data-bs-toggle="dropdown">
-                    <i data-lucide="more-horizontal" style="width: 16px; height: 16px;"></i>
-                  </button>
-                  <div class="dropdown-menu">
-                    <a href="#" class="dropdown-item">
-                      <i data-lucide="eye" style="width: 16px; height: 16px;"></i>
-                      Visualizar
-                    </a>
-                    <a href="#" class="dropdown-item">
-                      <i data-lucide="edit" style="width: 16px; height: 16px;"></i>
-                      Editar
-                    </a>
-                    <a href="#" class="dropdown-item">
-                      <i data-lucide="file-text" style="width: 16px; height: 16px;"></i>
-                      Contratos
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item text-danger">
-                      <i data-lucide="trash-2" style="width: 16px; height: 16px;"></i>
-                      Excluir
-                    </a>
-                  </div>
-                </div>
-              </td>
             </tr>
           </tbody>
         </table>
       </div>
-      <!-- Paginação -->
-      <div class="pagination-modern">
-        <a href="#" class="pagination-btn">
-          <i data-lucide="chevron-left" style="width: 16px; height: 16px;"></i>
-        </a>
-        <a href="#" class="pagination-btn active">1</a>
-        <a href="#" class="pagination-btn">2</a>
-        <a href="#" class="pagination-btn">3</a>
-        <span style="color: var(--neutral-400); margin: 0 8px;">...</span>
-        <a href="#" class="pagination-btn">15</a>
-        <a href="#" class="pagination-btn">
-          <i data-lucide="chevron-right" style="width: 16px; height: 16px;"></i>
-        </a>
-      </div>
+    </div>
+    <!-- Paginação -->
+    <div class="pagination-modern">
+      <a href="#" class="pagination-btn">
+        <i data-lucide="chevron-left" style="width: 16px; height: 16px;"></i>
+      </a>
+      <a href="#" class="pagination-btn active">1</a>
+      <a href="#" class="pagination-btn">2</a>
+      <a href="#" class="pagination-btn">3</a>
+      <span style="color: var(--neutral-400); margin: 0 8px;">...</span>
+      <a href="#" class="pagination-btn">15</a>
+      <a href="#" class="pagination-btn">
+        <i data-lucide="chevron-right" style="width: 16px; height: 16px;"></i>
+      </a>
     </div>
   </div>
+</div>
 </div>
 <script>
   // Seleção em lote
