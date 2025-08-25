@@ -1,0 +1,2 @@
+module GStatusContratosHelper
+end

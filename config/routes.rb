@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :g_status_contratos
   resources :g_status_clientes
   resources :g_tipo_operacoes
 

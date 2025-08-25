@@ -11,4 +11,5 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.irregular 'g_tipo_beneficio', 'g_tipo_beneficios'
   inflect.irregular 'g_tipo_operacao',  'g_tipo_operacoes'
   inflect.irregular 'g_status_cliente', 'g_status_clientes'
+  inflect.irregular 'g_status_contrato', 'g_status_contratos'
 end
