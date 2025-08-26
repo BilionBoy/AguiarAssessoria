@@ -33989,3 +33989,320 @@ Completed 200 OK in 117ms (Views: 85.1ms | ActiveRecord: 0.0ms (0 queries, 0 cac
   
 ActionController::RoutingError (No route matches [GET] "/assets/logo_simpliconsig_white.png"):
   
+Started GET "/admin/clientes" for ::1 at 2025-08-25 19:37:50 -0400
+Processing by AdminController#clientes as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/clientes.html.erb within layouts/application
+  Rendered admin/clientes.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 2.3ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 9.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 31.1ms | GC: 0.0ms)
+Completed 200 OK in 67ms (Views: 33.0ms | ActiveRecord: 8.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/admin/new" for ::1 at 2025-08-25 19:37:56 -0400
+Processing by AdminController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/new.html.erb within layouts/application
+  Rendered admin/new.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | GC: 1.1ms)
+Completed 200 OK in 32ms (Views: 17.5ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 9.2ms)
+
+
+Started GET "/g_tipo_usuarios" for ::1 at 2025-08-25 19:38:07 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.4ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:22
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 22.2ms | GC: 0.2ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 2.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 33.1ms | GC: 0.4ms)
+Completed 200 OK in 54ms (Views: 31.6ms | ActiveRecord: 6.8ms (3 queries, 0 cached) | GC: 1.4ms)
+
+
+Started GET "/admin/clientes" for ::1 at 2025-08-25 19:38:08 -0400
+Processing by AdminController#clientes as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/clientes.html.erb within layouts/application
+  Rendered admin/clientes.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | GC: 1.3ms)
+Completed 200 OK in 18ms (Views: 13.1ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 1.3ms)
+
+
+Started GET "/g_tipo_usuarios" for ::1 at 2025-08-25 19:38:09 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Count (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.6ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:22
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 9.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 26.0ms | GC: 0.0ms)
+Completed 200 OK in 56ms (Views: 34.3ms | ActiveRecord: 2.4ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/admin/clientes" for ::1 at 2025-08-25 19:38:10 -0400
+Processing by AdminController#clientes as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/clientes.html.erb within layouts/application
+  Rendered admin/clientes.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 22.8ms | GC: 0.8ms)
+Completed 200 OK in 33ms (Views: 23.7ms | ActiveRecord: 1.2ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/admin/contratos" for ::1 at 2025-08-25 19:38:12 -0400
+Processing by AdminController#contratos as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/contratos.html.erb within layouts/application
+  Rendered admin/contratos.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | GC: 0.4ms)
+Completed 200 OK in 21ms (Views: 15.2ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/admin/clientes" for ::1 at 2025-08-25 19:38:13 -0400
+Processing by AdminController#clientes as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/clientes.html.erb within layouts/application
+  Rendered admin/clientes.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 3.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | GC: 0.4ms)
+Completed 200 OK in 24ms (Views: 18.6ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/" for ::1 at 2025-08-25 19:39:32 -0400
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 5.4ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.0ms | GC: 0.0ms)
+Completed 200 OK in 52ms (Views: 24.8ms | ActiveRecord: 7.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/admin/clientes" for ::1 at 2025-08-25 19:39:34 -0400
+Processing by AdminController#clientes as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/clientes.html.erb within layouts/application
+  Rendered admin/clientes.html.erb within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | GC: 0.0ms)
+Completed 200 OK in 20ms (Views: 12.9ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/admin/clientes" for ::1 at 2025-08-25 19:40:39 -0400
+Processing by AdminController#clientes as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/clientes.html.erb within layouts/application
+  Rendered admin/clientes.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 4.0ms | GC: 0.2ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 2.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 28.0ms | GC: 1.2ms)
+Completed 200 OK in 69ms (Views: 29.8ms | ActiveRecord: 8.4ms (1 query, 0 cached) | GC: 10.1ms)
+
+
+Started GET "/" for ::1 at 2025-08-25 19:40:42 -0400
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 4.8ms | GC: 2.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | GC: 2.3ms)
+Completed 200 OK in 37ms (Views: 24.6ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 2.6ms)
+
+
+Started GET "/g_tipo_usuarios" for ::1 at 2025-08-25 19:40:49 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.9ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:22
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 24.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 43.7ms | GC: 9.6ms)
+Completed 200 OK in 63ms (Views: 40.7ms | ActiveRecord: 7.9ms (3 queries, 0 cached) | GC: 9.6ms)
+
+
+Started GET "/g_tipo_usuarios/new" for ::1 at 2025-08-25 19:40:51 -0400
+Processing by GTipoUsuariosController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered g_tipo_usuarios/_form.html.erb (Duration: 6.1ms | GC: 0.0ms)
+  Rendered g_tipo_usuarios/new.html.erb within layouts/application (Duration: 9.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | GC: 1.3ms)
+Completed 200 OK in 32ms (Views: 23.6ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 1.3ms)
+
+
+Started GET "/g_tipo_usuarios/new" for ::1 at 2025-08-25 19:41:00 -0400
+Processing by GTipoUsuariosController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered g_tipo_usuarios/_form.html.erb (Duration: 2.5ms | GC: 0.0ms)
+  Rendered g_tipo_usuarios/new.html.erb within layouts/application (Duration: 3.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 6.9ms | GC: 6.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 37.5ms | GC: 15.5ms)
+Completed 200 OK in 47ms (Views: 38.0ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 16.0ms)
+
+
+Started GET "/g_tipo_usuarios/new" for ::1 at 2025-08-25 19:41:32 -0400
+Processing by GTipoUsuariosController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 2.0ms | GC: 1.5ms)
+  Rendered g_tipo_usuarios/_form.html.erb (Duration: 9.3ms | GC: 5.8ms)
+  Rendered g_tipo_usuarios/new.html.erb within layouts/application (Duration: 10.1ms | GC: 5.8ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 37.5ms | GC: 11.5ms)
+Completed 200 OK in 59ms (Views: 38.1ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 24.9ms)
+
+
+Started GET "/g_tipo_usuarios/new" for ::1 at 2025-08-25 19:41:32 -0400
+Processing by GTipoUsuariosController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered g_tipo_usuarios/_form.html.erb (Duration: 4.4ms | GC: 0.0ms)
+  Rendered g_tipo_usuarios/new.html.erb within layouts/application (Duration: 5.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | GC: 1.0ms)
+Completed 200 OK in 25ms (Views: 19.0ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/g_tipo_usuarios/new" for ::1 at 2025-08-25 19:41:33 -0400
+Processing by GTipoUsuariosController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered g_tipo_usuarios/_form.html.erb (Duration: 3.9ms | GC: 0.0ms)
+  Rendered g_tipo_usuarios/new.html.erb within layouts/application (Duration: 4.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | GC: 0.5ms)
+Completed 200 OK in 23ms (Views: 16.7ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/g_tipo_usuarios/new" for ::1 at 2025-08-25 19:41:33 -0400
+Processing by GTipoUsuariosController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered g_tipo_usuarios/_form.html.erb (Duration: 13.6ms | GC: 0.0ms)
+  Rendered g_tipo_usuarios/new.html.erb within layouts/application (Duration: 14.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 35.3ms | GC: 9.0ms)
+Completed 200 OK in 56ms (Views: 36.2ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 9.4ms)
+
+
+Started GET "/g_tipo_usuarios/new" for ::1 at 2025-08-25 19:41:33 -0400
+Processing by GTipoUsuariosController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered g_tipo_usuarios/_form.html.erb (Duration: 14.7ms | GC: 0.0ms)
+  Rendered g_tipo_usuarios/new.html.erb within layouts/application (Duration: 15.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 42.7ms | GC: 0.0ms)
+Completed 200 OK in 54ms (Views: 43.6ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/admin/clientes" for ::1 at 2025-08-25 19:41:33 -0400
+Processing by AdminController#clientes as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/clientes.html.erb within layouts/application
+  Rendered admin/clientes.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | GC: 7.8ms)
+Completed 200 OK in 23ms (Views: 17.0ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 7.8ms)
+
+
+Started GET "/admin/clientes" for ::1 at 2025-08-25 19:41:38 -0400
+Processing by AdminController#clientes as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/clientes.html.erb within layouts/application
+  Rendered admin/clientes.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | GC: 1.0ms)
+Completed 200 OK in 20ms (Views: 14.3ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/admin/clientes" for ::1 at 2025-08-25 19:42:09 -0400
+Processing by AdminController#clientes as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/clientes.html.erb within layouts/application
+  Rendered admin/clientes.html.erb within layouts/application (Duration: 2.0ms | GC: 0.7ms)
+  Rendered shared/_navbar.html.erb (Duration: 2.5ms | GC: 0.6ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | GC: 1.3ms)
+Completed 200 OK in 54ms (Views: 22.5ms | ActiveRecord: 7.3ms (1 query, 0 cached) | GC: 9.5ms)
+
+
+Started GET "/admin/clientes" for ::1 at 2025-08-25 19:42:28 -0400
+Processing by AdminController#clientes as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/clientes.html.erb within layouts/application
+  Rendered admin/clientes.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 2.8ms | GC: 0.6ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 3.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 31.3ms | GC: 1.2ms)
+Completed 200 OK in 77ms (Views: 33.3ms | ActiveRecord: 9.0ms (1 query, 0 cached) | GC: 10.5ms)
+
+
