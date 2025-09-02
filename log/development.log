@@ -40477,3 +40477,24 @@ Processing by GBancosController#index as HTML
 Completed 200 OK in 47ms (Views: 28.8ms | ActiveRecord: 4.5ms (5 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/g_bancos" for ::1 at 2025-09-02 19:03:21 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GBancosController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGBanco Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_bancos"[0m
+  ↳ app/controllers/g_bancos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_bancos/index.html.erb within layouts/application
+  [1m[36mGBanco Count (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "g_bancos" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_bancos/index.html.erb:18
+  [1m[36mGBanco Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "g_bancos" WHERE (created_at > $1) LIMIT $2 OFFSET $3) subquery_for_count[0m  [[nil, "2025-08-03 23:03:22.098074"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_bancos/index.html.erb:32
+  [1m[36mGBanco Load (6.5ms)[0m  [1m[34mSELECT "g_bancos".* FROM "g_bancos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_bancos/index.html.erb:110
+  Rendered g_bancos/index.html.erb within layouts/application (Duration: 51.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 68.0ms | GC: 0.0ms)
+Completed 200 OK in 126ms (Views: 50.3ms | ActiveRecord: 30.8ms (5 queries, 0 cached) | GC: 0.9ms)
+
+

@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :g_bancos
   devise_for :users
 
   root 'admin#index'
@@ -22,6 +21,7 @@ Rails.application.routes.draw do
   resources :g_status_contratos
   resources :g_status_clientes
   resources :g_tipo_operacoes
+  resources :g_bancos
   resources :e_empresas
 
   # Can be used by load balancers and uptime monitors to verify that the app is live.
