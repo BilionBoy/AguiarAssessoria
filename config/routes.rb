@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
-  
+
   root 'admin#index'
   get  'admin/index'
   get  'admin/new'
   get  'admin/clientes'
   get  'admin/contratos'
   get  'home/index'
-  
+
   # Rotas Scaffold
   resources :g_tipo_usuarios
   resources :g_sexos
@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   resources :g_status_contratos
   resources :g_status_clientes
   resources :g_tipo_operacoes
+  resources :g_bancos
   resources :e_empresas
 
   # Can be used by load balancers and uptime monitors to verify that the app is live.

@@ -16,11 +16,11 @@
           <tr>
             <th class="text-center">Ações</th>
             <th><%= sort_link(@q, :razao_social, t("activerecord.attributes.e_empresa.razao_social")) %></th>
+            <th><%= sort_link(@q, :nome_fantasia, t("activerecord.attributes.e_empresa.nome_fantasia.Nome")) %></th>
             <th><%= sort_link(@q, :cnpj, t("activerecord.attributes.e_empresa.cnpj")) %></th>
             <th><%= sort_link(@q, :endereco, t("activerecord.attributes.e_empresa.endereco")) %></th>
-            <th><%= sort_link(@q, :email, t("activerecord.attributes.e_empresa.email")) %></th>
             <th><%= sort_link(@q, :telefone, t("activerecord.attributes.e_empresa.telefone")) %></th>
-            <th><%= sort_link(@q, :g_cidade, t("activerecord.attributes.e_empresa.g_cidade")) %></th>
+            <th><%= sort_link(@q, :g_cidade, t("activerecord.attributes.e_empresa.g_cidade.Cidade")) %></th>
           </tr>
         </thead>
         <tbody>
@@ -42,11 +42,11 @@
                       </a>
                     <% end %>
                     <td><%= e_empresa.razao_social %></td>
+                    <td><%= e_empresa.nome_fantasia %></td>
                     <td><%= e_empresa.cnpj %></td>
                     <td><%= e_empresa.endereco %></td>
-                    <td><%= e_empresa.email %></td>
                     <td><%= e_empresa.telefone %></td>
-                    <td><%= e_empresa.g_cidade %></td>
+                    <td><%= e_empresa.g_cidade.nome_fantasia %></td>
                   </div>
                 </div>
               </td>

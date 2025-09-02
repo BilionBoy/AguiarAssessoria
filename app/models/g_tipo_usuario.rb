@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 class GTipoUsuario < ApplicationRecord
-  validates :descricao, presence: true
-
   before_save :uppercase_descricao
+
+  validates :descricao, presence: true
 
   private
 

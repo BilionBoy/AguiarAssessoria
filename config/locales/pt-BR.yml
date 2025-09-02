@@ -44,6 +44,9 @@ pt-BR:
       g_status_contrato:
         one: "Status do Contrato"
         other: "Status dos Contratos"
+      g_banco:
+        one: "Banco"
+        other: "Bancos"
       e_empresa:
         one: "Empresa"
         other: "Empresas"
@@ -77,6 +80,7 @@ pt-BR:
         cnpj: "CNPJ"
         endereco: "Endereço"
         email: "E-mail"
+        nome_fantasia: "Nome Fantasia"
         telefone: "Telefone"
         g_cidade_id: "Cidade"
 
