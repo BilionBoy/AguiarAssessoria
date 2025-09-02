@@ -1,61 +1,242 @@
-<%%= render "shared/context_nav", title: t("activerecord.models.#{<%= class_name %>.model_name.i18n_key}.other"), new_path: new_<%= singular_table_name %>_path do  %>
-<span class="breadcrumb-item active"><%%= t("activerecord.models.#{<%= class_name %>.model_name.i18n_key}.other") %></span>
-<%% end %>
-<div class="card">
-  <div class="card-header d-flex">
-    <%%= search_form_for @q, html: { class: "d-flex gap-2" , autocomplete: "off"} do |f| %>
-      <%%= f.search_field :<%= attributes[0].name %>_cont, class: "form-control", placeholder: "Pesquisar" %>
-      <%%= f.button(type: 'submit', class: 'btn btn-info') { tag.i(class: 'ph-magnifying-glass') } %>
-      <%%= link_to  tag.i(class: 'ph-x-circle'), <%= plural_table_name %>_path, class: "btn btn-light" if params[:q] %>
-      <%% end %>
-    </div>
-    <div class="card-body">
-      <div class= "table-responsive">
-        <table class="table table-sm table-bordered table-striped">
-          <thead>
-            <tr>
-              <th class="text-center">Ações</th>
-              <% attributes_to_ignore = ['deleted_at', 'original_user_create', 'last_user_update', 'created_by', 'updated_by'] %>
-              <%- attributes.each do |attribute| -%>
-                <% unless attributes_to_ignore.include?(attribute.name) %>
-                  <th><%%= sort_link(@q, :<%= attribute.name %>, t("activerecord.attributes.<%= singular_table_name %>.<%= attribute.name %>")) %></th>
-                <% end %>
-              <%- end -%>
-            </tr>
-          </thead>
-          <tbody>
-            <%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
-            <tr>
-              <td class="text-center">
-                <div class="dropdown-toggle">
-                  <a href="#" class="text-body dropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="ph-gear"></i>
-                  </a>
-                  <div class="dropdown-menu" style="">
-                    <div class="dropdown-header">Opções</div>
-                    <%%= link_to edit_<%= singular_table_name %>_path(<%= singular_table_name %>), class: "dropdown-item" do %>
-                    <i class="ph-pen me-2"></i> Editar
-                    <%% end %>
-                    <%%= form_for <%= singular_table_name %>, method: :delete do |f| %>
-                    <a class="dropdown-item hand-pointer " data-confirm-delete="<%%= <%= singular_table_name %>_path(<%= singular_table_name %>) %>" data-csrf-token="<%%= form_authenticity_token %>">
-                      <i class="ph-trash-simple me-2"></i>Excluir
-                    </a>
-                    <%% end %>
-                    <%- attributes.each do |attribute| -%>
-                      <% unless attributes_to_ignore.include?(attribute.name) %>
-                        <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
-                      <% end %>
-                    <%- end -%>
-                  </div>
-                </div>
-              </td>
-            </tr>
-            <%% end %>
-          </tbody>
-        </table>
+<div class="modern-dashboard">
+  <div class="page-header <%= plural_table_name %>-header shadow-sm">
+    <div class="page-header-content d-lg-flex">
+      <div class="d-flex">
+        <div class="breadcrumb modern-breadcrumb py-3">
+          <a href="/" class="breadcrumb-item">
+            <i data-lucide="home" style="width: 16px; height: 16px;"></i>
+          </a>
+          <span class="breadcrumb-item active"><%%= t("activerecord.models.#{<%= class_name %>.model_name.i18n_key}.other") %></span>
+        </div>
       </div>
     </div>
-    <div class="card-footer">
-      <%%= pagy_bootstrap_nav(@pagy, link_extra: 'class="btn btn-outline-secondary btn-sm mx-1"').html_safe %>
+  </div>
+  <div class="content" style="padding: 32px 24px;">
+    Estatísticas Rápidas 
+    <div class="<%= plural_table_name %>-stats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 32px;">
+      <div class="stat-mini" style="background: white; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #e5e7eb;">
+        <div class="stat-mini-value" style="font-size: 32px; font-weight: 700; color: #1f2937; margin-bottom: 4px;"><%%= @<%= plural_table_name %>.count %></div>
+        <div class="stat-mini-label" style="font-size: 14px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px;">TOTAL</div>
+      </div>
+      <%% if @<%= plural_table_name %>.respond_to?(:active) %>
+      <div class="stat-mini" style="background: white; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #e5e7eb;">
+        <div class="stat-mini-value" style="font-size: 32px; font-weight: 700; color: #059669; margin-bottom: 4px;"><%%= @<%= plural_table_name %>.active.count %></div>
+        <div class="stat-mini-label" style="font-size: 14px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px;">ATIVOS</div>
+      </div>
+      <div class="stat-mini" style="background: white; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #e5e7eb;">
+        <div class="stat-mini-value" style="font-size: 32px; font-weight: 700; color: #dc2626; margin-bottom: 4px;"><%%= @<%= plural_table_name %>.inactive.count %></div>
+        <div class="stat-mini-label" style="font-size: 14px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px;">INATIVOS</div>
+      </div>
+      <%% end %>
+      <div class="stat-mini" style="background: white; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #e5e7eb;">
+        <div class="stat-mini-value" style="font-size: 32px; font-weight: 700; color: #2563eb; margin-bottom: 4px;"><%%= @<%= plural_table_name %>.where('created_at > ?', 30.days.ago).count %></div>
+        <div class="stat-mini-label" style="font-size: 14px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px;">NOVOS (30D)</div>
+      </div>
+    </div>
+    Filtros de Busca 
+    <div class="search-filters" style="background: white; border-radius: 12px; padding: 24px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #e5e7eb;">
+      <%%= search_form_for @q, html: { class: "filter-group", autocomplete: "off", style: "display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; align-items: end;" } do |f| %>
+        <div class="form-group">
+          <label class="form-label" style="display: block; margin-bottom: 8px; font-weight: 500; color: #374151;">Buscar <%= human_name %></label>
+          <%%= f.search_field :<%= attributes.first.name %>_cont, class: "form-input", placeholder: "Digite para buscar...", style: "width: 100%; padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px;" %>
+        </div>
+        <%% if @<%= plural_table_name %>.respond_to?(:distinct) %>
+        <%- status_attribute = attributes.find { |attr| attr.name.include?('status') || attr.name.include?('estado') } -%>
+        <%- if status_attribute -%>
+          <div class="form-group">
+            <label class="form-label" style="display: block; margin-bottom: 8px; font-weight: 500; color: #374151;">Status</label>
+            <%%= f.select :<%= status_attribute.name %>_eq, options_for_select([['Todos os status', ''], ['Ativo', 'active'], ['Inativo', 'inactive']]), {}, { class: "form-select", style: "width: 100%; padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; background: white;" } %>
+          </div>
+        <%- end -%>
+        <%% end %>
+        <div class="form-group" style="display: flex; gap: 12px;">
+          <button type="submit" class="modern-btn modern-btn-primary" style="height: 44px; padding: 0 24px; background: #2563eb; color: white; border: none; border-radius: 8px; font-weight: 500; display: flex; align-items: center; gap: 8px; cursor: pointer;">
+            <i data-lucide="search" style="width: 16px; height: 16px;"></i>
+            Buscar
+          </button>
+          <%%= link_to <%= plural_table_name %>_path, class: "modern-btn modern-btn-secondary", style: "height: 44px; padding: 0 24px; background: #f3f4f6; color: #374151; border: 1px solid #d1d5db; border-radius: 8px; font-weight: 500; display: flex; align-items: center; gap: 8px; text-decoration: none;" do %>
+          <i data-lucide="x-circle" style="width: 16px; height: 16px;"></i>
+          Limpar
+          <%% end if params[:q] %>
+        </div>
+        <%% end %>
+      </div>
+      Ações em Lote 
+      <div class="bulk-actions" id="bulkActions" style="display: none;">
+        <div class="bulk-text">
+          <span id="selectedCount">0</span> <%= plural_table_name %> selecionados
+        </div>
+        <div class="bulk-buttons">
+          <button class="bulk-btn bulk-btn-primary">
+            <i data-lucide="mail" style="width: 14px; height: 14px;"></i>
+            Ação em Lote
+          </button>
+          <button class="bulk-btn bulk-btn-danger" onclick="bulkDelete()">
+            <i data-lucide="trash-2" style="width: 14px; height: 14px;"></i>
+            Excluir Selecionados
+          </button>
+        </div>
+      </div>
+      Tabela Principal 
+      <div class="modern-card">
+        <div class="modern-card-header d-flex align-items-center justify-content-between">
+          <h5 class="modern-card-title">
+            <i data-lucide="list" style="width: 20px; height: 20px;"></i>
+            Lista de <%%= t("activerecord.models.#{<%= class_name %>.model_name.i18n_key}.other") %>
+          </h5>
+          <div class="card-actions">
+            <button class="btn-export" onclick="exportData()">
+              <i data-lucide="download" style="width: 16px; height: 16px;"></i>
+              Exportar
+            </button>
+            <%%= link_to new_<%= singular_table_name %>_path, class: "btn-new-client" do %>
+            <i data-lucide="plus" style="width: 16px; height: 16px;"></i>
+            Novo <%%= t("activerecord.models.#{<%= class_name %>.model_name.i18n_key}.one") %>
+            <%% end %>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="modern-table">
+            <thead>
+              <tr>
+                <th style="width: 50px;">
+                  <input type="checkbox" id="selectAll" style="width: 16px; height: 16px;" onchange="toggleSelectAll()">
+                </th>
+                <th style="width: 50px; text-align: center;">Ações</th>
+                <% attributes_to_ignore = ['deleted_at', 'original_user_create', 'last_user_update', 'created_by', 'updated_by'] %>
+                <%- attributes.each do |attribute| -%>
+                  <% unless attributes_to_ignore.include?(attribute.name) %>
+                    <th><%%= sort_link(@q, :<%= attribute.name %>, t("activerecord.attributes.<%= singular_table_name %>.<%= attribute.name %>")) %></th>
+                  <% end %>
+                <%- end -%>
+                <th>Cadastro</th>
+              </tr>
+            </thead>
+            <tbody>
+              <%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
+              <tr>
+                <td>
+                  <input type="checkbox" class="<%= singular_table_name %>-checkbox" style="width: 16px; height: 16px;" 
+                       value="<%%= <%= singular_table_name %>.id %>" onchange="updateBulkActions()">
+                </td>
+                <td style="text-align: center;">
+                  <div class="dropdown">
+                    <button type="button" class="action-btn dropdown-toggle" data-bs-toggle="dropdown">
+                      <i data-lucide="more-horizontal" style="width: 16px; height: 16px;"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                      <%%= link_to <%= singular_table_name %>_path(<%= singular_table_name %>), class: "dropdown-item" do %>
+                      <i data-lucide="eye" style="width: 16px; height: 16px;"></i> Visualizar
+                      <%% end %>
+                      <%%= link_to edit_<%= singular_table_name %>_path(<%= singular_table_name %>), class: "dropdown-item" do %>
+                      <i data-lucide="edit" style="width: 16px; height: 16px;"></i> Editar
+                      <%% end %>
+                      <div class="dropdown-divider"></div>
+                      <%%= link_to <%= singular_table_name %>_path(<%= singular_table_name %>), method: :delete, 
+                      class: "dropdown-item text-danger", 
+                      data: { confirm: "Tem certeza que deseja excluir?" } do %>
+                      <i data-lucide="trash-2" style="width: 16px; height: 16px;"></i> Excluir
+                      <%% end %>
+                    </div>
+                  </div>
+                </td>
+                <%- attributes.each do |attribute| -%>
+                  <% unless attributes_to_ignore.include?(attribute.name) %>
+                    <td>
+                      <%- if attribute.name.include?('email') -%>
+                        <div style="color: var(--neutral-600); font-size: 13px;"><%%= <%= singular_table_name %>.<%= attribute.name %> %></div>
+                      <%- elsif attribute.name.include?('status') -%>
+                        <span class="<%= singular_table_name %>-status <%%= <%= singular_table_name %>.<%= attribute.name %>&.downcase %>">
+                          <%%= <%= singular_table_name %>.<%= attribute.name %>&.humanize %>
+                        </span>
+                      <%- elsif attribute.type == :boolean -%>
+                        <span class="badge <%%= <%= singular_table_name %>.<%= attribute.name %> ? 'bg-success' : 'bg-secondary' %>">
+                          <%%= <%= singular_table_name %>.<%= attribute.name %> ? 'Sim' : 'Não' %>
+                        </span>
+                      <%- else -%>
+                        <%%= <%= singular_table_name %>.<%= attribute.name %> %>
+                      <%- end -%>
+                    </td>
+                  <% end %>
+                <%- end -%>
+                <td style="color: var(--neutral-600);">
+                  <%%= l(<%= singular_table_name %>.created_at, format: :short) if <%= singular_table_name %>.created_at %>
+                </td>
+              </tr>
+              <%% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      Paginação 
+      <%% if respond_to?(:pagy_bootstrap_nav) && defined?(@pagy) %>
+      <div class="pagination-modern">
+        <%%= pagy_bootstrap_nav(@pagy, link_extra: 'class="pagination-btn"').html_safe %>
+      </div>
+      <%% end %>
     </div>
   </div>
+  <script>
+    // Funcionalidades JavaScript para o template moderno
+    function toggleSelectAll() {
+      const selectAll = document.getElementById('selectAll');
+      const checkboxes = document.querySelectorAll('.<%= singular_table_name %>-checkbox');
+
+      checkboxes.forEach(checkbox => {
+        checkbox.checked = selectAll.checked;
+      });
+
+      updateBulkActions();
+    }
+
+    function updateBulkActions() {
+      const checkboxes = document.querySelectorAll('.<%= singular_table_name %>-checkbox:checked');
+      const bulkActions = document.getElementById('bulkActions');
+      const selectedCount = document.getElementById('selectedCount');
+
+      if (checkboxes.length > 0) {
+        bulkActions.style.display = 'flex';
+        selectedCount.textContent = checkboxes.length;
+      } else {
+        bulkActions.style.display = 'none';
+      }
+    }
+
+    function bulkDelete() {
+      const checkboxes = document.querySelectorAll('.<%= singular_table_name %>-checkbox:checked');
+      const ids = Array.from(checkboxes).map(cb => cb.value);
+
+      if (ids.length > 0 && confirm(`Tem certeza que deseja excluir ${ids.length} registros?`)) {
+        // Implementar lógica de exclusão em lote
+        console.log('Excluir IDs:', ids);
+      }
+    }
+
+    function exportData() {
+      // Implementar lógica de exportação
+      window.location.href = '<%= plural_table_name %>.csv';
+    }
+
+    // Inicializar Lucide icons se disponível
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+  </script>
+  <style>
+    .page-header-content {
+    position: relative;
+    padding: 0 var(--page-header-padding-x);
+    background: linear-gradient(
+      135deg,
+      var(--primary-blue) 0%,
+      var(--primary-blue-dark) 100%
+    );
+    border: none;
+    }
+
+    .modern-table td{
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--neutral-900);
+     }
+  </style>
