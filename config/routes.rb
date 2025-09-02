@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :g_bancos
   devise_for :users
 
   root 'admin#index'

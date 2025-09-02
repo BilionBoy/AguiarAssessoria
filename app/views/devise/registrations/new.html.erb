@@ -45,7 +45,7 @@
             <%= f.input :g_tipo_usuario_id, required: true, label: "Tipo de Usuário",collection: GTipoUsuario.all, prompt: "Selecione o tipo de usuário", label_method: :descricao, value_method: :id,input_html: { class: "form-select form-select-lg" } %>
           </div>
           <div class="col-md-6">
-            <%= f.input :e_empresa_id, required: true, label: "Empresa", collection: EEmpresa.all,prompt: "Selecione a empresa", label_method: :razao_social, value_method: :id, input_html: { class: "form-select form-select-lg" } %>
+            <%= f.input :e_empresa_id, required: true, label: "Empresa", collection: EEmpresa.all,prompt: "Selecione a empresa", label_method: :nome_fantasia, value_method: :id, input_html: { class: "form-select form-select-lg" } %>
           </div>
         </div>
         <!-- Botão -->

@@ -19,8 +19,9 @@
       <li class="nav-item nav-item-dropdown-lg ms-lg-2">
         <a href="#" class="navbar-nav-link align-items-center rounded-pill user-avatar-btn" id="userMenuToggle">
           <i class="ph-user-circle fs-4 text-white"></i>
-          <span class="d-none d-xl-inline-block mx-lg-2 text-white fw-medium">Olá, Dhiogo</span>
-        </a>
+          <span class="d-none d-xl-inline-block mx-lg-2 text-white fw-medium">
+            Olá, <%= current_user.nome_completo %>
+          </span>        </a>
         <div id="userMenu" class="custom-dropdown-menu">
           <%= button_to destroy_user_session_path, method: :delete, class: "btn btn-logout" do %><i class="ph-sign-out me-2"></i>Sair
           <% end %>
