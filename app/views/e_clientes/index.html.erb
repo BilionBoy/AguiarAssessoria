@@ -39,7 +39,7 @@
     <div class="search-filters" style="background: white; border-radius: 12px; padding: 24px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #e5e7eb;">
       <%= search_form_for @q, html: { class: "filter-group", autocomplete: "off", style: "display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; align-items: end;" } do |f| %>
         <div class="form-group">
-          <label class="form-label" style="display: block; margin-bottom: 8px; font-weight: 500; color: #374151;">Buscar E cliente</label>
+          <label class="form-label" style="display: block; margin-bottom: 8px; font-weight: 500; color: #374151;">Buscar Clientes</label>
           <%= f.search_field :e_empresa_nome_fantasia_cont, class: "form-input", placeholder: "Digite para buscar...", style: "width: 100%; padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px;" %>
         </div>
         <div class="form-group" style="display: flex; gap: 12px;">
@@ -96,14 +96,12 @@
                 <input type="checkbox" id="selectAll" style="width: 16px; height: 16px;" onchange="toggleSelectAll()">
               </th>
               <th style="width: 50px; text-align: center;">Ações</th>
-              <th><%= sort_link(@q, :e_empresa, t("activerecord.attributes.e_cliente.e_empresa")) %></th>
+              <th><%= sort_link(@q, :e_empresa, t("activerecord.attributes.e_cliente.e_empresa.empresa")) %></th>
               <th><%= sort_link(@q, :nome_completo, t("activerecord.attributes.e_cliente.nome_completo")) %></th>
               <th><%= sort_link(@q, :cpf, t("activerecord.attributes.e_cliente.cpf")) %></th>
-              <th><%= sort_link(@q, :data_nascimento, t("activerecord.attributes.e_cliente.data_nascimento")) %></th>
               <th><%= sort_link(@q, :matricula, t("activerecord.attributes.e_cliente.matricula")) %></th>
               <th><%= sort_link(@q, :ultima_margem, t("activerecord.attributes.e_cliente.ultima_margem")) %></th>
               <th><%= sort_link(@q, :ano_admissao, t("activerecord.attributes.e_cliente.ano_admissao")) %></th>
-              <th>Cadastro</th>
             </tr>
           </thead>
           <tbody>
@@ -150,9 +148,6 @@
                   <%= e_cliente.ano_admissao %>
                 </td>
               </td>
-            </td>
-            <td style="color: var(--neutral-600);">
-              <%= l(e_cliente.created_at, format: :short) if e_cliente.created_at %>
             </td>
           </tr>
         <% end %>
