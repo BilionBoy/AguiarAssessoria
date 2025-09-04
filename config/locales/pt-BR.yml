@@ -50,6 +50,9 @@ pt-BR:
       e_empresa:
         one: "Empresa"
         other: "Empresas"
+      e_cliente:
+        one: "Cliente"
+        other: "Clientes"
     attributes:
       g_tipo_usuario:
         descricao: "Descrição"
@@ -83,7 +86,25 @@ pt-BR:
         nome_fantasia: "Nome Fantasia"
         telefone: "Telefone"
         g_cidade_id: "Cidade"
-
+      e_cliente:
+        nome: "Nome"
+        cpf: "CPF"
+        rg: "RG"
+        data_nascimento: "Data de Nascimento"
+        telefone: "Telefone"
+        celular: "Celular"
+        email: "E-mail"
+        endereco: "Endereço"
+        numero: "Número"
+        complemento: "Complemento"
+        cep: "CEP"
+        g_bairro_id: "Bairro"
+        g_estado_id: "Estado"
+        g_sexo_id: "Sexo"
+        g_orgao_id: "Órgão Emissor"
+        g_tipo_usuario_id: "Tipo de Usuário"
+        e_empresa_id: "Empresa"
+        g_status_cliente_id: "Status do Cliente"
     errors:
       messages:
         record_invalid: "A validação falhou: %{errors}"

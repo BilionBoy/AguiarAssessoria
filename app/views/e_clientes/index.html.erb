@@ -18,16 +18,18 @@
         <div class="stat-mini-value" style="font-size: 32px; font-weight: 700; color: #1f2937; margin-bottom: 4px;"><%= @e_clientes.count %></div>
         <div class="stat-mini-label" style="font-size: 14px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px;">TOTAL</div>
       </div>
-      <% if @e_clientes.respond_to?(:active) %>
-        <div class="stat-mini" style="background: white; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #e5e7eb;">
-          <div class="stat-mini-value" style="font-size: 32px; font-weight: 700; color: #059669; margin-bottom: 4px;"><%= @e_clientes.active.count %></div>
-          <div class="stat-mini-label" style="font-size: 14px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px;">ATIVOS</div>
+      <div class="stat-mini" style="background: white; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #e5e7eb;">
+        <div class="stat-mini-value" style="font-size: 32px; font-weight: 700; color: #059669; margin-bottom: 4px;">
+          <%= @e_clientes.joins(:g_status_cliente).where(g_status_clientes: { descricao: 'Ativo' }).count %>
         </div>
-        <div class="stat-mini" style="background: white; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #e5e7eb;">
-          <div class="stat-mini-value" style="font-size: 32px; font-weight: 700; color: #dc2626; margin-bottom: 4px;"><%= @e_clientes.inactive.count %></div>
-          <div class="stat-mini-label" style="font-size: 14px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px;">INATIVOS</div>
+        <div class="stat-mini-label" style="font-size: 14px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px;">ATIVOS</div>
+      </div>
+      <div class="stat-mini" style="background: white; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #e5e7eb;">
+        <div class="stat-mini-value" style="font-size: 32px; font-weight: 700; color: #dc2626; margin-bottom: 4px;">
+          <%= @e_clientes.joins(:g_status_cliente).where.not(g_status_clientes: { descricao: 'Ativo' }).count %>
         </div>
-      <% end %>
+        <div class="stat-mini-label" style="font-size: 14px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px;">INATIVOS</div>
+      </div>
       <div class="stat-mini" style="background: white; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #e5e7eb;">
         <div class="stat-mini-value" style="font-size: 32px; font-weight: 700; color: #2563eb; margin-bottom: 4px;"><%= @e_clientes.where('created_at > ?', 30.days.ago).count %></div>
         <div class="stat-mini-label" style="font-size: 14px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px;">NOVOS (30D)</div>
