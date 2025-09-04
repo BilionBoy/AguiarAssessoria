@@ -87,7 +87,7 @@ pt-BR:
         telefone: "Telefone"
         g_cidade_id: "Cidade"
       e_cliente:
-        nome: "Nome"
+        nome_completo: "Nome"
         cpf: "CPF"
         rg: "RG"
         data_nascimento: "Data de Nascimento"

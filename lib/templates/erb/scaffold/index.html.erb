@@ -18,16 +18,18 @@
         <div class="stat-mini-value" style="font-size: 32px; font-weight: 700; color: #1f2937; margin-bottom: 4px;"><%%= @<%= plural_table_name %>.count %></div>
         <div class="stat-mini-label" style="font-size: 14px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px;">TOTAL</div>
       </div>
-      <%% if @<%= plural_table_name %>.respond_to?(:active) %>
       <div class="stat-mini" style="background: white; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #e5e7eb;">
-        <div class="stat-mini-value" style="font-size: 32px; font-weight: 700; color: #059669; margin-bottom: 4px;"><%%= @<%= plural_table_name %>.active.count %></div>
+        <div class="stat-mini-value" style="font-size: 32px; font-weight: 700; color: #059669; margin-bottom: 4px;">
+          <%%= @<%= plural_table_name %>.joins(:<%= "g_status_#{singular_table_name}" %>).where(<%= "g_status_#{plural_table_name}" %>: { descricao: 'Ativo' }).count %>
+        </div>
         <div class="stat-mini-label" style="font-size: 14px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px;">ATIVOS</div>
       </div>
       <div class="stat-mini" style="background: white; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #e5e7eb;">
-        <div class="stat-mini-value" style="font-size: 32px; font-weight: 700; color: #dc2626; margin-bottom: 4px;"><%%= @<%= plural_table_name %>.inactive.count %></div>
+        <div class="stat-mini-value" style="font-size: 32px; font-weight: 700; color: #dc2626; margin-bottom: 4px;">
+          <%%= @<%= plural_table_name %>.joins(:<%= "g_status_#{singular_table_name}" %>).where.not(<%= "g_status_#{plural_table_name}" %>: { descricao: 'Ativo' }).count %>
+        </div>
         <div class="stat-mini-label" style="font-size: 14px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px;">INATIVOS</div>
       </div>
-      <%% end %>
       <div class="stat-mini" style="background: white; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #e5e7eb;">
         <div class="stat-mini-value" style="font-size: 32px; font-weight: 700; color: #2563eb; margin-bottom: 4px;"><%%= @<%= plural_table_name %>.where('created_at > ?', 30.days.ago).count %></div>
         <div class="stat-mini-label" style="font-size: 14px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px;">NOVOS (30D)</div>
