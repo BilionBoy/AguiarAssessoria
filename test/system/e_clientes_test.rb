@@ -30,6 +30,7 @@ class EClientesTest < ApplicationSystemTestCase
     fill_in "G margem tipo", with: @e_cliente.g_margem_tipo_id
     fill_in "G orgao", with: @e_cliente.g_orgao_id
     fill_in "G sexo", with: @e_cliente.g_sexo_id
+    fill_in "G status cliente", with: @e_cliente.g_status_cliente_id
     fill_in "G tipo beneficio", with: @e_cliente.g_tipo_beneficio_id
     fill_in "Matricula", with: @e_cliente.matricula
     fill_in "Nome completo", with: @e_cliente.nome_completo
@@ -66,6 +67,7 @@ class EClientesTest < ApplicationSystemTestCase
     fill_in "G margem tipo", with: @e_cliente.g_margem_tipo_id
     fill_in "G orgao", with: @e_cliente.g_orgao_id
     fill_in "G sexo", with: @e_cliente.g_sexo_id
+    fill_in "G status cliente", with: @e_cliente.g_status_cliente_id
     fill_in "G tipo beneficio", with: @e_cliente.g_tipo_beneficio_id
     fill_in "Matricula", with: @e_cliente.matricula
     fill_in "Nome completo", with: @e_cliente.nome_completo

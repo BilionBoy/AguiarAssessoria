@@ -8,25 +8,26 @@ one:
   email: MyString
   telefone: MyString
   nome_social: MyString
-  g_sexo: one
   endereco: MyString
-  g_estado: one
-  g_cidade: one
-  g_bairro: one
-  g_orgao: one
   matricula: MyString
   alfabetizado: false
-  g_margem_tipo: one
   ultima_margem: 9.99
   data_ultima_margem: 2025-09-03
   ano_admissao: 1
   pensionista: false
   numero_beneficio: MyString
-  g_tipo_beneficio: one
   possui_representante_legal: false
   created_by: MyString
   updated_by: MyString
-  deleted_at: 2025-09-03 23:22:42
+  deleted_at: 2025-09-03 23:46:38
+  g_sexo: one
+  g_estado: one
+  g_cidade: one
+  g_bairro: one
+  g_orgao: one
+  g_margem_tipo: one
+  g_tipo_beneficio: one
+  g_status_cliente: one
 
 two:
   e_empresa: two
@@ -36,22 +37,23 @@ two:
   email: MyString
   telefone: MyString
   nome_social: MyString
-  g_sexo: two
   endereco: MyString
-  g_estado: two
-  g_cidade: two
-  g_bairro: two
-  g_orgao: two
   matricula: MyString
   alfabetizado: false
-  g_margem_tipo: two
   ultima_margem: 9.99
   data_ultima_margem: 2025-09-03
   ano_admissao: 1
   pensionista: false
   numero_beneficio: MyString
-  g_tipo_beneficio: two
   possui_representante_legal: false
   created_by: MyString
   updated_by: MyString
-  deleted_at: 2025-09-03 23:22:42
+  deleted_at: 2025-09-03 23:46:38
+  g_sexo: two
+  g_estado: two
+  g_cidade: two
+  g_bairro: two
+  g_orgao: two
+  g_margem_tipo: two
+  g_tipo_beneficio: two
+  g_status_cliente: two

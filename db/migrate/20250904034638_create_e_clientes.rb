@@ -37,6 +37,7 @@ class CreateEClientes < ActiveRecord::Migration[7.2]
         t.references :g_orgao,          foreign_key: true
         t.references :g_margem_tipo,    foreign_key: true
         t.references :g_tipo_beneficio, foreign_key: true
+        t.references :g_status_cliente, foreign_key: true
 
         t.timestamps
       end

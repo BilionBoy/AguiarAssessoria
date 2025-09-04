@@ -1,17 +1,17 @@
 <%= form_with(model: @e_cliente, local: true, class: "modern-form", data: { turbo: false }) do |form| %>
-  <% if @e_cliente.errors.any? %>
-    <div class="alert alert-danger" role="alert" style="margin-bottom: 24px; padding: 16px; background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; color: #dc2626;">
-      <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
-        <i data-lucide="alert-circle" style="width: 20px; height: 20px;"></i>
-        <strong><%= pluralize(@e_cliente.errors.count, "erro") %> encontrados:</strong>
-      </div>
-      <ul style="margin: 0; padding-left: 20px;">
-        <% @e_cliente.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<% if @e_cliente.errors.any? %>
+<div class="alert alert-danger" role="alert" style="margin-bottom: 24px; padding: 16px; background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; color: #dc2626;">
+  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+    <i data-lucide="alert-circle" style="width: 20px; height: 20px;"></i>
+    <strong><%= pluralize(@e_cliente.errors.count, "erro") %> encontrados:</strong>
+  </div>
+  <ul style="margin: 0; padding-left: 20px;">
+    <% @e_cliente.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
   Multi-step Wizard Form 
   <div class="form-wizard">
     Wizard Header 
@@ -37,55 +37,62 @@
         Informações Básicas
       </h3>
       <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
-        <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
-          <%= form.label :nome_completo, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
-          <%= form.text_field :nome_completo, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite nome completo..." %>
-        </div>
-        <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
-          <%= form.label :cpf, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
-          <%= form.text_field :cpf, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite cpf..." %>
-        </div>
-        <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
-          <%= form.label :data_nascimento, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
-          <%= form.date_field :data_nascimento, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;" %>
-        </div>
-        <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
-          <%= form.label :email, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
-          <%= form.text_field :email, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite email..." %>
-        </div>
-        <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
-          <%= form.label :telefone, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
-          <%= form.text_field :telefone, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite telefone..." %>
-        </div>
-        <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
-          <%= form.label :nome_social, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
-          <%= form.text_field :nome_social, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite nome social..." %>
-        </div>
-        <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
-          <%= form.label :g_sexo, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
-          <%= form.text_field :g_sexo, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite g sexo..." %>
-        </div>
-        <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
-          <%= form.label :endereco, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
-          <%= form.text_field :endereco, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite endereco..." %>
-        </div>
-        <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
-          <%= form.label :g_estado, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
-          <%= form.text_field :g_estado, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite g estado..." %>
-        </div>
-        <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
-          <%= form.label :g_cidade, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
-          <%= form.text_field :g_cidade, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite g cidade..." %>
-        </div>
-        <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
-          <%= form.label :g_bairro, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
-          <%= form.text_field :g_bairro, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite g bairro..." %>
-        </div>
-        <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
-          <%= form.label :g_orgao, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
-          <%= form.text_field :g_orgao, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite g orgao..." %>
-        </div>
-      </div>
+                  <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+            <%= form.label :e_empresa, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
+                          <%= form.text_field :e_empresa, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite e empresa..." %>
+                      </div>
+                  <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+            <%= form.label :nome_completo, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
+                          <%= form.text_field :nome_completo, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite nome completo..." %>
+                      </div>
+                  <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+            <%= form.label :cpf, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
+                          <%= form.text_field :cpf, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite cpf..." %>
+                      </div>
+                  <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+            <%= form.label :data_nascimento, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
+                          <%= form.date_field :data_nascimento, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;" %>
+                      </div>
+                  <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+            <%= form.label :email, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
+                          <%= form.text_field :email, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite email..." %>
+                      </div>
+                  <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+            <%= form.label :telefone, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
+                          <%= form.text_field :telefone, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite telefone..." %>
+                      </div>
+                  <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+            <%= form.label :nome_social, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
+                          <%= form.text_field :nome_social, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite nome social..." %>
+                      </div>
+                  <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+            <%= form.label :endereco, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
+                          <%= form.text_field :endereco, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite endereco..." %>
+                      </div>
+                  <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+            <%= form.label :matricula, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
+                          <%= form.text_field :matricula, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite matricula..." %>
+                      </div>
+                  <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+            <%= form.label :alfabetizado, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
+                          <div style="display: flex; align-items: center; gap: 8px; padding: 12px 0;">
+                <%= form.check_box :alfabetizado, style: "width: 18px; height: 18px;" %>
+                <span style="font-size: 14px; color: #6b7280;">Marque se aplicável</span>
+              </div>
+                      </div>
+                  <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+            <%= form.label :ultima_margem, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
+                          <%= form.text_field :ultima_margem, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite ultima margem..." %>
+                      </div>
+                  <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+            <%= form.label :data_ultima_margem, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
+                          <%= form.date_field :data_ultima_margem, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;" %>
+                      </div>
+                  <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+            <%= form.label :ano_admissao, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
+                          <%= form.number_field :ano_admissao, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite ano admissao..." %>
+                      </div>
+              </div>
     </div>
     Step 2: Additional Details 
     <div class="wizard-step-content" id="step2" style="display: none; background: white; padding: 32px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
@@ -94,68 +101,69 @@
         Detalhes Adicionais
       </h3>
       <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
-        <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
-          <%= form.label :matricula, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
-          <%= form.text_field :matricula, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite matricula..." %>
-        </div>
-        <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
-          <%= form.label :alfabetizado, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
-          <div style="display: flex; align-items: center; gap: 8px; padding: 12px 0;">
-            <%= form.check_box :alfabetizado, style: "width: 18px; height: 18px;" %>
-            <span style="font-size: 14px; color: #6b7280;">Marque se aplicável</span>
-          </div>
-        </div>
-        <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
-          <%= form.label :g_margem_tipo, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
-          <%= form.text_field :g_margem_tipo, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite g margem tipo..." %>
-        </div>
-        <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
-          <%= form.label :ultima_margem, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
-          <%= form.text_field :ultima_margem, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite ultima margem..." %>
-        </div>
-        <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
-          <%= form.label :data_ultima_margem, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
-          <%= form.date_field :data_ultima_margem, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;" %>
-        </div>
-        <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
-          <%= form.label :ano_admissao, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
-          <%= form.number_field :ano_admissao, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite ano admissao..." %>
-        </div>
-        <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
-          <%= form.label :pensionista, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
-          <div style="display: flex; align-items: center; gap: 8px; padding: 12px 0;">
-            <%= form.check_box :pensionista, style: "width: 18px; height: 18px;" %>
-            <span style="font-size: 14px; color: #6b7280;">Marque se aplicável</span>
-          </div>
-        </div>
-        <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
-          <%= form.label :numero_beneficio, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
-          <%= form.text_field :numero_beneficio, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite numero beneficio..." %>
-        </div>
-        <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
-          <%= form.label :g_tipo_beneficio, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
-          <%= form.text_field :g_tipo_beneficio, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite g tipo beneficio..." %>
-        </div>
-        <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
-          <%= form.label :possui_representante_legal, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
-          <div style="display: flex; align-items: center; gap: 8px; padding: 12px 0;">
-            <%= form.check_box :possui_representante_legal, style: "width: 18px; height: 18px;" %>
-            <span style="font-size: 14px; color: #6b7280;">Marque se aplicável</span>
-          </div>
-        </div>
-        <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
-          <%= form.label :created_by, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
-          <%= form.text_field :created_by, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite created by..." %>
-        </div>
-        <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
-          <%= form.label :updated_by, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
-          <%= form.text_field :updated_by, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite updated by..." %>
-        </div>
-        <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
-          <%= form.label :deleted_at, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
-          <%= form.text_field :deleted_at, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite deleted at..." %>
-        </div>
-      </div>
+                  <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+            <%= form.label :pensionista, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
+                          <div style="display: flex; align-items: center; gap: 8px; padding: 12px 0;">
+                <%= form.check_box :pensionista, style: "width: 18px; height: 18px;" %>
+                <span style="font-size: 14px; color: #6b7280;">Marque se aplicável</span>
+              </div>
+                      </div>
+                  <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+            <%= form.label :numero_beneficio, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
+                          <%= form.text_field :numero_beneficio, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite numero beneficio..." %>
+                      </div>
+                  <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+            <%= form.label :possui_representante_legal, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
+                          <div style="display: flex; align-items: center; gap: 8px; padding: 12px 0;">
+                <%= form.check_box :possui_representante_legal, style: "width: 18px; height: 18px;" %>
+                <span style="font-size: 14px; color: #6b7280;">Marque se aplicável</span>
+              </div>
+                      </div>
+                  <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+            <%= form.label :created_by, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
+                          <%= form.text_field :created_by, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite created by..." %>
+                      </div>
+                  <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+            <%= form.label :updated_by, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
+                          <%= form.text_field :updated_by, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite updated by..." %>
+                      </div>
+                  <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+            <%= form.label :deleted_at, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
+                          <%= form.text_field :deleted_at, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite deleted at..." %>
+                      </div>
+                  <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+            <%= form.label :g_sexo, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
+                          <%= form.text_field :g_sexo, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite g sexo..." %>
+                      </div>
+                  <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+            <%= form.label :g_estado, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
+                          <%= form.text_field :g_estado, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite g estado..." %>
+                      </div>
+                  <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+            <%= form.label :g_cidade, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
+                          <%= form.text_field :g_cidade, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite g cidade..." %>
+                      </div>
+                  <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+            <%= form.label :g_bairro, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
+                          <%= form.text_field :g_bairro, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite g bairro..." %>
+                      </div>
+                  <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+            <%= form.label :g_orgao, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
+                          <%= form.text_field :g_orgao, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite g orgao..." %>
+                      </div>
+                  <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+            <%= form.label :g_margem_tipo, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
+                          <%= form.text_field :g_margem_tipo, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite g margem tipo..." %>
+                      </div>
+                  <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+            <%= form.label :g_tipo_beneficio, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
+                          <%= form.text_field :g_tipo_beneficio, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite g tipo beneficio..." %>
+                      </div>
+                  <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
+            <%= form.label :g_status_cliente, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
+                          <%= form.text_field :g_status_cliente, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite g status cliente..." %>
+                      </div>
+              </div>
     </div>
     Wizard Actions 
     <div class="wizard-actions" style="display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 24px; background: white; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
@@ -165,8 +173,8 @@
       </button>
       <div style="display: flex; gap: 12px;">
         <%= link_to e_clientes_path, class: "btn-secondary", style: "padding: 12px 24px; border: 1px solid #d1d5db; background: white; color: #374151; border-radius: 8px; font-weight: 500; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.2s;" do %>
-          <i data-lucide="x" style="width: 16px; height: 16px;"></i>
-          Cancelar
+        <i data-lucide="x" style="width: 16px; height: 16px;"></i>
+        Cancelar
         <% end %>
         <button type="button" class="btn-primary" id="nextBtn" style="padding: 12px 24px; background: #3b82f6; color: white; border: none; border-radius: 8px; font-weight: 500; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 8px;">
           Próximo

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_09_04_032242) do
+ActiveRecord::Schema[7.2].define(version: 2025_09_04_034638) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -41,6 +41,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_09_04_032242) do
     t.bigint "g_orgao_id"
     t.bigint "g_margem_tipo_id"
     t.bigint "g_tipo_beneficio_id"
+    t.bigint "g_status_cliente_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["cpf"], name: "index_e_clientes_on_cpf", unique: true
@@ -52,6 +53,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_09_04_032242) do
     t.index ["g_margem_tipo_id"], name: "index_e_clientes_on_g_margem_tipo_id"
     t.index ["g_orgao_id"], name: "index_e_clientes_on_g_orgao_id"
     t.index ["g_sexo_id"], name: "index_e_clientes_on_g_sexo_id"
+    t.index ["g_status_cliente_id"], name: "index_e_clientes_on_g_status_cliente_id"
     t.index ["g_tipo_beneficio_id"], name: "index_e_clientes_on_g_tipo_beneficio_id"
   end
 
@@ -211,6 +213,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_09_04_032242) do
   add_foreign_key "e_clientes", "g_margem_tipos"
   add_foreign_key "e_clientes", "g_orgaos"
   add_foreign_key "e_clientes", "g_sexos"
+  add_foreign_key "e_clientes", "g_status_clientes"
   add_foreign_key "e_clientes", "g_tipo_beneficios"
   add_foreign_key "e_empresas", "g_cidades"
   add_foreign_key "g_bairros", "g_cidades"
