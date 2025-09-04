@@ -19,4 +19,5 @@ class ECliente < ApplicationRecord
   validates :nome_completo,   presence: true
   validates :ultima_margem,   presence: true
   validates :ano_admissao,    presence: true
+  validates :matricula,       presence: true
 end
