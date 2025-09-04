@@ -12,4 +12,11 @@ class ECliente < ApplicationRecord
   belongs_to :g_margem_tipo
   belongs_to :g_tipo_beneficio
   belongs_to :g_margem_tipo
+
+  validates :nome_completo,   presence: true
+  validates :cpf,             presence: true
+  validates :data_nascimento, presence: true
+  validates :nome_completo,   presence: true
+  validates :ultima_margem,   presence: true
+  validates :ano_admissao,    presence: true
 end
