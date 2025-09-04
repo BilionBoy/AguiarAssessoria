@@ -1,0 +1,2 @@
+json.extract! e_cliente, :id, :e_empresa_id, :nome_completo, :cpf, :data_nascimento, :email, :telefone, :nome_social, :g_sexo_id, :endereco, :g_estado_id, :g_cidade_id, :g_bairro_id, :g_orgao_id, :matricula, :alfabetizado, :g_margem_tipo_id, :ultima_margem, :data_ultima_margem, :ano_admissao, :pensionista, :numero_beneficio, :g_tipo_beneficio_id, :possui_representante_legal, :created_by, :updated_by, :deleted_at, :created_at, :updated_at
+json.url e_cliente_url(e_cliente, format: :json)

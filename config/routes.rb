@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :e_clientes
   devise_for :users
 
   root 'admin#index'

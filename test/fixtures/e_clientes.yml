@@ -1,0 +1,57 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  e_empresa: one
+  nome_completo: MyString
+  cpf: MyString
+  data_nascimento: 2025-09-03
+  email: MyString
+  telefone: MyString
+  nome_social: MyString
+  g_sexo: one
+  endereco: MyString
+  g_estado: one
+  g_cidade: one
+  g_bairro: one
+  g_orgao: one
+  matricula: MyString
+  alfabetizado: false
+  g_margem_tipo: one
+  ultima_margem: 9.99
+  data_ultima_margem: 2025-09-03
+  ano_admissao: 1
+  pensionista: false
+  numero_beneficio: MyString
+  g_tipo_beneficio: one
+  possui_representante_legal: false
+  created_by: MyString
+  updated_by: MyString
+  deleted_at: 2025-09-03 23:22:42
+
+two:
+  e_empresa: two
+  nome_completo: MyString
+  cpf: MyString
+  data_nascimento: 2025-09-03
+  email: MyString
+  telefone: MyString
+  nome_social: MyString
+  g_sexo: two
+  endereco: MyString
+  g_estado: two
+  g_cidade: two
+  g_bairro: two
+  g_orgao: two
+  matricula: MyString
+  alfabetizado: false
+  g_margem_tipo: two
+  ultima_margem: 9.99
+  data_ultima_margem: 2025-09-03
+  ano_admissao: 1
+  pensionista: false
+  numero_beneficio: MyString
+  g_tipo_beneficio: two
+  possui_representante_legal: false
+  created_by: MyString
+  updated_by: MyString
+  deleted_at: 2025-09-03 23:22:42
