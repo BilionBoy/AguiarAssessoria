@@ -46616,3 +46616,1453 @@ Completed 200 OK in 31ms (Views: 14.1ms | ActiveRecord: 6.8ms (7 queries, 0 cach
   [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
   [1m[36mGSexo Create (6.2ms)[0m  [1m[32mINSERT INTO "g_sexos" ("descricao", "created_by", "updated_by", "deleted_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["descricao", "Masculino"], ["created_by", nil], ["updated_by", nil], ["deleted_at", nil], ["created_at", "2025-09-04 23:18:31.595991"], ["updated_at", "2025-09-04 23:18:31.595991"]]
   [1m[36mTRANSACTION (6.4ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2025-09-06 10:46:28 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (3.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250904034638_create_e_clientes.rb
+
+
+):
+  
+activerecord (7.2.2.1) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.2.1) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-09-06 10:46:30 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250904034638_create_e_clientes.rb
+
+
+):
+  
+activerecord (7.2.2.1) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.2.1) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started POST "/rails/actions" for 127.0.0.1 at 2025-09-06 10:46:31 -0400
+  [1m[35m (13.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (30.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateEClientes (20250904034638)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (250.7ms)[0m  [1m[35mCREATE TABLE "e_clientes" ("id" bigserial primary key, "e_empresa_id" bigint NOT NULL, "nome_completo" character varying NOT NULL, "cpf" character varying NOT NULL, "data_nascimento" date, "email" character varying, "telefone" character varying, "nome_social" character varying, "endereco" character varying, "matricula" character varying, "alfabetizado" boolean DEFAULT FALSE, "ultima_margem" decimal(10,2), "data_ultima_margem" date, "ano_admissao" integer, "pensionista" boolean DEFAULT FALSE, "numero_beneficio" character varying, "possui_representante_legal" boolean DEFAULT FALSE, "created_by" character varying, "updated_by" character varying, "deleted_at" timestamp(6), "g_sexo_id" bigint, "g_estado_id" bigint, "g_cidade_id" bigint, "g_bairro_id" bigint, "g_orgao_id" bigint, "g_margem_tipo_id" bigint, "g_tipo_beneficio_id" bigint, "g_status_cliente_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_e41278c676"
+FOREIGN KEY ("e_empresa_id")
+  REFERENCES "e_empresas" ("id")
+, CONSTRAINT "fk_rails_36d92bc040"
+FOREIGN KEY ("g_sexo_id")
+  REFERENCES "g_sexos" ("id")
+, CONSTRAINT "fk_rails_6d8f408ac2"
+FOREIGN KEY ("g_estado_id")
+  REFERENCES "g_estados" ("id")
+, CONSTRAINT "fk_rails_da0851220d"
+FOREIGN KEY ("g_cidade_id")
+  REFERENCES "g_cidades" ("id")
+, CONSTRAINT "fk_rails_72a8cf05ed"
+FOREIGN KEY ("g_bairro_id")
+  REFERENCES "g_bairros" ("id")
+, CONSTRAINT "fk_rails_f80636f80e"
+FOREIGN KEY ("g_orgao_id")
+  REFERENCES "g_orgaos" ("id")
+, CONSTRAINT "fk_rails_11888bf0df"
+FOREIGN KEY ("g_margem_tipo_id")
+  REFERENCES "g_margem_tipos" ("id")
+, CONSTRAINT "fk_rails_afe7a31c2e"
+FOREIGN KEY ("g_tipo_beneficio_id")
+  REFERENCES "g_tipo_beneficios" ("id")
+, CONSTRAINT "fk_rails_c38a502cbe"
+FOREIGN KEY ("g_status_cliente_id")
+  REFERENCES "g_status_clientes" ("id")
+)[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE INDEX "index_e_clientes_on_e_empresa_id" ON "e_clientes" ("e_empresa_id")[0m
+  [1m[35m (15.0ms)[0m  [1m[35mCREATE INDEX "index_e_clientes_on_g_sexo_id" ON "e_clientes" ("g_sexo_id")[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE INDEX "index_e_clientes_on_g_estado_id" ON "e_clientes" ("g_estado_id")[0m
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE INDEX "index_e_clientes_on_g_cidade_id" ON "e_clientes" ("g_cidade_id")[0m
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE INDEX "index_e_clientes_on_g_bairro_id" ON "e_clientes" ("g_bairro_id")[0m
+  [1m[35m (14.0ms)[0m  [1m[35mCREATE INDEX "index_e_clientes_on_g_orgao_id" ON "e_clientes" ("g_orgao_id")[0m
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE INDEX "index_e_clientes_on_g_margem_tipo_id" ON "e_clientes" ("g_margem_tipo_id")[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE INDEX "index_e_clientes_on_g_tipo_beneficio_id" ON "e_clientes" ("g_tipo_beneficio_id")[0m
+  [1m[35m (13.9ms)[0m  [1m[35mCREATE INDEX "index_e_clientes_on_g_status_cliente_id" ON "e_clientes" ("g_status_cliente_id")[0m
+  [1m[35m (17.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_e_clientes_on_cpf" ON "e_clientes" ("cpf")[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE INDEX "index_e_clientes_on_email" ON "e_clientes" ("email")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250904034638') RETURNING "version"[0m
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2025-09-06 10:46:33 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (6.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdminController#index as HTML
+Completed 401 Unauthorized in 27ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-09-06 10:46:33 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 91.2ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 513.6ms | GC: 20.9ms)
+Completed 200 OK in 593ms (Views: 521.4ms | ActiveRecord: 7.6ms (0 queries, 0 cached) | GC: 20.9ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/logo_simpliconsig_white.png"):
+  
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-09-06 10:46:35 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-09-06 10:46:38 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  [1m[36mGTipoUsuario Load (3.6ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios"[0m
+  ↳ app/views/devise/registrations/new.html.erb:45
+  [1m[36mEEmpresa Load (3.2ms)[0m  [1m[34mSELECT "e_empresas".* FROM "e_empresas"[0m
+  ↳ app/views/devise/registrations/new.html.erb:48
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 167.8ms | GC: 1.4ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 175.7ms | GC: 2.4ms)
+Completed 200 OK in 195ms (Views: 164.5ms | ActiveRecord: 17.4ms (2 queries, 0 cached) | GC: 2.4ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/logo_simpliconsig_white.png"):
+  
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-09-06 10:46:40 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 69.2ms | GC: 1.8ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 85.0ms | GC: 1.8ms)
+Completed 200 OK in 120ms (Views: 94.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.8ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/logo_simpliconsig_white.png"):
+  
+Started POST "/users/sign_in" for 127.0.0.1 at 2025-09-06 10:46:49 -0400
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 275ms (ActiveRecord: 6.1ms (1 query, 0 cached) | GC: 1.9ms)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 17.0ms | GC: 1.1ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 20.1ms | GC: 1.1ms)
+Completed 200 OK in 253ms (Views: 21.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.1ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/logo_simpliconsig_white.png"):
+  
+Started POST "/users/sign_in" for 127.0.0.1 at 2025-09-06 10:46:53 -0400
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 238ms (ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 3.3ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 6.9ms | GC: 0.7ms)
+Completed 200 OK in 224ms (Views: 7.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 3.1ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/logo_simpliconsig_white.png"):
+  
+Started GET "/users/sign_up" for 127.0.0.1 at 2025-09-06 10:46:55 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  [1m[36mGTipoUsuario Load (0.8ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios"[0m
+  ↳ app/views/devise/registrations/new.html.erb:45
+  [1m[36mEEmpresa Load (2.6ms)[0m  [1m[34mSELECT "e_empresas".* FROM "e_empresas"[0m
+  ↳ app/views/devise/registrations/new.html.erb:48
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 34.5ms | GC: 0.5ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 40.1ms | GC: 0.5ms)
+Completed 200 OK in 43ms (Views: 37.4ms | ActiveRecord: 3.4ms (2 queries, 0 cached) | GC: 0.5ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/logo_simpliconsig_white.png"):
+  
+Started POST "/users" for 127.0.0.1 at 2025-09-06 10:47:15 -0400
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "nome_completo"=>"Kayke", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "cpf"=>"02588772211", "telefone"=>"69993881869", "g_tipo_usuario_id"=>"1", "e_empresa_id"=>"1"}, "commit"=>"Criar conta"}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (3.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.7ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEEmpresa Load (0.8ms)[0m  [1m[34mSELECT "e_empresas".* FROM "e_empresas" WHERE "e_empresas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."cpf" = $1 LIMIT $2[0m  [["cpf", "02588772211"], ["LIMIT", 1]]
+  [1m[36mUser Create (9.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "nome_completo", "cpf", "telefone", "g_tipo_usuario_id", "e_empresa_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["nome_completo", "Kayke"], ["cpf", "02588772211"], ["telefone", "69993881869"], ["g_tipo_usuario_id", 1], ["e_empresa_id", 1], ["created_at", "2025-09-06 14:47:16.031902"], ["updated_at", "2025-09-06 14:47:16.031902"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 360ms (ActiveRecord: 17.5ms (5 queries, 0 cached) | GC: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-09-06 10:47:16 -0400
+Processing by AdminController#index as TURBO_STREAM
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 7.6ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 3.1ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 34.5ms | GC: 1.1ms)
+Completed 200 OK in 52ms (Views: 39.2ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-09-06 10:47:16 -0400
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 4.6ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | GC: 0.0ms)
+Completed 200 OK in 35ms (Views: 21.1ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/e_empresas" for 127.0.0.1 at 2025-09-06 10:47:24 -0400
+Processing by EEmpresasController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mEEmpresa Count (5.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "e_empresas"[0m
+  ↳ app/controllers/e_empresas_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering e_empresas/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 2.1ms | GC: 0.0ms)
+  [1m[36mEEmpresa Load (0.9ms)[0m  [1m[34mSELECT "e_empresas".* FROM "e_empresas" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_empresas/index.html.erb:27
+  Rendered e_empresas/index.html.erb within layouts/application (Duration: 57.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 57.8ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 91ms (ActiveRecord: 13.8ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `nome_fantasia' for nil):
+
+Causes:
+NoMethodError (undefined method `nome_fantasia' for nil)
+    46:                     <td><%= e_empresa.cnpj %></td>
+    47:                     <td><%= e_empresa.endereco %></td>
+    48:                     <td><%= e_empresa.telefone %></td>
+    49:                     <td><%= e_empresa.g_cidade.nome_fantasia %></td>
+    50:                   </div>
+    51:                 </div>
+    52:               </td>
+  
+app/views/e_empresas/index.html.erb:49
+app/views/e_empresas/index.html.erb:27
+Started GET "/g_sexos" for 127.0.0.1 at 2025-09-06 10:47:30 -0400
+Processing by GSexosController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mGSexo Count (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_sexos"[0m
+  ↳ app/controllers/g_sexos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_sexos/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mGSexo Load (0.5ms)[0m  [1m[34mSELECT "g_sexos".* FROM "g_sexos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_sexos/index.html.erb:22
+  Rendered g_sexos/index.html.erb within layouts/application (Duration: 18.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.9ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 36.1ms | GC: 0.0ms)
+Completed 200 OK in 76ms (Views: 36.4ms | ActiveRecord: 7.0ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/admin/contratos" for 127.0.0.1 at 2025-09-06 10:48:21 -0400
+Processing by AdminController#contratos as HTML
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/contratos.html.erb within layouts/application
+  Rendered admin/contratos.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 45.2ms | GC: 8.9ms)
+Completed 200 OK in 65ms (Views: 46.2ms | ActiveRecord: 4.2ms (1 query, 0 cached) | GC: 8.9ms)
+
+
+Started GET "/e_empresas" for 127.0.0.1 at 2025-09-06 10:48:22 -0400
+Processing by EEmpresasController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mEEmpresa Count (7.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "e_empresas"[0m
+  ↳ app/controllers/e_empresas_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering e_empresas/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mEEmpresa Load (0.6ms)[0m  [1m[34mSELECT "e_empresas".* FROM "e_empresas" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_empresas/index.html.erb:27
+  Rendered e_empresas/index.html.erb within layouts/application (Duration: 16.8ms | GC: 1.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | GC: 1.5ms)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 9.2ms (3 queries, 0 cached) | GC: 4.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `nome_fantasia' for nil):
+
+Causes:
+NoMethodError (undefined method `nome_fantasia' for nil)
+    46:                     <td><%= e_empresa.cnpj %></td>
+    47:                     <td><%= e_empresa.endereco %></td>
+    48:                     <td><%= e_empresa.telefone %></td>
+    49:                     <td><%= e_empresa.g_cidade.nome_fantasia %></td>
+    50:                   </div>
+    51:                 </div>
+    52:               </td>
+  
+app/views/e_empresas/index.html.erb:49
+app/views/e_empresas/index.html.erb:27
+Started GET "/g_sexos" for 127.0.0.1 at 2025-09-06 10:48:26 -0400
+Processing by GSexosController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mGSexo Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_sexos"[0m
+  ↳ app/controllers/g_sexos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_sexos/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mGSexo Load (0.7ms)[0m  [1m[34mSELECT "g_sexos".* FROM "g_sexos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_sexos/index.html.erb:22
+  Rendered g_sexos/index.html.erb within layouts/application (Duration: 29.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 12.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 54.1ms | GC: 0.0ms)
+Completed 200 OK in 80ms (Views: 54.0ms | ActiveRecord: 2.3ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-09-06 10:52:47 -0400
+Processing by AdminController#index as HTML
+Completed 401 Unauthorized in 23ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-09-06 10:52:47 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 104.9ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 167.0ms | GC: 0.0ms)
+Completed 200 OK in 227ms (Views: 181.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/logo_simpliconsig_white.png"):
+  
+Started GET "/admin/clientes" for 127.0.0.1 at 2025-09-06 11:03:36 -0400
+Processing by AdminController#clientes as HTML
+  [1m[36mUser Load (19.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/clientes.html.erb within layouts/application
+  Rendered admin/clientes.html.erb within layouts/application (Duration: 62.9ms | GC: 0.0ms)
+Started GET "/admin/clientes" for 127.0.0.1 at 2025-09-06 11:03:40 -0400
+  Rendered shared/_navbar.html.erb (Duration: 22.2ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 8.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 420.0ms | GC: 109.3ms)
+Completed 200 OK in 1901ms (Views: 442.1ms | ActiveRecord: 281.9ms (1 query, 0 cached) | GC: 311.9ms)
+
+
+Processing by AdminController#clientes as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/clientes.html.erb within layouts/application
+  Rendered admin/clientes.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 5.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 183.2ms | GC: 82.0ms)
+Completed 200 OK in 237ms (Views: 183.9ms | ActiveRecord: 1.4ms (1 query, 0 cached) | GC: 82.0ms)
+
+
+Started GET "/admin/clientes" for 127.0.0.1 at 2025-09-06 11:50:13 -0400
+Processing by AdminController#clientes as HTML
+Started GET "/admin/contratos" for 127.0.0.1 at 2025-09-06 11:50:14 -0400
+Processing by AdminController#contratos as HTML
+  [1m[36mUser Load (8.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mUser Load (21.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering layout layouts/application.html.erb
+  Rendering admin/clientes.html.erb within layouts/application
+  Rendering admin/contratos.html.erb within layouts/application
+  Rendered admin/clientes.html.erb within layouts/application (Duration: 24.9ms | GC: 0.0ms)
+  Rendered admin/contratos.html.erb within layouts/application (Duration: 29.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 27.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 2.2ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 27.9ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 2.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 438.1ms | GC: 146.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 431.2ms | GC: 146.8ms)
+Completed 200 OK in 1499ms (Views: 479.9ms | ActiveRecord: 170.2ms (1 query, 0 cached) | GC: 210.2ms)
+
+
+Completed 200 OK in 1029ms (Views: 450.2ms | ActiveRecord: 166.0ms (1 query, 0 cached) | GC: 210.2ms)
+
+
+Started GET "/" for ::1 at 2025-09-06 12:36:48 -0400
+Processing by AdminController#index as HTML
+Completed 401 Unauthorized in 271ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-09-06 12:36:49 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 422.7ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 575.9ms | GC: 0.0ms)
+Completed 200 OK in 802ms (Views: 620.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/e_empresas" for 127.0.0.1 at 2025-09-06 13:01:32 -0400
+Processing by EEmpresasController#index as HTML
+  [1m[36mUser Load (7.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mEEmpresa Count (13.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "e_empresas"[0m
+  ↳ app/controllers/e_empresas_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering e_empresas/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 14.7ms | GC: 0.0ms)
+  [1m[36mEEmpresa Load (0.7ms)[0m  [1m[34mSELECT "e_empresas".* FROM "e_empresas" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_empresas/index.html.erb:27
+  Rendered e_empresas/index.html.erb within layouts/application (Duration: 731.0ms | GC: 531.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 733.2ms | GC: 531.4ms)
+Completed 500 Internal Server Error in 1847ms (ActiveRecord: 136.9ms (3 queries, 0 cached) | GC: 531.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `nome_fantasia' for nil):
+
+Causes:
+NoMethodError (undefined method `nome_fantasia' for nil)
+    46:                     <td><%= e_empresa.cnpj %></td>
+    47:                     <td><%= e_empresa.endereco %></td>
+    48:                     <td><%= e_empresa.telefone %></td>
+    49:                     <td><%= e_empresa.g_cidade.nome_fantasia %></td>
+    50:                   </div>
+    51:                 </div>
+    52:               </td>
+  
+app/views/e_empresas/index.html.erb:49
+app/views/e_empresas/index.html.erb:27
+Started GET "/g_estados" for 127.0.0.1 at 2025-09-06 13:02:07 -0400
+Processing by GEstadosController#index as HTML
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mGEstado Count (12.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_estados"[0m
+  ↳ app/controllers/g_estados_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_estados/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 5.6ms | GC: 0.0ms)
+  [1m[36mGEstado Load (1.2ms)[0m  [1m[34mSELECT "g_estados".* FROM "g_estados" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_estados/index.html.erb:23
+  Rendered g_estados/index.html.erb within layouts/application (Duration: 117.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 7.0ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 3.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 225.7ms | GC: 0.0ms)
+Completed 200 OK in 793ms (Views: 251.8ms | ActiveRecord: 92.6ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_estados/new" for 127.0.0.1 at 2025-09-06 13:02:10 -0400
+Processing by GEstadosController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_estados/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 12.1ms | GC: 0.0ms)
+  Rendered g_estados/_form.html.erb (Duration: 126.9ms | GC: 0.0ms)
+  Rendered g_estados/new.html.erb within layouts/application (Duration: 130.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 3.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 173.4ms | GC: 0.0ms)
+Completed 200 OK in 392ms (Views: 175.9ms | ActiveRecord: 41.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/g_estados" for 127.0.0.1 at 2025-09-06 13:02:17 -0400
+Processing by GEstadosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "g_estado"=>{"nome_fantasia"=>"Rondônia", "sigla"=>"RO"}, "button"=>""}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/g_estados_controller.rb:23:in `create'
+  [1m[36mGEstado Create (40.2ms)[0m  [1m[32mINSERT INTO "g_estados" ("nome_fantasia", "sigla", "created_by", "updated_by", "deleted_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["nome_fantasia", "Rondônia"], ["sigla", "RO"], ["created_by", nil], ["updated_by", nil], ["deleted_at", nil], ["created_at", "2025-09-06 17:02:17.557862"], ["updated_at", "2025-09-06 17:02:17.557862"]]
+  ↳ app/controllers/g_estados_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (12.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/g_estados_controller.rb:23:in `create'
+Redirected to http://127.0.0.1:3000/g_estados
+Completed 302 Found in 429ms (ActiveRecord: 54.2ms (2 queries, 0 cached) | GC: 155.0ms)
+
+
+Started GET "/g_estados" for 127.0.0.1 at 2025-09-06 13:02:17 -0400
+Processing by GEstadosController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mGEstado Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_estados"[0m
+  ↳ app/controllers/g_estados_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_estados/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 39.3ms | GC: 0.0ms)
+  [1m[36mGEstado Load (0.8ms)[0m  [1m[34mSELECT "g_estados".* FROM "g_estados" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_estados/index.html.erb:23
+  Rendered g_estados/index.html.erb within layouts/application (Duration: 76.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 12.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 135.4ms | GC: 18.2ms)
+Completed 200 OK in 207ms (Views: 142.1ms | ActiveRecord: 2.5ms (3 queries, 0 cached) | GC: 44.0ms)
+
+
+Started GET "/g_cidades" for 127.0.0.1 at 2025-09-06 13:02:20 -0400
+Processing by GCidadesController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mGCidade Count (4.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_cidades"[0m
+  ↳ app/controllers/g_cidades_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_cidades/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mGCidade Load (0.9ms)[0m  [1m[34mSELECT "g_cidades".* FROM "g_cidades" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_cidades/index.html.erb:23
+  Rendered g_cidades/index.html.erb within layouts/application (Duration: 22.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 4.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 47.1ms | GC: 2.3ms)
+Completed 200 OK in 116ms (Views: 48.3ms | ActiveRecord: 13.0ms (3 queries, 0 cached) | GC: 4.8ms)
+
+
+Started GET "/g_cidades/new" for 127.0.0.1 at 2025-09-06 13:02:22 -0400
+Processing by GCidadesController#new as HTML
+  [1m[36mUser Load (13.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_cidades/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 2.5ms | GC: 0.0ms)
+  [1m[36mGEstado Load (3.4ms)[0m  [1m[34mSELECT "g_estados".* FROM "g_estados" ORDER BY "g_estados"."nome_fantasia" ASC[0m
+  ↳ app/views/g_cidades/_form.html.erb:20
+  Rendered g_cidades/_form.html.erb (Duration: 56.6ms | GC: 5.8ms)
+  Rendered g_cidades/new.html.erb within layouts/application (Duration: 65.4ms | GC: 5.8ms)
+  Rendered shared/_navbar.html.erb (Duration: 106.0ms | GC: 101.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 229.6ms | GC: 221.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 588.2ms | GC: 492.8ms)
+Completed 200 OK in 647ms (Views: 587.5ms | ActiveRecord: 16.4ms (2 queries, 0 cached) | GC: 494.6ms)
+
+
+Started POST "/g_cidades" for 127.0.0.1 at 2025-09-06 13:02:29 -0400
+Processing by GCidadesController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "g_cidade"=>{"nome_fantasia"=>"Porto Velho", "g_estado_id"=>"1"}, "button"=>""}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/g_cidades_controller.rb:22:in `create'
+  [1m[36mGEstado Load (0.6ms)[0m  [1m[34mSELECT "g_estados".* FROM "g_estados" WHERE "g_estados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/g_cidades_controller.rb:22:in `create'
+  [1m[36mGCidade Create (17.2ms)[0m  [1m[32mINSERT INTO "g_cidades" ("nome_fantasia", "g_estado_id", "created_by", "updated_by", "deleted_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["nome_fantasia", "Porto Velho"], ["g_estado_id", 1], ["created_by", nil], ["updated_by", nil], ["deleted_at", nil], ["created_at", "2025-09-06 17:02:30.639353"], ["updated_at", "2025-09-06 17:02:30.639353"]]
+  ↳ app/controllers/g_cidades_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/g_cidades_controller.rb:22:in `create'
+Redirected to http://127.0.0.1:3000/g_cidades
+Completed 302 Found in 892ms (ActiveRecord: 22.2ms (3 queries, 0 cached) | GC: 801.6ms)
+
+
+Started GET "/g_cidades" for 127.0.0.1 at 2025-09-06 13:02:31 -0400
+Processing by GCidadesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mGCidade Count (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_cidades"[0m
+  ↳ app/controllers/g_cidades_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_cidades/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  [1m[36mGCidade Load (1.0ms)[0m  [1m[34mSELECT "g_cidades".* FROM "g_cidades" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_cidades/index.html.erb:23
+  [1m[36mGEstado Load (0.6ms)[0m  [1m[34mSELECT "g_estados".* FROM "g_estados" WHERE "g_estados"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/g_cidades/index.html.erb:41
+  Rendered g_cidades/index.html.erb within layouts/application (Duration: 108.9ms | GC: 92.2ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 31.4ms | GC: 25.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 309.2ms | GC: 285.2ms)
+Completed 200 OK in 439ms (Views: 310.7ms | ActiveRecord: 3.6ms (4 queries, 0 cached) | GC: 389.0ms)
+
+
+Started GET "/g_bairros" for 127.0.0.1 at 2025-09-06 13:02:34 -0400
+Processing by GBairrosController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mGBairro Count (4.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_bairros"[0m
+  ↳ app/controllers/g_bairros_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_bairros/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mGBairro Load (0.6ms)[0m  [1m[34mSELECT "g_bairros".* FROM "g_bairros" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_bairros/index.html.erb:23
+  Rendered g_bairros/index.html.erb within layouts/application (Duration: 41.6ms | GC: 1.7ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.8ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 4.3ms | GC: 1.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 76.4ms | GC: 2.7ms)
+Completed 200 OK in 148ms (Views: 78.0ms | ActiveRecord: 9.7ms (3 queries, 0 cached) | GC: 4.1ms)
+
+
+Started GET "/g_bairros/new" for 127.0.0.1 at 2025-09-06 13:02:36 -0400
+Processing by GBairrosController#new as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_bairros/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 1.9ms | GC: 0.0ms)
+  [1m[36mGCidade Load (1.4ms)[0m  [1m[34mSELECT "g_cidades".* FROM "g_cidades" ORDER BY "g_cidades"."nome_fantasia" ASC[0m
+  ↳ app/views/g_bairros/_form.html.erb:20
+  Rendered g_bairros/_form.html.erb (Duration: 30.2ms | GC: 0.5ms)
+  Rendered g_bairros/new.html.erb within layouts/application (Duration: 35.7ms | GC: 0.5ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 49.5ms | GC: 1.8ms)
+Completed 200 OK in 86ms (Views: 49.3ms | ActiveRecord: 9.9ms (2 queries, 0 cached) | GC: 3.7ms)
+
+
+Started POST "/g_bairros" for 127.0.0.1 at 2025-09-06 13:02:42 -0400
+Processing by GBairrosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "g_bairro"=>{"descricao"=>"Aponiã", "g_cidade_id"=>"1"}, "button"=>""}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/g_bairros_controller.rb:22:in `create'
+  [1m[36mGCidade Load (0.6ms)[0m  [1m[34mSELECT "g_cidades".* FROM "g_cidades" WHERE "g_cidades"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/g_bairros_controller.rb:22:in `create'
+  [1m[36mGBairro Create (4.6ms)[0m  [1m[32mINSERT INTO "g_bairros" ("descricao", "g_cidade_id", "created_by", "updated_by", "deleted_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["descricao", "Aponiã"], ["g_cidade_id", 1], ["created_by", nil], ["updated_by", nil], ["deleted_at", nil], ["created_at", "2025-09-06 17:02:42.449734"], ["updated_at", "2025-09-06 17:02:42.449734"]]
+  ↳ app/controllers/g_bairros_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (14.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/g_bairros_controller.rb:22:in `create'
+Redirected to http://127.0.0.1:3000/g_bairros
+Completed 302 Found in 85ms (ActiveRecord: 20.5ms (3 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/g_bairros" for 127.0.0.1 at 2025-09-06 13:02:42 -0400
+Processing by GBairrosController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mGBairro Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_bairros"[0m
+  ↳ app/controllers/g_bairros_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_bairros/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  [1m[36mGBairro Load (0.6ms)[0m  [1m[34mSELECT "g_bairros".* FROM "g_bairros" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_bairros/index.html.erb:23
+  [1m[36mGCidade Load (0.5ms)[0m  [1m[34mSELECT "g_cidades".* FROM "g_cidades" WHERE "g_cidades"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/g_bairros/index.html.erb:41
+  Rendered g_bairros/index.html.erb within layouts/application (Duration: 31.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 47.3ms | GC: 0.0ms)
+Completed 200 OK in 84ms (Views: 47.1ms | ActiveRecord: 2.3ms (4 queries, 0 cached) | GC: 2.5ms)
+
+
+Started GET "/e_empresas" for 127.0.0.1 at 2025-09-06 13:02:43 -0400
+Processing by EEmpresasController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mEEmpresa Count (2.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "e_empresas"[0m
+  ↳ app/controllers/e_empresas_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering e_empresas/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 2.8ms | GC: 0.0ms)
+  [1m[36mEEmpresa Load (0.6ms)[0m  [1m[34mSELECT "e_empresas".* FROM "e_empresas" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_empresas/index.html.erb:27
+  Rendered e_empresas/index.html.erb within layouts/application (Duration: 36.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 36.9ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 4.5ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `nome_fantasia' for nil):
+
+Causes:
+NoMethodError (undefined method `nome_fantasia' for nil)
+    46:                     <td><%= e_empresa.cnpj %></td>
+    47:                     <td><%= e_empresa.endereco %></td>
+    48:                     <td><%= e_empresa.telefone %></td>
+    49:                     <td><%= e_empresa.g_cidade.nome_fantasia %></td>
+    50:                   </div>
+    51:                 </div>
+    52:               </td>
+  
+app/views/e_empresas/index.html.erb:49
+app/views/e_empresas/index.html.erb:27
+Started GET "/e_empresas/1/edit" for 127.0.0.1 at 2025-09-06 13:03:04 -0400
+Processing by EEmpresasController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mEEmpresa Load (4.2ms)[0m  [1m[34mSELECT "e_empresas".* FROM "e_empresas" WHERE "e_empresas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/e_empresas_controller.rb:49:in `set_e_empresa'
+  Rendering layout layouts/application.html.erb
+  Rendering e_empresas/edit.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 4.7ms | GC: 0.0ms)
+  [1m[36mGCidade Load (0.6ms)[0m  [1m[34mSELECT "g_cidades".* FROM "g_cidades" ORDER BY "g_cidades"."nome_fantasia" ASC[0m
+  ↳ app/views/e_empresas/_form.html.erb:35
+  Rendered e_empresas/_form.html.erb (Duration: 53.2ms | GC: 0.0ms)
+  Rendered e_empresas/edit.html.erb within layouts/application (Duration: 55.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 72.0ms | GC: 0.0ms)
+Completed 200 OK in 109ms (Views: 75.1ms | ActiveRecord: 10.5ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/e_empresas/1" for 127.0.0.1 at 2025-09-06 13:03:14 -0400
+Processing by EEmpresasController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "e_empresa"=>{"razao_social"=>"Mylena P. Aguiar Brilhante Ltda", "nome_fantasia"=>"Aguiar Assessoria", "cnpj"=>"", "endereco"=>"", "email"=>"[FILTERED]", "telefone"=>"", "g_cidade_id"=>""}, "button"=>"", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mEEmpresa Load (1.2ms)[0m  [1m[34mSELECT "e_empresas".* FROM "e_empresas" WHERE "e_empresas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/e_empresas_controller.rb:49:in `set_e_empresa'
+  Rendering layout layouts/application.html.erb
+  Rendering e_empresas/edit.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  [1m[36mGCidade Load (0.6ms)[0m  [1m[34mSELECT "g_cidades".* FROM "g_cidades" ORDER BY "g_cidades"."nome_fantasia" ASC[0m
+  ↳ app/views/e_empresas/_form.html.erb:35
+  Rendered e_empresas/_form.html.erb (Duration: 41.5ms | GC: 0.0ms)
+  Rendered e_empresas/edit.html.erb within layouts/application (Duration: 44.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 51.9ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 75ms (Views: 54.6ms | ActiveRecord: 2.3ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/e_empresas/1" for 127.0.0.1 at 2025-09-06 13:03:25 -0400
+Processing by EEmpresasController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "e_empresa"=>{"razao_social"=>"Mylena P. Aguiar Brilhante Ltda", "nome_fantasia"=>"Aguiar Assessoria", "cnpj"=>"19.796.117/0001-51", "endereco"=>"Rua Enrico Caruso, 6078", "email"=>"[FILTERED]", "telefone"=>"69993881869", "g_cidade_id"=>"1"}, "button"=>"", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mEEmpresa Load (0.5ms)[0m  [1m[34mSELECT "e_empresas".* FROM "e_empresas" WHERE "e_empresas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/e_empresas_controller.rb:49:in `set_e_empresa'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/e_empresas_controller.rb:31:in `update'
+  [1m[36mGCidade Load (0.5ms)[0m  [1m[34mSELECT "g_cidades".* FROM "g_cidades" WHERE "g_cidades"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/e_empresas_controller.rb:31:in `update'
+  [1m[36mEEmpresa Update (8.1ms)[0m  [1m[33mUPDATE "e_empresas" SET "razao_social" = $1, "cnpj" = $2, "endereco" = $3, "email" = $4, "telefone" = $5, "g_cidade_id" = $6, "updated_at" = $7 WHERE "e_empresas"."id" = $8[0m  [["razao_social", "Mylena P. Aguiar Brilhante Ltda"], ["cnpj", "19.796.117/0001-51"], ["endereco", "Rua Enrico Caruso, 6078"], ["email", "[FILTERED]"], ["telefone", "69993881869"], ["g_cidade_id", 1], ["updated_at", "2025-09-06 17:03:26.014146"], ["id", 1]]
+  ↳ app/controllers/e_empresas_controller.rb:31:in `update'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/e_empresas_controller.rb:31:in `update'
+Redirected to http://127.0.0.1:3000/e_empresas
+Completed 303 See Other in 114ms (ActiveRecord: 11.9ms (4 queries, 0 cached) | GC: 1.7ms)
+
+
+Started GET "/e_empresas" for 127.0.0.1 at 2025-09-06 13:03:26 -0400
+Processing by EEmpresasController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mEEmpresa Count (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "e_empresas"[0m
+  ↳ app/controllers/e_empresas_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering e_empresas/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mEEmpresa Load (0.7ms)[0m  [1m[34mSELECT "e_empresas".* FROM "e_empresas" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_empresas/index.html.erb:27
+  [1m[36mGCidade Load (0.8ms)[0m  [1m[34mSELECT "g_cidades".* FROM "g_cidades" WHERE "g_cidades"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/e_empresas/index.html.erb:49
+  Rendered e_empresas/index.html.erb within layouts/application (Duration: 31.2ms | GC: 1.2ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 39.6ms | GC: 1.2ms)
+Completed 200 OK in 58ms (Views: 38.9ms | ActiveRecord: 3.0ms (4 queries, 0 cached) | GC: 2.5ms)
+
+
+Started GET "/e_empresas" for 127.0.0.1 at 2025-09-06 13:03:29 -0400
+Processing by EEmpresasController#index as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mEEmpresa Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "e_empresas"[0m
+  ↳ app/controllers/e_empresas_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering e_empresas/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  [1m[36mEEmpresa Load (2.8ms)[0m  [1m[34mSELECT "e_empresas".* FROM "e_empresas" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_empresas/index.html.erb:27
+  [1m[36mGCidade Load (0.4ms)[0m  [1m[34mSELECT "g_cidades".* FROM "g_cidades" WHERE "g_cidades"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/e_empresas/index.html.erb:49
+  Rendered e_empresas/index.html.erb within layouts/application (Duration: 22.4ms | GC: 0.7ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 38.8ms | GC: 2.3ms)
+Completed 200 OK in 102ms (Views: 36.0ms | ActiveRecord: 6.1ms (4 queries, 0 cached) | GC: 2.3ms)
+
+
+Started GET "/e_empresas" for 127.0.0.1 at 2025-09-06 13:03:30 -0400
+Processing by EEmpresasController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mEEmpresa Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "e_empresas"[0m
+  ↳ app/controllers/e_empresas_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering e_empresas/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mEEmpresa Load (0.8ms)[0m  [1m[34mSELECT "e_empresas".* FROM "e_empresas" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_empresas/index.html.erb:27
+  [1m[36mGCidade Load (0.7ms)[0m  [1m[34mSELECT "g_cidades".* FROM "g_cidades" WHERE "g_cidades"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/e_empresas/index.html.erb:49
+  Rendered e_empresas/index.html.erb within layouts/application (Duration: 27.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.9ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 36.0ms | GC: 0.0ms)
+Completed 200 OK in 84ms (Views: 35.3ms | ActiveRecord: 3.6ms (4 queries, 0 cached) | GC: 25.3ms)
+
+
+Started GET "/admin/clientes" for 127.0.0.1 at 2025-09-06 13:03:31 -0400
+Processing by AdminController#clientes as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/clientes.html.erb within layouts/application
+  Rendered admin/clientes.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | GC: 0.0ms)
+Completed 200 OK in 23ms (Views: 14.6ms | ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/e_empresas" for 127.0.0.1 at 2025-09-06 13:03:32 -0400
+Processing by EEmpresasController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mEEmpresa Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "e_empresas"[0m
+  ↳ app/controllers/e_empresas_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering e_empresas/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  [1m[36mEEmpresa Load (1.0ms)[0m  [1m[34mSELECT "e_empresas".* FROM "e_empresas" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_empresas/index.html.erb:27
+  [1m[36mGCidade Load (0.4ms)[0m  [1m[34mSELECT "g_cidades".* FROM "g_cidades" WHERE "g_cidades"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/e_empresas/index.html.erb:49
+  Rendered e_empresas/index.html.erb within layouts/application (Duration: 31.7ms | GC: 1.2ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 48.2ms | GC: 2.3ms)
+Completed 200 OK in 71ms (Views: 47.6ms | ActiveRecord: 3.6ms (4 queries, 0 cached) | GC: 2.3ms)
+
+
+Started GET "/e_empresas" for 127.0.0.1 at 2025-09-06 13:04:03 -0400
+Processing by EEmpresasController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mEEmpresa Count (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "e_empresas"[0m
+  ↳ app/controllers/e_empresas_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering e_empresas/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 4.7ms | GC: 0.0ms)
+  [1m[36mEEmpresa Load (0.4ms)[0m  [1m[34mSELECT "e_empresas".* FROM "e_empresas" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_empresas/index.html.erb:27
+  [1m[36mGCidade Load (0.4ms)[0m  [1m[34mSELECT "g_cidades".* FROM "g_cidades" WHERE "g_cidades"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/e_empresas/index.html.erb:49
+  Rendered e_empresas/index.html.erb within layouts/application (Duration: 87.8ms | GC: 0.9ms)
+  Rendered shared/_navbar.html.erb (Duration: 2.5ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 2.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 115.4ms | GC: 0.9ms)
+Completed 200 OK in 343ms (Views: 113.6ms | ActiveRecord: 41.7ms (4 queries, 0 cached) | GC: 61.6ms)
+
+
+Started GET "/e_empresas" for 127.0.0.1 at 2025-09-06 13:04:09 -0400
+Processing by EEmpresasController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mEEmpresa Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "e_empresas"[0m
+  ↳ app/controllers/e_empresas_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering e_empresas/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mEEmpresa Load (0.6ms)[0m  [1m[34mSELECT "e_empresas".* FROM "e_empresas" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_empresas/index.html.erb:27
+  [1m[36mGCidade Load (0.4ms)[0m  [1m[34mSELECT "g_cidades".* FROM "g_cidades" WHERE "g_cidades"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/e_empresas/index.html.erb:49
+  Rendered e_empresas/index.html.erb within layouts/application (Duration: 17.7ms | GC: 4.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 4.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 40.0ms | GC: 4.0ms)
+Completed 200 OK in 74ms (Views: 40.4ms | ActiveRecord: 3.1ms (4 queries, 0 cached) | GC: 4.0ms)
+
+
+Started GET "/e_empresas/1/edit" for 127.0.0.1 at 2025-09-06 13:04:14 -0400
+Processing by EEmpresasController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mEEmpresa Load (1.8ms)[0m  [1m[34mSELECT "e_empresas".* FROM "e_empresas" WHERE "e_empresas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/e_empresas_controller.rb:49:in `set_e_empresa'
+  Rendering layout layouts/application.html.erb
+  Rendering e_empresas/edit.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 3.0ms | GC: 0.0ms)
+  [1m[36mGCidade Load (0.6ms)[0m  [1m[34mSELECT "g_cidades".* FROM "g_cidades" ORDER BY "g_cidades"."nome_fantasia" ASC[0m
+  ↳ app/views/e_empresas/_form.html.erb:35
+  Rendered e_empresas/_form.html.erb (Duration: 49.6ms | GC: 0.0ms)
+  Rendered e_empresas/edit.html.erb within layouts/application (Duration: 52.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.8ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 81.2ms | GC: 18.3ms)
+Completed 200 OK in 115ms (Views: 82.4ms | ActiveRecord: 3.2ms (3 queries, 0 cached) | GC: 18.3ms)
+
+
+Started GET "/e_empresas" for 127.0.0.1 at 2025-09-06 13:04:15 -0400
+Processing by EEmpresasController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mEEmpresa Count (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "e_empresas"[0m
+  ↳ app/controllers/e_empresas_controller.rb:10:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering e_empresas/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mEEmpresa Load (0.6ms)[0m  [1m[34mSELECT "e_empresas".* FROM "e_empresas" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_empresas/index.html.erb:27
+  [1m[36mGCidade Load (0.4ms)[0m  [1m[34mSELECT "g_cidades".* FROM "g_cidades" WHERE "g_cidades"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/e_empresas/index.html.erb:49
+  Rendered e_empresas/index.html.erb within layouts/application (Duration: 28.6ms | GC: 1.2ms)
+  Rendered shared/_navbar.html.erb (Duration: 2.5ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 73.8ms | GC: 2.0ms)
+Completed 200 OK in 87ms (Views: 73.5ms | ActiveRecord: 3.6ms (4 queries, 0 cached) | GC: 2.9ms)
+
+
+Started GET "/admin/contratos" for 127.0.0.1 at 2025-09-06 13:04:19 -0400
+Processing by AdminController#contratos as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/contratos.html.erb within layouts/application
+  Rendered admin/contratos.html.erb within layouts/application (Duration: 17.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 6.0ms | GC: 0.6ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 4.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 48.4ms | GC: 0.6ms)
+Completed 200 OK in 68ms (Views: 49.3ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/admin/clientes" for 127.0.0.1 at 2025-09-06 13:04:20 -0400
+Processing by AdminController#clientes as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/clientes.html.erb within layouts/application
+  Rendered admin/clientes.html.erb within layouts/application (Duration: 2.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 3.2ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | GC: 0.0ms)
+Completed 200 OK in 56ms (Views: 22.3ms | ActiveRecord: 1.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/admin/contratos" for 127.0.0.1 at 2025-09-06 13:04:21 -0400
+Processing by AdminController#contratos as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/contratos.html.erb within layouts/application
+  Rendered admin/contratos.html.erb within layouts/application (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 17.3ms | GC: 16.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 33.4ms | GC: 16.3ms)
+Completed 200 OK in 55ms (Views: 34.2ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 16.3ms)
+
+
+Started GET "/admin/clientes" for 127.0.0.1 at 2025-09-06 13:04:22 -0400
+Processing by AdminController#clientes as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/clientes.html.erb within layouts/application
+  Rendered admin/clientes.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | GC: 2.5ms)
+Completed 200 OK in 36ms (Views: 22.5ms | ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 2.5ms)
+
+
+Started GET "/e_clientes" for 127.0.0.1 at 2025-09-06 13:04:29 -0400
+Processing by EClientesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mECliente Count (15.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "e_clientes"[0m
+  ↳ app/controllers/e_clientes_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering e_clientes/index.html.erb within layouts/application
+  [1m[36mECliente Count (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:18
+  [1m[36mECliente Count (10.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:23
+  [1m[36mECliente Count (2.4ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" != $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:29
+  [1m[36mECliente Count (5.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" WHERE (created_at > $1) LIMIT $2 OFFSET $3) subquery_for_count[0m  [[nil, "2025-08-07 17:04:29.882296"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:34
+  [1m[36mECliente Load (12.0ms)[0m  [1m[34mSELECT "e_clientes".* FROM "e_clientes" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:108
+  Rendered e_clientes/index.html.erb within layouts/application (Duration: 172.7ms | GC: 0.4ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 191.0ms | GC: 1.8ms)
+Completed 200 OK in 306ms (Views: 152.6ms | ActiveRecord: 61.9ms (7 queries, 0 cached) | GC: 5.2ms)
+
+
+Started GET "/e_clientes" for 127.0.0.1 at 2025-09-06 13:08:42 -0400
+Processing by EClientesController#index as HTML
+  [1m[36mUser Load (10.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mECliente Count (9.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "e_clientes"[0m
+  ↳ app/controllers/e_clientes_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering e_clientes/index.html.erb within layouts/application
+  [1m[36mECliente Count (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:18
+  [1m[36mECliente Count (3.9ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:23
+  [1m[36mECliente Count (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" != $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:29
+  [1m[36mECliente Count (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" WHERE (created_at > $1) LIMIT $2 OFFSET $3) subquery_for_count[0m  [[nil, "2025-08-07 17:08:43.191663"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:34
+  [1m[36mECliente Load (1.0ms)[0m  [1m[34mSELECT "e_clientes".* FROM "e_clientes" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:108
+  Rendered e_clientes/index.html.erb within layouts/application (Duration: 147.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 21.9ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 11.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 250.6ms | GC: 0.0ms)
+Completed 200 OK in 466ms (Views: 252.0ms | ActiveRecord: 29.4ms (7 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/e_clientes/new" for 127.0.0.1 at 2025-09-06 13:09:02 -0400
+Processing by EClientesController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering e_clientes/new.html.erb within layouts/application
+  [1m[36mGSexo Load (5.2ms)[0m  [1m[34mSELECT "g_sexos".* FROM "g_sexos"[0m
+  ↳ app/views/e_clientes/_form.html.erb:63
+  [1m[36mGEstado Load (0.9ms)[0m  [1m[34mSELECT "g_estados".* FROM "g_estados"[0m
+  ↳ app/views/e_clientes/_form.html.erb:64
+  Rendered e_clientes/_form.html.erb (Duration: 311.2ms | GC: 7.9ms)
+  Rendered e_clientes/new.html.erb within layouts/application (Duration: 316.5ms | GC: 7.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 317.2ms | GC: 7.9ms)
+Completed 500 Internal Server Error in 444ms (ActiveRecord: 35.6ms (3 queries, 0 cached) | GC: 37.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `nome' for an instance of GEstado):
+
+Causes:
+NoMethodError (undefined method `nome' for an instance of GEstado)
+    61:         <%= f.input :numero_beneficio, placeholder: "Digite número do benefício..." %>
+    62:         <%= f.input :possui_representante_legal, as: :boolean, label: "Possui representante legal?" %>
+    63:         <%= f.association :g_sexo, collection: GSexo.all, label_method: :descricao, value_method: :id, prompt: "Selecione o sexo" %>
+    64:         <%= f.association :g_estado, collection: GEstado.all, label_method: :nome, value_method: :id, prompt: "Selecione o estado" %>
+    65:         <%= f.association :g_cidade, collection: GCidade.all, label_method: :nome, value_method: :id, prompt: "Selecione a cidade" %>
+    66:         <%= f.association :g_bairro, collection: GBairro.all, label_method: :nome, value_method: :id, prompt: "Selecione o bairro" %>
+    67:         <%= f.association :g_orgao, collection: GOrgao.all, label_method: :descricao, value_method: :id, prompt: "Selecione o órgão" %>
+  
+app/views/e_clientes/_form.html.erb:64
+app/views/e_clientes/_form.html.erb:1
+app/views/e_clientes/new.html.erb:1
+Started GET "/e_clientes/new" for 127.0.0.1 at 2025-09-06 13:09:50 -0400
+Processing by EClientesController#new as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering e_clientes/new.html.erb within layouts/application
+  [1m[36mGSexo Load (0.9ms)[0m  [1m[34mSELECT "g_sexos".* FROM "g_sexos"[0m
+  ↳ app/views/e_clientes/_form.html.erb:63
+  [1m[36mGEstado Load (0.8ms)[0m  [1m[34mSELECT "g_estados".* FROM "g_estados"[0m
+  ↳ app/views/e_clientes/_form.html.erb:64
+  [1m[36mGCidade Load (2.7ms)[0m  [1m[34mSELECT "g_cidades".* FROM "g_cidades"[0m
+  ↳ app/views/e_clientes/_form.html.erb:65
+  [1m[36mGBairro Load (1.3ms)[0m  [1m[34mSELECT "g_bairros".* FROM "g_bairros"[0m
+  ↳ app/views/e_clientes/_form.html.erb:66
+  Rendered e_clientes/_form.html.erb (Duration: 144.5ms | GC: 2.4ms)
+  Rendered e_clientes/new.html.erb within layouts/application (Duration: 147.3ms | GC: 2.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 147.9ms | GC: 2.4ms)
+Completed 500 Internal Server Error in 388ms (ActiveRecord: 64.9ms (5 queries, 0 cached) | GC: 108.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `nome' for an instance of GBairro):
+
+Causes:
+NoMethodError (undefined method `nome' for an instance of GBairro)
+    63:         <%= f.association :g_sexo, collection: GSexo.all, label_method: :descricao, value_method: :id, prompt: "Selecione o sexo" %>
+    64:         <%= f.association :g_estado, collection: GEstado.all, label_method: :nome_fantasia, value_method: :id, prompt: "Selecione o estado" %>
+    65:         <%= f.association :g_cidade, collection: GCidade.all, label_method: :nome_fantasia, value_method: :id, prompt: "Selecione a cidade" %>
+    66:         <%= f.association :g_bairro, collection: GBairro.all, label_method: :nome, value_method: :id, prompt: "Selecione o bairro" %>
+    67:         <%= f.association :g_orgao, collection: GOrgao.all, label_method: :descricao, value_method: :id, prompt: "Selecione o órgão" %>
+    68:         <%= f.association :g_margem_tipo, collection: GMargemTipo.all, label_method: :descricao, value_method: :id, prompt: "Selecione o tipo de margem" %>
+    69:         <%= f.association :g_tipo_beneficio, collection: GTipoBeneficio.all, label_method: :descricao, value_method: :id, prompt: "Selecione o tipo de benefício" %>
+  
+app/views/e_clientes/_form.html.erb:66
+app/views/e_clientes/_form.html.erb:1
+app/views/e_clientes/new.html.erb:1
+Started GET "/e_clientes/new" for 127.0.0.1 at 2025-09-06 13:10:04 -0400
+Processing by EClientesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering e_clientes/new.html.erb within layouts/application
+  [1m[36mGSexo Load (0.6ms)[0m  [1m[34mSELECT "g_sexos".* FROM "g_sexos"[0m
+  ↳ app/views/e_clientes/_form.html.erb:63
+  [1m[36mGEstado Load (0.7ms)[0m  [1m[34mSELECT "g_estados".* FROM "g_estados"[0m
+  ↳ app/views/e_clientes/_form.html.erb:64
+  [1m[36mGCidade Load (0.7ms)[0m  [1m[34mSELECT "g_cidades".* FROM "g_cidades"[0m
+  ↳ app/views/e_clientes/_form.html.erb:65
+  [1m[36mGBairro Load (0.6ms)[0m  [1m[34mSELECT "g_bairros".* FROM "g_bairros"[0m
+  ↳ app/views/e_clientes/_form.html.erb:66
+  [1m[36mGOrgao Load (9.6ms)[0m  [1m[34mSELECT "g_orgaos".* FROM "g_orgaos"[0m
+  ↳ app/views/e_clientes/_form.html.erb:67
+  [1m[36mGMargemTipo Load (2.7ms)[0m  [1m[34mSELECT "g_margem_tipos".* FROM "g_margem_tipos"[0m
+  ↳ app/views/e_clientes/_form.html.erb:68
+  [1m[36mGTipoBeneficio Load (2.4ms)[0m  [1m[34mSELECT "g_tipo_beneficios".* FROM "g_tipo_beneficios"[0m
+  ↳ app/views/e_clientes/_form.html.erb:69
+  [1m[36mGStatusCliente Load (0.7ms)[0m  [1m[34mSELECT "g_status_clientes".* FROM "g_status_clientes"[0m
+  ↳ app/views/e_clientes/_form.html.erb:70
+  Rendered e_clientes/_form.html.erb (Duration: 310.3ms | GC: 85.4ms)
+  Rendered e_clientes/new.html.erb within layouts/application (Duration: 315.0ms | GC: 88.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 2.3ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 4.2ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 343.0ms | GC: 88.6ms)
+Completed 200 OK in 450ms (Views: 316.7ms | ActiveRecord: 43.6ms (9 queries, 0 cached) | GC: 121.1ms)
+
+
+Started GET "/e_clientes/g_sexos" for 127.0.0.1 at 2025-09-06 13:10:23 -0400
+Processing by EClientesController#show as HTML
+  Parameters: {"id"=>"g_sexos"}
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mECliente Load (5.4ms)[0m  [1m[34mSELECT "e_clientes".* FROM "e_clientes" WHERE "e_clientes"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/e_clientes_controller.rb:48:in `set_e_cliente'
+Redirected to http://127.0.0.1:3000/e_clientes
+Filter chain halted as :set_e_cliente rendered or redirected
+Completed 302 Found in 94ms (ActiveRecord: 10.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/e_clientes" for 127.0.0.1 at 2025-09-06 13:10:23 -0400
+Processing by EClientesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mECliente Count (2.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "e_clientes"[0m
+  ↳ app/controllers/e_clientes_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering e_clientes/index.html.erb within layouts/application
+  [1m[36mECliente Count (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:18
+  [1m[36mECliente Count (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:23
+  [1m[36mECliente Count (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" != $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:29
+  [1m[36mECliente Count (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" WHERE (created_at > $1) LIMIT $2 OFFSET $3) subquery_for_count[0m  [[nil, "2025-08-07 17:10:23.552124"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:34
+  [1m[36mECliente Load (1.1ms)[0m  [1m[34mSELECT "e_clientes".* FROM "e_clientes" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:108
+  Rendered e_clientes/index.html.erb within layouts/application (Duration: 124.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 3.3ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 3.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 189.6ms | GC: 40.7ms)
+Completed 200 OK in 222ms (Views: 172.4ms | ActiveRecord: 22.1ms (7 queries, 0 cached) | GC: 40.7ms)
+
+
+Started GET "/e_clientes/new" for 127.0.0.1 at 2025-09-06 13:10:25 -0400
+Processing by EClientesController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering e_clientes/new.html.erb within layouts/application
+  [1m[36mGSexo Load (0.7ms)[0m  [1m[34mSELECT "g_sexos".* FROM "g_sexos"[0m
+  ↳ app/views/e_clientes/_form.html.erb:63
+  [1m[36mGEstado Load (0.7ms)[0m  [1m[34mSELECT "g_estados".* FROM "g_estados"[0m
+  ↳ app/views/e_clientes/_form.html.erb:64
+  [1m[36mGCidade Load (0.8ms)[0m  [1m[34mSELECT "g_cidades".* FROM "g_cidades"[0m
+  ↳ app/views/e_clientes/_form.html.erb:65
+  [1m[36mGBairro Load (0.7ms)[0m  [1m[34mSELECT "g_bairros".* FROM "g_bairros"[0m
+  ↳ app/views/e_clientes/_form.html.erb:66
+  [1m[36mGOrgao Load (0.7ms)[0m  [1m[34mSELECT "g_orgaos".* FROM "g_orgaos"[0m
+  ↳ app/views/e_clientes/_form.html.erb:67
+  [1m[36mGMargemTipo Load (0.6ms)[0m  [1m[34mSELECT "g_margem_tipos".* FROM "g_margem_tipos"[0m
+  ↳ app/views/e_clientes/_form.html.erb:68
+  [1m[36mGTipoBeneficio Load (1.4ms)[0m  [1m[34mSELECT "g_tipo_beneficios".* FROM "g_tipo_beneficios"[0m
+  ↳ app/views/e_clientes/_form.html.erb:69
+  [1m[36mGStatusCliente Load (0.6ms)[0m  [1m[34mSELECT "g_status_clientes".* FROM "g_status_clientes"[0m
+  ↳ app/views/e_clientes/_form.html.erb:70
+  Rendered e_clientes/_form.html.erb (Duration: 150.4ms | GC: 6.8ms)
+  Rendered e_clientes/new.html.erb within layouts/application (Duration: 151.1ms | GC: 6.8ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.9ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 164.0ms | GC: 7.8ms)
+Completed 200 OK in 197ms (Views: 159.1ms | ActiveRecord: 6.9ms (9 queries, 0 cached) | GC: 13.1ms)
+
+
+Started GET "/g_sexos" for 127.0.0.1 at 2025-09-06 13:10:30 -0400
+Processing by GSexosController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mGSexo Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_sexos"[0m
+  ↳ app/controllers/g_sexos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_sexos/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 2.6ms | GC: 0.0ms)
+  [1m[36mGSexo Load (0.6ms)[0m  [1m[34mSELECT "g_sexos".* FROM "g_sexos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_sexos/index.html.erb:22
+  Rendered g_sexos/index.html.erb within layouts/application (Duration: 25.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.3ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 45.6ms | GC: 0.9ms)
+Completed 200 OK in 102ms (Views: 46.3ms | ActiveRecord: 4.6ms (3 queries, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/g_sexos/new" for 127.0.0.1 at 2025-09-06 13:10:32 -0400
+Processing by GSexosController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_sexos/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 3.8ms | GC: 0.0ms)
+  Rendered g_sexos/_form.html.erb (Duration: 17.0ms | GC: 0.0ms)
+  Rendered g_sexos/new.html.erb within layouts/application (Duration: 19.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 30.1ms | GC: 0.0ms)
+Completed 200 OK in 59ms (Views: 30.9ms | ActiveRecord: 3.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/g_sexos" for 127.0.0.1 at 2025-09-06 13:10:35 -0400
+Processing by GSexosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "g_sexo"=>{"descricao"=>"Masculino"}, "button"=>""}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/g_sexos_controller.rb:22:in `create'
+  [1m[36mGSexo Create (27.5ms)[0m  [1m[32mINSERT INTO "g_sexos" ("descricao", "created_by", "updated_by", "deleted_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["descricao", "Masculino"], ["created_by", nil], ["updated_by", nil], ["deleted_at", nil], ["created_at", "2025-09-06 17:10:35.410922"], ["updated_at", "2025-09-06 17:10:35.410922"]]
+  ↳ app/controllers/g_sexos_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/g_sexos_controller.rb:22:in `create'
+Redirected to http://127.0.0.1:3000/g_sexos
+Completed 302 Found in 84ms (ActiveRecord: 35.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_sexos" for 127.0.0.1 at 2025-09-06 13:10:35 -0400
+Processing by GSexosController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mGSexo Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_sexos"[0m
+  ↳ app/controllers/g_sexos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_sexos/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  [1m[36mGSexo Load (1.6ms)[0m  [1m[34mSELECT "g_sexos".* FROM "g_sexos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_sexos/index.html.erb:22
+  Rendered g_sexos/index.html.erb within layouts/application (Duration: 11.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.4ms | GC: 0.0ms)
+Completed 200 OK in 32ms (Views: 19.2ms | ActiveRecord: 2.9ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_sexos/new" for 127.0.0.1 at 2025-09-06 13:10:37 -0400
+Processing by GSexosController#new as HTML
+  [1m[36mUser Load (8.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering g_sexos/new.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered g_sexos/_form.html.erb (Duration: 25.8ms | GC: 0.0ms)
+  Rendered g_sexos/new.html.erb within layouts/application (Duration: 26.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 2.2ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 7.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 48.1ms | GC: 0.0ms)
+Completed 200 OK in 70ms (Views: 48.7ms | ActiveRecord: 8.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/g_sexos" for 127.0.0.1 at 2025-09-06 13:10:41 -0400
+Processing by GSexosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "g_sexo"=>{"descricao"=>"Feminino"}, "button"=>""}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/g_sexos_controller.rb:22:in `create'
+  [1m[36mGSexo Create (3.8ms)[0m  [1m[32mINSERT INTO "g_sexos" ("descricao", "created_by", "updated_by", "deleted_at", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["descricao", "Feminino"], ["created_by", nil], ["updated_by", nil], ["deleted_at", nil], ["created_at", "2025-09-06 17:10:41.771303"], ["updated_at", "2025-09-06 17:10:41.771303"]]
+  ↳ app/controllers/g_sexos_controller.rb:22:in `create'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/g_sexos_controller.rb:22:in `create'
+Redirected to http://127.0.0.1:3000/g_sexos
+Completed 302 Found in 25ms (ActiveRecord: 6.8ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_sexos" for 127.0.0.1 at 2025-09-06 13:10:41 -0400
+Processing by GSexosController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mGSexo Count (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_sexos"[0m
+  ↳ app/controllers/g_sexos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_sexos/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mGSexo Load (0.9ms)[0m  [1m[34mSELECT "g_sexos".* FROM "g_sexos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_sexos/index.html.erb:22
+  Rendered g_sexos/index.html.erb within layouts/application (Duration: 13.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | GC: 0.0ms)
+Completed 200 OK in 45ms (Views: 23.0ms | ActiveRecord: 3.0ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_sexos" for 127.0.0.1 at 2025-09-06 13:10:48 -0400
+Processing by GSexosController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 34], ["LIMIT", 1]]
+  [1m[36mGSexo Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_sexos"[0m
+  ↳ app/controllers/g_sexos_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_sexos/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mGSexo Load (0.6ms)[0m  [1m[34mSELECT "g_sexos".* FROM "g_sexos" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_sexos/index.html.erb:22
+  Rendered g_sexos/index.html.erb within layouts/application (Duration: 34.9ms | GC: 24.7ms)
+  Rendered shared/_navbar.html.erb (Duration: 3.0ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 2.7ms | GC: 1.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 50.1ms | GC: 26.2ms)
+Completed 200 OK in 69ms (Views: 50.1ms | ActiveRecord: 2.1ms (3 queries, 0 cached) | GC: 26.2ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (5.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2025-09-08 01:17:00 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdminController#index as HTML
+Completed 401 Unauthorized in 41ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-09-08 01:17:01 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 83.9ms | GC: 1.7ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 322.9ms | GC: 5.8ms)
+Completed 200 OK in 615ms (Views: 351.3ms | ActiveRecord: 55.7ms (0 queries, 0 cached) | GC: 68.9ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/logo_simpliconsig_white.png"):
+  
+Started GET "/favicon.ico" for ::1 at 2025-09-08 01:17:02 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started POST "/users/sign_in" for ::1 at 2025-09-08 01:17:13 -0400
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (7.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 292ms (ActiveRecord: 7.7ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 15.5ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 20.8ms | GC: 0.0ms)
+Completed 200 OK in 274ms (Views: 24.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/logo_simpliconsig_white.png"):
+  
+Started POST "/users/sign_in" for ::1 at 2025-09-08 01:17:17 -0400
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 281ms (ActiveRecord: 1.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 4.2ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 12.0ms | GC: 0.0ms)
+Completed 200 OK in 257ms (Views: 13.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/logo_simpliconsig_white.png"):
+  
+Started POST "/users/sign_in" for ::1 at 2025-09-08 01:17:20 -0400
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 277ms (ActiveRecord: 0.8ms (1 query, 0 cached) | GC: 1.8ms)
+
+
+Started GET "/" for ::1 at 2025-09-08 01:17:20 -0400
+Processing by AdminController#index as TURBO_STREAM
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 5.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 10.3ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 2.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 46.5ms | GC: 0.5ms)
+Completed 200 OK in 66ms (Views: 50.1ms | ActiveRecord: 1.8ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/" for ::1 at 2025-09-08 01:17:20 -0400
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 35.9ms | GC: 0.0ms)
+Completed 200 OK in 57ms (Views: 36.6ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/admin/clientes" for ::1 at 2025-09-08 01:17:36 -0400
+Processing by AdminController#clientes as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/clientes.html.erb within layouts/application
+  Rendered admin/clientes.html.erb within layouts/application (Duration: 2.8ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 23.8ms | GC: 2.7ms)
+Completed 200 OK in 47ms (Views: 25.9ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 13.4ms)
+
+

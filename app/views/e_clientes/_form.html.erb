@@ -60,11 +60,11 @@
         <%= f.input :pensionista, as: :boolean, label: "É pensionista?" %>
         <%= f.input :numero_beneficio, placeholder: "Digite número do benefício..." %>
         <%= f.input :possui_representante_legal, as: :boolean, label: "Possui representante legal?" %>
-        <%= f.association :g_sexo, collection: GSexo.all, label_method: :descricao, value_method: :id, prompt: "Selecione o sexo" %>
-        <%= f.association :g_estado, collection: GEstado.all, label_method: :nome, value_method: :id, prompt: "Selecione o estado" %>
-        <%= f.association :g_cidade, collection: GCidade.all, label_method: :nome, value_method: :id, prompt: "Selecione a cidade" %>
-        <%= f.association :g_bairro, collection: GBairro.all, label_method: :nome, value_method: :id, prompt: "Selecione o bairro" %>
-        <%= f.association :g_orgao, collection: GOrgao.all, label_method: :descricao, value_method: :id, prompt: "Selecione o órgão" %>
+        <%= f.association :g_sexo,   collection:   GSexo.all, label_method: :descricao, value_method: :id, prompt: "Selecione o sexo" %>
+        <%= f.association :g_estado, collection: GEstado.all, label_method: :nome_fantasia, value_method: :id, prompt: "Selecione o estado" %>
+        <%= f.association :g_cidade, collection: GCidade.all, label_method: :nome_fantasia, value_method: :id, prompt: "Selecione a cidade" %>
+        <%= f.association :g_bairro, collection: GBairro.all, label_method: :descricao, value_method: :id, prompt: "Selecione o bairro" %>
+        <%= f.association :g_orgao, collection:  GOrgao.all, label_method: :descricao, value_method: :id, prompt: "Selecione o órgão" %>
         <%= f.association :g_margem_tipo, collection: GMargemTipo.all, label_method: :descricao, value_method: :id, prompt: "Selecione o tipo de margem" %>
         <%= f.association :g_tipo_beneficio, collection: GTipoBeneficio.all, label_method: :descricao, value_method: :id, prompt: "Selecione o tipo de benefício" %>
         <%= f.association :g_status_cliente, collection: GStatusCliente.all, label_method: :descricao, value_method: :id, prompt: "Selecione o status do cliente" %>
