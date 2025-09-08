@@ -49923,3 +49923,382 @@ Migrating to CreatePosts (20250908211823)
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1121794573135366305)[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2025-09-08 17:20:10 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 5.8ms | ActiveRecord: 2.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/admin/clientes" for ::1 at 2025-09-08 17:20:12 -0400
+Processing by AdminController#clientes as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/clientes.html.erb within layouts/application
+  Rendered admin/clientes.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | GC: 0.8ms)
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/e_clientes" for ::1 at 2025-09-08 17:20:19 -0400
+Processing by EClientesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mECliente Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "e_clientes"[0m
+  ↳ app/controllers/e_clientes_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering e_clientes/index.html.erb within layouts/application
+  [1m[36mECliente Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:18
+  [1m[36mECliente Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:23
+  [1m[36mECliente Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" != $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:29
+  [1m[36mECliente Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" WHERE (created_at > $1) LIMIT $2 OFFSET $3) subquery_for_count[0m  [[nil, "2025-08-09 21:20:19.632765"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:34
+  [1m[36mECliente Load (0.2ms)[0m  [1m[34mSELECT "e_clientes".* FROM "e_clientes" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:108
+  Rendered e_clientes/index.html.erb within layouts/application (Duration: 12.7ms | GC: 0.6ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | GC: 0.8ms)
+Completed 200 OK in 26ms (Views: 12.5ms | ActiveRecord: 4.8ms (7 queries, 0 cached) | GC: 1.6ms)
+
+
+Started GET "/e_clientes/new" for ::1 at 2025-09-08 17:20:27 -0400
+Processing by EClientesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering e_clientes/new.html.erb within layouts/application
+  [1m[36mGSexo Load (0.3ms)[0m  [1m[34mSELECT "g_sexos".* FROM "g_sexos"[0m
+  ↳ app/views/e_clientes/_form.html.erb:64
+  [1m[36mGEstado Load (0.3ms)[0m  [1m[34mSELECT "g_estados".* FROM "g_estados"[0m
+  ↳ app/views/e_clientes/_form.html.erb:65
+  [1m[36mGCidade Load (0.2ms)[0m  [1m[34mSELECT "g_cidades".* FROM "g_cidades"[0m
+  ↳ app/views/e_clientes/_form.html.erb:66
+  [1m[36mGBairro Load (0.2ms)[0m  [1m[34mSELECT "g_bairros".* FROM "g_bairros"[0m
+  ↳ app/views/e_clientes/_form.html.erb:67
+  [1m[36mGOrgao Load (0.2ms)[0m  [1m[34mSELECT "g_orgaos".* FROM "g_orgaos"[0m
+  ↳ app/views/e_clientes/_form.html.erb:68
+  [1m[36mGMargemTipo Load (0.3ms)[0m  [1m[34mSELECT "g_margem_tipos".* FROM "g_margem_tipos"[0m
+  ↳ app/views/e_clientes/_form.html.erb:69
+  [1m[36mGTipoBeneficio Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_beneficios".* FROM "g_tipo_beneficios"[0m
+  ↳ app/views/e_clientes/_form.html.erb:70
+  [1m[36mGStatusCliente Load (0.1ms)[0m  [1m[34mSELECT "g_status_clientes".* FROM "g_status_clientes"[0m
+  ↳ app/views/e_clientes/_form.html.erb:71
+  Rendered e_clientes/_form.html.erb (Duration: 75.2ms | GC: 43.1ms)
+  Rendered e_clientes/new.html.erb within layouts/application (Duration: 76.6ms | GC: 44.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 79.9ms | GC: 44.4ms)
+Completed 200 OK in 108ms (Views: 75.0ms | ActiveRecord: 5.4ms (9 queries, 0 cached) | GC: 63.3ms)
+
+
+Started GET "/admin/new" for ::1 at 2025-09-08 17:20:33 -0400
+Processing by AdminController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/new.html.erb within layouts/application
+  Rendered admin/new.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | GC: 0.3ms)
+Completed 200 OK in 9ms (Views: 4.7ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/e_clientes" for ::1 at 2025-09-08 17:20:45 -0400
+Processing by EClientesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mECliente Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "e_clientes"[0m
+  ↳ app/controllers/e_clientes_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering e_clientes/index.html.erb within layouts/application
+  [1m[36mECliente Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:18
+  [1m[36mECliente Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:23
+  [1m[36mECliente Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" != $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:29
+  [1m[36mECliente Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" WHERE (created_at > $1) LIMIT $2 OFFSET $3) subquery_for_count[0m  [[nil, "2025-08-09 21:20:45.962324"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:34
+  [1m[36mECliente Load (0.1ms)[0m  [1m[34mSELECT "e_clientes".* FROM "e_clientes" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:108
+  Rendered e_clientes/index.html.erb within layouts/application (Duration: 5.9ms | GC: 0.1ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | GC: 0.2ms)
+Completed 200 OK in 14ms (Views: 8.5ms | ActiveRecord: 1.6ms (7 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/e_clientes" for ::1 at 2025-09-08 17:21:24 -0400
+Processing by EClientesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mECliente Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "e_clientes"[0m
+  ↳ app/controllers/e_clientes_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering e_clientes/index.html.erb within layouts/application
+  [1m[36mECliente Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:18
+  [1m[36mECliente Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:23
+  [1m[36mECliente Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" != $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:29
+  [1m[36mECliente Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" WHERE (created_at > $1) LIMIT $2 OFFSET $3) subquery_for_count[0m  [[nil, "2025-08-09 21:21:24.516925"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:34
+  [1m[36mECliente Load (0.2ms)[0m  [1m[34mSELECT "e_clientes".* FROM "e_clientes" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:108
+  Rendered e_clientes/index.html.erb within layouts/application (Duration: 12.0ms | GC: 0.2ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | GC: 0.3ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 7.0ms (7 queries, 0 cached) | GC: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `admin_clientes_path' for an instance of #<Class:0x0000737b53b32e40>):
+
+Causes:
+NameError (undefined local variable or method `admin_clientes_path' for an instance of #<Class:0x0000737b53b32e40>)
+    14:         <% sidebar_items = [
+    15:           { path: root_path,                    icon: 'bi-house-fill me-2 fs-5',              label: 'Home' },
+    16:           { path: g_tipo_usuarios_path,         icon: 'bi bi-person-lines-fill me-2 fs-5',    label: 'Usuários' },
+    17:           { path: admin_clientes_path,          icon: 'bi-person-badge-fill me-2 fs-5',       label: 'Clientes' },
+    18:           { path: admin_contratos_path,         icon: 'bi-file-earmark-text-fill me-2 fs-5',  label: 'Contratos' },
+    19:           { path: e_empresas_path,              icon: 'bi-buildings me-2 fs-5',               label: 'Empresas' },
+    20:           { path: g_bancos_path,                icon: 'bi-bank me-2 fs-5',                    label: 'Bancos' },
+  
+app/views/shared/sidebar/_sidebar.html.erb:17
+app/views/layouts/application.html.erb:45
+Started GET "/e_clientes" for ::1 at 2025-09-08 17:21:46 -0400
+Processing by EClientesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mECliente Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "e_clientes"[0m
+  ↳ app/controllers/e_clientes_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering e_clientes/index.html.erb within layouts/application
+  [1m[36mECliente Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:18
+  [1m[36mECliente Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:23
+  [1m[36mECliente Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" != $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:29
+  [1m[36mECliente Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" WHERE (created_at > $1) LIMIT $2 OFFSET $3) subquery_for_count[0m  [[nil, "2025-08-09 21:21:46.217071"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:34
+  [1m[36mECliente Load (0.1ms)[0m  [1m[34mSELECT "e_clientes".* FROM "e_clientes" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:108
+  Rendered e_clientes/index.html.erb within layouts/application (Duration: 13.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | GC: 0.0ms)
+Completed 200 OK in 33ms (Views: 15.1ms | ActiveRecord: 7.0ms (7 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/e_clientes" for ::1 at 2025-09-08 17:21:47 -0400
+Processing by EClientesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mECliente Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "e_clientes"[0m
+  ↳ app/controllers/e_clientes_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering e_clientes/index.html.erb within layouts/application
+  [1m[36mECliente Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:18
+  [1m[36mECliente Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:23
+  [1m[36mECliente Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" != $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:29
+  [1m[36mECliente Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" WHERE (created_at > $1) LIMIT $2 OFFSET $3) subquery_for_count[0m  [[nil, "2025-08-09 21:21:47.715600"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:34
+  [1m[36mECliente Load (0.2ms)[0m  [1m[34mSELECT "e_clientes".* FROM "e_clientes" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:108
+  Rendered e_clientes/index.html.erb within layouts/application (Duration: 6.0ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 8.2ms | ActiveRecord: 1.6ms (7 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/g_tipo_usuarios" for ::1 at 2025-09-08 17:21:48 -0400
+Processing by GTipoUsuariosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "g_tipo_usuarios"[0m
+  ↳ app/controllers/g_tipo_usuarios_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering g_tipo_usuarios/index.html.erb within layouts/application
+  Rendered shared/_context_nav.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/g_tipo_usuarios/index.html.erb:22
+  Rendered g_tipo_usuarios/index.html.erb within layouts/application (Duration: 6.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 8.9ms | ActiveRecord: 2.7ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/e_clientes" for ::1 at 2025-09-08 17:21:49 -0400
+Processing by EClientesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mECliente Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "e_clientes"[0m
+  ↳ app/controllers/e_clientes_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering e_clientes/index.html.erb within layouts/application
+  [1m[36mECliente Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:18
+  [1m[36mECliente Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:23
+  [1m[36mECliente Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" != $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:29
+  [1m[36mECliente Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" WHERE (created_at > $1) LIMIT $2 OFFSET $3) subquery_for_count[0m  [[nil, "2025-08-09 21:21:49.259375"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:34
+  [1m[36mECliente Load (0.1ms)[0m  [1m[34mSELECT "e_clientes".* FROM "e_clientes" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:108
+  Rendered e_clientes/index.html.erb within layouts/application (Duration: 5.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 7.9ms | ActiveRecord: 1.6ms (7 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/admin/contratos" for ::1 at 2025-09-08 17:21:49 -0400
+Processing by AdminController#contratos as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/contratos.html.erb within layouts/application
+  Rendered admin/contratos.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `admin_index_path' for an instance of #<Class:0x0000737b5341a0b8>):
+
+Causes:
+NameError (undefined local variable or method `admin_index_path' for an instance of #<Class:0x0000737b5341a0b8>)
+    400:     <div class="page-header-content d-lg-flex">
+    401:       <div class="d-flex">
+    402:         <div class="breadcrumb modern-breadcrumb py-3">
+    403:           <a href="<%= admin_index_path %>" class="breadcrumb-item">
+    404:             <i data-lucide="home" style="width: 16px; height: 16px;"></i>
+    405:           </a>
+    406:           <span class="breadcrumb-item active">Contratos</span>
+  
+app/views/admin/contratos.html.erb:403
+Started GET "/e_clientes" for ::1 at 2025-09-08 17:21:58 -0400
+Processing by EClientesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mECliente Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "e_clientes"[0m
+  ↳ app/controllers/e_clientes_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering e_clientes/index.html.erb within layouts/application
+  [1m[36mECliente Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:18
+  [1m[36mECliente Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:23
+  [1m[36mECliente Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" != $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:29
+  [1m[36mECliente Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" WHERE (created_at > $1) LIMIT $2 OFFSET $3) subquery_for_count[0m  [[nil, "2025-08-09 21:21:58.905568"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:34
+  [1m[36mECliente Load (0.1ms)[0m  [1m[34mSELECT "e_clientes".* FROM "e_clientes" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:108
+  Rendered e_clientes/index.html.erb within layouts/application (Duration: 12.7ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | GC: 0.0ms)
+Completed 200 OK in 33ms (Views: 14.1ms | ActiveRecord: 7.7ms (7 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/admin/contratos" for ::1 at 2025-09-08 17:21:59 -0400
+Processing by AdminController#contratos as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/contratos.html.erb within layouts/application
+  Rendered admin/contratos.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 4.4ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/e_clientes" for ::1 at 2025-09-08 17:22:04 -0400
+Processing by EClientesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mECliente Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "e_clientes"[0m
+  ↳ app/controllers/e_clientes_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering e_clientes/index.html.erb within layouts/application
+  [1m[36mECliente Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:18
+  [1m[36mECliente Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:23
+  [1m[36mECliente Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" != $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:29
+  [1m[36mECliente Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" WHERE (created_at > $1) LIMIT $2 OFFSET $3) subquery_for_count[0m  [[nil, "2025-08-09 21:22:04.797258"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:34
+  [1m[36mECliente Load (0.1ms)[0m  [1m[34mSELECT "e_clientes".* FROM "e_clientes" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:108
+  Rendered e_clientes/index.html.erb within layouts/application (Duration: 5.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 8.3ms | ActiveRecord: 1.5ms (7 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/e_clientes/new" for ::1 at 2025-09-08 17:22:06 -0400
+Processing by EClientesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering e_clientes/new.html.erb within layouts/application
+  [1m[36mGSexo Load (0.3ms)[0m  [1m[34mSELECT "g_sexos".* FROM "g_sexos"[0m
+  ↳ app/views/e_clientes/_form.html.erb:64
+  [1m[36mGEstado Load (0.3ms)[0m  [1m[34mSELECT "g_estados".* FROM "g_estados"[0m
+  ↳ app/views/e_clientes/_form.html.erb:65
+  [1m[36mGCidade Load (0.2ms)[0m  [1m[34mSELECT "g_cidades".* FROM "g_cidades"[0m
+  ↳ app/views/e_clientes/_form.html.erb:66
+  [1m[36mGBairro Load (0.2ms)[0m  [1m[34mSELECT "g_bairros".* FROM "g_bairros"[0m
+  ↳ app/views/e_clientes/_form.html.erb:67
+  [1m[36mGOrgao Load (0.3ms)[0m  [1m[34mSELECT "g_orgaos".* FROM "g_orgaos"[0m
+  ↳ app/views/e_clientes/_form.html.erb:68
+  [1m[36mGMargemTipo Load (0.2ms)[0m  [1m[34mSELECT "g_margem_tipos".* FROM "g_margem_tipos"[0m
+  ↳ app/views/e_clientes/_form.html.erb:69
+  [1m[36mGTipoBeneficio Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_beneficios".* FROM "g_tipo_beneficios"[0m
+  ↳ app/views/e_clientes/_form.html.erb:70
+  [1m[36mGStatusCliente Load (0.1ms)[0m  [1m[34mSELECT "g_status_clientes".* FROM "g_status_clientes"[0m
+  ↳ app/views/e_clientes/_form.html.erb:71
+  Rendered e_clientes/_form.html.erb (Duration: 37.2ms | GC: 6.8ms)
+  Rendered e_clientes/new.html.erb within layouts/application (Duration: 37.6ms | GC: 6.8ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.8ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 40.7ms | GC: 7.2ms)
+Completed 200 OK in 49ms (Views: 36.0ms | ActiveRecord: 5.2ms (9 queries, 0 cached) | GC: 7.2ms)
+
+
+Started GET "/e_clientes" for ::1 at 2025-09-08 17:22:09 -0400
+Processing by EClientesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mECliente Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "e_clientes"[0m
+  ↳ app/controllers/e_clientes_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering e_clientes/index.html.erb within layouts/application
+  [1m[36mECliente Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:18
+  [1m[36mECliente Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:23
+  [1m[36mECliente Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" != $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:29
+  [1m[36mECliente Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" WHERE (created_at > $1) LIMIT $2 OFFSET $3) subquery_for_count[0m  [[nil, "2025-08-09 21:22:09.557482"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:34
+  [1m[36mECliente Load (0.1ms)[0m  [1m[34mSELECT "e_clientes".* FROM "e_clientes" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:108
+  Rendered e_clientes/index.html.erb within layouts/application (Duration: 6.1ms | GC: 0.5ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | GC: 0.9ms)
+Completed 200 OK in 14ms (Views: 8.6ms | ActiveRecord: 1.7ms (7 queries, 0 cached) | GC: 0.9ms)
+
+

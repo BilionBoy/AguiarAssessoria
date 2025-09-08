@@ -3,8 +3,6 @@ Rails.application.routes.draw do
 
   root 'admin#index'
   get  'admin/index'
-  get  'admin/new'
-  get  'admin/clientes'
   get  'admin/contratos'
   get  'home/index'
 
