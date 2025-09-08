@@ -110,106 +110,6 @@
       </div>
     </div>
   </div>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      let currentStep = 1;
-      const totalSteps = 2;
-
-      function showStep(step) {
-        // Hide all step contents
-        document.querySelectorAll('.wizard-step-content').forEach(content => {
-          content.style.display = 'none';
-        });
-
-        // Show current step
-        const currentContent = document.getElementById(`step${step}`);
-        if (currentContent) {
-          currentContent.style.display = 'block';
-        }
-
-        // Update step indicators
-        document.querySelectorAll('.wizard-step').forEach((stepEl, index) => {
-          const stepNumber = stepEl.querySelector('.step-number');
-          stepEl.classList.remove('active', 'completed');
-
-          if (index + 1 < step) {
-            stepEl.classList.add('completed');
-            stepNumber.style.background = '#10b981';
-            stepNumber.style.color = 'white';
-          } else if (index + 1 === step) {
-            stepEl.classList.add('active');
-            stepNumber.style.background = '#3b82f6';
-            stepNumber.style.color = 'white';
-          } else {
-            stepNumber.style.background = '#e5e7eb';
-            stepNumber.style.color = '#6b7280';
-          }
-        });
-
-        // Update progress bar
-        const progress = ((step - 1) / (totalSteps - 1)) * 100;
-        const progressBar = document.querySelector('.wizard-progress-bar');
-        if (progressBar) {
-          progressBar.style.width = `${progress}%`;
-        }
-
-        // Control buttons
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const submitBtn = document.getElementById('submitBtn');
-
-        if (prevBtn) prevBtn.style.display = step > 1 ? 'flex' : 'none';
-        if (nextBtn) nextBtn.style.display = step < totalSteps ? 'flex' : 'none';
-        if (submitBtn) submitBtn.style.display = step === totalSteps ? 'block' : 'none';
-      }
-
-      // Next button
-      const nextBtn = document.getElementById('nextBtn');
-      if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-          if (currentStep < totalSteps) {
-            currentStep++;
-            showStep(currentStep);
-          }
-        });
-      }
-
-      // Previous button
-      const prevBtn = document.getElementById('prevBtn');
-      if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-          if (currentStep > 1) {
-            currentStep--;
-            showStep(currentStep);
-          }
-        });
-      }
-
-      // Step click navigation
-      document.querySelectorAll('.wizard-step').forEach((step, index) => {
-        step.addEventListener('click', () => {
-          currentStep = index + 1;
-          showStep(currentStep);
-        });
-      });
-
-      // Form input focus effects
-      document.querySelectorAll('.form-input').forEach(input => {
-        input.addEventListener('focus', function() {
-          this.style.borderColor = '#3b82f6';
-          this.style.boxShadow = '0 0 0 3px rgba(59, 130, 246, 0.1)';
-        });
-
-        input.addEventListener('blur', function() {
-          this.style.borderColor = '#d1d5db';
-          this.style.boxShadow = 'none';
-        });
-      });
-
-      // Initialize first step
-      showStep(1);
-    });
-  </script>
 <% else -%>
   <!-- Simple Single Form -->
   <div class="simple-form" style="background: white; padding: 32px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
@@ -252,40 +152,69 @@
       <%%= f.submit "Salvar <%= human_name %>", class: "btn-primary", style: "padding: 12px 24px; background: #10b981; color: white; border: none; border-radius: 8px; font-weight: 500; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 8px;" %>
     </div>
   </div>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Form input focus effects
-      document.querySelectorAll('.form-input').forEach(input => {
-        input.addEventListener('focus', function() {
-          this.style.borderColor = '#3b82f6';
-          this.style.boxShadow = '0 0 0 3px rgba(59, 130, 246, 0.1)';
-        });
-
-        input.addEventListener('blur', function() {
-          this.style.borderColor = '#d1d5db';
-          this.style.boxShadow = 'none';
-        });
-      });
-
-      // Button hover effects
-      document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
-        btn.addEventListener('mouseenter', function() {
-          if (this.classList.contains('btn-primary')) {
-            this.style.background = '#2563eb';
-          } else {
-            this.style.background = '#f9fafb';
-          }
-        });
-
-        btn.addEventListener('mouseleave', function() {
-          if (this.classList.contains('btn-primary')) {
-            this.style.background = '#10b981';
-          } else {
-            this.style.background = 'white';
-          }
-        });
-      });
-    });
-  </script>
 <% end -%>
 <%% end %>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    let currentStep = 1;
+    const totalSteps = 2;
+
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    const progressBar = document.querySelector('.wizard-progress-bar');
+    const steps = document.querySelectorAll('.wizard-step');
+    const contents = document.querySelectorAll('.wizard-step-content');
+
+    function showStep(step) {
+      // Mostrar/esconder conteúdos
+      contents.forEach((content, i) => {
+        content.style.display = (i + 1 === step) ? 'block' : 'none';
+      });
+
+      // Atualizar steps
+      steps.forEach((stepEl, i) => {
+        stepEl.classList.remove('active', 'completed');
+        if (i + 1 < step) stepEl.classList.add('completed');
+        else if (i + 1 === step) stepEl.classList.add('active');
+      });
+
+      // Atualizar progress bar
+      if (progressBar) {
+        progressBar.style.width = `${((step - 1) / (totalSteps - 1)) * 100}%`;
+      }
+
+      // Controlar botões
+      if (prevBtn) prevBtn.style.display = step > 1 ? 'flex' : 'none';
+      if (nextBtn) nextBtn.style.display = step < totalSteps ? 'flex' : 'none';
+      if (submitBtn) submitBtn.style.display = step === totalSteps ? 'block' : 'none';
+    }
+
+    // Botão próximo
+    nextBtn?.addEventListener('click', () => {
+      if (currentStep < totalSteps) {
+        currentStep++;
+        showStep(currentStep);
+      }
+    });
+
+    // Botão anterior
+    prevBtn?.addEventListener('click', () => {
+      if (currentStep > 1) {
+        currentStep--;
+        showStep(currentStep);
+      }
+    });
+
+    // Navegação clicando nos steps
+    steps.forEach((stepEl, i) => {
+      stepEl.addEventListener('click', () => {
+        currentStep = i + 1;
+        showStep(currentStep);
+      });
+    });
+
+    // Inicializar
+    showStep(currentStep);
+  });
+</script>

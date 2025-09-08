@@ -12,15 +12,15 @@
       </ul>
     </div>
   <% end %>
-  <div class="form-wizard">
+  <div class="form-wizard" style="display: flex; flex-direction: column; gap: 32px;">
     <!-- Wizard Header -->
-    <div class="wizard-header" style="margin-bottom: 32px; padding: 24px; background: white; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-      <div class="wizard-steps" style="display: flex; justify-content: center; gap: 32px; margin-bottom: 16px;">
-        <div class="wizard-step active" data-step="1" style="display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer;">
+    <div class="wizard-header" style="padding: 24px; background: #ffffff; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.08);">
+      <div class="wizard-steps" style="display: flex; justify-content: space-between; gap: 16px; margin-bottom: 16px;">
+        <div class="wizard-step active" data-step="1" style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer;">
           <div class="step-number" style="width: 40px; height: 40px; border-radius: 50%; background: #3b82f6; color: white; display: flex; align-items: center; justify-content: center; font-weight: 600;">1</div>
-          <span style="font-size: 14px; color: #6b7280;">Informações Básicas</span>
+          <span style="font-size: 14px; color: #374151;">Informações Básicas</span>
         </div>
-        <div class="wizard-step" data-step="2" style="display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer;">
+        <div class="wizard-step" data-step="2" style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer;">
           <div class="step-number" style="width: 40px; height: 40px; border-radius: 50%; background: #e5e7eb; color: #6b7280; display: flex; align-items: center; justify-content: center; font-weight: 600;">2</div>
           <span style="font-size: 14px; color: #6b7280;">Detalhes Adicionais</span>
         </div>
@@ -30,55 +30,60 @@
       </div>
     </div>
     <!-- Step 1: Informações Básicas -->
-    <div class="wizard-step-content active" id="step1" style="background: white; padding: 32px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-      <h3 style="margin: 0 0 24px 0; font-size: 20px; font-weight: 600; color: #111827; display: flex; align-items: center; gap: 12px;">
+    <div class="wizard-step-content active" id="step1" style="background: #ffffff; padding: 32px; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); display: flex; flex-direction: column; gap: 24px;">
+      <h3 style="font-size: 20px; font-weight: 600; color: #111827; display: flex; align-items: center; gap: 12px;">
         <i data-lucide="info" style="width: 24px; height: 24px; color: #3b82f6;"></i>
         Informações Básicas
       </h3>
-      <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
-        <%= f.input :nome_completo, placeholder: "Digite nome completo..." %>
-        <%= f.input :cpf, placeholder: "Digite CPF..
-        ." %>
+      <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+        <%= f.input :nome_completo, placeholder: "Nome completo" %>
+        <%= f.input :cpf, placeholder: "CPF" %>
         <%= f.input :data_nascimento, as: :date %>
-        <%= f.input :email, placeholder: "Digite email..." %>
-        <%= f.input :telefone, placeholder: "Digite telefone..." %>
-        <%= f.input :nome_social, placeholder: "Digite nome social..." %>
-        <%= f.input :endereco, placeholder: "Digite endereço..." %>
-        <%= f.input :matricula, placeholder: "Digite matrícula..." %>
+        <%= f.input :email, placeholder: "Email" %>
+        <%= f.input :telefone, placeholder: "Telefone" %>
+        <%= f.input :nome_social, placeholder: "Nome social" %>
+        <%= f.input :endereco, placeholder: "Endereço" %>
+        <%= f.input :matricula, placeholder: "Matrícula" %>
         <%= f.input :alfabetizado, as: :boolean, label: "Alfabetizado?" %>
-        <%= f.input :ultima_margem, placeholder: "Digite última margem..." %>
+        <%= f.input :ultima_margem, placeholder: "Última margem" %>
         <%= f.input :data_ultima_margem, as: :date %>
-        <%= f.input :ano_admissao, as: :integer, placeholder: "Digite ano de admissão..." %>
+        <%= f.association :g_orgao, collection: GOrgao.all, label_method: :descricao, value_method: :id, prompt: "Selecione o órgão", input_html: { id: "g_orgao_select" } %>
+        <%= f.association :g_margem_tipo, collection: GMargemTipo.all, label_method: :descricao, value_method: :id, prompt: "Selecione o tipo de margem" %>
       </div>
     </div>
     <!-- Step 2: Detalhes Adicionais -->
-    <div class="wizard-step-content" id="step2" style="display: none; background: white; padding: 32px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-      <h3 style="margin: 0 0 24px 0; font-size: 20px; font-weight: 600; color: #111827; display: flex; align-items: center; gap: 12px;">
+    <div class="wizard-step-content" id="step2" style="background: #ffffff; padding: 32px; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); display: flex; flex-direction: column; gap: 24px;">
+      <h3 style="font-size: 20px; font-weight: 600; color: #111827; display: flex; align-items: center; gap: 12px;">
         <i data-lucide="settings" style="width: 24px; height: 24px; color: #3b82f6;"></i>
         Detalhes Adicionais
       </h3>
-      <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
-        <%= f.input :pensionista, as: :boolean, label: "É pensionista?" %>
-        <%= f.input :numero_beneficio, placeholder: "Digite número do benefício..." %>
-        <%= f.input :possui_representante_legal, as: :boolean, label: "Possui representante legal?" %>
-        <%= f.association :g_sexo,   collection:   GSexo.all, label_method: :descricao, value_method: :id, prompt: "Selecione o sexo" %>
+      <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+        <%= f.association :g_sexo, collection: GSexo.all, label_method: :descricao, value_method: :id, prompt: "Selecione o sexo" %>
         <%= f.association :g_estado, collection: GEstado.all, label_method: :nome_fantasia, value_method: :id, prompt: "Selecione o estado" %>
         <%= f.association :g_cidade, collection: GCidade.all, label_method: :nome_fantasia, value_method: :id, prompt: "Selecione a cidade" %>
         <%= f.association :g_bairro, collection: GBairro.all, label_method: :descricao, value_method: :id, prompt: "Selecione o bairro" %>
-        <%= f.association :g_orgao, collection:  GOrgao.all, label_method: :descricao, value_method: :id, prompt: "Selecione o órgão" %>
-        <%= f.association :g_margem_tipo, collection: GMargemTipo.all, label_method: :descricao, value_method: :id, prompt: "Selecione o tipo de margem" %>
-        <%= f.association :g_tipo_beneficio, collection: GTipoBeneficio.all, label_method: :descricao, value_method: :id, prompt: "Selecione o tipo de benefício" %>
         <%= f.association :g_status_cliente, collection: GStatusCliente.all, label_method: :descricao, value_method: :id, prompt: "Selecione o status do cliente" %>
+        <!-- Campos condicionais Estado -->
+        <div id="estado_fields" style="display: none;">
+          <%= f.input :ano_admissao, as: :integer, placeholder: "Ano de admissão" %>
+          <%= f.input :pensionista, as: :boolean, label: "É pensionista?" %>
+        </div>
+        <!-- Campos condicionais INSS -->
+        <div id="inss_fields" style="display: none;">
+          <%= f.input :numero_beneficio, placeholder: "Número do benefício" %>
+          <%= f.association :g_tipo_beneficio, collection: GTipoBeneficio.all, label_method: :descricao, value_method: :id, prompt: "Selecione o tipo de benefício" %>
+          <%= f.input :possui_representante_legal, as: :boolean, label: "Possui representante legal?" %>
+        </div>
       </div>
     </div>
     <!-- Wizard Actions -->
-    <div class="wizard-actions" style="display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 24px; background: white; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-      <button type="button" class="btn-secondary" id="prevBtn" style="display: none; padding: 12px 24px; border: 1px solid #d1d5db; background: white; color: #374151; border-radius: 8px; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+    <div class="wizard-actions" style="display: flex; justify-content: space-between; align-items: center; padding: 24px; background: #ffffff; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.08);">
+      <button type="button" class="btn-secondary" id="prevBtn" style="display: none; padding: 12px 24px; border: 1px solid #d1d5db; background: #f9fafb; color: #374151; border-radius: 8px; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 8px;">
         <i data-lucide="chevron-left" style="width: 16px; height: 16px;"></i>
         Anterior
       </button>
       <div style="display: flex; gap: 12px;">
-        <%= link_to e_clientes_path, class: "btn-secondary", style: "padding: 12px 24px; border: 1px solid #d1d5db; background: white; color: #374151; border-radius: 8px; font-weight: 500; text-decoration: none; display: flex; align-items: center; gap: 8px;" do %>
+        <%= link_to(e_clientes_path, class: "btn-secondary", style: "padding: 12px 24px; border: 1px solid #d1d5db; background: #f9fafb; color: #374151; border-radius: 8px; font-weight: 500; text-decoration: none; display: flex; align-items: center; gap: 8px;") do %>
           <i data-lucide="x" style="width: 16px; height: 16px;"></i>
           Cancelar
         <% end %>
@@ -96,98 +101,75 @@
     let currentStep = 1;
     const totalSteps = 2;
 
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    const progressBar = document.querySelector('.wizard-progress-bar');
+    const steps = document.querySelectorAll('.wizard-step');
+    const contents = document.querySelectorAll('.wizard-step-content');
+
     function showStep(step) {
-      // Hide all step contents
-      document.querySelectorAll('.wizard-step-content').forEach(content => {
-        content.style.display = 'none';
+      contents.forEach((content, i) => {
+        content.style.display = (i + 1 === step) ? 'block' : 'none';
       });
 
-      // Show current step
-      const currentContent = document.getElementById(`step${step}`);
-      if (currentContent) {
-        currentContent.style.display = 'block';
-      }
-
-      // Update step indicators
-      document.querySelectorAll('.wizard-step').forEach((stepEl, index) => {
-        const stepNumber = stepEl.querySelector('.step-number');
+      steps.forEach((stepEl, i) => {
         stepEl.classList.remove('active', 'completed');
-
-        if (index + 1 < step) {
-          stepEl.classList.add('completed');
-          stepNumber.style.background = '#10b981';
-          stepNumber.style.color = 'white';
-        } else if (index + 1 === step) {
-          stepEl.classList.add('active');
-          stepNumber.style.background = '#3b82f6';
-          stepNumber.style.color = 'white';
-        } else {
-          stepNumber.style.background = '#e5e7eb';
-          stepNumber.style.color = '#6b7280';
-        }
+        if (i + 1 < step) stepEl.classList.add('completed');
+        else if (i + 1 === step) stepEl.classList.add('active');
       });
 
-      // Update progress bar
-      const progress = ((step - 1) / (totalSteps - 1)) * 100;
-      const progressBar = document.querySelector('.wizard-progress-bar');
       if (progressBar) {
-        progressBar.style.width = `${progress}%`;
+        progressBar.style.width = `${((step - 1) / (totalSteps - 1)) * 100}%`;
       }
-
-      // Control buttons
-      const prevBtn = document.getElementById('prevBtn');
-      const nextBtn = document.getElementById('nextBtn');
-      const submitBtn = document.getElementById('submitBtn');
 
       if (prevBtn) prevBtn.style.display = step > 1 ? 'flex' : 'none';
       if (nextBtn) nextBtn.style.display = step < totalSteps ? 'flex' : 'none';
       if (submitBtn) submitBtn.style.display = step === totalSteps ? 'block' : 'none';
     }
 
-    // Next button
-    const nextBtn = document.getElementById('nextBtn');
-    if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
-        if (currentStep < totalSteps) {
-          currentStep++;
-          showStep(currentStep);
-        }
-      });
-    }
+    nextBtn?.addEventListener('click', () => {
+      if (currentStep < totalSteps) {
+        currentStep++;
+        showStep(currentStep);
+      }
+    });
 
-    // Previous button
-    const prevBtn = document.getElementById('prevBtn');
-    if (prevBtn) {
-      prevBtn.addEventListener('click', () => {
-        if (currentStep > 1) {
-          currentStep--;
-          showStep(currentStep);
-        }
-      });
-    }
+    prevBtn?.addEventListener('click', () => {
+      if (currentStep > 1) {
+        currentStep--;
+        showStep(currentStep);
+      }
+    });
 
-    // Step click navigation
-    document.querySelectorAll('.wizard-step').forEach((step, index) => {
-      step.addEventListener('click', () => {
-        currentStep = index + 1;
+    steps.forEach((stepEl, i) => {
+      stepEl.addEventListener('click', () => {
+        currentStep = i + 1;
         showStep(currentStep);
       });
     });
 
-    // Form input focus effects
-    document.querySelectorAll('.form-input').forEach(input => {
-      input.addEventListener('focus', function() {
-        this.style.borderColor = '#3b82f6';
-        this.style.boxShadow = '0 0 0 3px rgba(59, 130, 246, 0.1)';
-      });
+    showStep(currentStep);
 
-      input.addEventListener('blur', function() {
-        this.style.borderColor = '#d1d5db';
-        this.style.boxShadow = 'none';
-      });
-    });
+    // ---- Campos condicionais ----
+    const orgaoSelect = document.getElementById("g_orgao_select");
+    const estadoFields = document.getElementById("estado_fields");
+    const inssFields = document.getElementById("inss_fields");
 
-    // Initialize first step
-    showStep(1);
+    function toggleCampos() {
+      const selectedText = orgaoSelect.options[orgaoSelect.selectedIndex]?.text?.toLowerCase();
+
+      estadoFields.style.display = "none";
+      inssFields.style.display = "none";
+
+      if (selectedText?.includes("estado")) {
+        estadoFields.style.display = "block";
+      } else if (selectedText?.includes("inss")) {
+        inssFields.style.display = "block";
+      }
+    }
+
+    toggleCampos();
+    orgaoSelect?.addEventListener("change", toggleCampos);
   });
 </script>
