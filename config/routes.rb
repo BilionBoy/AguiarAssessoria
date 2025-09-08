@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :e_clientes
   devise_for :users
 
   root 'admin#index'
@@ -24,6 +23,7 @@ Rails.application.routes.draw do
   resources :g_tipo_operacoes
   resources :g_bancos
   resources :e_empresas
+  resources :e_clientes
 
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get 'up' => 'rails/health#show', as: :rails_health_check

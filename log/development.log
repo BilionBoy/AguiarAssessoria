@@ -48066,3 +48066,1860 @@ Processing by AdminController#clientes as HTML
 Completed 200 OK in 47ms (Views: 25.9ms | ActiveRecord: 0.9ms (1 query, 0 cached) | GC: 13.4ms)
 
 
+Started GET "/" for 127.0.0.1 at 2025-09-08 13:45:02 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdminController#index as HTML
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2025-09-08 13:45:03 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 20.2ms | GC: 1.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 69.5ms | GC: 2.4ms)
+Completed 200 OK in 153ms (Views: 76.5ms | ActiveRecord: 21.2ms (0 queries, 0 cached) | GC: 42.6ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/logo_simpliconsig_white.png"):
+  
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-09-08 13:45:03 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for ::1 at 2025-09-08 13:45:12 -0400
+Processing by AdminController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-09-08 13:45:12 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 2.7ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 4.8ms | GC: 0.2ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/logo_simpliconsig_white.png"):
+  
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2025-09-08 13:45:16 -0400
+Processing by AdminController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.3ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-09-08 13:45:16 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 5.3ms | GC: 2.8ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 6.9ms | GC: 2.8ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.8ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/logo_simpliconsig_white.png"):
+  
+Started GET "/favicon.ico" for ::1 at 2025-09-08 13:45:16 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started POST "/users/sign_in" for ::1 at 2025-09-08 13:45:19 -0400
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 190ms (ActiveRecord: 2.2ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 3.2ms | GC: 0.1ms)
+Completed 200 OK in 180ms (Views: 3.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/logo_simpliconsig_white.png"):
+  
+Started POST "/users/sign_in" for ::1 at 2025-09-08 13:45:22 -0400
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 176ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 3.5ms | GC: 0.2ms)
+Completed 200 OK in 182ms (Views: 3.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/logo_simpliconsig_white.png"):
+  
+Started POST "/users/sign_in" for ::1 at 2025-09-08 13:45:27 -0400
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 2.1ms | GC: 0.2ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 3.4ms | GC: 0.2ms)
+Completed 200 OK in 170ms (Views: 3.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/logo_simpliconsig_white.png"):
+  
+Started POST "/users/sign_in" for ::1 at 2025-09-08 13:45:29 -0400
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 2.2ms | GC: 0.2ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 3.4ms | GC: 0.2ms)
+Completed 200 OK in 171ms (Views: 3.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/logo_simpliconsig_white.png"):
+  
+Started POST "/users/sign_in" for ::1 at 2025-09-08 13:45:34 -0400
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 167ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 2.1ms | GC: 0.2ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 3.4ms | GC: 0.2ms)
+Completed 200 OK in 168ms (Views: 3.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/logo_simpliconsig_white.png"):
+  
+Started POST "/users/sign_in" for ::1 at 2025-09-08 13:45:36 -0400
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 166ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/devise_application
+  Rendered devise/sessions/new.html.erb within layouts/devise_application (Duration: 2.1ms | GC: 0.2ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 3.3ms | GC: 0.2ms)
+Completed 200 OK in 166ms (Views: 3.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/logo_simpliconsig_white.png"):
+  
+Started GET "/users/sign_up" for ::1 at 2025-09-08 13:45:37 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  [1m[36mGTipoUsuario Load (1.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios"[0m
+  ↳ app/views/devise/registrations/new.html.erb:45
+  [1m[36mEEmpresa Load (1.4ms)[0m  [1m[34mSELECT "e_empresas".* FROM "e_empresas"[0m
+  ↳ app/views/devise/registrations/new.html.erb:48
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 28.2ms | GC: 1.3ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 29.7ms | GC: 1.3ms)
+Completed 200 OK in 31ms (Views: 23.7ms | ActiveRecord: 6.8ms (2 queries, 0 cached) | GC: 1.3ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/logo_simpliconsig_white.png"):
+  
+Started GET "/users/sign_up" for ::1 at 2025-09-08 13:46:01 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  [1m[36mGTipoUsuario Load (0.3ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios"[0m
+  ↳ app/views/devise/registrations/new.html.erb:45
+  [1m[36mEEmpresa Load (0.2ms)[0m  [1m[34mSELECT "e_empresas".* FROM "e_empresas"[0m
+  ↳ app/views/devise/registrations/new.html.erb:48
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 16.5ms | GC: 0.1ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 24.1ms | GC: 0.1ms)
+Completed 200 OK in 33ms (Views: 21.7ms | ActiveRecord: 6.1ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/logo_simpliconsig_white.png"):
+  
+  [1m[36mEEmpresa Load (0.2ms)[0m  [1m[34mSELECT "e_empresas".* FROM "e_empresas" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mEEmpresa Load (0.3ms)[0m  [1m[34mSELECT "e_empresas".* FROM "e_empresas" ORDER BY "e_empresas"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEEmpresa Update (2.9ms)[0m  [1m[33mUPDATE "e_empresas" SET "updated_at" = $1, "nome_fantasia" = $2 WHERE "e_empresas"."id" = $3[0m  [["updated_at", "2025-09-08 17:46:41.362058"], ["nome_fantasia", "Aguiar Assessoria"], ["id", 1]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mEEmpresa Load (0.3ms)[0m  [1m[34mSELECT "e_empresas".* FROM "e_empresas" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/users/sign_up" for ::1 at 2025-09-08 13:46:50 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  [1m[36mGTipoUsuario Load (0.3ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios"[0m
+  ↳ app/views/devise/registrations/new.html.erb:45
+  [1m[36mEEmpresa Load (0.1ms)[0m  [1m[34mSELECT "e_empresas".* FROM "e_empresas"[0m
+  ↳ app/views/devise/registrations/new.html.erb:48
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 5.1ms | GC: 0.2ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 7.0ms | GC: 0.8ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.8ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/logo_simpliconsig_white.png"):
+  
+Started POST "/users" for ::1 at 2025-09-08 13:47:00 -0400
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "nome_completo"=>"Andre", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "cpf"=>"02588772277", "telefone"=>"69993881869", "g_tipo_usuario_id"=>"1", "e_empresa_id"=>"1"}, "commit"=>"Criar conta"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEEmpresa Load (0.2ms)[0m  [1m[34mSELECT "e_empresas".* FROM "e_empresas" WHERE "e_empresas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."cpf" = $1 LIMIT $2[0m  [["cpf", "02588772277"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/devise_application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/devise_application
+  [1m[36mGTipoUsuario Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios"[0m
+  ↳ app/views/devise/registrations/new.html.erb:45
+  [1m[36mEEmpresa Load (0.2ms)[0m  [1m[34mSELECT "e_empresas".* FROM "e_empresas"[0m
+  ↳ app/views/devise/registrations/new.html.erb:48
+  Rendered devise/registrations/new.html.erb within layouts/devise_application (Duration: 6.9ms | GC: 0.7ms)
+  Rendered layout layouts/devise_application.html.erb (Duration: 8.1ms | GC: 0.7ms)
+Completed 422 Unprocessable Content in 190ms (Views: 8.0ms | ActiveRecord: 2.7ms (6 queries, 0 cached) | GC: 1.1ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/logo_simpliconsig_white.png"):
+  
+Started POST "/users" for ::1 at 2025-09-08 13:47:12 -0400
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "nome_completo"=>"Andre", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "cpf"=>"02588772277", "telefone"=>"69993881869", "g_tipo_usuario_id"=>"1", "e_empresa_id"=>"1"}, "commit"=>"Criar conta"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mGTipoUsuario Load (0.1ms)[0m  [1m[34mSELECT "g_tipo_usuarios".* FROM "g_tipo_usuarios" WHERE "g_tipo_usuarios"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEEmpresa Load (0.1ms)[0m  [1m[34mSELECT "e_empresas".* FROM "e_empresas" WHERE "e_empresas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."cpf" = $1 LIMIT $2[0m  [["cpf", "02588772277"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "nome_completo", "cpf", "telefone", "g_tipo_usuario_id", "e_empresa_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["nome_completo", "Andre"], ["cpf", "02588772277"], ["telefone", "69993881869"], ["g_tipo_usuario_id", 1], ["e_empresa_id", 1], ["created_at", "2025-09-08 17:47:12.982851"], ["updated_at", "2025-09-08 17:47:12.982851"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 177ms (ActiveRecord: 6.7ms (5 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/" for ::1 at 2025-09-08 13:47:12 -0400
+Processing by AdminController#index as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-09-08 13:47:13 -0400
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 4.3ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/admin/clientes" for ::1 at 2025-09-08 13:47:16 -0400
+Processing by AdminController#clientes as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/clientes.html.erb within layouts/application
+  Rendered admin/clientes.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | GC: 0.2ms)
+Completed 200 OK in 7ms (Views: 3.8ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/" for ::1 at 2025-09-08 13:47:38 -0400
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 3.5ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/favicon.ico" for ::1 at 2025-09-08 13:47:41 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/admin/e_clientes" for ::1 at 2025-09-08 13:47:57 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/admin/e_clientes"):
+  
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/admin/e_clientes" for ::1 at 2025-09-08 13:48:24 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/admin/e_clientes"):
+  
+Started GET "//e_clientes" for ::1 at 2025-09-08 13:48:26 -0400
+Processing by EClientesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mECliente Count (3.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "e_clientes"[0m
+  ↳ app/controllers/e_clientes_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering e_clientes/index.html.erb within layouts/application
+  [1m[36mECliente Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:18
+  [1m[36mECliente Count (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:23
+  [1m[36mECliente Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" != $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:29
+  [1m[36mECliente Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" WHERE (created_at > $1) LIMIT $2 OFFSET $3) subquery_for_count[0m  [[nil, "2025-08-09 17:48:26.260631"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:34
+  [1m[36mECliente Load (0.2ms)[0m  [1m[34mSELECT "e_clientes".* FROM "e_clientes" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:108
+  Rendered e_clientes/index.html.erb within layouts/application (Duration: 15.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | GC: 0.0ms)
+Completed 200 OK in 43ms (Views: 16.2ms | ActiveRecord: 12.1ms (7 queries, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/e_clientes/new" for ::1 at 2025-09-08 13:48:31 -0400
+Processing by EClientesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering e_clientes/new.html.erb within layouts/application
+  [1m[36mGSexo Load (0.9ms)[0m  [1m[34mSELECT "g_sexos".* FROM "g_sexos"[0m
+  ↳ app/views/e_clientes/_form.html.erb:63
+  [1m[36mGEstado Load (0.8ms)[0m  [1m[34mSELECT "g_estados".* FROM "g_estados"[0m
+  ↳ app/views/e_clientes/_form.html.erb:64
+  [1m[36mGCidade Load (1.3ms)[0m  [1m[34mSELECT "g_cidades".* FROM "g_cidades"[0m
+  ↳ app/views/e_clientes/_form.html.erb:65
+  [1m[36mGBairro Load (1.1ms)[0m  [1m[34mSELECT "g_bairros".* FROM "g_bairros"[0m
+  ↳ app/views/e_clientes/_form.html.erb:66
+  [1m[36mGOrgao Load (0.7ms)[0m  [1m[34mSELECT "g_orgaos".* FROM "g_orgaos"[0m
+  ↳ app/views/e_clientes/_form.html.erb:67
+  [1m[36mGMargemTipo Load (0.7ms)[0m  [1m[34mSELECT "g_margem_tipos".* FROM "g_margem_tipos"[0m
+  ↳ app/views/e_clientes/_form.html.erb:68
+  [1m[36mGTipoBeneficio Load (1.0ms)[0m  [1m[34mSELECT "g_tipo_beneficios".* FROM "g_tipo_beneficios"[0m
+  ↳ app/views/e_clientes/_form.html.erb:69
+  [1m[36mGStatusCliente Load (0.2ms)[0m  [1m[34mSELECT "g_status_clientes".* FROM "g_status_clientes"[0m
+  ↳ app/views/e_clientes/_form.html.erb:70
+  Rendered e_clientes/_form.html.erb (Duration: 41.9ms | GC: 2.1ms)
+  Rendered e_clientes/new.html.erb within layouts/application (Duration: 42.5ms | GC: 2.1ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 45.7ms | GC: 2.3ms)
+Completed 200 OK in 65ms (Views: 36.0ms | ActiveRecord: 10.3ms (9 queries, 0 cached) | GC: 9.1ms)
+
+
+Started GET "/e_clientes" for ::1 at 2025-09-08 13:48:38 -0400
+Processing by EClientesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mECliente Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "e_clientes"[0m
+  ↳ app/controllers/e_clientes_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering e_clientes/index.html.erb within layouts/application
+  [1m[36mECliente Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:18
+  [1m[36mECliente Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:23
+  [1m[36mECliente Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" != $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:29
+  [1m[36mECliente Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" WHERE (created_at > $1) LIMIT $2 OFFSET $3) subquery_for_count[0m  [[nil, "2025-08-09 17:48:38.294670"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:34
+  [1m[36mECliente Load (0.1ms)[0m  [1m[34mSELECT "e_clientes".* FROM "e_clientes" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:108
+  Rendered e_clientes/index.html.erb within layouts/application (Duration: 6.3ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 8.3ms | ActiveRecord: 1.9ms (7 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-09-08 15:32:24 -0400
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | GC: 0.3ms)
+Completed 200 OK in 32ms (Views: 5.8ms | ActiveRecord: 2.8ms (1 query, 0 cached) | GC: 6.7ms)
+
+
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2025-09-08 16:14:27 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250908201423_create_posts.rb
+
+
+):
+  
+activerecord (7.2.2.1) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:95:in `execute_if_updated'
+activerecord (7.2.2.1) lib/active_record/migration.rb:670:in `block in call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started GET "/posts" for ::1 at 2025-09-08 16:14:29 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250908201423_create_posts.rb
+
+
+):
+  
+activerecord (7.2.2.1) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.2.1) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started POST "/rails/actions" for ::1 at 2025-09-08 16:14:30 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreatePosts (20250908201423)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (21.7ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "titulo" character varying, "descricao" character varying, "g_cidade_id" bigint, "created_by" character varying, "updated_by" character varying, "deleted_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE INDEX "index_posts_on_g_cidade_id" ON "posts" ("g_cidade_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250908201423') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/posts" for ::1 at 2025-09-08 16:14:30 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "posts" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:18
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 3.8ms (3 queries, 0 cached) | GC: 4.7ms)
+
+
+  
+ActionView::Template::Error (Can't join 'Post' to association named 'g_status_post'; perhaps you misspelled it?):
+
+Causes:
+ActiveRecord::ConfigurationError (Can't join 'Post' to association named 'g_status_post'; perhaps you misspelled it?)
+    20:       </div>
+    21:       <div class="stat-mini" style="background: white; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #e5e7eb;">
+    22:         <div class="stat-mini-value" style="font-size: 32px; font-weight: 700; color: #059669; margin-bottom: 4px;">
+    23:           <%= @posts.joins(:g_status_post).where(g_status_posts: { descricao: 'Ativo' }).count %>
+    24:         </div>
+    25:         <div class="stat-mini-label" style="font-size: 14px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px;">ATIVOS</div>
+    26:       </div>
+  
+app/views/posts/index.html.erb:23
+Started GET "/posts" for ::1 at 2025-09-08 16:14:50 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "posts" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:18
+  [1m[36mPost Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "posts" WHERE (created_at > $1) LIMIT $2 OFFSET $3) subquery_for_count[0m  [[nil, "2025-08-09 20:14:50.894405"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:23
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:97
+  Rendered posts/index.html.erb within layouts/application (Duration: 5.5ms | GC: 0.3ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.9ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | GC: 0.6ms)
+Completed 200 OK in 23ms (Views: 10.2ms | ActiveRecord: 3.7ms (5 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/posts/new" for ::1 at 2025-09-08 16:14:53 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 2.5ms | GC: 0.0ms)
+  Rendered posts/new.html.erb within layouts/application (Duration: 2.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `g_cidade' for an instance of Post):
+
+Causes:
+NoMethodError (undefined method `g_cidade' for an instance of Post)
+    26:       
+    27:                         <%= f.input :titulo, placeholder: "Digite titulo..." %>
+    28:                                 <%= f.input :descricao, placeholder: "Digite descricao..." %>
+    29:                                 <%= f.input :g_cidade, placeholder: "Digite g cidade..." %>
+    30:                   </div>
+    31:     <div class="form-actions" style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 32px; padding-top: 24px; border-top: 1px solid #e5e7eb;">
+    32:       <%= link_to posts_path, class: "btn-secondary", style: "padding: 12px 24px; border: 1px solid #d1d5db; background: white; color: #374151; border-radius: 8px; font-weight: 500; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.2s;" do %>
+  
+app/views/posts/_form.html.erb:29
+app/views/posts/_form.html.erb:1
+app/views/posts/new.html.erb:1
+Started GET "/posts/new" for ::1 at 2025-09-08 16:15:20 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 2.6ms | GC: 0.0ms)
+  Rendered posts/new.html.erb within layouts/application (Duration: 3.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 4.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (Association :g_cidade not found):
+
+Causes:
+RuntimeError (Association :g_cidade not found)
+    25:     <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+    26:       <%= f.input :titulo, placeholder: "Digite titulo..." %>
+    27:       <%= f.input :descricao, placeholder: "Digite descricao..." %>
+    28:       <%= f.association :g_cidade, collection: GCidade.all, label_method: :nome_fantasia, value_method: :id, prompt: "Selecione a cidade" %>
+    29:     </div>
+    30:     <div class="form-actions" style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 32px; padding-top: 24px; border-top: 1px solid #e5e7eb;">
+    31:       <%= link_to posts_path, class: "btn-secondary", style: "padding: 12px 24px; border: 1px solid #d1d5db; background: white; color: #374151; border-radius: 8px; font-weight: 500; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.2s;" do %>
+  
+app/views/posts/_form.html.erb:28
+app/views/posts/_form.html.erb:1
+app/views/posts/new.html.erb:1
+Started GET "/posts/new" for ::1 at 2025-09-08 16:15:21 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 1.4ms | GC: 0.2ms)
+  Rendered posts/new.html.erb within layouts/application (Duration: 1.5ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | GC: 0.2ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+  
+ActionView::Template::Error (Association :g_cidade not found):
+
+Causes:
+RuntimeError (Association :g_cidade not found)
+    25:     <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+    26:       <%= f.input :titulo, placeholder: "Digite titulo..." %>
+    27:       <%= f.input :descricao, placeholder: "Digite descricao..." %>
+    28:       <%= f.association :g_cidade, collection: GCidade.all, label_method: :nome_fantasia, value_method: :id, prompt: "Selecione a cidade" %>
+    29:     </div>
+    30:     <div class="form-actions" style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 32px; padding-top: 24px; border-top: 1px solid #e5e7eb;">
+    31:       <%= link_to posts_path, class: "btn-secondary", style: "padding: 12px 24px; border: 1px solid #d1d5db; background: white; color: #374151; border-radius: 8px; font-weight: 500; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.2s;" do %>
+  
+app/views/posts/_form.html.erb:28
+app/views/posts/_form.html.erb:1
+app/views/posts/new.html.erb:1
+Started GET "/posts/new" for ::1 at 2025-09-08 16:15:36 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mGCidade Load (0.5ms)[0m  [1m[34mSELECT "g_cidades".* FROM "g_cidades"[0m
+  ↳ app/views/posts/_form.html.erb:28
+  Rendered posts/_form.html.erb (Duration: 9.0ms | GC: 0.9ms)
+  Rendered posts/new.html.erb within layouts/application (Duration: 9.5ms | GC: 0.9ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.1ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | GC: 1.6ms)
+Completed 200 OK in 33ms (Views: 13.2ms | ActiveRecord: 5.9ms (2 queries, 0 cached) | GC: 4.7ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20250908201423)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.1ms)[0m  [1m[35mDROP TABLE "posts"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20250908201423'[0m
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEClientes (20250904034638)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.1ms)[0m  [1m[35mDROP TABLE "e_clientes"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20250904034638'[0m
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateEClientes (20250904034638)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.3ms)[0m  [1m[35mCREATE TABLE "e_clientes" ("id" bigserial primary key, "e_empresa_id" bigint NOT NULL, "nome_completo" character varying NOT NULL, "cpf" character varying NOT NULL, "data_nascimento" date, "email" character varying, "telefone" character varying, "nome_social" character varying, "endereco" character varying, "matricula" character varying, "alfabetizado" boolean DEFAULT FALSE, "ultima_margem" decimal(10,2), "data_ultima_margem" date, "ano_admissao" integer, "pensionista" boolean DEFAULT FALSE, "numero_beneficio" character varying, "possui_representante_legal" boolean DEFAULT FALSE, "created_by" character varying, "updated_by" character varying, "deleted_at" timestamp(6), "g_sexo_id" bigint, "g_estado_id" bigint, "g_cidade_id" bigint, "g_bairro_id" bigint, "g_orgao_id" bigint, "g_margem_tipo_id" bigint, "g_tipo_beneficio_id" bigint, "g_status_cliente_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_e41278c676"
+FOREIGN KEY ("e_empresa_id")
+  REFERENCES "e_empresas" ("id")
+, CONSTRAINT "fk_rails_36d92bc040"
+FOREIGN KEY ("g_sexo_id")
+  REFERENCES "g_sexos" ("id")
+, CONSTRAINT "fk_rails_6d8f408ac2"
+FOREIGN KEY ("g_estado_id")
+  REFERENCES "g_estados" ("id")
+, CONSTRAINT "fk_rails_da0851220d"
+FOREIGN KEY ("g_cidade_id")
+  REFERENCES "g_cidades" ("id")
+, CONSTRAINT "fk_rails_72a8cf05ed"
+FOREIGN KEY ("g_bairro_id")
+  REFERENCES "g_bairros" ("id")
+, CONSTRAINT "fk_rails_f80636f80e"
+FOREIGN KEY ("g_orgao_id")
+  REFERENCES "g_orgaos" ("id")
+, CONSTRAINT "fk_rails_11888bf0df"
+FOREIGN KEY ("g_margem_tipo_id")
+  REFERENCES "g_margem_tipos" ("id")
+, CONSTRAINT "fk_rails_afe7a31c2e"
+FOREIGN KEY ("g_tipo_beneficio_id")
+  REFERENCES "g_tipo_beneficios" ("id")
+, CONSTRAINT "fk_rails_c38a502cbe"
+FOREIGN KEY ("g_status_cliente_id")
+  REFERENCES "g_status_clientes" ("id")
+)[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE INDEX "index_e_clientes_on_e_empresa_id" ON "e_clientes" ("e_empresa_id")[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE INDEX "index_e_clientes_on_g_sexo_id" ON "e_clientes" ("g_sexo_id")[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE INDEX "index_e_clientes_on_g_estado_id" ON "e_clientes" ("g_estado_id")[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE INDEX "index_e_clientes_on_g_cidade_id" ON "e_clientes" ("g_cidade_id")[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE INDEX "index_e_clientes_on_g_bairro_id" ON "e_clientes" ("g_bairro_id")[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE INDEX "index_e_clientes_on_g_orgao_id" ON "e_clientes" ("g_orgao_id")[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE INDEX "index_e_clientes_on_g_margem_tipo_id" ON "e_clientes" ("g_margem_tipo_id")[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE INDEX "index_e_clientes_on_g_tipo_beneficio_id" ON "e_clientes" ("g_tipo_beneficio_id")[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE INDEX "index_e_clientes_on_g_status_cliente_id" ON "e_clientes" ("g_status_cliente_id")[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_e_clientes_on_cpf" ON "e_clientes" ("cpf")[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE INDEX "index_e_clientes_on_email" ON "e_clientes" ("email")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250904034638') RETURNING "version"[0m
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePosts (20250908201423)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.9ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "titulo" character varying, "descricao" character varying, "g_cidade_id" bigint, "created_by" character varying, "updated_by" character varying, "deleted_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE INDEX "index_posts_on_g_cidade_id" ON "posts" ("g_cidade_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250908201423') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20250908201423)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.7ms)[0m  [1m[35mDROP TABLE "posts"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20250908201423'[0m
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/e_clientes" for ::1 at 2025-09-08 16:59:49 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250908205948_create_posts.rb
+
+
+):
+  
+activerecord (7.2.2.1) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:95:in `execute_if_updated'
+activerecord (7.2.2.1) lib/active_record/migration.rb:670:in `block in call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started POST "/rails/actions" for ::1 at 2025-09-08 16:59:51 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreatePosts (20250908205948)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.9ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "titulo" character varying, "descricao" character varying, "g_cidade_id" bigint, "created_by" character varying, "updated_by" character varying, "deleted_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE INDEX "index_posts_on_g_cidade_id" ON "posts" ("g_cidade_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250908205948') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/e_clientes" for ::1 at 2025-09-08 16:59:51 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EClientesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mECliente Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "e_clientes"[0m
+  ↳ app/controllers/e_clientes_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering e_clientes/index.html.erb within layouts/application
+  [1m[36mECliente Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:18
+  [1m[36mECliente Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:23
+  [1m[36mECliente Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" != $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:29
+  [1m[36mECliente Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" WHERE (created_at > $1) LIMIT $2 OFFSET $3) subquery_for_count[0m  [[nil, "2025-08-09 20:59:51.793262"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:34
+  [1m[36mECliente Load (0.1ms)[0m  [1m[34mSELECT "e_clientes".* FROM "e_clientes" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:108
+  Rendered e_clientes/index.html.erb within layouts/application (Duration: 12.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | GC: 0.0ms)
+Completed 200 OK in 32ms (Views: 13.6ms | ActiveRecord: 7.9ms (7 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2025-09-08 16:59:53 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 2.1ms | GC: 0.0ms)
+  Rendered posts/new.html.erb within layouts/application (Duration: 2.9ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | GC: 0.4ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.8ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `g_cidade' for an instance of Post):
+
+Causes:
+NoMethodError (undefined method `g_cidade' for an instance of Post)
+    26:       
+    27:                         <%= f.input :titulo, placeholder: "Digite titulo..." %>
+    28:                                 <%= f.input :descricao, placeholder: "Digite descricao..." %>
+    29:                                 <%= f.input :g_cidade, placeholder: "Digite g cidade..." %>
+    30:                   </div>
+    31:     <div class="form-actions" style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 32px; padding-top: 24px; border-top: 1px solid #e5e7eb;">
+    32:       <%= link_to posts_path, class: "btn-secondary", style: "padding: 12px 24px; border: 1px solid #d1d5db; background: white; color: #374151; border-radius: 8px; font-weight: 500; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.2s;" do %>
+  
+app/views/posts/_form.html.erb:29
+app/views/posts/_form.html.erb:1
+app/views/posts/new.html.erb:1
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20250908205948)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE "posts"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20250908205948'[0m
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/posts/new" for ::1 at 2025-09-08 17:00:11 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250908210010_create_posts.rb
+
+
+):
+  
+activerecord (7.2.2.1) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:95:in `execute_if_updated'
+activerecord (7.2.2.1) lib/active_record/migration.rb:670:in `block in call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started POST "/rails/actions" for ::1 at 2025-09-08 17:00:12 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreatePosts (20250908210010)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.3ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "titulo" character varying, "descricao" character varying, "g_cidade_id" bigint, "created_by" character varying, "updated_by" character varying, "deleted_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE INDEX "index_posts_on_g_cidade_id" ON "posts" ("g_cidade_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250908210010') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/posts/new" for ::1 at 2025-09-08 17:00:13 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 2.6ms | GC: 0.6ms)
+  Rendered posts/new.html.erb within layouts/application (Duration: 3.0ms | GC: 0.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.6ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 4.2ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `g_cidade' for an instance of Post):
+
+Causes:
+NoMethodError (undefined method `g_cidade' for an instance of Post)
+    26:       
+    27:                         <%= f.input :titulo, placeholder: "Digite titulo..." %>
+    28:                                 <%= f.input :descricao, placeholder: "Digite descricao..." %>
+    29:                                 <%= f.input :g_cidade, placeholder: "Digite g cidade..." %>
+    30:                   </div>
+    31:     <div class="form-actions" style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 32px; padding-top: 24px; border-top: 1px solid #e5e7eb;">
+    32:       <%= link_to posts_path, class: "btn-secondary", style: "padding: 12px 24px; border: 1px solid #d1d5db; background: white; color: #374151; border-radius: 8px; font-weight: 500; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.2s;" do %>
+  
+app/views/posts/_form.html.erb:29
+app/views/posts/_form.html.erb:1
+app/views/posts/new.html.erb:1
+Started GET "/" for ::1 at 2025-09-08 17:01:42 -0400
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20250908210010)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.6ms)[0m  [1m[35mDROP TABLE "posts"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20250908210010'[0m
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/posts/new" for ::1 at 2025-09-08 17:05:19 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250908210518_create_posts.rb
+
+
+):
+  
+activerecord (7.2.2.1) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:95:in `execute_if_updated'
+activerecord (7.2.2.1) lib/active_record/migration.rb:670:in `block in call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started POST "/rails/actions" for ::1 at 2025-09-08 17:05:20 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreatePosts (20250908210518)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (13.3ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "titulo" character varying, "descricao" character varying, "g_cidade_id" bigint, "created_by" character varying, "updated_by" character varying, "deleted_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE INDEX "index_posts_on_g_cidade_id" ON "posts" ("g_cidade_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250908210518') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/posts/new" for ::1 at 2025-09-08 17:05:20 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 2.6ms | GC: 0.1ms)
+  Rendered posts/new.html.erb within layouts/application (Duration: 3.0ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | GC: 0.1ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 4.0ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+  
+ActionView::Template::Error (Association :g_cidade not found):
+
+Causes:
+RuntimeError (Association :g_cidade not found)
+    29:                                 
+    30:           
+    31:           
+    32:           <%= f.association :g_cidade, collection: GCidade.all, label_method: :nome, value_method: :id, prompt: "Selecione g cidade", input_html: { class: "form-select" } %>
+    33:                   </div>
+    34:     <div class="form-actions" style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 32px; padding-top: 24px; border-top: 1px solid #e5e7eb;">
+    35:       <%= link_to posts_path, class: "btn-secondary", style: "padding: 12px 24px; border: 1px solid #d1d5db; background: white; color: #374151; border-radius: 8px; font-weight: 500; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.2s;" do %>
+  
+app/views/posts/_form.html.erb:32
+app/views/posts/_form.html.erb:1
+app/views/posts/new.html.erb:1
+Started GET "/posts/new" for ::1 at 2025-09-08 17:05:27 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mGCidade Load (0.3ms)[0m  [1m[34mSELECT "g_cidades".* FROM "g_cidades"[0m
+  ↳ app/views/posts/_form.html.erb:32
+  Rendered posts/_form.html.erb (Duration: 7.6ms | GC: 0.0ms)
+  Rendered posts/new.html.erb within layouts/application (Duration: 8.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 5.8ms (2 queries, 0 cached) | GC: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `nome' for an instance of GCidade):
+
+Causes:
+NoMethodError (undefined method `nome' for an instance of GCidade)
+    29:                                 
+    30:           
+    31:           
+    32:           <%= f.association :g_cidade, collection: GCidade.all, label_method: :nome, value_method: :id, prompt: "Selecione g cidade", input_html: { class: "form-select" } %>
+    33:                   </div>
+    34:     <div class="form-actions" style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 32px; padding-top: 24px; border-top: 1px solid #e5e7eb;">
+    35:       <%= link_to posts_path, class: "btn-secondary", style: "padding: 12px 24px; border: 1px solid #d1d5db; background: white; color: #374151; border-radius: 8px; font-weight: 500; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.2s;" do %>
+  
+app/views/posts/_form.html.erb:32
+app/views/posts/_form.html.erb:1
+app/views/posts/new.html.erb:1
+Started GET "/posts/new" for ::1 at 2025-09-08 17:06:33 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 5.3ms | GC: 2.6ms)
+  Rendered posts/new.html.erb within layouts/application (Duration: 5.8ms | GC: 2.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | GC: 2.6ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 4.3ms (1 query, 0 cached) | GC: 3.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `plural_table_name' for an instance of #<Class:0x0000737bbb306c40>):
+
+Causes:
+NameError (undefined local variable or method `plural_table_name' for an instance of #<Class:0x0000737bbb306c40>)
+    29:       <div class="alert alert-danger" role="alert" style="margin-bottom: 24px; padding: 16px; background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; color: #dc2626;">
+    30:         <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+    31:           <i data-lucide="alert-circle" style="width: 20px; height: 20px;"></i>
+    32:           <strong><%%= pluralize(@<%= singular_table_name %>.errors.count, "erro") %> encontrado<%= plural_table_name.size > 1 ? 's' : '' %>:</strong>
+    33:         </div>
+    34:         <ul style="margin: 0; padding-left: 20px;">
+    35:           <%% @<%= singular_table_name %>.errors.full_messages.each do |message| %>
+  
+app/views/posts/_form.html.erb:32
+app/views/posts/_form.html.erb:1
+app/views/posts/new.html.erb:1
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20250908210518)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.8ms)[0m  [1m[35mDROP TABLE "posts"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20250908210518'[0m
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/posts/new" for ::1 at 2025-09-08 17:10:24 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250908211011_create_posts.rb
+
+
+):
+  
+activerecord (7.2.2.1) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:95:in `execute_if_updated'
+activerecord (7.2.2.1) lib/active_record/migration.rb:670:in `block in call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started POST "/rails/actions" for ::1 at 2025-09-08 17:10:25 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreatePosts (20250908211011)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (13.9ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "titulo" character varying, "descricao" character varying, "g_cidade_id" bigint, "created_by" character varying, "updated_by" character varying, "deleted_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE INDEX "index_posts_on_g_cidade_id" ON "posts" ("g_cidade_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250908211011') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/posts/new" for ::1 at 2025-09-08 17:10:25 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 3.2ms | GC: 0.5ms)
+  Rendered posts/new.html.erb within layouts/application (Duration: 3.6ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | GC: 0.5ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 4.1ms (1 query, 0 cached) | GC: 5.0ms)
+
+
+  
+ActionView::Template::Error (Association :g_cidade not found):
+
+Causes:
+RuntimeError (Association :g_cidade not found)
+    25:     <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+    26:       <%= f.input :titulo, placeholder: "Digite titulo..." %>
+    27:       <%= f.input :descricao, placeholder: "Digite descricao..." %>
+    28:       <%= f.association :g_cidade, collection: GCidade.all, label_method: :nome, value_method: :id, prompt: "Selecione g cidade", input_html: { class: "form-select" } %>
+    29:     </div>
+    30:     <div class="form-actions" style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 32px; padding-top: 24px; border-top: 1px solid #e5e7eb;">
+    31:       <%= link_to posts_path, class: "btn-secondary", style: "padding: 12px 24px; border: 1px solid #d1d5db; background: white; color: #374151; border-radius: 8px; font-weight: 500; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.2s;" do %>
+  
+app/views/posts/_form.html.erb:28
+app/views/posts/_form.html.erb:1
+app/views/posts/new.html.erb:1
+Started GET "/posts/new" for ::1 at 2025-09-08 17:10:42 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 2.2ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+  
+NoMethodError (undefined method `belogs_to' for class Post):
+  
+app/models/post.rb:5:in `<class:Post>'
+app/models/post.rb:3:in `<main>'
+app/controllers/posts_controller.rb:13:in `new'
+Started GET "/posts/new" for ::1 at 2025-09-08 17:10:49 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mGCidade Load (0.3ms)[0m  [1m[34mSELECT "g_cidades".* FROM "g_cidades"[0m
+  ↳ app/views/posts/_form.html.erb:28
+  Rendered posts/_form.html.erb (Duration: 9.4ms | GC: 0.7ms)
+  Rendered posts/new.html.erb within layouts/application (Duration: 9.9ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | GC: 0.7ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 6.9ms (2 queries, 0 cached) | GC: 5.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `nome' for an instance of GCidade):
+
+Causes:
+NoMethodError (undefined method `nome' for an instance of GCidade)
+    25:     <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+    26:       <%= f.input :titulo, placeholder: "Digite titulo..." %>
+    27:       <%= f.input :descricao, placeholder: "Digite descricao..." %>
+    28:       <%= f.association :g_cidade, collection: GCidade.all, label_method: :nome, value_method: :id, prompt: "Selecione g cidade", input_html: { class: "form-select" } %>
+    29:     </div>
+    30:     <div class="form-actions" style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 32px; padding-top: 24px; border-top: 1px solid #e5e7eb;">
+    31:       <%= link_to posts_path, class: "btn-secondary", style: "padding: 12px 24px; border: 1px solid #d1d5db; background: white; color: #374151; border-radius: 8px; font-weight: 500; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.2s;" do %>
+  
+app/views/posts/_form.html.erb:28
+app/views/posts/_form.html.erb:1
+app/views/posts/new.html.erb:1
+Started GET "/posts/new" for ::1 at 2025-09-08 17:11:05 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mGCidade Load (0.3ms)[0m  [1m[34mSELECT "g_cidades".* FROM "g_cidades"[0m
+  ↳ app/views/posts/_form.html.erb:28
+  Rendered posts/_form.html.erb (Duration: 20.6ms | GC: 11.8ms)
+  Rendered posts/new.html.erb within layouts/application (Duration: 21.9ms | GC: 12.6ms)
+  Rendered shared/_navbar.html.erb (Duration: 1.9ms | GC: 1.3ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 3.0ms | GC: 2.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 40.7ms | GC: 26.4ms)
+Completed 200 OK in 78ms (Views: 40.4ms | ActiveRecord: 6.3ms (2 queries, 0 cached) | GC: 48.0ms)
+
+
+Started GET "/posts" for ::1 at 2025-09-08 17:11:11 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "posts" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:18
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.4ms | GC: 0.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | GC: 0.7ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.1ms (3 queries, 0 cached) | GC: 0.7ms)
+
+
+  
+ActionView::Template::Error (Can't join 'Post' to association named 'g_status_post'; perhaps you misspelled it?):
+
+Causes:
+ActiveRecord::ConfigurationError (Can't join 'Post' to association named 'g_status_post'; perhaps you misspelled it?)
+    20:       </div>
+    21:       <div class="stat-mini" style="background: white; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #e5e7eb;">
+    22:         <div class="stat-mini-value" style="font-size: 32px; font-weight: 700; color: #059669; margin-bottom: 4px;">
+    23:           <%= @posts.joins(:g_status_post).where(g_status_posts: { descricao: 'Ativo' }).count %>
+    24:         </div>
+    25:         <div class="stat-mini-label" style="font-size: 14px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px;">ATIVOS</div>
+    26:       </div>
+  
+app/views/posts/index.html.erb:23
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20250908211011)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.6ms)[0m  [1m[35mDROP TABLE "posts"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20250908211011'[0m
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/clientes" for ::1 at 2025-09-08 17:11:35 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/clientes"):
+  
+Started GET "/" for ::1 at 2025-09-08 17:11:48 -0400
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 6.6ms | ActiveRecord: 2.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEClientes (20250904034638)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.3ms)[0m  [1m[35mDROP TABLE "e_clientes"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20250904034638'[0m
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateEClientes (20250904034638)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.8ms)[0m  [1m[35mCREATE TABLE "e_clientes" ("id" bigserial primary key, "e_empresa_id" bigint NOT NULL, "nome_completo" character varying NOT NULL, "cpf" character varying NOT NULL, "data_nascimento" date, "email" character varying, "telefone" character varying, "nome_social" character varying, "endereco" character varying, "matricula" character varying, "alfabetizado" boolean DEFAULT FALSE, "ultima_margem" decimal(10,2), "data_ultima_margem" date, "ano_admissao" integer, "pensionista" boolean DEFAULT FALSE, "numero_beneficio" character varying, "possui_representante_legal" boolean DEFAULT FALSE, "created_by" character varying, "updated_by" character varying, "deleted_at" timestamp(6), "g_sexo_id" bigint, "g_estado_id" bigint, "g_cidade_id" bigint, "g_bairro_id" bigint, "g_orgao_id" bigint, "g_margem_tipo_id" bigint, "g_tipo_beneficio_id" bigint, "g_status_cliente_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_e41278c676"
+FOREIGN KEY ("e_empresa_id")
+  REFERENCES "e_empresas" ("id")
+, CONSTRAINT "fk_rails_36d92bc040"
+FOREIGN KEY ("g_sexo_id")
+  REFERENCES "g_sexos" ("id")
+, CONSTRAINT "fk_rails_6d8f408ac2"
+FOREIGN KEY ("g_estado_id")
+  REFERENCES "g_estados" ("id")
+, CONSTRAINT "fk_rails_da0851220d"
+FOREIGN KEY ("g_cidade_id")
+  REFERENCES "g_cidades" ("id")
+, CONSTRAINT "fk_rails_72a8cf05ed"
+FOREIGN KEY ("g_bairro_id")
+  REFERENCES "g_bairros" ("id")
+, CONSTRAINT "fk_rails_f80636f80e"
+FOREIGN KEY ("g_orgao_id")
+  REFERENCES "g_orgaos" ("id")
+, CONSTRAINT "fk_rails_11888bf0df"
+FOREIGN KEY ("g_margem_tipo_id")
+  REFERENCES "g_margem_tipos" ("id")
+, CONSTRAINT "fk_rails_afe7a31c2e"
+FOREIGN KEY ("g_tipo_beneficio_id")
+  REFERENCES "g_tipo_beneficios" ("id")
+, CONSTRAINT "fk_rails_c38a502cbe"
+FOREIGN KEY ("g_status_cliente_id")
+  REFERENCES "g_status_clientes" ("id")
+)[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE INDEX "index_e_clientes_on_e_empresa_id" ON "e_clientes" ("e_empresa_id")[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE INDEX "index_e_clientes_on_g_sexo_id" ON "e_clientes" ("g_sexo_id")[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE INDEX "index_e_clientes_on_g_estado_id" ON "e_clientes" ("g_estado_id")[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE INDEX "index_e_clientes_on_g_cidade_id" ON "e_clientes" ("g_cidade_id")[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE INDEX "index_e_clientes_on_g_bairro_id" ON "e_clientes" ("g_bairro_id")[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE INDEX "index_e_clientes_on_g_orgao_id" ON "e_clientes" ("g_orgao_id")[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE INDEX "index_e_clientes_on_g_margem_tipo_id" ON "e_clientes" ("g_margem_tipo_id")[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE INDEX "index_e_clientes_on_g_tipo_beneficio_id" ON "e_clientes" ("g_tipo_beneficio_id")[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE INDEX "index_e_clientes_on_g_status_cliente_id" ON "e_clientes" ("g_status_cliente_id")[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_e_clientes_on_cpf" ON "e_clientes" ("cpf")[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE INDEX "index_e_clientes_on_email" ON "e_clientes" ("email")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250904034638') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/admin/clientes" for ::1 at 2025-09-08 17:12:17 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AdminController#clientes as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/clientes.html.erb within layouts/application
+  Rendered admin/clientes.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | GC: 0.2ms)
+Completed 200 OK in 15ms (Views: 5.9ms | ActiveRecord: 2.3ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/admin/e_clientes" for ::1 at 2025-09-08 17:12:22 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/admin/e_clientes"):
+  
+Started GET "/clientes" for ::1 at 2025-09-08 17:12:31 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/clientes"):
+  
+Started GET "/e_clientes" for ::1 at 2025-09-08 17:12:36 -0400
+Processing by EClientesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mECliente Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "e_clientes"[0m
+  ↳ app/controllers/e_clientes_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering e_clientes/index.html.erb within layouts/application
+  [1m[36mECliente Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:18
+  [1m[36mECliente Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:23
+  [1m[36mECliente Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" != $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:29
+  [1m[36mECliente Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" WHERE (created_at > $1) LIMIT $2 OFFSET $3) subquery_for_count[0m  [[nil, "2025-08-09 21:12:36.082004"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:34
+  [1m[36mECliente Load (0.3ms)[0m  [1m[34mSELECT "e_clientes".* FROM "e_clientes" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:108
+  Rendered e_clientes/index.html.erb within layouts/application (Duration: 12.6ms | GC: 0.5ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | GC: 0.6ms)
+Completed 200 OK in 34ms (Views: 14.6ms | ActiveRecord: 7.1ms (7 queries, 0 cached) | GC: 1.4ms)
+
+
+Started GET "/" for ::1 at 2025-09-08 17:12:37 -0400
+Processing by AdminController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | GC: 2.1ms)
+Completed 200 OK in 12ms (Views: 8.3ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 2.1ms)
+
+
+Started GET "/e_clientes/new" for ::1 at 2025-09-08 17:17:46 -0400
+Processing by EClientesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering e_clientes/new.html.erb within layouts/application
+  [1m[36mGSexo Load (0.5ms)[0m  [1m[34mSELECT "g_sexos".* FROM "g_sexos"[0m
+  ↳ app/views/e_clientes/_form.html.erb:64
+  [1m[36mGEstado Load (0.3ms)[0m  [1m[34mSELECT "g_estados".* FROM "g_estados"[0m
+  ↳ app/views/e_clientes/_form.html.erb:65
+  [1m[36mGCidade Load (0.2ms)[0m  [1m[34mSELECT "g_cidades".* FROM "g_cidades"[0m
+  ↳ app/views/e_clientes/_form.html.erb:66
+  [1m[36mGBairro Load (0.5ms)[0m  [1m[34mSELECT "g_bairros".* FROM "g_bairros"[0m
+  ↳ app/views/e_clientes/_form.html.erb:67
+  [1m[36mGOrgao Load (0.2ms)[0m  [1m[34mSELECT "g_orgaos".* FROM "g_orgaos"[0m
+  ↳ app/views/e_clientes/_form.html.erb:68
+  [1m[36mGMargemTipo Load (0.3ms)[0m  [1m[34mSELECT "g_margem_tipos".* FROM "g_margem_tipos"[0m
+  ↳ app/views/e_clientes/_form.html.erb:69
+  [1m[36mGTipoBeneficio Load (0.2ms)[0m  [1m[34mSELECT "g_tipo_beneficios".* FROM "g_tipo_beneficios"[0m
+  ↳ app/views/e_clientes/_form.html.erb:70
+  [1m[36mGStatusCliente Load (0.1ms)[0m  [1m[34mSELECT "g_status_clientes".* FROM "g_status_clientes"[0m
+  ↳ app/views/e_clientes/_form.html.erb:71
+  Rendered e_clientes/_form.html.erb (Duration: 46.7ms | GC: 8.1ms)
+  Rendered e_clientes/new.html.erb within layouts/application (Duration: 47.2ms | GC: 8.1ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 51.0ms | GC: 8.1ms)
+Completed 200 OK in 60ms (Views: 45.5ms | ActiveRecord: 6.2ms (9 queries, 0 cached) | GC: 8.1ms)
+
+
+Started GET "/e_clientes" for ::1 at 2025-09-08 17:17:50 -0400
+Processing by EClientesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mECliente Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "e_clientes"[0m
+  ↳ app/controllers/e_clientes_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering e_clientes/index.html.erb within layouts/application
+  [1m[36mECliente Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:18
+  [1m[36mECliente Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:23
+  [1m[36mECliente Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" INNER JOIN "g_status_clientes" ON "g_status_clientes"."id" = "e_clientes"."g_status_cliente_id" WHERE "g_status_clientes"."descricao" != $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["descricao", "Ativo"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:29
+  [1m[36mECliente Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "e_clientes" WHERE (created_at > $1) LIMIT $2 OFFSET $3) subquery_for_count[0m  [[nil, "2025-08-09 21:17:50.324883"], ["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:34
+  [1m[36mECliente Load (0.1ms)[0m  [1m[34mSELECT "e_clientes".* FROM "e_clientes" LIMIT $1 OFFSET $2[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/e_clientes/index.html.erb:108
+  Rendered e_clientes/index.html.erb within layouts/application (Duration: 5.6ms | GC: 0.2ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | GC: 0.3ms)
+Completed 200 OK in 13ms (Views: 7.7ms | ActiveRecord: 1.6ms (7 queries, 0 cached) | GC: 0.3ms)
+
+
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/posts" for ::1 at 2025-09-08 17:18:27 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250908211823_create_posts.rb
+
+
+):
+  
+activerecord (7.2.2.1) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:95:in `execute_if_updated'
+activerecord (7.2.2.1) lib/active_record/migration.rb:670:in `block in call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started GET "/posts" for ::1 at 2025-09-08 17:18:27 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250908211823_create_posts.rb
+
+
+):
+  
+activerecord (7.2.2.1) lib/active_record/migration.rb:756:in `check_pending_migrations'
+activerecord (7.2.2.1) lib/active_record/migration.rb:663:in `block (2 levels) in call'
+activesupport (7.2.2.1) lib/active_support/file_update_checker.rb:85:in `execute'
+activerecord (7.2.2.1) lib/active_record/migration.rb:668:in `block in call'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `synchronize'
+activerecord (7.2.2.1) lib/active_record/migration.rb:660:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (7.2.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (7.2.2.1) lib/rails/rack/logger.rb:41:in `call_app'
+railties (7.2.2.1) lib/rails/rack/logger.rb:29:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/request_id.rb:33:in `call'
+rack (3.1.8) lib/rack/method_override.rb:28:in `call'
+rack (3.1.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.1.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.2.2.1) lib/action_dispatch/middleware/host_authorization.rb:143:in `call'
+railties (7.2.2.1) lib/rails/engine.rb:535:in `call'
+puma (6.5.0) lib/puma/configuration.rb:279:in `call'
+puma (6.5.0) lib/puma/request.rb:99:in `block in handle_request'
+puma (6.5.0) lib/puma/thread_pool.rb:389:in `with_force_shutdown'
+puma (6.5.0) lib/puma/request.rb:98:in `handle_request'
+puma (6.5.0) lib/puma/server.rb:468:in `process_client'
+puma (6.5.0) lib/puma/server.rb:249:in `block in run'
+puma (6.5.0) lib/puma/thread_pool.rb:166:in `block in spawn_thread'
+Started POST "/rails/actions" for ::1 at 2025-09-08 17:18:28 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreatePosts (20250908211823)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.5ms)[0m  [1m[35mCREATE TABLE "posts" ("id" bigserial primary key, "titulo" character varying, "descricao" character varying, "g_cidade_id" bigint, "g_bairro_id" bigint, "quantidade" character varying, "status" character varying, "tipo" character varying, "idade" character varying, "preco" character varying, "created_by" character varying, "updated_by" character varying, "deleted_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE INDEX "index_posts_on_g_cidade_id" ON "posts" ("g_cidade_id")[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE INDEX "index_posts_on_g_bairro_id" ON "posts" ("g_bairro_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250908211823') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/posts" for ::1 at 2025-09-08 17:18:29 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "posts" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:18
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 3.6ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (Can't join 'Post' to association named 'g_status_post'; perhaps you misspelled it?):
+
+Causes:
+ActiveRecord::ConfigurationError (Can't join 'Post' to association named 'g_status_post'; perhaps you misspelled it?)
+    20:       </div>
+    21:       <div class="stat-mini" style="background: white; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #e5e7eb;">
+    22:         <div class="stat-mini-value" style="font-size: 32px; font-weight: 700; color: #059669; margin-bottom: 4px;">
+    23:           <%= @posts.joins(:g_status_post).where(g_status_posts: { descricao: 'Ativo' }).count %>
+    24:         </div>
+    25:         <div class="stat-mini-label" style="font-size: 14px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px;">ATIVOS</div>
+    26:       </div>
+  
+app/views/posts/index.html.erb:23
+Started GET "/posts/new" for ::1 at 2025-09-08 17:18:33 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 3.7ms | GC: 0.5ms)
+  Rendered posts/new.html.erb within layouts/application (Duration: 4.2ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.5ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.3ms (1 query, 0 cached) | GC: 0.9ms)
+
+
+  
+ActionView::Template::Error (Association :g_cidade not found):
+
+Causes:
+RuntimeError (Association :g_cidade not found)
+    43:                                         
+    44:             
+    45:             
+    46:             <%= f.association :g_cidade, collection: GCidade.all, label_method: :nome, value_method: :id, prompt: "Selecione g cidade", input_html: { class: "form-select" } %>
+    47:                                         
+    48:             
+    49:             
+  
+app/views/posts/_form.html.erb:46
+app/views/posts/_form.html.erb:1
+app/views/posts/new.html.erb:1
+Started GET "/posts/new" for ::1 at 2025-09-08 17:18:53 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 3.5ms | GC: 0.2ms)
+  Rendered posts/new.html.erb within layouts/application (Duration: 4.0ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | GC: 0.2ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 4.0ms (1 query, 0 cached) | GC: 0.8ms)
+
+
+  
+ActionView::Template::Error (Association :g_cidade not found):
+
+Causes:
+RuntimeError (Association :g_cidade not found)
+    39:       <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+    40:         <%= f.input :titulo, placeholder: "Digite titulo..." %>
+    41:         <%= f.input :descricao, placeholder: "Digite descricao..." %>
+    42:         <%= f.association :g_cidade, collection: GCidade.all, label_method: :nome_fantasia, value_method: :id, prompt: "Selecione g cidade", input_html: { class: "form-select" } %>
+    43:         <%= f.association :g_bairro, collection: GBairro.all, label_method: :descricao, value_method: :id, prompt: "Selecione g bairro", input_html: { class: "form-select" } %>
+    44:       </div>
+    45:     </div>
+  
+app/views/posts/_form.html.erb:42
+app/views/posts/_form.html.erb:1
+app/views/posts/new.html.erb:1
+Started GET "/posts/new" for ::1 at 2025-09-08 17:19:06 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mGCidade Load (0.3ms)[0m  [1m[34mSELECT "g_cidades".* FROM "g_cidades"[0m
+  ↳ app/views/posts/_form.html.erb:42
+  [1m[36mGBairro Load (0.1ms)[0m  [1m[34mSELECT "g_bairros".* FROM "g_bairros"[0m
+  ↳ app/views/posts/_form.html.erb:43
+  Rendered posts/_form.html.erb (Duration: 12.3ms | GC: 0.6ms)
+  Rendered posts/new.html.erb within layouts/application (Duration: 12.7ms | GC: 0.6ms)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/sidebar/_sidebar.html.erb (Duration: 1.3ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | GC: 1.1ms)
+Completed 200 OK in 35ms (Views: 16.5ms | ActiveRecord: 6.0ms (3 queries, 0 cached) | GC: 1.5ms)
+
+
+Started GET "/posts" for ::1 at 2025-09-08 17:19:18 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "posts" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 6], ["OFFSET", 0]]
+  ↳ app/views/posts/index.html.erb:18
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.8ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (Can't join 'Post' to association named 'g_status_post'; perhaps you misspelled it?):
+
+Causes:
+ActiveRecord::ConfigurationError (Can't join 'Post' to association named 'g_status_post'; perhaps you misspelled it?)
+    20:       </div>
+    21:       <div class="stat-mini" style="background: white; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #e5e7eb;">
+    22:         <div class="stat-mini-value" style="font-size: 32px; font-weight: 700; color: #059669; margin-bottom: 4px;">
+    23:           <%= @posts.joins(:g_status_post).where(g_status_posts: { descricao: 'Ativo' }).count %>
+    24:         </div>
+    25:         <div class="stat-mini-label" style="font-size: 14px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px;">ATIVOS</div>
+    26:       </div>
+  
+app/views/posts/index.html.erb:23
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20250908211823)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.6ms)[0m  [1m[35mDROP TABLE "posts"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20250908211823'[0m
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1121794573135366305)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

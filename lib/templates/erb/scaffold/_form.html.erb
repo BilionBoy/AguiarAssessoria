@@ -1,4 +1,4 @@
-<%%= form_with(model: @<%= singular_table_name %>, local: true, class: "modern-form", data: { turbo: false }) do |form| %>
+<%%= simple_form_for @<%= singular_table_name %>, html: { class: "modern-form" }, data: { turbo: false } do |f| %>
 <%% if @<%= singular_table_name %>.errors.any? %>
 <div class="alert alert-danger" role="alert" style="margin-bottom: 24px; padding: 16px; background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; color: #dc2626;">
   <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
@@ -12,11 +12,10 @@
   </ul>
 </div>
 <%% end %>
-<% # Simplified logic - removed complex field grouping that was causing ERB syntax errors %>
 <% if attributes.reject(&:password_digest?).length > 6 -%>
-  Multi-step Wizard Form 
+  <!-- Multi-step Wizard Form -->
   <div class="form-wizard">
-    Wizard Header 
+    <!-- Wizard Header -->
     <div class="wizard-header" style="margin-bottom: 32px; padding: 24px; background: white; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
       <div class="wizard-steps" style="display: flex; justify-content: center; gap: 32px; margin-bottom: 16px;">
         <div class="wizard-step active" data-step="1" style="display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer;">
@@ -32,69 +31,67 @@
         <div class="wizard-progress-bar" style="height: 100%; background: #3b82f6; width: 50%; transition: width 0.3s ease;"></div>
       </div>
     </div>
-    Step 1: Basic Information 
+    <!-- Step 1: Basic Information -->
     <div class="wizard-step-content active" id="step1" style="background: white; padding: 32px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
       <h3 style="margin: 0 0 24px 0; font-size: 20px; font-weight: 600; color: #111827; display: flex; align-items: center; gap: 12px;">
         <i data-lucide="info" style="width: 24px; height: 24px; color: #3b82f6;"></i>
         Informações Básicas
       </h3>
       <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
-        <% # First half of fields for step 1 %>
+        <%# Using f.input and f.association for first half of fields %>
         <% attributes.reject(&:password_digest?).first(attributes.length / 2).each do |attribute| -%>
-          <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
-            <%%= form.label :<%= attribute.name %>, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
-            <% if attribute.field_type == :text_area -%>
-              <%%= form.text_area :<%= attribute.name %>, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s; min-height: 100px; resize: vertical;", placeholder: "Digite <%= attribute.human_name.downcase %>..." %>
-            <% elsif attribute.field_type == :check_box -%>
-              <div style="display: flex; align-items: center; gap: 8px; padding: 12px 0;">
-                <%%= form.check_box :<%= attribute.name %>, style: "width: 18px; height: 18px;" %>
-                <span style="font-size: 14px; color: #6b7280;">Marque se aplicável</span>
-              </div>
-            <% elsif attribute.field_type == :datetime_local_field -%>
-              <%%= form.datetime_local_field :<%= attribute.name %>, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;" %>
-            <% elsif attribute.field_type == :date_field -%>
-              <%%= form.date_field :<%= attribute.name %>, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;" %>
-            <% elsif attribute.field_type == :number_field -%>
-              <%%= form.number_field :<%= attribute.name %>, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite <%= attribute.human_name.downcase %>..." %>
-            <% else -%>
-              <%%= form.text_field :<%= attribute.name %>, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite <%= attribute.human_name.downcase %>..." %>
-            <% end -%>
-          </div>
+          <% if attribute.name.end_with?('_id') || attribute.name.start_with?('g_') -%>
+            <%# Improved detection for both _id fields and g_ prefixed fields %>
+            <% association_name = attribute.name.end_with?('_id') ? attribute.name.gsub('_id', '') : attribute.name %>
+            <% model_class = association_name.camelize %>
+            <%%= f.association :<%= association_name %>, collection: <%= model_class %>.all, label_method: :nome, value_method: :id, prompt: "Selecione <%= attribute.human_name.downcase %>", input_html: { class: "form-select" } %>
+          <% elsif attribute.field_type == :text_area -%>
+            <%%= f.input :<%= attribute.name %>, as: :text, placeholder: "Digite <%= attribute.human_name.downcase %>..." %>
+          <% elsif attribute.field_type == :check_box -%>
+            <%%= f.input :<%= attribute.name %>, as: :boolean, label: "<%= attribute.human_name %>?" %>
+          <% elsif attribute.field_type == :datetime_local_field -%>
+            <%%= f.input :<%= attribute.name %>, as: :datetime, placeholder: "Selecione data e hora..." %>
+          <% elsif attribute.field_type == :date_field -%>
+            <%%= f.input :<%= attribute.name %>, as: :date %>
+          <% elsif attribute.field_type == :number_field -%>
+            <%%= f.input :<%= attribute.name %>, as: :integer, placeholder: "Digite <%= attribute.human_name.downcase %>..." %>
+          <% else -%>
+            <%%= f.input :<%= attribute.name %>, placeholder: "Digite <%= attribute.human_name.downcase %>..." %>
+          <% end -%>
         <% end -%>
       </div>
     </div>
-    Step 2: Additional Details 
+    <!-- Step 2: Additional Details -->
     <div class="wizard-step-content" id="step2" style="display: none; background: white; padding: 32px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
       <h3 style="margin: 0 0 24px 0; font-size: 20px; font-weight: 600; color: #111827; display: flex; align-items: center; gap: 12px;">
         <i data-lucide="settings" style="width: 24px; height: 24px; color: #3b82f6;"></i>
         Detalhes Adicionais
       </h3>
       <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
-        <% # Second half of fields for step 2 %>
+        <%# Using f.input and f.association for second half of fields %>
         <% attributes.reject(&:password_digest?).drop(attributes.length / 2).each do |attribute| -%>
-          <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
-            <%%= form.label :<%= attribute.name %>, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
-            <% if attribute.field_type == :text_area -%>
-              <%%= form.text_area :<%= attribute.name %>, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s; min-height: 100px; resize: vertical;", placeholder: "Digite <%= attribute.human_name.downcase %>..." %>
-            <% elsif attribute.field_type == :check_box -%>
-              <div style="display: flex; align-items: center; gap: 8px; padding: 12px 0;">
-                <%%= form.check_box :<%= attribute.name %>, style: "width: 18px; height: 18px;" %>
-                <span style="font-size: 14px; color: #6b7280;">Marque se aplicável</span>
-              </div>
-            <% elsif attribute.field_type == :datetime_local_field -%>
-              <%%= form.datetime_local_field :<%= attribute.name %>, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;" %>
-            <% elsif attribute.field_type == :date_field -%>
-              <%%= form.date_field :<%= attribute.name %>, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;" %>
-            <% elsif attribute.field_type == :number_field -%>
-              <%%= form.number_field :<%= attribute.name %>, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite <%= attribute.human_name.downcase %>..." %>
-            <% else -%>
-              <%%= form.text_field :<%= attribute.name %>, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite <%= attribute.human_name.downcase %>..." %>
-            <% end -%>
-          </div>
+          <% if attribute.name.end_with?('_id') || attribute.name.start_with?('g_') -%>
+            <%# Improved detection for both _id fields and g_ prefixed fields %>
+            <% association_name = attribute.name.end_with?('_id') ? attribute.name.gsub('_id', '') : attribute.name %>
+            <% model_class = association_name.camelize %>
+            <%%= f.association :<%= association_name %>, collection: <%= model_class %>.all, label_method: :nome, value_method: :id, prompt: "Selecione <%= attribute.human_name.downcase %>", input_html: { class: "form-select" } %>
+          <% elsif attribute.field_type == :text_area -%>
+            <%%= f.input :<%= attribute.name %>, as: :text, placeholder: "Digite <%= attribute.human_name.downcase %>..." %>
+          <% elsif attribute.field_type == :check_box -%>
+            <%%= f.input :<%= attribute.name %>, as: :boolean, label: "<%= attribute.human_name %>?" %>
+          <% elsif attribute.field_type == :datetime_local_field -%>
+            <%%= f.input :<%= attribute.name %>, as: :datetime, placeholder: "Selecione data e hora..." %>
+          <% elsif attribute.field_type == :date_field -%>
+            <%%= f.input :<%= attribute.name %>, as: :date %>
+          <% elsif attribute.field_type == :number_field -%>
+            <%%= f.input :<%= attribute.name %>, as: :integer, placeholder: "Digite <%= attribute.human_name.downcase %>..." %>
+          <% else -%>
+            <%%= f.input :<%= attribute.name %>, placeholder: "Digite <%= attribute.human_name.downcase %>..." %>
+          <% end -%>
         <% end -%>
       </div>
     </div>
-    Wizard Actions 
+    <!-- Wizard Actions -->
     <div class="wizard-actions" style="display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 24px; background: white; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
       <button type="button" class="btn-secondary" id="prevBtn" style="display: none; padding: 12px 24px; border: 1px solid #d1d5db; background: white; color: #374151; border-radius: 8px; font-weight: 500; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 8px;">
         <i data-lucide="chevron-left" style="width: 16px; height: 16px;"></i>
@@ -109,7 +106,7 @@
           Próximo
           <i data-lucide="chevron-right" style="width: 16px; height: 16px;"></i>
         </button>
-        <%%= form.submit "Salvar <%= human_name %>", class: "btn-primary", id: "submitBtn", style: "display: none; padding: 12px 24px; background: #10b981; color: white; border: none; border-radius: 8px; font-weight: 500; cursor: pointer; transition: all 0.2s;" %>
+        <%%= f.submit "Salvar <%= human_name %>", class: "btn-primary", id: "submitBtn", style: "display: none; padding: 12px 24px; background: #10b981; color: white; border: none; border-radius: 8px; font-weight: 500; cursor: pointer; transition: all 0.2s;" %>
       </div>
     </div>
   </div>
@@ -214,7 +211,7 @@
     });
   </script>
 <% else -%>
-  Simple Single Form 
+  <!-- Simple Single Form -->
   <div class="simple-form" style="background: white; padding: 32px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
     <div class="form-header" style="margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid #e5e7eb;">
       <h2 style="margin: 0; font-size: 24px; font-weight: 600; color: #111827;">
@@ -225,26 +222,26 @@
       </p>
     </div>
     <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+      <%# Using f.input and f.association for all fields in simple form %>
       <% attributes.reject(&:password_digest?).each do |attribute| -%>
-        <div class="form-group" style="display: flex; flex-direction: column; gap: 8px;">
-          <%%= form.label :<%= attribute.name %>, class: "form-label", style: "font-weight: 500; color: #374151; font-size: 14px;" %>
-          <% if attribute.field_type == :text_area -%>
-            <%%= form.text_area :<%= attribute.name %>, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s; min-height: 120px; resize: vertical;", placeholder: "Digite <%= attribute.human_name.downcase %>..." %>
-          <% elsif attribute.field_type == :check_box -%>
-            <div style="display: flex; align-items: center; gap: 8px; padding: 12px 0;">
-              <%%= form.check_box :<%= attribute.name %>, style: "width: 18px; height: 18px;" %>
-              <span style="font-size: 14px; color: #6b7280;">Marque se aplicável</span>
-            </div>
-          <% elsif attribute.field_type == :datetime_local_field -%>
-            <%%= form.datetime_local_field :<%= attribute.name %>, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;" %>
-          <% elsif attribute.field_type == :date_field -%>
-            <%%= form.date_field :<%= attribute.name %>, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;" %>
-          <% elsif attribute.field_type == :number_field -%>
-            <%%= form.number_field :<%= attribute.name %>, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite <%= attribute.human_name.downcase %>..." %>
-          <% else -%>
-            <%%= form.text_field :<%= attribute.name %>, class: "form-input", style: "padding: 12px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; transition: all 0.2s;", placeholder: "Digite <%= attribute.human_name.downcase %>..." %>
-          <% end -%>
-        </div>
+        <% if attribute.name.end_with?('_id') || attribute.name.start_with?('g_') -%>
+          <%# Improved detection for both _id fields and g_ prefixed fields %>
+          <% association_name = attribute.name.end_with?('_id') ? attribute.name.gsub('_id', '') : attribute.name %>
+          <% model_class = association_name.camelize %>
+          <%%= f.association :<%= association_name %>, collection: <%= model_class %>.all, label_method: :nome, value_method: :id, prompt: "Selecione <%= attribute.human_name.downcase %>", input_html: { class: "form-select" } %>
+        <% elsif attribute.field_type == :text_area -%>
+          <%%= f.input :<%= attribute.name %>, as: :text, placeholder: "Digite <%= attribute.human_name.downcase %>..." %>
+        <% elsif attribute.field_type == :check_box -%>
+          <%%= f.input :<%= attribute.name %>, as: :boolean, label: "<%= attribute.human_name %>?" %>
+        <% elsif attribute.field_type == :datetime_local_field -%>
+          <%%= f.input :<%= attribute.name %>, as: :datetime, placeholder: "Selecione data e hora..." %>
+        <% elsif attribute.field_type == :date_field -%>
+          <%%= f.input :<%= attribute.name %>, as: :date %>
+        <% elsif attribute.field_type == :number_field -%>
+          <%%= f.input :<%= attribute.name %>, as: :integer, placeholder: "Digite <%= attribute.human_name.downcase %>..." %>
+        <% else -%>
+          <%%= f.input :<%= attribute.name %>, placeholder: "Digite <%= attribute.human_name.downcase %>..." %>
+        <% end -%>
       <% end -%>
     </div>
     <div class="form-actions" style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 32px; padding-top: 24px; border-top: 1px solid #e5e7eb;">
@@ -252,7 +249,7 @@
       <i data-lucide="x" style="width: 16px; height: 16px;"></i>
       Cancelar
       <%% end %>
-      <%%= form.submit "Salvar <%= human_name %>", class: "btn-primary", style: "padding: 12px 24px; background: #10b981; color: white; border: none; border-radius: 8px; font-weight: 500; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 8px;" %>
+      <%%= f.submit "Salvar <%= human_name %>", class: "btn-primary", style: "padding: 12px 24px; background: #10b981; color: white; border: none; border-radius: 8px; font-weight: 500; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 8px;" %>
     </div>
   </div>
   <script>
