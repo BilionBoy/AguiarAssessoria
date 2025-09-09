@@ -44,6 +44,9 @@ pt-BR:
       g_status_contrato:
         one: "Status do Contrato"
         other: "Status dos Contratos"
+      g_status_user:
+        one: "Status do Usuário"
+        other: "Status dos Usuários"
       g_banco:
         one: "Banco"
         other: "Bancos"
@@ -74,9 +77,14 @@ pt-BR:
         descricao: "Descrição"
       g_tipo_operacao:
         descricao: "Descrição"
+      g_banco:
+        descricao: "Descrição"
+        codigo: "Código"
       g_status_cliente:
         descricao: "Descrição"
       g_status_contrato:
+        descricao: "Descrição"
+      g_status_user:
         descricao: "Descrição"
       e_empresa:
         razao_social: "Razão Social"

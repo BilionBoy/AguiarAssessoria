@@ -1,0 +1,101 @@
+<%= simple_form_for @g_status_user, html: { class: "modern-form" }, data: { turbo: false } do |f| %>
+<% if @g_status_user.errors.any? %>
+<div class="alert alert-danger" role="alert" style="margin-bottom: 24px; padding: 16px; background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; color: #dc2626;">
+  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+    <i data-lucide="alert-circle" style="width: 20px; height: 20px;"></i>
+    <strong><%= pluralize(@g_status_user.errors.count, "erro") %> encontrados:</strong>
+  </div>
+  <ul style="margin: 0; padding-left: 20px;">
+    <% @g_status_user.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+  <!-- Simple Single Form -->
+  <div class="simple-form" style="background: white; padding: 32px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+    <div class="form-header" style="margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid #e5e7eb;">
+      <h2 style="margin: 0; font-size: 24px; font-weight: 600; color: #111827;">
+        <%= @g_status_user.persisted? ? "Editar" : "Novo" %> G status user
+      </h2>
+      <p style="margin: 8px 0 0 0; color: #6b7280; font-size: 14px;">
+        Preencha os campos abaixo para <%= @g_status_user.persisted? ? "atualizar" : "cadastrar" %> g status user.
+      </p>
+    </div>
+    <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+      
+                        <%= f.input :descricao, placeholder: "Digite descricao..." %>
+                  </div>
+    <div class="form-actions" style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 32px; padding-top: 24px; border-top: 1px solid #e5e7eb;">
+      <%= link_to g_status_users_path, class: "btn-secondary", style: "padding: 12px 24px; border: 1px solid #d1d5db; background: white; color: #374151; border-radius: 8px; font-weight: 500; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.2s;" do %>
+      <i data-lucide="x" style="width: 16px; height: 16px;"></i>
+      Cancelar
+      <% end %>
+      <%= f.submit "Salvar G status user", class: "btn-primary", style: "padding: 12px 24px; background: #10b981; color: white; border: none; border-radius: 8px; font-weight: 500; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 8px;" %>
+    </div>
+  </div>
+<% end %>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    let currentStep = 1;
+    const totalSteps = 2;
+
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    const progressBar = document.querySelector('.wizard-progress-bar');
+    const steps = document.querySelectorAll('.wizard-step');
+    const contents = document.querySelectorAll('.wizard-step-content');
+
+    function showStep(step) {
+      // Mostrar/esconder conteúdos
+      contents.forEach((content, i) => {
+        content.style.display = (i + 1 === step) ? 'block' : 'none';
+      });
+
+      // Atualizar steps
+      steps.forEach((stepEl, i) => {
+        stepEl.classList.remove('active', 'completed');
+        if (i + 1 < step) stepEl.classList.add('completed');
+        else if (i + 1 === step) stepEl.classList.add('active');
+      });
+
+      // Atualizar progress bar
+      if (progressBar) {
+        progressBar.style.width = `${((step - 1) / (totalSteps - 1)) * 100}%`;
+      }
+
+      // Controlar botões
+      if (prevBtn) prevBtn.style.display = step > 1 ? 'flex' : 'none';
+      if (nextBtn) nextBtn.style.display = step < totalSteps ? 'flex' : 'none';
+      if (submitBtn) submitBtn.style.display = step === totalSteps ? 'block' : 'none';
+    }
+
+    // Botão próximo
+    nextBtn?.addEventListener('click', () => {
+      if (currentStep < totalSteps) {
+        currentStep++;
+        showStep(currentStep);
+      }
+    });
+
+    // Botão anterior
+    prevBtn?.addEventListener('click', () => {
+      if (currentStep > 1) {
+        currentStep--;
+        showStep(currentStep);
+      }
+    });
+
+    // Navegação clicando nos steps
+    steps.forEach((stepEl, i) => {
+      stepEl.addEventListener('click', () => {
+        currentStep = i + 1;
+        showStep(currentStep);
+      });
+    });
+
+    // Inicializar
+    showStep(currentStep);
+  });
+</script>
