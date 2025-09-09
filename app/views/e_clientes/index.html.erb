@@ -142,9 +142,7 @@
                           <i data-lucide="edit"></i> Editar
                         <% end %>
                         <div class="dropdown-divider"></div>
-                        <%= link_to e_cliente_path(e_cliente), method: :delete, 
-                            class: "dropdown-item text-danger", 
-                            data: { confirm: "Tem certeza que deseja excluir?" } do %>
+                        <%= button_to e_cliente_path(e_cliente),method: :delete, class: "dropdown-item text-danger",data: { confirm: "Tem certeza que deseja excluir?" } do %>
                           <i data-lucide="trash-2"></i> Excluir
                         <% end %>
                       </div>

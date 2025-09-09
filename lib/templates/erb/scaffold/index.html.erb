@@ -139,7 +139,7 @@
                         <i data-lucide="edit" style="width: 16px; height: 16px;"></i> Editar
                         <%% end %>
                         <div class="dropdown-divider"></div>
-                        <%%= link_to <%= singular_table_name %>_path(<%= singular_table_name %>), method: :delete, 
+                        <%%= button_to <%= singular_table_name %>_path(<%= singular_table_name %>), method: :delete, 
                         class: "dropdown-item text-danger", 
                         data: { confirm: "Tem certeza que deseja excluir?" } do %>
                         <i data-lucide="trash-2" style="width: 16px; height: 16px;"></i> Excluir
