@@ -98,6 +98,7 @@ pt-BR:
         numero: "Número"
         complemento: "Complemento"
         cep: "CEP"
+        g_sexo: "Sexo"
         g_bairro_id: "Bairro"
         g_estado_id: "Estado"
         g_cidade_id: "Cidade"

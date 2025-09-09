@@ -38,11 +38,11 @@
       <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
         <%= f.input :nome_completo, placeholder: "Nome completo" %>
         <%= f.input :nome_social, placeholder: "Nome social" %>
-        <%= f.input :cpf, placeholder: "CPF" %>
+        <%= f.input :cpf, required: true, label: "CPF",input_html: { maxlength: 11, placeholder: "Somente números" } %>
         <%= f.input :data_nascimento, as: :date %>
         <%= f.association :g_sexo, collection: GSexo.all, label_method: :descricao, value_method: :id, prompt: "Selecione o sexo" %>
         <%= f.input :email, placeholder: "Email" %>
-        <%= f.input :telefone, placeholder: "Telefone" %>
+        <%= f.input :telefone, required: true, label: "Telefone",input_html: { placeholder: "(99) 99999-9999", class: "form-control form-control-lg" } %>
         <%= f.input :endereco, placeholder: "Endereço" %>
         <%= f.input :g_estado_id, collection: GEstado.all, label_method: :nome_fantasia, value_method: :id, prompt: "Selecione o estado" %>
         <%= f.input :g_cidade_id, collection: GCidade.all, label_method: :nome_fantasia, value_method: :id, prompt: "Selecione a cidade" %>
