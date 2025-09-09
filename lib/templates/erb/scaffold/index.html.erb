@@ -149,8 +149,8 @@
                   </td>
                   <% attributes.reject(&:password_digest?).each do |attribute| -%>
                     <td>
-                      <% if attribute.reference? -%>
-                        <%%= <%= singular_table_name %>.<%= attribute.name %>&.<%= attribute.reference.name %> %>
+                      <% if attribute.type == :references -%>
+                        <%%= <%= singular_table_name %>.<%= attribute.name %>&.id %>
                       <% else -%>
                         <%%= <%= singular_table_name %>.<%= attribute.name %> %>
                       <% end -%>
