@@ -171,6 +171,11 @@
   position: relative;
 }
 /* INDEX */
+.page-title {
+  color: black;
+  padding: var(--page-header-padding-y) 0;
+  position: relative;
+}
 .modern-dashboard {
   min-height: 100vh;
 }
