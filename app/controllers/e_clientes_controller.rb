@@ -6,7 +6,7 @@ class EClientesController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :handle_not_found
 
   def index
-    @q = ECliente.ransack(params[:q])
+    @q = current_user.e_empresa.e_clientes.ransack(params[:q])
     @pagy, @e_clientes = pagy(@q.result)
   end
 
@@ -45,16 +45,16 @@ class EClientesController < ApplicationController
 
   private
 
-  def set_e_cliente
-    @e_cliente = ECliente.find_by(id: params[:id])
-    redirect_to e_clientes_path, alert: t('messages.not_found') unless @e_cliente
-  end
-
   def e_cliente_params
     permitted_attributes = ECliente.column_names.reject do |col|
       %w[deleted_at created_by updated_by].include?(col)
     end
     params.require(:e_cliente).permit(permitted_attributes.map(&:to_sym))
+  end
+
+  def set_e_cliente
+    @e_cliente = current_user.e_empresa.e_clientes.find_by(id: params[:id])
+    redirect_to e_clientes_path, alert: t('messages.not_found') unless @e_cliente
   end
 
   def handle_not_found

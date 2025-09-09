@@ -39,7 +39,7 @@
         <%= f.input :nome_completo, placeholder: "Nome completo" %>
         <%= f.input :nome_social, placeholder: "Nome social" %>
         <%= f.input :cpf, required: true, label: "CPF",input_html: { maxlength: 11, placeholder: "Somente números" } %>
-        <%= f.input :data_nascimento, as: :date %>
+        <%= f.input :data_nascimento, as: :date, start_year: 1900, end_year: Date.today.year, order: [:day, :month, :year],label_html: { class: "form-label" } %>
         <%= f.association :g_sexo, collection: GSexo.all, label_method: :descricao, value_method: :id, prompt: "Selecione o sexo" %>
         <%= f.input :email, placeholder: "Email" %>
         <%= f.input :telefone, required: true, label: "Telefone",input_html: { placeholder: "(99) 99999-9999", class: "form-control form-control-lg" } %>

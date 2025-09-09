@@ -166,6 +166,11 @@
 .btn-logout:hover {
   background-color: #f2f2f2;
 }
+.btn:hover {
+  color: black;
+  background-color: var(--btn-hover-bg);
+  border-color: var(--btn-hover-border-color);
+}
 
 .nav-item-dropdown-lg {
   position: relative;
