@@ -1,17 +1,17 @@
 <%= simple_form_for @g_status_user, html: { class: "modern-form" }, data: { turbo: false } do |f| %>
-<% if @g_status_user.errors.any? %>
-<div class="alert alert-danger" role="alert" style="margin-bottom: 24px; padding: 16px; background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; color: #dc2626;">
-  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
-    <i data-lucide="alert-circle" style="width: 20px; height: 20px;"></i>
-    <strong><%= pluralize(@g_status_user.errors.count, "erro") %> encontrados:</strong>
-  </div>
-  <ul style="margin: 0; padding-left: 20px;">
-    <% @g_status_user.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
+  <% if @g_status_user.errors.any? %>
+    <div class="alert alert-danger" role="alert" style="margin-bottom: 24px; padding: 16px; background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; color: #dc2626;">
+      <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+        <i data-lucide="alert-circle" style="width: 20px; height: 20px;"></i>
+        <strong><%= pluralize(@g_status_user.errors.count, "erro") %> encontrados:</strong>
+      </div>
+      <ul style="margin: 0; padding-left: 20px;">
+        <% @g_status_user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <!-- Simple Single Form -->
   <div class="simple-form" style="background: white; padding: 32px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
     <div class="form-header" style="margin-bottom: 32px; padding-bottom: 24px; border-bottom: 1px solid #e5e7eb;">
@@ -23,13 +23,12 @@
       </p>
     </div>
     <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
-      
-                        <%= f.input :descricao, placeholder: "Digite descricao..." %>
-                  </div>
+      <%= f.input :descricao, input_html: { style: "text-transform: uppercase;" }, placeholder: "Descricao" %>
+    </div>
     <div class="form-actions" style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 32px; padding-top: 24px; border-top: 1px solid #e5e7eb;">
       <%= link_to g_status_users_path, class: "btn-secondary", style: "padding: 12px 24px; border: 1px solid #d1d5db; background: white; color: #374151; border-radius: 8px; font-weight: 500; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.2s;" do %>
-      <i data-lucide="x" style="width: 16px; height: 16px;"></i>
-      Cancelar
+        <i data-lucide="x" style="width: 16px; height: 16px;"></i>
+        Cancelar
       <% end %>
       <%= f.submit "Salvar G status user", class: "btn-primary", style: "padding: 12px 24px; background: #10b981; color: white; border: none; border-radius: 8px; font-weight: 500; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 8px;" %>
     </div>

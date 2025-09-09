@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_09_09_034713) do
+ActiveRecord::Schema[7.2].define(version: 2025_09_09_035439) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -209,8 +209,10 @@ ActiveRecord::Schema[7.2].define(version: 2025_09_09_034713) do
     t.bigint "e_empresa_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "g_status_user_id", default: 1, null: false
     t.index ["e_empresa_id"], name: "index_users_on_e_empresa_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["g_status_user_id"], name: "index_users_on_g_status_user_id"
     t.index ["g_tipo_usuario_id"], name: "index_users_on_g_tipo_usuario_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -228,5 +230,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_09_09_034713) do
   add_foreign_key "g_bairros", "g_cidades"
   add_foreign_key "g_cidades", "g_estados"
   add_foreign_key "users", "e_empresas"
+  add_foreign_key "users", "g_status_users"
   add_foreign_key "users", "g_tipo_usuarios"
 end
