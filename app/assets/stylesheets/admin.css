@@ -990,6 +990,9 @@ abbr {
   color: white;
 }
 
+.form-check {
+  color: var(--neutral-900);
+}
 /* Reduced bulk action text size */
 .bulk-info {
   font-weight: 600;
