@@ -703,11 +703,6 @@ abbr {
 
 /* Reduced padding and made stats section more compact */
 .stats-section-fluid {
-  background: linear-gradient(
-    135deg,
-    var(--primary-blue-light) 0%,
-    rgba(37, 99, 235, 0.05) 100%
-  );
   padding: 1.5rem 0;
   border-bottom: 1px solid var(--neutral-200);
 }
