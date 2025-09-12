@@ -1,0 +1,161 @@
+<%= simple_form_for @e_contrato, html: { class: "modern-form" }, data: { turbo: false } do |f| %>
+<% if @e_contrato.errors.any? %>
+<div class="alert alert-danger" role="alert" style="margin-bottom: 24px; padding: 16px; background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; color: #dc2626;">
+  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+    <i data-lucide="alert-circle" style="width: 20px; height: 20px;"></i>
+    <strong><%= pluralize(@e_contrato.errors.count, "erro") %> encontrados:</strong>
+  </div>
+  <ul style="margin: 0; padding-left: 20px;">
+    <% @e_contrato.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+  <!-- Multi-step Wizard Form -->
+  <div class="form-wizard">
+    <!-- Wizard Header -->
+    <div class="wizard-header" style="margin-bottom: 32px; padding: 24px; background: white; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+      <div class="wizard-steps" style="display: flex; justify-content: center; gap: 32px; margin-bottom: 16px;">
+        <div class="wizard-step active" data-step="1" style="display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer;">
+          <div class="step-number" style="width: 40px; height: 40px; border-radius: 50%; background: #3b82f6; color: white; display: flex; align-items: center; justify-content: center; font-weight: 600;">1</div>
+          <span style="font-size: 14px; color: #6b7280;">Informações Básicas</span>
+        </div>
+        <div class="wizard-step" data-step="2" style="display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer;">
+          <div class="step-number" style="width: 40px; height: 40px; border-radius: 50%; background: #e5e7eb; color: #6b7280; display: flex; align-items: center; justify-content: center; font-weight: 600;">2</div>
+          <span style="font-size: 14px; color: #6b7280;">Detalhes Adicionais</span>
+        </div>
+      </div>
+      <div class="wizard-progress" style="height: 4px; background: #e5e7eb; border-radius: 2px; overflow: hidden;">
+        <div class="wizard-progress-bar" style="height: 100%; background: #3b82f6; width: 50%; transition: width 0.3s ease;"></div>
+      </div>
+    </div>
+    <!-- Step 1: Basic Information -->
+    <div class="wizard-step-content active" id="step1" style="background: white; padding: 32px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+      <h3 style="margin: 0 0 24px 0; font-size: 20px; font-weight: 600; color: #111827; display: flex; align-items: center; gap: 12px;">
+        <i data-lucide="info" style="width: 24px; height: 24px; color: #3b82f6;"></i>
+        Informações Básicas
+      </h3>
+      <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+        
+                              <%= f.input :e_empresa, placeholder: "Digite e empresa..." %>
+                                        <%= f.input :e_cliente, placeholder: "Digite e cliente..." %>
+                                        <%= f.input :user, placeholder: "Digite user..." %>
+                                        <%= f.input :numero_contrato, placeholder: "Digite numero contrato..." %>
+                                        
+            
+            
+            <%= f.association :g_banco, collection: GBanco.all, label_method: :nome, value_method: :id, prompt: "Selecione g banco", input_html: { class: "form-select" } %>
+                                        
+            
+            
+            <%= f.association :g_status_contrato, collection: GStatusContrato.all, label_method: :nome, value_method: :id, prompt: "Selecione g status contrato", input_html: { class: "form-select" } %>
+                                        
+            
+            
+            <%= f.association :g_tipo_operacao, collection: GTipoOperacao.all, label_method: :nome, value_method: :id, prompt: "Selecione g tipo operacao", input_html: { class: "form-select" } %>
+                                        <%= f.input :produto, placeholder: "Digite produto..." %>
+                        </div>
+    </div>
+    <!-- Step 2: Additional Details -->
+    <div class="wizard-step-content" id="step2" style="display: none; background: white; padding: 32px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+      <h3 style="margin: 0 0 24px 0; font-size: 20px; font-weight: 600; color: #111827; display: flex; align-items: center; gap: 12px;">
+        <i data-lucide="settings" style="width: 24px; height: 24px; color: #3b82f6;"></i>
+        Detalhes Adicionais
+      </h3>
+      <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+        
+                              <%= f.input :valor_total, placeholder: "Digite valor total..." %>
+                                        <%= f.input :quantidade_parcelas, as: :integer, placeholder: "Digite quantidade parcelas..." %>
+                                        <%= f.input :valor_parcela, placeholder: "Digite valor parcela..." %>
+                                        <%= f.input :valor_comissao, placeholder: "Digite valor comissao..." %>
+                                        <%= f.input :data_inicio, as: :date %>
+                                        <%= f.input :data_fim, as: :date %>
+                                        <%= f.input :user_created, placeholder: "Digite user created..." %>
+                                        <%= f.input :user_updated, placeholder: "Digite user updated..." %>
+                        </div>
+    </div>
+    <!-- Wizard Actions -->
+    <div class="wizard-actions" style="display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 24px; background: white; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+      <button type="button" class="btn-secondary" id="prevBtn" style="display: none; padding: 12px 24px; border: 1px solid #d1d5db; background: white; color: #374151; border-radius: 8px; font-weight: 500; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 8px;">
+        <i data-lucide="chevron-left" style="width: 16px; height: 16px;"></i>
+        Anterior
+      </button>
+      <div style="display: flex; gap: 12px;">
+        <%= link_to e_contratos_path, class: "btn-secondary", style: "padding: 12px 24px; border: 1px solid #d1d5db; background: white; color: #374151; border-radius: 8px; font-weight: 500; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.2s;" do %>
+        <i data-lucide="x" style="width: 16px; height: 16px;"></i>
+        Cancelar
+        <% end %>
+        <button type="button" class="btn-primary" id="nextBtn" style="padding: 12px 24px; background: #3b82f6; color: white; border: none; border-radius: 8px; font-weight: 500; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 8px;">
+          Próximo
+          <i data-lucide="chevron-right" style="width: 16px; height: 16px;"></i>
+        </button>
+        <%= f.submit "Salvar E contrato", class: "btn-primary", id: "submitBtn", style: "display: none; padding: 12px 24px; background: #10b981; color: white; border: none; border-radius: 8px; font-weight: 500; cursor: pointer; transition: all 0.2s;" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    let currentStep = 1;
+    const totalSteps = 2;
+
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    const progressBar = document.querySelector('.wizard-progress-bar');
+    const steps = document.querySelectorAll('.wizard-step');
+    const contents = document.querySelectorAll('.wizard-step-content');
+
+    function showStep(step) {
+      // Mostrar/esconder conteúdos
+      contents.forEach((content, i) => {
+        content.style.display = (i + 1 === step) ? 'block' : 'none';
+      });
+
+      // Atualizar steps
+      steps.forEach((stepEl, i) => {
+        stepEl.classList.remove('active', 'completed');
+        if (i + 1 < step) stepEl.classList.add('completed');
+        else if (i + 1 === step) stepEl.classList.add('active');
+      });
+
+      // Atualizar progress bar
+      if (progressBar) {
+        progressBar.style.width = `${((step - 1) / (totalSteps - 1)) * 100}%`;
+      }
+
+      // Controlar botões
+      if (prevBtn) prevBtn.style.display = step > 1 ? 'flex' : 'none';
+      if (nextBtn) nextBtn.style.display = step < totalSteps ? 'flex' : 'none';
+      if (submitBtn) submitBtn.style.display = step === totalSteps ? 'block' : 'none';
+    }
+
+    // Botão próximo
+    nextBtn?.addEventListener('click', () => {
+      if (currentStep < totalSteps) {
+        currentStep++;
+        showStep(currentStep);
+      }
+    });
+
+    // Botão anterior
+    prevBtn?.addEventListener('click', () => {
+      if (currentStep > 1) {
+        currentStep--;
+        showStep(currentStep);
+      }
+    });
+
+    // Navegação clicando nos steps
+    steps.forEach((stepEl, i) => {
+      stepEl.addEventListener('click', () => {
+        currentStep = i + 1;
+        showStep(currentStep);
+      });
+    });
+
+    // Inicializar
+    showStep(currentStep);
+  });
+</script>

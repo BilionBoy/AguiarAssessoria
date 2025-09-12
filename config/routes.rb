@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :e_contratos
   resources :g_status_users
   devise_for :users
 

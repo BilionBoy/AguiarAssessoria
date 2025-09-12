@@ -56,6 +56,9 @@ pt-BR:
       e_cliente:
         one: "Cliente"
         other: "Clientes"
+      e_contrato:
+        one: "Contrato"
+        other: "Contratos"
     attributes:
       g_tipo_usuario:
         descricao: "Descrição"
