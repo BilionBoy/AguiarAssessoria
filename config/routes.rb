@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
-  resources :e_contratos
-  resources :g_status_users
   devise_for :users
 
   root 'admin#index'
   get  'admin/index'
-  get  'admin/contratos'
   get  'home/index'
 
   # Rotas Scaffold
@@ -22,6 +19,8 @@ Rails.application.routes.draw do
   resources :g_status_clientes
   resources :g_tipo_operacoes
   resources :g_bancos
+  resources :g_status_users
+  resources :e_contratos
   resources :e_empresas
   resources :e_clientes
 
