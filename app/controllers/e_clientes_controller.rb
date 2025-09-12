@@ -49,7 +49,7 @@ class EClientesController < ApplicationController
     permitted_attributes = ECliente.column_names.reject do |col|
       %w[deleted_at created_by updated_by].include?(col)
     end
-    params.require(:e_cliente).permit(permitted_attributes.map(&:to_sym))
+    params.require(:e_cliente).permit(permitted_attributes.map(&:to_sym), :foto_cliente, :foto_contracheque, :foto_rg)
   end
 
   def set_e_cliente

@@ -24,9 +24,13 @@
           <div class="step-number" style="width: 40px; height: 40px; border-radius: 50%; background: #e5e7eb; color: #6b7280; display: flex; align-items: center; justify-content: center; font-weight: 600;">2</div>
           <span style="font-size: 14px; color: #6b7280;">Dados Funcionais</span>
         </div>
+        <div class="wizard-step" data-step="3" style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer;">
+          <div class="step-number" style="width: 40px; height: 40px; border-radius: 50%; background: #e5e7eb; color: #6b7280; display: flex; align-items: center; justify-content: center; font-weight: 600;">3</div>
+          <span style="font-size: 14px; color: #6b7280;">Documentos</span>
+        </div>
       </div>
       <div class="wizard-progress" style="height: 4px; background: #e5e7eb; border-radius: 2px; overflow: hidden;">
-        <div class="wizard-progress-bar" style="height: 100%; background: #3b82f6; width: 50%; transition: width 0.3s ease;"></div>
+        <div class="wizard-progress-bar" style="height: 100%; background: #3b82f6; width: 33%; transition: width 0.3s ease;"></div>
       </div>
     </div>
     <!-- Step 1: Dados Cadastrais -->
@@ -76,6 +80,18 @@
         </div>
       </div>
     </div>
+    <!-- Step 3: Documentos -->
+    <div class="wizard-step-content" id="step3" style="background: #ffffff; padding: 32px; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); display: flex; flex-direction: column; gap: 24px;">
+      <h3 style="font-size: 20px; font-weight: 600; color: #111827; display: flex; align-items: center; gap: 12px;">
+        <i data-lucide="file-text" style="width: 24px; height: 24px; color: #3b82f6;"></i>
+        Envio de Documentos
+      </h3>
+      <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+        <%= f.input :foto_cliente, as: :file, label: "Foto do Cliente", input_html: { accept: "image/*" } %>
+        <%= f.input :foto_contracheque, as: :file, label: "Foto Contracheque", input_html: { accept: "image/*,application/pdf" } %>
+        <%= f.input :foto_rg, as: :file, label: "Foto RG", input_html: { accept: "image/*" } %>
+      </div>
+    </div>
     <!-- Wizard Actions -->
     <div class="wizard-actions" style="display: flex; justify-content: space-between; align-items: center; padding: 24px; background: #ffffff; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.08);">
       <button type="button" class="btn-secondary" id="prevBtn" style="display: none; padding: 12px 24px; border: 1px solid #d1d5db; background: #f9fafb; color: #374151; border-radius: 8px; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 8px;">
@@ -99,7 +115,7 @@
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     let currentStep = 1;
-    const totalSteps = 2;
+    const totalSteps = 3;
 
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
