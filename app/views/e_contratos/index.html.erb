@@ -63,77 +63,69 @@
                 Buscar
               </button>
               <% if params[:q] %>
-              <%= link_to e_contratos_path, class: "btn btn-secondary" do %>
-              <i data-lucide="x-circle"></i>
-              Limpar
-              <% end %>
+                <%= link_to e_contratos_path, class: "btn btn-secondary" do %>
+                  <i data-lucide="x-circle"></i>
+                  Limpar
+                <% end %>
               <% end %>
             </div>
+          <% end %>
+        </div>
+      </div>
+      <!-- Ações em Lote -->
+      <div class="bulk-actions-fluid" id="bulkActions">
+        <div class="bulk-info">
+          <span id="selectedCount">0</span> e_contratos selecionados
+        </div>
+        <div class="bulk-buttons">
+          <button class="btn btn-bulk-primary">
+            <i data-lucide="mail"></i>
+            Ação em Lote
+          </button>
+          <button class="btn btn-bulk-danger" onclick="bulkDelete()">
+            <i data-lucide="trash-2"></i>
+            Excluir Selecionados
+          </button>
+        </div>
+      </div>
+      <!-- Tabela Principal -->
+      <div class="table-section-fluid">
+        <div class="table-header-fluid">
+          <h3 class="table-title">
+            <i data-lucide="list"></i>
+            Lista de <%= t("activerecord.models.#{EContrato.model_name.i18n_key}.other") %>
+          </h3>
+          <div class="table-actions">
+            <button class="btn btn-export" onclick="exportData()">
+              <i data-lucide="download"></i>
+              Exportar
+            </button>
+            <%= link_to new_e_contrato_path, class: "btn btn-new" do %>
+              <i data-lucide="plus"></i>
+              Novo <%= t("activerecord.models.#{EContrato.model_name.i18n_key}.one") %>
             <% end %>
           </div>
         </div>
-        <!-- Ações em Lote -->
-        <div class="bulk-actions-fluid" id="bulkActions">
-          <div class="bulk-info">
-            <span id="selectedCount">0</span> e_contratos selecionados
-          </div>
-          <div class="bulk-buttons">
-            <button class="btn btn-bulk-primary">
-              <i data-lucide="mail"></i>
-              Ação em Lote
-            </button>
-            <button class="btn btn-bulk-danger" onclick="bulkDelete()">
-              <i data-lucide="trash-2"></i>
-              Excluir Selecionados
-            </button>
-          </div>
-        </div>
-        <!-- Tabela Principal -->
-        <div class="table-section-fluid">
-          <div class="table-header-fluid">
-            <h3 class="table-title">
-              <i data-lucide="list"></i>
-              Lista de <%= t("activerecord.models.#{EContrato.model_name.i18n_key}.other") %>
-            </h3>
-            <div class="table-actions">
-              <button class="btn btn-export" onclick="exportData()">
-                <i data-lucide="download"></i>
-                Exportar
-              </button>
-              <%= link_to new_e_contrato_path, class: "btn btn-new" do %>
-              <i data-lucide="plus"></i>
-              Novo <%= t("activerecord.models.#{EContrato.model_name.i18n_key}.one") %>
-              <% end %>
-            </div>
-          </div>
-          <div class="table-container-fluid">
-            <table class="data-table-fluid">
-              <thead>
-                <tr>
-                  <th class="checkbox-col">
-                    <input type="checkbox" id="selectAll" onchange="toggleSelectAll()">
-                  </th>
-                  <th class="actions-col">Ações</th>
-                                      <th><%= sort_link(@q, :e_empresa, t("activerecord.attributes.e_contrato.e_empresa")) %></th>
-                                      <th><%= sort_link(@q, :e_cliente, t("activerecord.attributes.e_contrato.e_cliente")) %></th>
-                                      <th><%= sort_link(@q, :user, t("activerecord.attributes.e_contrato.user")) %></th>
-                                      <th><%= sort_link(@q, :numero_contrato, t("activerecord.attributes.e_contrato.numero_contrato")) %></th>
-                                      <th><%= sort_link(@q, :g_banco, t("activerecord.attributes.e_contrato.g_banco")) %></th>
-                                      <th><%= sort_link(@q, :g_status_contrato, t("activerecord.attributes.e_contrato.g_status_contrato")) %></th>
-                                      <th><%= sort_link(@q, :g_tipo_operacao, t("activerecord.attributes.e_contrato.g_tipo_operacao")) %></th>
-                                      <th><%= sort_link(@q, :produto, t("activerecord.attributes.e_contrato.produto")) %></th>
-                                      <th><%= sort_link(@q, :valor_total, t("activerecord.attributes.e_contrato.valor_total")) %></th>
-                                      <th><%= sort_link(@q, :quantidade_parcelas, t("activerecord.attributes.e_contrato.quantidade_parcelas")) %></th>
-                                      <th><%= sort_link(@q, :valor_parcela, t("activerecord.attributes.e_contrato.valor_parcela")) %></th>
-                                      <th><%= sort_link(@q, :valor_comissao, t("activerecord.attributes.e_contrato.valor_comissao")) %></th>
-                                      <th><%= sort_link(@q, :data_inicio, t("activerecord.attributes.e_contrato.data_inicio")) %></th>
-                                      <th><%= sort_link(@q, :data_fim, t("activerecord.attributes.e_contrato.data_fim")) %></th>
-                                      <th><%= sort_link(@q, :user_created, t("activerecord.attributes.e_contrato.user_created")) %></th>
-                                      <th><%= sort_link(@q, :user_updated, t("activerecord.attributes.e_contrato.user_updated")) %></th>
-                                  </tr>
-              </thead>
-              <tbody>
-                <% @e_contratos.each do |e_contrato| %>
+        <div class="table-container-fluid">
+          <table class="data-table-fluid">
+            <thead>
+              <tr>
+                <th class="checkbox-col">
+                  <input type="checkbox" id="selectAll" onchange="toggleSelectAll()">
+                </th>
+                <th class="actions-col">Ações</th>
+                <th><%= sort_link(@q, :e_cliente, t("activerecord.attributes.e_contrato.e_cliente")) %></th>
+                <th><%= sort_link(@q, :user, t("activerecord.attributes.e_contrato.user")) %></th>
+                <th><%= sort_link(@q, :numero_contrato, t("activerecord.attributes.e_contrato.numero_contrato")) %></th>
+                <th><%= sort_link(@q, :g_banco, t("activerecord.attributes.e_contrato.g_banco")) %></th>
+                <th><%= sort_link(@q, :g_status_contrato, t("activerecord.attributes.e_contrato.g_status_contrato")) %></th>
+                <th><%= sort_link(@q, :g_tipo_operacao, t("activerecord.attributes.e_contrato.g_tipo_operacao")) %></th>
+                <th><%= sort_link(@q, :valor_total, t("activerecord.attributes.e_contrato.valor_total")) %></th>
+                <th><%= sort_link(@q, :quantidade_parcelas, t("activerecord.attributes.e_contrato.quantidade_parcelas")) %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @e_contratos.each do |e_contrato| %>
                 <tr>
                   <td>
                     <input type="checkbox" class="e_contrato-checkbox" 
@@ -146,167 +138,143 @@
                       </button>
                       <div class="dropdown-menu">
                         <%= link_to e_contrato_path(e_contrato), class: "dropdown-item" do %>
-                        <i data-lucide="eye" style="width: 16px; height: 16px;"></i> Visualizar
+                          <i data-lucide="eye" style="width: 16px; height: 16px;"></i> Visualizar
                         <% end %>
                         <%= link_to edit_e_contrato_path(e_contrato), class: "dropdown-item" do %>
-                        <i data-lucide="edit" style="width: 16px; height: 16px;"></i> Editar
+                          <i data-lucide="edit" style="width: 16px; height: 16px;"></i> Editar
                         <% end %>
                         <div class="dropdown-divider"></div>
                         <%= button_to e_contrato_path(e_contrato), method: :delete, 
                         class: "dropdown-item text-danger", 
                         data: { confirm: "Tem certeza que deseja excluir?" } do %>
-                        <i data-lucide="trash-2" style="width: 16px; height: 16px;"></i> Excluir
+                          <i data-lucide="trash-2" style="width: 16px; height: 16px;"></i> Excluir
                         <% end %>
                       </div>
                     </div>
                   </td>
-                                      <td>
-                                              <%= e_contrato.e_empresa&.id %>
-                                          </td>
-                                      <td>
-                                              <%= e_contrato.e_cliente&.id %>
-                                          </td>
-                                      <td>
-                                              <%= e_contrato.user&.id %>
-                                          </td>
-                                      <td>
-                                              <%= e_contrato.numero_contrato %>
-                                          </td>
-                                      <td>
-                                              <%= e_contrato.g_banco&.id %>
-                                          </td>
-                                      <td>
-                                              <%= e_contrato.g_status_contrato&.id %>
-                                          </td>
-                                      <td>
-                                              <%= e_contrato.g_tipo_operacao&.id %>
-                                          </td>
-                                      <td>
-                                              <%= e_contrato.produto %>
-                                          </td>
-                                      <td>
-                                              <%= e_contrato.valor_total %>
-                                          </td>
-                                      <td>
-                                              <%= e_contrato.quantidade_parcelas %>
-                                          </td>
-                                      <td>
-                                              <%= e_contrato.valor_parcela %>
-                                          </td>
-                                      <td>
-                                              <%= e_contrato.valor_comissao %>
-                                          </td>
-                                      <td>
-                                              <%= e_contrato.data_inicio %>
-                                          </td>
-                                      <td>
-                                              <%= e_contrato.data_fim %>
-                                          </td>
-                                      <td>
-                                              <%= e_contrato.user_created&.id %>
-                                          </td>
-                                      <td>
-                                              <%= e_contrato.user_updated&.id %>
-                                          </td>
-                                  </tr>
-                <% end %>
-              </tbody>
-            </table>
-          </div>
+                  <td>
+                    <%= e_contrato.e_cliente&.id %>
+                  </td>
+                  <td>
+                    <%= e_contrato.user&.id %>
+                  </td>
+                  <td>
+                    <%= e_contrato.numero_contrato %>
+                  </td>
+                  <td>
+                    <%= e_contrato.g_banco&.id %>
+                  </td>
+                  <td>
+                    <%= e_contrato.g_status_contrato&.id %>
+                  </td>
+                  <td>
+                    <%= e_contrato.g_tipo_operacao&.id %>
+                  </td>
+                  <td>
+                    <%= e_contrato.valor_total %>
+                  </td>
+                  <td>
+                    <%= e_contrato.quantidade_parcelas %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
         </div>
-        <!-- Paginação -->
-        <% if respond_to?(:pagy_bootstrap_nav) && defined?(@pagy) %>
+      </div>
+      <!-- Paginação -->
+      <% if respond_to?(:pagy_bootstrap_nav) && defined?(@pagy) %>
         <div class="pagination-wrapper-fluid">
           <%= pagy_bootstrap_nav(@pagy, link_extra: 'class="pagination-link"').html_safe %>
         </div>
-        <% end %>
-      </div>
+      <% end %>
     </div>
   </div>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Initialize Lucide icons
-      if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-      }
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Lucide icons
+    if (typeof lucide !== 'undefined') {
+      lucide.createIcons();
+    }
+  });
+
+  function toggleSelectAll() {
+    const selectAll = document.getElementById('selectAll');
+    const checkboxes = document.querySelectorAll('.e_contrato-checkbox');
+
+    checkboxes.forEach(checkbox => {
+      checkbox.checked = selectAll.checked;
     });
 
-    function toggleSelectAll() {
-      const selectAll = document.getElementById('selectAll');
-      const checkboxes = document.querySelectorAll('.e_contrato-checkbox');
+    updateBulkActions();
+  }
 
-      checkboxes.forEach(checkbox => {
-        checkbox.checked = selectAll.checked;
-      });
+  function updateBulkActions() {
+    const checkboxes = document.querySelectorAll('.e_contrato-checkbox:checked');
+    const bulkActions = document.getElementById('bulkActions');
+    const selectedCount = document.getElementById('selectedCount');
 
-      updateBulkActions();
+    if (checkboxes.length > 0) {
+      bulkActions.classList.add('show');
+      selectedCount.textContent = checkboxes.length;
+    } else {
+      bulkActions.classList.remove('show');
     }
+  }
 
-    function updateBulkActions() {
-      const checkboxes = document.querySelectorAll('.e_contrato-checkbox:checked');
-      const bulkActions = document.getElementById('bulkActions');
-      const selectedCount = document.getElementById('selectedCount');
+  function bulkDelete() {
+    const checkboxes = document.querySelectorAll('.e_contrato-checkbox:checked');
+    const ids = Array.from(checkboxes).map(cb => cb.value);
 
-      if (checkboxes.length > 0) {
-        bulkActions.classList.add('show');
-        selectedCount.textContent = checkboxes.length;
-      } else {
-        bulkActions.classList.remove('show');
-      }
+    if (ids.length > 0 && confirm(`Tem certeza que deseja excluir ${ids.length} registros?`)) {
+      // Implementar lógica de exclusão em lote
+      console.log('Excluir IDs:', ids);
     }
+  }
 
-    function bulkDelete() {
-      const checkboxes = document.querySelectorAll('.e_contrato-checkbox:checked');
-      const ids = Array.from(checkboxes).map(cb => cb.value);
+  function exportData() {
+    window.location.href = '/e_contratos.csv';
+  }
+</script>
+<style>
+  .page-header-content {
+  padding: 1rem 1.5rem;
+  max-width: 1600px;
+  margin: 0 auto;
+  }
 
-      if (ids.length > 0 && confirm(`Tem certeza que deseja excluir ${ids.length} registros?`)) {
-        // Implementar lógica de exclusão em lote
-        console.log('Excluir IDs:', ids);
-      }
-    }
+  .breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  }
 
-    function exportData() {
-      window.location.href = '/e_contratos.csv';
-    }
-  </script>
-  <style>
-    .page-header-content {
-    padding: 1rem 1.5rem;
-    max-width: 1600px;
-    margin: 0 auto;
-    }
+  .breadcrumb-item {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  }
 
-    .breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin: 0;
-    }
+  .breadcrumb-item.active {
+  color: white;
+  font-weight: 600;
+  }
 
-    .breadcrumb-item {
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    font-size: 0.875rem;
-    }
-
-    .breadcrumb-item.active {
-    color: white;
-    font-weight: 600;
-    }
-
-    .breadcrumb-item i {
-    width: 14px;
-    height: 14px;
-    }
-    .page-header {
-    background: linear-gradient(
-      135deg,
-      var(--primary-blue) 0%,
-      var(--primary-blue-dark) 100%
-    );
-    color: white;
-    box-shadow: var(--shadow-md);
-    }
-  </style>
+  .breadcrumb-item i {
+  width: 14px;
+  height: 14px;
+  }
+  .page-header {
+  background: linear-gradient(
+    135deg,
+    var(--primary-blue) 0%,
+    var(--primary-blue-dark) 100%
+  );
+  color: white;
+  box-shadow: var(--shadow-md);
+  }
+</style>

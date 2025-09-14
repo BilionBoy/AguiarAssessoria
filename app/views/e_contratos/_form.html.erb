@@ -1,17 +1,17 @@
 <%= simple_form_for @e_contrato, html: { class: "modern-form" }, data: { turbo: false } do |f| %>
-<% if @e_contrato.errors.any? %>
-<div class="alert alert-danger" role="alert" style="margin-bottom: 24px; padding: 16px; background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; color: #dc2626;">
-  <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
-    <i data-lucide="alert-circle" style="width: 20px; height: 20px;"></i>
-    <strong><%= pluralize(@e_contrato.errors.count, "erro") %> encontrados:</strong>
-  </div>
-  <ul style="margin: 0; padding-left: 20px;">
-    <% @e_contrato.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
+  <% if @e_contrato.errors.any? %>
+    <div class="alert alert-danger" role="alert" style="margin-bottom: 24px; padding: 16px; background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; color: #dc2626;">
+      <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+        <i data-lucide="alert-circle" style="width: 20px; height: 20px;"></i>
+        <strong><%= pluralize(@e_contrato.errors.count, "erro") %> encontrados:</strong>
+      </div>
+      <ul style="margin: 0; padding-left: 20px;">
+        <% @e_contrato.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <!-- Multi-step Wizard Form -->
   <div class="form-wizard">
     <!-- Wizard Header -->
@@ -37,25 +37,15 @@
         Informações Básicas
       </h3>
       <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
-        
-                              <%= f.input :e_empresa, placeholder: "Digite e empresa..." %>
-                                        <%= f.input :e_cliente, placeholder: "Digite e cliente..." %>
-                                        <%= f.input :user, placeholder: "Digite user..." %>
-                                        <%= f.input :numero_contrato, placeholder: "Digite numero contrato..." %>
-                                        
-            
-            
-            <%= f.association :g_banco, collection: GBanco.all, label_method: :nome, value_method: :id, prompt: "Selecione g banco", input_html: { class: "form-select" } %>
-                                        
-            
-            
-            <%= f.association :g_status_contrato, collection: GStatusContrato.all, label_method: :nome, value_method: :id, prompt: "Selecione g status contrato", input_html: { class: "form-select" } %>
-                                        
-            
-            
-            <%= f.association :g_tipo_operacao, collection: GTipoOperacao.all, label_method: :nome, value_method: :id, prompt: "Selecione g tipo operacao", input_html: { class: "form-select" } %>
-                                        <%= f.input :produto, placeholder: "Digite produto..." %>
-                        </div>
+        <%= f.input :e_empresa, placeholder: "Digite e empresa..." %>
+        <%= f.input :e_cliente, placeholder: "Digite e cliente..." %>
+        <%= f.input :user, placeholder: "Digite user..." %>
+        <%= f.input :numero_contrato, placeholder: "Digite numero contrato..." %>
+        <%= f.association :g_banco, collection: GBanco.all, label_method: :nome, value_method: :id, prompt: "Selecione g banco", input_html: { class: "form-select" } %>
+        <%= f.association :g_status_contrato, collection: GStatusContrato.all, label_method: :nome, value_method: :id, prompt: "Selecione g status contrato", input_html: { class: "form-select" } %>
+        <%= f.association :g_tipo_operacao, collection: GTipoOperacao.all, label_method: :nome, value_method: :id, prompt: "Selecione g tipo operacao", input_html: { class: "form-select" } %>
+        <%= f.input :produto, placeholder: "Digite produto..." %>
+      </div>
     </div>
     <!-- Step 2: Additional Details -->
     <div class="wizard-step-content" id="step2" style="display: none; background: white; padding: 32px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
@@ -64,16 +54,15 @@
         Detalhes Adicionais
       </h3>
       <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
-        
-                              <%= f.input :valor_total, placeholder: "Digite valor total..." %>
-                                        <%= f.input :quantidade_parcelas, as: :integer, placeholder: "Digite quantidade parcelas..." %>
-                                        <%= f.input :valor_parcela, placeholder: "Digite valor parcela..." %>
-                                        <%= f.input :valor_comissao, placeholder: "Digite valor comissao..." %>
-                                        <%= f.input :data_inicio, as: :date %>
-                                        <%= f.input :data_fim, as: :date %>
-                                        <%= f.input :user_created, placeholder: "Digite user created..." %>
-                                        <%= f.input :user_updated, placeholder: "Digite user updated..." %>
-                        </div>
+        <%= f.input :valor_total, placeholder: "Digite valor total..." %>
+        <%= f.input :quantidade_parcelas, as: :integer, placeholder: "Digite quantidade parcelas..." %>
+        <%= f.input :valor_parcela, placeholder: "Digite valor parcela..." %>
+        <%= f.input :valor_comissao, placeholder: "Digite valor comissao..." %>
+        <%= f.input :data_inicio, as: :date %>
+        <%= f.input :data_fim, as: :date %>
+        <%= f.input :user_created, placeholder: "Digite user created..." %>
+        <%= f.input :user_updated, placeholder: "Digite user updated..." %>
+      </div>
     </div>
     <!-- Wizard Actions -->
     <div class="wizard-actions" style="display: flex; justify-content: space-between; align-items: center; margin-top: 32px; padding: 24px; background: white; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
@@ -83,8 +72,8 @@
       </button>
       <div style="display: flex; gap: 12px;">
         <%= link_to e_contratos_path, class: "btn-secondary", style: "padding: 12px 24px; border: 1px solid #d1d5db; background: white; color: #374151; border-radius: 8px; font-weight: 500; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: all 0.2s;" do %>
-        <i data-lucide="x" style="width: 16px; height: 16px;"></i>
-        Cancelar
+          <i data-lucide="x" style="width: 16px; height: 16px;"></i>
+          Cancelar
         <% end %>
         <button type="button" class="btn-primary" id="nextBtn" style="padding: 12px 24px; background: #3b82f6; color: white; border: none; border-radius: 8px; font-weight: 500; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 8px;">
           Próximo
