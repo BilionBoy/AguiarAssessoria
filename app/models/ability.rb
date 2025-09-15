@@ -2,13 +2,19 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    user ||= User.new 
+    return unless user.present?
 
     if user.admin?
       can :manage, :all
       can :access, :sidebar_admin
+    elsif user.gerente?
+      # gerente só enxerga essas entidades
+      can :read, EContrato
+      can :read, ECliente
+      can :read, GBanco
+      can :access, :sidebar_gerente
     else
-      # outros tipos de permissões podem ir aqui
+      # usuários comuns
       can :read, :home
       can :access, :sidebar_user
     end

@@ -23,4 +23,8 @@ class User < ApplicationRecord
   def admin?
     g_tipo_usuario&.descricao == 'ADMIN'
   end
+
+  def gerente?
+    g_tipo_usuario&.descricao == 'GERENTE'
+  end
 end
