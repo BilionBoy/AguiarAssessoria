@@ -44,12 +44,21 @@ pt-BR:
       g_status_contrato:
         one: "Status do Contrato"
         other: "Status dos Contratos"
+      g_status_user:
+        one: "Status do Usuário"
+        other: "Status dos Usuários"
       g_banco:
         one: "Banco"
         other: "Bancos"
       e_empresa:
         one: "Empresa"
         other: "Empresas"
+      e_cliente:
+        one: "Cliente"
+        other: "Clientes"
+      e_contrato:
+        one: "Contrato"
+        other: "Contratos"
     attributes:
       g_tipo_usuario:
         descricao: "Descrição"
@@ -71,9 +80,14 @@ pt-BR:
         descricao: "Descrição"
       g_tipo_operacao:
         descricao: "Descrição"
+      g_banco:
+        descricao: "Descrição"
+        codigo: "Código"
       g_status_cliente:
         descricao: "Descrição"
       g_status_contrato:
+        descricao: "Descrição"
+      g_status_user:
         descricao: "Descrição"
       e_empresa:
         razao_social: "Razão Social"
@@ -83,7 +97,27 @@ pt-BR:
         nome_fantasia: "Nome Fantasia"
         telefone: "Telefone"
         g_cidade_id: "Cidade"
-
+      e_cliente:
+        nome_completo: "Nome"
+        cpf: "CPF"
+        rg: "RG"
+        data_nascimento: "Data de Nascimento"
+        telefone: "Telefone"
+        celular: "Celular"
+        email: "E-mail"
+        endereco: "Endereço"
+        numero: "Número"
+        complemento: "Complemento"
+        cep: "CEP"
+        g_sexo: "Sexo"
+        g_bairro_id: "Bairro"
+        g_estado_id: "Estado"
+        g_cidade_id: "Cidade"
+        g_sexo_id: "Sexo"
+        g_orgao_id: "Convênio "
+        g_tipo_usuario_id: "Tipo de Usuário"
+        e_empresa_id: "Empresa"
+        g_status_cliente_id: "Status do Cliente"
     errors:
       messages:
         record_invalid: "A validação falhou: %{errors}"

@@ -1,0 +1,37 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  e_empresa: one
+  e_cliente: one
+  user: one
+  numero_contrato: MyString
+  g_banco: one
+  g_status_contrato: one
+  g_tipo_operacao: one
+  produto: MyString
+  valor_total: 9.99
+  quantidade_parcelas: 1
+  valor_parcela: 9.99
+  valor_comissao: 9.99
+  data_inicio: 2025-09-12
+  data_fim: 2025-09-12
+  user_created: one
+  user_updated: one
+
+two:
+  e_empresa: two
+  e_cliente: two
+  user: two
+  numero_contrato: MyString
+  g_banco: two
+  g_status_contrato: two
+  g_tipo_operacao: two
+  produto: MyString
+  valor_total: 9.99
+  quantidade_parcelas: 1
+  valor_parcela: 9.99
+  valor_comissao: 9.99
+  data_inicio: 2025-09-12
+  data_fim: 2025-09-12
+  user_created: two
+  user_updated: two

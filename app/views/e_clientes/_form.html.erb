@@ -1,0 +1,191 @@
+<%= simple_form_for @e_cliente, html: { class: "modern-form" }, data: { turbo: false } do |f| %>
+  <% if @e_cliente.errors.any? %>
+    <div class="alert alert-danger" role="alert" style="margin-bottom: 24px; padding: 16px; background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; color: #dc2626;">
+      <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+        <i data-lucide="alert-circle" style="width: 20px; height: 20px;"></i>
+        <strong><%= pluralize(@e_cliente.errors.count, "erro") %> encontrados:</strong>
+      </div>
+      <ul style="margin: 0; padding-left: 20px;">
+        <% @e_cliente.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-wizard" style="display: flex; flex-direction: column; gap: 32px;">
+    <!-- Wizard Header -->
+    <div class="wizard-header" style="padding: 24px; background: #ffffff; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.08);">
+      <div class="wizard-steps" style="display: flex; justify-content: space-between; gap: 16px; margin-bottom: 16px;">
+        <div class="wizard-step active" data-step="1" style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer;">
+          <div class="step-number" style="width: 40px; height: 40px; border-radius: 50%; background: #3b82f6; color: white; display: flex; align-items: center; justify-content: center; font-weight: 600;">1</div>
+          <span style="font-size: 14px; color: #374151;">Dados Cadastrais</span>
+        </div>
+        <div class="wizard-step" data-step="2" style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer;">
+          <div class="step-number" style="width: 40px; height: 40px; border-radius: 50%; background: #e5e7eb; color: #6b7280; display: flex; align-items: center; justify-content: center; font-weight: 600;">2</div>
+          <span style="font-size: 14px; color: #6b7280;">Dados Funcionais</span>
+        </div>
+        <div class="wizard-step" data-step="3" style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; cursor: pointer;">
+          <div class="step-number" style="width: 40px; height: 40px; border-radius: 50%; background: #e5e7eb; color: #6b7280; display: flex; align-items: center; justify-content: center; font-weight: 600;">3</div>
+          <span style="font-size: 14px; color: #6b7280;">Documentos</span>
+        </div>
+      </div>
+      <div class="wizard-progress" style="height: 4px; background: #e5e7eb; border-radius: 2px; overflow: hidden;">
+        <div class="wizard-progress-bar" style="height: 100%; background: #3b82f6; width: 33%; transition: width 0.3s ease;"></div>
+      </div>
+    </div>
+    <!-- Step 1: Dados Cadastrais -->
+    <div class="wizard-step-content active" id="step1" style="background: #ffffff; padding: 32px; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); display: flex; flex-direction: column; gap: 24px;">
+      <h3 style="font-size: 20px; font-weight: 600; color: #111827; display: flex; align-items: center; gap: 12px;">
+        <i data-lucide="info" style="width: 24px; height: 24px; color: #3b82f6;"></i>
+        Dados Cadastrais
+      </h3>
+      <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+        <%= f.input :nome_completo, placeholder: "Nome completo" %>
+        <%= f.input :nome_social, placeholder: "Nome social" %>
+        <%= f.input :cpf, required: true, label: "CPF",input_html: { maxlength: 11, placeholder: "Somente números" } %>
+        <%= f.input :data_nascimento, as: :date, start_year: 1900, end_year: Date.today.year, order: [:day, :month, :year],label_html: { class: "form-label" } %>
+        <%= f.association :g_sexo, collection: GSexo.all, label_method: :descricao, value_method: :id, prompt: "Selecione o sexo" %>
+        <%= f.input :email, placeholder: "Email" %>
+        <%= f.input :telefone, required: true, label: "Telefone",input_html: { placeholder: "(99) 99999-9999", class: "form-control form-control-lg" } %>
+        <%= f.input :endereco, placeholder: "Endereço" %>
+        <%= f.input :g_estado_id, collection: GEstado.all, label_method: :nome_fantasia, value_method: :id, prompt: "Selecione o estado" %>
+        <%= f.input :g_cidade_id, collection: GCidade.all, label_method: :nome_fantasia, value_method: :id, prompt: "Selecione a cidade" %>
+        <%= f.input :g_bairro_id, collection: GBairro.all, label_method: :descricao, value_method: :id, prompt: "Selecione o bairro" %>
+      </div>
+    </div>
+    <!-- Step 2: Dados Funcionais -->
+    <div class="wizard-step-content" id="step2" style="background: #ffffff; padding: 32px; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); display: flex; flex-direction: column; gap: 24px;">
+      <h3 style="font-size: 20px; font-weight: 600; color: #111827; display: flex; align-items: center; gap: 12px;">
+        <i data-lucide="settings" style="width: 24px; height: 24px; color: #3b82f6;"></i>
+        Dados Funcionais
+      </h3>
+      <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+        <%= f.input :matricula, placeholder: "Matrícula" %>
+        <%= f.input :g_orgao_id, collection: GOrgao.all, label_method: :descricao, value_method: :id, prompt: "Selecione o órgão", input_html: { id: "g_orgao_select" } %>
+        <%= f.input :g_margem_tipo_id, collection: GMargemTipo.all, label_method: :descricao, value_method: :id, prompt: "Selecione o tipo de margem" %>
+        <%= f.input :alfabetizado, as: :boolean, label: "Alfabetizado?" %>
+        <%= f.input :ultima_margem, placeholder: "Última margem" %>
+        <%= f.input :data_ultima_margem, as: :date %>
+        <%= f.input :g_status_cliente_id, collection: GStatusCliente.all, label_method: :descricao, value_method: :id, prompt: "Selecione o status do cliente" %>
+        <!-- Condicionais Estado -->
+        <div id="estado_fields" style="display: none;">
+          <%= f.input :ano_admissao, as: :integer, placeholder: "Ano de admissão" %>
+          <%= f.input :pensionista, as: :boolean, label: "É pensionista?" %>
+        </div>
+        <!-- Condicionais INSS -->
+        <div id="inss_fields" style="display: none;">
+          <%= f.input :numero_beneficio, placeholder: "Número do benefício" %>
+          <%= f.input :g_tipo_beneficio_id, collection: GTipoBeneficio.all, label_method: :descricao, value_method: :id, prompt: "Selecione o tipo de benefício" %>
+          <%= f.input :possui_representante_legal, as: :boolean, label: "Possui representante legal?" %>
+        </div>
+      </div>
+    </div>
+    <!-- Step 3: Documentos -->
+    <div class="wizard-step-content" id="step3" style="background: #ffffff; padding: 32px; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); display: flex; flex-direction: column; gap: 24px;">
+      <h3 style="font-size: 20px; font-weight: 600; color: #111827; display: flex; align-items: center; gap: 12px;">
+        <i data-lucide="file-text" style="width: 24px; height: 24px; color: #3b82f6;"></i>
+        Envio de Documentos
+      </h3>
+      <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+        <%= f.input :foto_cliente, as: :file, label: "Foto do Cliente", input_html: { accept: "image/*" } %>
+        <%= f.input :foto_contracheque, as: :file, label: "Foto Contracheque", input_html: { accept: "image/*,application/pdf" } %>
+        <%= f.input :foto_rg, as: :file, label: "Foto RG", input_html: { accept: "image/*" } %>
+      </div>
+    </div>
+    <!-- Wizard Actions -->
+    <div class="wizard-actions" style="display: flex; justify-content: space-between; align-items: center; padding: 24px; background: #ffffff; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.08);">
+      <button type="button" class="btn-secondary" id="prevBtn" style="display: none; padding: 12px 24px; border: 1px solid #d1d5db; background: #f9fafb; color: #374151; border-radius: 8px; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+        <i data-lucide="chevron-left" style="width: 16px; height: 16px;"></i>
+        Anterior
+      </button>
+      <div style="display: flex; gap: 12px;">
+        <%= link_to(e_clientes_path, class: "btn-secondary", style: "padding: 12px 24px; border: 1px solid #d1d5db; background: #f9fafb; color: #374151; border-radius: 8px; font-weight: 500; text-decoration: none; display: flex; align-items: center; gap: 8px;") do %>
+          <i data-lucide="x" style="width: 16px; height: 16px;"></i>
+          Cancelar
+        <% end %>
+        <button type="button" class="btn-primary" id="nextBtn" style="padding: 12px 24px; background: #3b82f6; color: white; border: none; border-radius: 8px; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+          Próximo
+          <i data-lucide="chevron-right" style="width: 16px; height: 16px;"></i>
+        </button>
+        <%= f.submit "Salvar Cliente", class: "btn-primary", id: "submitBtn", style: "display: none; padding: 12px 24px; background: #10b981; color: white; border: none; border-radius: 8px; font-weight: 500; cursor: pointer;" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    let currentStep = 1;
+    const totalSteps = 3;
+
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    const progressBar = document.querySelector('.wizard-progress-bar');
+    const steps = document.querySelectorAll('.wizard-step');
+    const contents = document.querySelectorAll('.wizard-step-content');
+
+    function showStep(step) {
+      contents.forEach((content, i) => {
+        content.style.display = (i + 1 === step) ? 'block' : 'none';
+      });
+
+      steps.forEach((stepEl, i) => {
+        stepEl.classList.remove('active', 'completed');
+        if (i + 1 < step) stepEl.classList.add('completed');
+        else if (i + 1 === step) stepEl.classList.add('active');
+      });
+
+      if (progressBar) {
+        progressBar.style.width = `${((step - 1) / (totalSteps - 1)) * 100}%`;
+      }
+
+      if (prevBtn) prevBtn.style.display = step > 1 ? 'flex' : 'none';
+      if (nextBtn) nextBtn.style.display = step < totalSteps ? 'flex' : 'none';
+      if (submitBtn) submitBtn.style.display = step === totalSteps ? 'block' : 'none';
+    }
+
+    nextBtn?.addEventListener('click', () => {
+      if (currentStep < totalSteps) {
+        currentStep++;
+        showStep(currentStep);
+      }
+    });
+
+    prevBtn?.addEventListener('click', () => {
+      if (currentStep > 1) {
+        currentStep--;
+        showStep(currentStep);
+      }
+    });
+
+    steps.forEach((stepEl, i) => {
+      stepEl.addEventListener('click', () => {
+        currentStep = i + 1;
+        showStep(currentStep);
+      });
+    });
+
+    showStep(currentStep);
+
+    // ---- Campos condicionais ----
+    const orgaoSelect = document.getElementById("g_orgao_select");
+    const estadoFields = document.getElementById("estado_fields");
+    const inssFields = document.getElementById("inss_fields");
+
+    function toggleCampos() {
+      const selectedText = orgaoSelect.options[orgaoSelect.selectedIndex]?.text?.toLowerCase();
+
+      estadoFields.style.display = "none";
+      inssFields.style.display = "none";
+
+      if (selectedText?.includes("estado")) {
+        estadoFields.style.display = "block";
+      } else if (selectedText?.includes("inss")) {
+        inssFields.style.display = "block";
+      }
+    }
+
+    toggleCampos();
+    orgaoSelect?.addEventListener("change", toggleCampos);
+  });
+</script>

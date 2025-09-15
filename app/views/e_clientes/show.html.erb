@@ -1,0 +1,128 @@
+<div class="container">
+  <div class="card border-0 shadow shadow-sm">
+    <div class="card-header border-0 d-flex justify-content-between">
+      <span class="fs-4">Visualizar E Cliente</span>
+    </div>
+    <div class="card-body">
+      <div id="<%= dom_id @e_cliente %>">
+        <p>
+          <strong>E Empresa:</strong>
+          <%= @e_cliente.e_empresa %>
+        </p>
+        <p>
+          <strong>Nome Completo:</strong>
+          <%= @e_cliente.nome_completo %>
+        </p>
+        <p>
+          <strong>Cpf:</strong>
+          <%= @e_cliente.cpf %>
+        </p>
+        <p>
+          <strong>Data Nascimento:</strong>
+          <%= @e_cliente.data_nascimento %>
+        </p>
+        <p>
+          <strong>Email:</strong>
+          <%= @e_cliente.email %>
+        </p>
+        <p>
+          <strong>Telefone:</strong>
+          <%= @e_cliente.telefone %>
+        </p>
+        <p>
+          <strong>Nome Social:</strong>
+          <%= @e_cliente.nome_social %>
+        </p>
+        <p>
+          <strong>Endereco:</strong>
+          <%= @e_cliente.endereco %>
+        </p>
+        <p>
+          <strong>Matricula:</strong>
+          <%= @e_cliente.matricula %>
+        </p>
+        <p>
+          <strong>Alfabetizado:</strong>
+          <%= @e_cliente.alfabetizado %>
+        </p>
+        <p>
+          <strong>Ultima Margem:</strong>
+          <%= @e_cliente.ultima_margem %>
+        </p>
+        <p>
+          <strong>Data Ultima Margem:</strong>
+          <%= @e_cliente.data_ultima_margem %>
+        </p>
+        <p>
+          <strong>Ano Admissao:</strong>
+          <%= @e_cliente.ano_admissao %>
+        </p>
+        <p>
+          <strong>Pensionista:</strong>
+          <%= @e_cliente.pensionista %>
+        </p>
+        <p>
+          <strong>Numero Beneficio:</strong>
+          <%= @e_cliente.numero_beneficio %>
+        </p>
+        <p>
+          <strong>Possui Representante Legal:</strong>
+          <%= @e_cliente.possui_representante_legal %>
+        </p>
+        <p>
+          <strong>Created By:</strong>
+          <%= @e_cliente.created_by %>
+        </p>
+        <p>
+          <strong>Updated By:</strong>
+          <%= @e_cliente.updated_by %>
+        </p>
+        <p>
+          <strong>Deleted At:</strong>
+          <%= @e_cliente.deleted_at %>
+        </p>
+        <p>
+          <strong>G Sexo:</strong>
+          <%= @e_cliente.g_sexo %>
+        </p>
+        <p>
+          <strong>G Estado:</strong>
+          <%= @e_cliente.g_estado %>
+        </p>
+        <p>
+          <strong>G Cidade:</strong>
+          <%= @e_cliente.g_cidade %>
+        </p>
+        <p>
+          <strong>G Bairro:</strong>
+          <%= @e_cliente.g_bairro %>
+        </p>
+        <p>
+          <strong>G Orgao:</strong>
+          <%= @e_cliente.g_orgao %>
+        </p>
+        <p>
+          <strong>G Margem Tipo:</strong>
+          <%= @e_cliente.g_margem_tipo %>
+        </p>
+        <p>
+          <strong>G Tipo Beneficio:</strong>
+          <%= @e_cliente.g_tipo_beneficio %>
+        </p>
+        <p>
+          <strong>G Status Cliente:</strong>
+          <%= @e_cliente.g_status_cliente %>
+        </p>
+      </div>
+    </div>
+    <div class="card-footer border-0 d-flex justify-content-between">
+      <div>
+        <%= link_to edit_e_cliente_path(@e_cliente), class: "btn btn-primary" do %>
+          <i class="bi bi-pencil-square"></i> Editar
+        <% end %>
+        <%= link_to "Voltar", e_clientes_path, class: "btn btn-secondary" %>
+      </div>
+      <%= button_to "Deletar", @e_cliente, method: :delete, class: "btn btn-outline-danger border-0" %>
+    </div>
+  </div>
+</div>
