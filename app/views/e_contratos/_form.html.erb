@@ -38,7 +38,7 @@
       </h3>
       <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
         <%= f.input :e_empresa, placeholder: "Digite e empresa..." %>
-        <%= f.input :e_cliente, placeholder: "Digite e cliente..." %>
+        <%= f.input :e_cliente_id, collection: ECliente.all, label_method: :nome_completo, value_method: :id, prompt: "Selecione o Cliente" %>
         <%= f.input :user, placeholder: "Digite user..." %>
         <%= f.input :numero_contrato, placeholder: "Digite numero contrato..." %>
         <%= f.association :g_banco, collection: GBanco.all, label_method: :nome, value_method: :id, prompt: "Selecione g banco", input_html: { class: "form-select" } %>

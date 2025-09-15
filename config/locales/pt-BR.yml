@@ -114,7 +114,7 @@ pt-BR:
         g_estado_id: "Estado"
         g_cidade_id: "Cidade"
         g_sexo_id: "Sexo"
-        g_orgao_id: "Órgão Emissor"
+        g_orgao_id: "Convênio "
         g_tipo_usuario_id: "Tipo de Usuário"
         e_empresa_id: "Empresa"
         g_status_cliente_id: "Status do Cliente"
