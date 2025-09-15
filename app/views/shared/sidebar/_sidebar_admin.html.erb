@@ -1,0 +1,71 @@
+<div class="sidebar sidebar-dark sidebar-main sidebar-expand-xl custom-sidebar" id="sidebar">
+  <div class="sidebar-content">
+    <!-- Cabeçalho superior da sidebar -->
+    <div class="sidebar-section pb-2 mb-2 border-bottom border-opacity">
+      <div class="sidebar-section-body d-flex justify-content-between align-items-center px-3">
+        <button type="button" class="btn btn-sm text-white sidebar-mobile-main-toggle d-xl-none">
+          <i class="ph-x fs-5"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Menu -->
+    <div class="sidebar-section">
+      <ul class="nav nav-sidebar" data-nav-type="collapsible" id="sidebar-items">
+        <% sidebar_items = [
+          { path: root_path,                    icon: 'bi-house-fill me-2 fs-5',              label: 'Home' },
+          { path: g_tipo_usuarios_path,         icon: 'bi bi-person-lines-fill me-2 fs-5',    label: 'Usuários' },
+          { path: e_clientes_path,              icon: 'bi-person-badge-fill me-2 fs-5',       label: 'Clientes' },
+          { path: e_contratos_path,             icon: 'bi-file-earmark-text-fill me-2 fs-5',  label: 'Contratos' },
+          { path: e_empresas_path,              icon: 'bi-buildings me-2 fs-5',               label: 'Empresas' },
+          { path: g_bancos_path,                icon: 'bi-bank me-2 fs-5',                    label: 'Bancos' },
+
+          # Submenu Tabelas referenciais
+          { icon: 'bi bi-list-columns-reverse me-2 fs-5', label: 'Tabelas referenciais', submenu: [
+            { path: g_sexos_path,               icon: 'bi-gender-ambiguous me-2 fs-5',        label: 'Sexos' },
+            { path: g_orgaos_path,              icon: 'bi-shield-fill me-2 fs-5',             label: 'Órgãos' },
+            { path: g_margem_tipos_path,        icon: 'bi-diagram-3 me-2 fs-5',               label: 'Tipos de Margem' },
+            { path: g_tipo_beneficios_path,     icon: 'bi-collection-fill me-2 fs-5',         label: 'Tipos de Benefícios' },
+            { path: g_status_clientes_path,     icon: 'bi-people-fill me-2 fs-5',             label: 'Status Clientes' },
+            { path: g_status_users_path,        icon: 'bi-people-fill me-2 fs-5',             label: 'Status Usuário' },
+            { path: g_status_contratos_path,    icon: 'bi-journal-check me-2 fs-5',           label: 'Status Contratos' },
+            { path: g_tipo_operacoes_path,      icon: 'bi-arrow-repeat me-2 fs-5',            label: 'Tipos de Operação' }
+          ]},
+
+          # Submenu Localidades
+          { icon: 'bi-geo-alt me-2 fs-5', label: 'Localidades', submenu: [
+            { path: g_estados_path,             icon: 'bi-geo-alt-fill me-2 fs-5',            label: 'Estados' },
+            { path: g_cidades_path,             icon: 'bi-building me-2 fs-5',                label: 'Cidades' },
+            { path: g_bairros_path,             icon: 'bi-geo-alt me-2 fs-5',                 label: 'Bairros' },
+          ]}
+        ] %>
+        <% sidebar_items.each do |item| %>
+          <% if item[:submenu] %>
+            <li class="nav-item nav-item-submenu">
+              <a href="#" class="nav-link custom-link">
+                <i class="<%= item[:icon] %>"></i>
+                <span><%= item[:label] %></span>
+              </a>
+              <ul class="nav nav-group-sub collapse" style="flex-direction: column;">
+                <% item[:submenu].each do |sub| %>
+                  <li class="nav-item">
+                    <%= link_to sub[:path], class: "nav-link custom-link" do %>
+                      <i class="<%= sub[:icon] %>"></i>
+                      <span><%= sub[:label] %></span>
+                    <% end %>
+                  </li>
+                <% end %>
+              </ul>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to item[:path], class: "nav-link custom-link" do %>
+                <i class="<%= item[:icon] %>"></i>
+                <span><%= item[:label] %></span>
+              <% end %>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

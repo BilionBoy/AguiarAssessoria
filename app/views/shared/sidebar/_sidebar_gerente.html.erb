@@ -1,0 +1,31 @@
+<div class="sidebar sidebar-dark sidebar-main sidebar-expand-xl custom-sidebar" id="sidebar">
+  <div class="sidebar-content">
+    <!-- Cabeçalho superior da sidebar -->
+    <div class="sidebar-section pb-2 mb-2 border-bottom border-opacity">
+      <div class="sidebar-section-body d-flex justify-content-between align-items-center px-3">
+        <button type="button" class="btn btn-sm text-white sidebar-mobile-main-toggle d-xl-none">
+          <i class="ph-x fs-5"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Menu -->
+    <div class="sidebar-section">
+      <ul class="nav nav-sidebar" data-nav-type="collapsible" id="sidebar-items">
+        <% sidebar_items = [
+          { path: root_path,        icon: 'bi-house-fill me-2 fs-5',              label: 'Home' },
+          { path: e_clientes_path,  icon: 'bi-person-badge-fill me-2 fs-5',       label: 'Clientes' },
+          { path: e_contratos_path, icon: 'bi-file-earmark-text-fill me-2 fs-5',  label: 'Contratos' },
+          { path: g_bancos_path,    icon: 'bi-bank me-2 fs-5',                    label: 'Bancos' }
+        ] %>
+        <% sidebar_items.each do |item| %>
+          <li class="nav-item">
+            <%= link_to item[:path], class: "nav-link custom-link" do %>
+              <i class="<%= item[:icon] %>"></i>
+              <span><%= item[:label] %></span>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

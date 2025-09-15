@@ -19,4 +19,12 @@ class User < ApplicationRecord
   validates :g_tipo_usuario, presence: true
   validates :g_status_user,  presence: true
   validates :e_empresa,      presence: true
+
+  def admin?
+    g_tipo_usuario&.descricao == 'ADMIN'
+  end
+
+  def gerente?
+    g_tipo_usuario&.descricao == 'GERENTE'
+  end
 end
