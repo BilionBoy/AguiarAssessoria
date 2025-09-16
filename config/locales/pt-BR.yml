@@ -118,6 +118,25 @@ pt-BR:
         g_tipo_usuario_id: "Tipo de Usuário"
         e_empresa_id: "Empresa"
         g_status_cliente_id: "Status do Cliente"
+      e_contrato:
+        e_empresa_id: "Empresa"
+        e_cliente_id: "Cliente"
+        user_id: "Usuário"
+        numero_contrato: "Número do Contrato"
+        g_margem_tipo_id: "Tipo de Margem"
+        g_banco_id: "Banco"
+        g_status_contrato_id: "Status do Contrato"
+        g_tipo_operacao_id: "Tipo de Operação"
+        produto: "Produto"
+        valor_contrato: "Valor do Contrato"
+        quantidade_parcelas: "Quantidade de Parcelas"
+        valor_parcela: "Valor da Parcela"
+        valor_comissao: "Valor da Comissão"
+        data_pagamento: "Data de Pagamento"
+        data_cadastro: "Data de Cadastro"
+        user_created: "Usuário que Criou"
+        user_updated: "Usuário que Atualizou"
+
     errors:
       messages:
         record_invalid: "A validação falhou: %{errors}"

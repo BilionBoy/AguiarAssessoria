@@ -67,7 +67,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_09_12_233512) do
     t.bigint "g_cidade_id"
     t.bigint "g_bairro_id"
     t.bigint "g_orgao_id"
-    t.bigint "g_margem_tipo_id"
     t.bigint "g_tipo_beneficio_id"
     t.bigint "g_status_cliente_id"
     t.datetime "created_at", null: false
@@ -78,7 +77,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_09_12_233512) do
     t.index ["g_bairro_id"], name: "index_e_clientes_on_g_bairro_id"
     t.index ["g_cidade_id"], name: "index_e_clientes_on_g_cidade_id"
     t.index ["g_estado_id"], name: "index_e_clientes_on_g_estado_id"
-    t.index ["g_margem_tipo_id"], name: "index_e_clientes_on_g_margem_tipo_id"
     t.index ["g_orgao_id"], name: "index_e_clientes_on_g_orgao_id"
     t.index ["g_sexo_id"], name: "index_e_clientes_on_g_sexo_id"
     t.index ["g_status_cliente_id"], name: "index_e_clientes_on_g_status_cliente_id"
@@ -89,29 +87,27 @@ ActiveRecord::Schema[7.2].define(version: 2025_09_12_233512) do
     t.bigint "e_empresa_id", null: false
     t.bigint "e_cliente_id", null: false
     t.bigint "user_id", null: false
-    t.string "numero_contrato", null: false
     t.bigint "g_banco_id", null: false
     t.bigint "g_status_contrato_id", null: false
     t.bigint "g_tipo_operacao_id", null: false
+    t.bigint "g_margem_tipo_id", null: false
+    t.string "numero_contrato", null: false
     t.string "produto"
     t.decimal "valor_total", null: false
     t.integer "quantidade_parcelas", null: false
     t.decimal "valor_parcela", null: false
     t.decimal "valor_comissao", null: false
-    t.date "data_inicio", null: false
-    t.date "data_fim"
-    t.bigint "user_created_id", null: false
-    t.bigint "user_updated_id", null: false
+    t.date "data_pagamento", null: false
+    t.date "data_cadastro", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["e_cliente_id"], name: "index_e_contratos_on_e_cliente_id"
     t.index ["e_empresa_id"], name: "index_e_contratos_on_e_empresa_id"
     t.index ["g_banco_id"], name: "index_e_contratos_on_g_banco_id"
+    t.index ["g_margem_tipo_id"], name: "index_e_contratos_on_g_margem_tipo_id"
     t.index ["g_status_contrato_id"], name: "index_e_contratos_on_g_status_contrato_id"
     t.index ["g_tipo_operacao_id"], name: "index_e_contratos_on_g_tipo_operacao_id"
-    t.index ["user_created_id"], name: "index_e_contratos_on_user_created_id"
     t.index ["user_id"], name: "index_e_contratos_on_user_id"
-    t.index ["user_updated_id"], name: "index_e_contratos_on_user_updated_id"
   end
 
   create_table "e_empresas", force: :cascade do |t|
@@ -280,7 +276,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_09_12_233512) do
   add_foreign_key "e_clientes", "g_bairros"
   add_foreign_key "e_clientes", "g_cidades"
   add_foreign_key "e_clientes", "g_estados"
-  add_foreign_key "e_clientes", "g_margem_tipos"
   add_foreign_key "e_clientes", "g_orgaos"
   add_foreign_key "e_clientes", "g_sexos"
   add_foreign_key "e_clientes", "g_status_clientes"
@@ -288,11 +283,10 @@ ActiveRecord::Schema[7.2].define(version: 2025_09_12_233512) do
   add_foreign_key "e_contratos", "e_clientes"
   add_foreign_key "e_contratos", "e_empresas"
   add_foreign_key "e_contratos", "g_bancos"
+  add_foreign_key "e_contratos", "g_margem_tipos"
   add_foreign_key "e_contratos", "g_status_contratos"
   add_foreign_key "e_contratos", "g_tipo_operacoes"
   add_foreign_key "e_contratos", "users"
-  add_foreign_key "e_contratos", "users", column: "user_created_id"
-  add_foreign_key "e_contratos", "users", column: "user_updated_id"
   add_foreign_key "e_empresas", "g_cidades"
   add_foreign_key "g_bairros", "g_cidades"
   add_foreign_key "g_cidades", "g_estados"

@@ -62,7 +62,6 @@
       <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
         <%= f.input :matricula, placeholder: "Matrícula" %>
         <%= f.input :g_orgao_id, collection: GOrgao.all, label_method: :descricao, value_method: :id, prompt: "Selecione o órgão", input_html: { id: "g_orgao_select" } %>
-        <%= f.input :g_margem_tipo_id, collection: GMargemTipo.all, label_method: :descricao, value_method: :id, prompt: "Selecione o tipo de margem" %>
         <%= f.input :alfabetizado, as: :boolean, label: "Alfabetizado?" %>
         <%= f.input :ultima_margem, placeholder: "Última margem" %>
         <%= f.input :data_ultima_margem, as: :date %>

@@ -19,6 +19,7 @@ class EContratosController < ApplicationController
 
   def create
     @e_contrato = EContrato.new(e_contrato_params)
+    @e_contrato.user = current_user
 
     if @e_contrato.save
       redirect_to e_contratos_path, notice: t('messages.created_successfully')
@@ -52,7 +53,7 @@ class EContratosController < ApplicationController
 
   def e_contrato_params
     permitted_attributes = EContrato.column_names.reject do |col|
-      %w[deleted_at created_by updated_by].include?(col)
+      %w[deleted_at created_by updated_by user_id].include?(col)
     end
     params.require(:e_contrato).permit(permitted_attributes.map(&:to_sym))
   end

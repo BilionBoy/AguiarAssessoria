@@ -37,13 +37,13 @@
         Informações Básicas
       </h3>
       <div class="form-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
-        <%= f.input :e_empresa, placeholder: "Digite e empresa..." %>
+        <%= f.input :e_empresa_id, collection: EEmpresa.all, label_method: :nome_fantasia, value_method: :id, prompt: "Selecione a Empresa" %>
         <%= f.input :e_cliente_id, collection: ECliente.all, label_method: :nome_completo, value_method: :id, prompt: "Selecione o Cliente" %>
-        <%= f.input :user, placeholder: "Digite user..." %>
         <%= f.input :numero_contrato, placeholder: "Digite numero contrato..." %>
-        <%= f.association :g_banco, collection: GBanco.all, label_method: :nome, value_method: :id, prompt: "Selecione g banco", input_html: { class: "form-select" } %>
-        <%= f.association :g_status_contrato, collection: GStatusContrato.all, label_method: :nome, value_method: :id, prompt: "Selecione g status contrato", input_html: { class: "form-select" } %>
-        <%= f.association :g_tipo_operacao, collection: GTipoOperacao.all, label_method: :nome, value_method: :id, prompt: "Selecione g tipo operacao", input_html: { class: "form-select" } %>
+        <%= f.input :g_margem_tipo_id, collection: GMargemTipo.all, label_method: :descricao, value_method: :id, prompt: "Selecione o tipo de margem" %>
+        <%= f.input :g_banco_id, collection: GBanco.all, label_method: :nome_fantasia, value_method: :id, prompt: "Selecione o tipo de Banco" %>
+        <%= f.input :g_status_contrato_id, collection: GStatusContrato.all, label_method: :descricao, value_method: :id, prompt: "Selecione o tipo de margem" %>
+        <%= f.input :g_tipo_operacao_id,   collection: GTipoOperacao.all, label_method: :descricao, value_method: :id, prompt: "Selecione o tipo de Banco" %>
         <%= f.input :produto, placeholder: "Digite produto..." %>
       </div>
     </div>
@@ -58,10 +58,8 @@
         <%= f.input :quantidade_parcelas, as: :integer, placeholder: "Digite quantidade parcelas..." %>
         <%= f.input :valor_parcela, placeholder: "Digite valor parcela..." %>
         <%= f.input :valor_comissao, placeholder: "Digite valor comissao..." %>
-        <%= f.input :data_inicio, as: :date %>
-        <%= f.input :data_fim, as: :date %>
-        <%= f.input :user_created, placeholder: "Digite user created..." %>
-        <%= f.input :user_updated, placeholder: "Digite user updated..." %>
+        <%= f.input :data_cadastro,  as: :date %>
+        <%= f.input :data_pagamento, as: :date %>
       </div>
     </div>
     <!-- Wizard Actions -->

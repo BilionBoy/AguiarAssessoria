@@ -114,12 +114,11 @@
                   <input type="checkbox" id="selectAll" onchange="toggleSelectAll()">
                 </th>
                 <th class="actions-col">Ações</th>
-                <th><%= sort_link(@q, :e_cliente, t("activerecord.attributes.e_contrato.e_cliente")) %></th>
-                <th><%= sort_link(@q, :user, t("activerecord.attributes.e_contrato.user")) %></th>
+                <th><%= sort_link(@q, :e_cliente, t("activerecord.attributes.e_contrato.cliente")) %></th>
                 <th><%= sort_link(@q, :numero_contrato, t("activerecord.attributes.e_contrato.numero_contrato")) %></th>
-                <th><%= sort_link(@q, :g_banco, t("activerecord.attributes.e_contrato.g_banco")) %></th>
-                <th><%= sort_link(@q, :g_status_contrato, t("activerecord.attributes.e_contrato.g_status_contrato")) %></th>
-                <th><%= sort_link(@q, :g_tipo_operacao, t("activerecord.attributes.e_contrato.g_tipo_operacao")) %></th>
+                <th><%= sort_link(@q, :g_banco, t("activerecord.attributes.e_contrato.g_banco.Banco")) %></th>
+                <th><%= sort_link(@q, :g_status_contrato, t("activerecord.attributes.e_contrato.status_contrato")) %></th>
+                <th><%= sort_link(@q, :g_tipo_operacao, t("activerecord.attributes.e_contrato.tipo_de_operacao")) %></th>
                 <th><%= sort_link(@q, :valor_total, t("activerecord.attributes.e_contrato.valor_total")) %></th>
                 <th><%= sort_link(@q, :quantidade_parcelas, t("activerecord.attributes.e_contrato.quantidade_parcelas")) %></th>
               </tr>
@@ -153,22 +152,19 @@
                     </div>
                   </td>
                   <td>
-                    <%= e_contrato.e_cliente&.id %>
-                  </td>
-                  <td>
-                    <%= e_contrato.user&.id %>
+                    <%= e_contrato.e_cliente&.nome_completo %>
                   </td>
                   <td>
                     <%= e_contrato.numero_contrato %>
                   </td>
                   <td>
-                    <%= e_contrato.g_banco&.id %>
+                    <%= e_contrato.g_banco&.nome_fantasia %>
                   </td>
                   <td>
-                    <%= e_contrato.g_status_contrato&.id %>
+                    <%= e_contrato.g_status_contrato&.descricao %>
                   </td>
                   <td>
-                    <%= e_contrato.g_tipo_operacao&.id %>
+                    <%= e_contrato.g_tipo_operacao&.descricao %>
                   </td>
                   <td>
                     <%= e_contrato.valor_total %>
