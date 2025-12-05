@@ -1,0 +1,37 @@
+<div class="search-section-fluid">
+  <div class="search-filters-fluid">
+    <%= search_form_for q, html: { class: "filter-form-fluid", autocomplete: "off" } do |f| %>
+      <div class="search-input-group">
+        <label class="form-label">Descrição da Meta</label>
+        <%= f.search_field :descricao_cont, 
+          class: "form-input-fluid", 
+          placeholder: "Buscar meta por descrição..." %>
+      </div>
+      <div class="search-input-group">
+        <label class="form-label">Empresa</label>
+        <%= f.collection_select :e_empresa_id_eq,
+            EEmpresa.order(:nome_fantasia),
+            :id, :nome_fantasia,
+            include_blank: "Todas",
+            class: "form-input-fluid" %>
+      </div>
+      <div class="search-input-group">
+        <label class="form-label">Referência (Mês)</label>
+        <%= f.month_field :referencia_eq,
+              class: "form-input-fluid" %>
+      </div>
+      <div class="form-actions-fluid">
+        <button type="submit" class="btn btn-primary">
+          <i data-lucide="search"></i>
+          Buscar
+        </button>
+        <% if params[:q].present? %>
+          <%= link_to e_metas_path, class: "btn btn-secondary" do %>
+            <i data-lucide="x-circle"></i>
+            Limpar Filtros
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

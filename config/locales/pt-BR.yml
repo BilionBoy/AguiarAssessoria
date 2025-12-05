@@ -59,6 +59,9 @@ pt-BR:
       e_contrato:
         one: "Contrato"
         other: "Contratos"
+      e_meta:
+        one: "Meta"
+        other: "Metas"
     attributes:
       g_tipo_usuario:
         descricao: "Descrição"
@@ -136,6 +139,12 @@ pt-BR:
         data_cadastro: "Data de Cadastro"
         user_created: "Usuário que Criou"
         user_updated: "Usuário que Atualizou"
+      e_meta:
+        e_empresa_id: "Empresa"
+        user_id: "Usuário"
+        valor_meta: "Valor da Meta"
+        referencia: "Referência"
+        descricao: "Descrição"
 
     errors:
       messages:

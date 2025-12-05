@@ -1,0 +1,66 @@
+<div class="table-section-fluid">
+  <div class="table-header-fluid">
+    <h3 class="table-title">
+      <i data-lucide="target"></i>
+      Metas Cadastradas
+    </h3>
+    <div class="table-actions">
+      <%= link_to new_e_meta_path, class: "btn btn-new" do %>
+        <i data-lucide="plus"></i>
+        Nova Meta
+      <% end %>
+    </div>
+  </div>
+  <div class="table-container-fluid">
+    <table class="data-table-fluid">
+      <thead>
+        <tr>
+          <th>Ações</th>
+          <th>Empresa</th>
+          <th>Valor da Meta</th>
+          <th>Referência</th>
+          <th>Descrição</th>
+          <th>Criado em</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% e_metas.each do |m| %>
+          <tr>
+            <td>
+              <div class="dropdown">
+                <button class="action-btn" data-bs-toggle="dropdown">
+                  <i data-lucide="more-horizontal"></i>
+                </button>
+                <div class="dropdown-menu">
+                  <%= link_to e_meta_path(m), class: "dropdown-item" do %>
+                    <i data-lucide="eye"></i> Visualizar
+                  <% end %>
+                  <%= link_to edit_e_meta_path(m), class: "dropdown-item" do %>
+                    <i data-lucide="edit"></i> Editar
+                  <% end %>
+                  <div class="dropdown-divider"></div>
+                  <%= button_to e_meta_path(m),
+                                method: :delete,
+                                data: { confirm: "Tem certeza que deseja excluir?" },
+                                class: "dropdown-item text-danger" do %>
+                    <i data-lucide="trash-2"></i> Excluir
+                  <% end %>
+                </div>
+              </div>
+            </td>
+            <td><%= m.e_empresa&.nome_fantasia %></td>
+            <td>R$ <%= number_to_currency(m.valor_meta, unit: "", separator: ",", delimiter: ".") %></td>
+            <td><%= m.referencia.strftime("%m/%Y") rescue "-" %></td>
+            <td><%= m.descricao %></td>
+            <td><%= l(m.created_at, format: :short) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <% if defined?(@pagy) %>
+    <div class="pagination-wrapper-fluid">
+      <%= pagy_bootstrap_nav(@pagy) %>
+    </div>
+  <% end %>
+</div>

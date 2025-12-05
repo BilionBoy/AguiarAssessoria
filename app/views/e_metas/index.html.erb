@@ -1,0 +1,201 @@
+<div class="main-content-fluid">
+  <!-- ===== PAINEL DASHBOARD DE METAS ===== -->
+  <div class="dashboard-metas">
+    <h3 class="section-title">Painel de Metas</h3>
+    <%# --- CALCULOS BASE --- %>
+    <% meta_total = @e_metas.sum(:valor_meta) %>
+    <% realizado_total = EContrato.where(
+      data_cadastro: Date.current.beginning_of_month..Date.current.end_of_month
+    ).sum(:valor_total) %>
+    <% progresso_total = meta_total > 0 ? ((realizado_total / meta_total) * 100).round : 0 %>
+    <div class="dashboard-cards">
+      <!-- META TOTAL -->
+      <div class="stat-card-large">
+        <div class="stat-label">Meta Total do Mês</div>
+        <div class="stat-value"><%= number_to_currency(meta_total) %></div>
+      </div>
+      <!-- REALIZADO NO MÊS -->
+      <div class="stat-card-large stat-success">
+        <div class="stat-label">Realizado no Mês</div>
+        <div class="stat-value"><%= number_to_currency(realizado_total) %></div>
+      </div>
+      <!-- % DE PROGRESSO -->
+      <div class="stat-card-large stat-info">
+        <div class="stat-label">% Atingido</div>
+        <div class="stat-value"><%= progresso_total %>%</div>
+        <div class="progress mt-2">
+          <div class="progress-bar" style="width: <%= progresso_total %>%"></div>
+        </div>
+      </div>
+      <!-- QUANTIDADE DE METAS ATIVAS -->
+      <div class="stat-card-large stat-warning">
+        <div class="stat-label">Metas Ativas</div>
+        <div class="stat-value"><%= @e_metas.count %></div>
+      </div>
+    </div>
+    <!-- ===== RANKING POR VENDEDOR ===== -->
+    <h4 class="mt-4">Ranking de Vendedores</h4>
+    <div class="ranking-container">
+      <% User.where(e_empresa_id: current_user.e_empresa_id).each do |vendedor| %>
+        <% realizado_vendedor = EContrato.where(
+          user_id: vendedor.id,
+          data_cadastro: Date.current.beginning_of_month..Date.current.end_of_month
+        ).sum(:valor_total) %>
+        <div class="ranking-item">
+          <div class="ranking-name"><%= vendedor.nome_completo %></div>
+          <div class="ranking-value">
+            <%= number_to_currency(realizado_vendedor) %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <!-- ===== FILTROS EXISTENTES (SEUS) ===== -->
+  <%= render partial: "filtros_existentes", locals: { q: @q } %>
+  <!-- ===== TABELA EXISTENTE (SUA) ===== -->
+  <%= render partial: "tabela_existente", locals: { e_metas: @e_metas } %>
+</div>
+<style>
+  /* ===========================
+        DASHBOARD – MELHORADO
+     =========================== */
+
+  .dashboard-metas {
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+
+  .dashboard-metas .section-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #1f2937;
+  }
+
+  /* ===== Cards Responsivos ===== */
+  .dashboard-cards {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .stat-card-large {
+    padding: 1.4rem;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+
+  .stat-card-large:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  }
+
+  .stat-label {
+    font-size: .85rem;
+    letter-spacing: .3px;
+    color: #6b7280;
+    margin-bottom: .2rem;
+  }
+
+  .stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #111827;
+  }
+
+  /* ===== Variantes ===== */
+  .stat-success { border-left: 4px solid #10b981; }
+  .stat-info    { border-left: 4px solid #3b82f6; }
+  .stat-warning { border-left: 4px solid #f59e0b; }
+
+  /* ===== Barra de Progresso ===== */
+  .progress {
+    background: #e5e7eb !important;
+    height: 6px !important;
+    border-radius: 3px;
+  }
+
+  .progress-bar {
+    background: linear-gradient(90deg, #3b82f6, #2563eb);
+  }
+
+  /* ===========================
+        RANKING DE VENDEDORES
+     =========================== */
+
+  .ranking-container {
+    margin-top: 1.2rem;
+    background: #fff;
+    padding: 1.3rem;
+    border-radius: 14px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  }
+
+  .ranking-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.9rem 0;
+    align-items: center;
+    border-bottom: 1px dashed rgba(0,0,0,0.08);
+    transition: background .15s ease;
+  }
+
+  .ranking-item:hover {
+    background: rgba(59,130,246,0.06);
+    border-radius: 6px;
+  }
+
+  .ranking-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #374151;
+  }
+
+  .ranking-value {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #2563eb;
+  }
+
+  /* Remove borda da última linha */
+  .ranking-item:last-child {
+    border-bottom: none;
+  }
+
+  /* ===========================
+       SEÇÃO DE FILTROS
+     =========================== */
+
+  .filtros-wrapper {
+    background: #fff;
+    padding: 1.7rem;
+    margin-top: 2rem;
+    border-radius: 14px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+
+  .filtros-wrapper h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+  }
+
+  /* Ajuste dos inputs */
+  .filtros-wrapper input,
+  .filtros-wrapper select {
+    border-radius: 10px !important;
+    height: 45px !important;
+  }
+
+  .btn-filtro {
+    height: 45px;
+    padding: 0 25px;
+    font-weight: 600;
+    border-radius: 10px;
+  }
+</style>

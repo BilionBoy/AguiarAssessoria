@@ -16,4 +16,5 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
   inflect.irregular 'g_status_user',     'g_status_users'
   inflect.irregular 'e_empresa',         'e_empresas'
   inflect.irregular 'e_contrato',        'e_contratos'
+  inflect.irregular 'e_meta',            'e_metas'
 end
