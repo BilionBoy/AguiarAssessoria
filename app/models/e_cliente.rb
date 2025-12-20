@@ -12,6 +12,7 @@ class ECliente < ApplicationRecord
   belongs_to       :g_bairro
   belongs_to       :g_orgao
   belongs_to       :g_tipo_beneficio, optional: true
+  belongs_to       :g_margem_tipo,    optional: true
   has_one_attached :foto_cliente
   has_one_attached :foto_contracheque
   has_one_attached :foto_rg

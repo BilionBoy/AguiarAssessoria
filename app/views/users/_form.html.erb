@@ -1,0 +1,86 @@
+<%= simple_form_for(@user) do |f| %>
+  <div class="card">
+    <div class="card-header">
+      <h5 class="mb-0">
+        <%= @user.new_record? ? "Incluir" : "Editar" %> Usuário
+      </h5>
+    </div>
+    <div class="card-body">
+      <%= f.error_notification %>
+      <% if f.object.errors.any? %>
+        <div class="alert alert-danger">
+          <ul class="mb-0">
+            <% f.object.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <%= f.input :cpf, input_html: { class: "cpf", placeholder: "CPF" } %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :nome_completo, placeholder: "Nome completo" %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :email, placeholder: "Email" %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :g_tipo_usuario_id,
+            collection: GTipoUsuario.all,
+            label_method: :descricao,
+            value_method: :id,
+            prompt: "Tipo de usuário",
+            input_html: { id: "tipo-usuario-select" } %>
+        </div>
+        <div class="col-md-4" id="campo-empresa">
+          <%= f.input :e_empresa_id,
+            collection: EEmpresa.all,
+            label_method: :nome_fantasia,
+            value_method: :id,
+            prompt: "Empresa" %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :g_status_user_id,
+            collection: GStatusUser.all,
+            label_method: :descricao,
+            value_method: :id,
+            prompt: "Status" %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :telefone, placeholder: "Telefone" %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :password,
+            required: @user.new_record?,
+            input_html: { autocomplete: "new-password" } %>
+        </div>
+        <div class="col-md-4">
+          <%= f.input :password_confirmation,
+            required: @user.new_record?,
+            input_html: { autocomplete: "new-password" } %>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer d-flex justify-content-end gap-3">
+      <%= btn_submit(f) %>
+      <%= link_to "Voltar", users_path, class: "btn btn-secondary" %>
+    </div>
+  </div>
+<% end %>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const select = document.getElementById("tipo-usuario-select");
+    const campoEmpresa = document.getElementById("campo-empresa");
+
+    function toggleEmpresa() {
+      if (!select) return;
+      const texto = select.options[select.selectedIndex]?.text.toLowerCase() || "";
+      campoEmpresa.style.display = texto === "admin" ? "none" : "block";
+    }
+
+    select?.addEventListener("change", toggleEmpresa);
+    toggleEmpresa();
+  });
+</script>

@@ -62,6 +62,9 @@ pt-BR:
       e_meta:
         one: "Meta"
         other: "Metas"
+      user:
+        one: "Usuário"
+        other: "Usuários"
     attributes:
       g_tipo_usuario:
         descricao: "Descrição"
@@ -145,7 +148,14 @@ pt-BR:
         valor_meta: "Valor da Meta"
         referencia: "Referência"
         descricao: "Descrição"
-
+      user:
+        nome_completo: "Nome Completo"
+        email: "E-mail"
+        password: "Senha"
+        password_confirmation: "Confirmação de Senha"
+        g_tipo_usuario_id: "Tipo de Usuário"
+        g_status_user_id: "Status do Usuário"
+        e_empresa_id: "Empresa"
     errors:
       messages:
         record_invalid: "A validação falhou: %{errors}"

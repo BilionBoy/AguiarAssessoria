@@ -1,0 +1,77 @@
+<%= render "shared/context_nav",
+  title: t("activerecord.models.#{User.model_name.i18n_key}.other"),
+  new_path: new_user_path do %>
+  <span class="breadcrumb-item active">
+    <%= t("activerecord.models.#{User.model_name.i18n_key}.other") %>
+  </span>
+<% end %>
+<div class="card">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <%= search_form_for @q, html: { class: "d-flex gap-2", autocomplete: "off" } do |f| %>
+      <%= f.search_field :nome_completo_or_email_or_cpf_cont,
+        class: "form-control",
+        placeholder: "Pesquisar por Nome, Email ou CPF" %>
+      <%= f.button(type: "submit", class: "btn btn-info") do %>
+        <i class="ph-magnifying-glass"></i>
+      <% end %>
+      <% if params[:q] %>
+        <%= link_to users_path, class: "btn btn-light" do %>
+          <i class="ph-x-circle"></i>
+        <% end %>
+      <% end %>
+    <% end %>
+    <%= link_to new_user_path, class: "btn btn-primary" do %>
+      <i class="ph-user-plus"></i> Novo Usuário
+    <% end %>
+  </div>
+  <div class="card-body">
+    <%= render "shared/notice" %>
+    <table class="table table-sm table-bordered table-striped">
+      <thead>
+        <tr>
+          <th class="text-center" style="width: 90px;">Ações</th>
+          <th><%= sort_link(@q, :nome_completo, "Nome") %></th>
+          <th><%= sort_link(@q, :cpf, "CPF") %></th>
+          <th><%= sort_link(@q, :email, "Email") %></th>
+          <th>Tipo</th>
+          <th>Empresa</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td class="text-center">
+              <div class="dropdown">
+                <a href="#" class="text-body" data-bs-toggle="dropdown">
+                  <i class="ph-gear"></i>
+                </a>
+                <div class="dropdown-menu">
+                  <div class="dropdown-header">Opções</div>
+                  <%= link_to edit_user_path(user), class: "dropdown-item" do %>
+                    <i class="ph-pen me-2"></i> Editar
+                  <% end %>
+                  <%= link_to user_path(user),
+                    method: :delete,
+                    data: { confirm: "Deseja realmente remover este usuário?" },
+                    class: "dropdown-item text-danger" do %>
+                    <i class="ph-trash me-2"></i> Excluir
+                  <% end %>
+                </div>
+              </div>
+            </td>
+            <td><%= user.nome_completo %></td>
+            <td><%= user.cpf %></td>
+            <td><%= user.email %></td>
+            <td><%= user.g_tipo_usuario&.descricao %></td>
+            <td><%= user.e_empresa&.nome_fantasia || "-" %></td>
+            <td><%= user.g_status_user&.descricao %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="card-footer d-flex justify-content-end">
+    <%# se usar Pagy depois %>
+  </div>
+</div>
