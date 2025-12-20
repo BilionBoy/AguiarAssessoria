@@ -51,7 +51,7 @@
                   <%= link_to edit_user_path(user), class: "dropdown-item" do %>
                     <i class="ph-pen me-2"></i> Editar
                   <% end %>
-                  <%= link_to user_path(user),
+                  <%= button_to user_path(user),
                     method: :delete,
                     data: { confirm: "Deseja realmente remover este usuário?" },
                     class: "dropdown-item text-danger" do %>
@@ -71,7 +71,7 @@
       </tbody>
     </table>
   </div>
-  <div class="card-footer d-flex justify-content-end">
-    <%# se usar Pagy depois %>
+  <div class="card-footer">
+    <%= pagy_bootstrap_nav(@pagy, link_extra: 'class="btn btn-outline-secondary btn-sm mx-1"').html_safe %>
   </div>
 </div>
