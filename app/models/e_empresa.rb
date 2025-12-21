@@ -3,7 +3,9 @@
 class EEmpresa < ApplicationRecord
   # Adicione aqui quaisquer métodos ou validações padrão para seus modelos
   belongs_to :g_cidade
-  has_many   :e_clientes, dependent: :nullify
+  has_many   :e_metas,     dependent: :nullify
+  has_many   :e_clientes,  dependent: :nullify
+  has_many   :e_contratos, dependent: :nullify
 
   validates :nome_fantasia, presence: true
   validates :razao_social,  presence: true

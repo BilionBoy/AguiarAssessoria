@@ -1,201 +1,657 @@
-<div class="main-content-fluid">
-  <!-- ===== PAINEL DASHBOARD DE METAS ===== -->
-  <div class="dashboard-metas">
-    <h3 class="section-title">Painel de Metas</h3>
-    <%# --- CALCULOS BASE --- %>
-    <% meta_total = @e_metas.sum(:valor_meta) %>
-    <% realizado_total = EContrato.where(
-      data_cadastro: Date.current.beginning_of_month..Date.current.end_of_month
-    ).sum(:valor_total) %>
-    <% progresso_total = meta_total > 0 ? ((realizado_total / meta_total) * 100).round : 0 %>
-    <div class="dashboard-cards">
-      <!-- META TOTAL -->
-      <div class="stat-card-large">
-        <div class="stat-label">Meta Total do Mês</div>
-        <div class="stat-value"><%= number_to_currency(meta_total) %></div>
-      </div>
-      <!-- REALIZADO NO MÊS -->
-      <div class="stat-card-large stat-success">
-        <div class="stat-label">Realizado no Mês</div>
-        <div class="stat-value"><%= number_to_currency(realizado_total) %></div>
-      </div>
-      <!-- % DE PROGRESSO -->
-      <div class="stat-card-large stat-info">
-        <div class="stat-label">% Atingido</div>
-        <div class="stat-value"><%= progresso_total %>%</div>
-        <div class="progress mt-2">
-          <div class="progress-bar" style="width: <%= progresso_total %>%"></div>
-        </div>
-      </div>
-      <!-- QUANTIDADE DE METAS ATIVAS -->
-      <div class="stat-card-large stat-warning">
-        <div class="stat-label">Metas Ativas</div>
-        <div class="stat-value"><%= @e_metas.count %></div>
-      </div>
-    </div>
-    <!-- ===== RANKING POR VENDEDOR ===== -->
-    <h4 class="mt-4">Ranking de Vendedores</h4>
-    <div class="ranking-container">
-      <% User.where(e_empresa_id: current_user.e_empresa_id).each do |vendedor| %>
-        <% realizado_vendedor = EContrato.where(
-          user_id: vendedor.id,
-          data_cadastro: Date.current.beginning_of_month..Date.current.end_of_month
-        ).sum(:valor_total) %>
-        <div class="ranking-item">
-          <div class="ranking-name"><%= vendedor.nome_completo %></div>
-          <div class="ranking-value">
-            <%= number_to_currency(realizado_vendedor) %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
-  <!-- ===== FILTROS EXISTENTES (SEUS) ===== -->
-  <%= render partial: "filtros_existentes", locals: { q: @q } %>
-  <!-- ===== TABELA EXISTENTE (SUA) ===== -->
-  <%= render partial: "tabela_existente", locals: { e_metas: @e_metas } %>
-</div>
 <style>
-  /* ===========================
-        DASHBOARD – MELHORADO
-     =========================== */
-
-  .dashboard-metas {
-    margin-bottom: 2.5rem;
-    padding: 1.5rem;
-    background: #fff;
-    border-radius: 14px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  :root {
+    --primary-blue: #3b82f6;
+    --primary-dark: #1e40af;
+    --success-green: #10b981;
+    --warning-amber: #f59e0b;
+    --purple-accent: #8b5cf6;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-600: #4b5563;
+    --gray-700: #374151;
+    --gray-900: #111827;
   }
 
-  .dashboard-metas .section-title {
-    font-size: 1.4rem;
+
+  body {
+    background-color: var(--gray-50);
+    color: var(--gray-900);
+  }
+
+  /* KPI Cards */
+  .kpi-card {
+    border: none;
+    border-radius: 12px;
+    padding: 24px;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border-top: 3px solid;
+    transition: all 0.2s ease;
+    height: 100%;
+  }
+
+  .kpi-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .kpi-card.blue { border-top-color: var(--primary-blue); }
+  .kpi-card.green { border-top-color: var(--success-green); }
+  .kpi-card.amber { border-top-color: var(--warning-amber); }
+  .kpi-card.purple { border-top-color: var(--purple-accent); }
+
+  .kpi-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .kpi-icon.blue { background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); color: white; }
+  .kpi-icon.green { background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; }
+  .kpi-icon.amber { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; }
+  .kpi-icon.purple { background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color: white; }
+
+  .kpi-label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--gray-600);
+    margin-bottom: 8px;
+  }
+
+  .kpi-value {
+    font-size: 32px;
     font-weight: 700;
-    margin-bottom: 1.5rem;
-    color: #1f2937;
+    color: var(--gray-900);
+    margin-bottom: 8px;
+    font-variant-numeric: tabular-nums;
   }
 
-  /* ===== Cards Responsivos ===== */
-  .dashboard-cards {
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  .kpi-meta {
+    font-size: 13px;
+    color: var(--gray-600);
+    display: flex;
+    align-items: center;
+    gap: 6px;
   }
 
-  .stat-card-large {
-    padding: 1.4rem;
-    border-radius: 14px;
-    background: #fff;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-    transition: transform .15s ease, box-shadow .15s ease;
+  /* Tabs */
+  .nav-tabs {
+    border-bottom: 2px solid var(--gray-200);
+    margin-bottom: 24px;
   }
 
-  .stat-card-large:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+  .nav-tabs .nav-link {
+    border: none;
+    color: var(--gray-600);
+    font-weight: 500;
+    padding: 12px 20px;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.2s;
   }
 
-  .stat-label {
-    font-size: .85rem;
-    letter-spacing: .3px;
-    color: #6b7280;
-    margin-bottom: .2rem;
+  .nav-tabs .nav-link:hover {
+    color: var(--primary-blue);
+    border-bottom-color: var(--gray-300);
   }
 
-  .stat-value {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #111827;
+  .nav-tabs .nav-link.active {
+    color: var(--primary-blue);
+    border-bottom-color: var(--primary-blue);
+    background: transparent;
   }
 
-  /* ===== Variantes ===== */
-  .stat-success { border-left: 4px solid #10b981; }
-  .stat-info    { border-left: 4px solid #3b82f6; }
-  .stat-warning { border-left: 4px solid #f59e0b; }
-
-  /* ===== Barra de Progresso ===== */
-  .progress {
-    background: #e5e7eb !important;
-    height: 6px !important;
-    border-radius: 3px;
+  /* Section Card */
+  .section-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    margin-bottom: 24px;
   }
 
-  .progress-bar {
-    background: linear-gradient(90deg, #3b82f6, #2563eb);
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
   }
 
-  /* ===========================
-        RANKING DE VENDEDORES
-     =========================== */
+  .section-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
 
-  .ranking-container {
-    margin-top: 1.2rem;
-    background: #fff;
-    padding: 1.3rem;
-    border-radius: 14px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  /* Ranking */
+  .ranking-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
 
   .ranking-item {
     display: flex;
     justify-content: space-between;
-    padding: 0.9rem 0;
     align-items: center;
-    border-bottom: 1px dashed rgba(0,0,0,0.08);
-    transition: background .15s ease;
+    padding: 16px;
+    background: var(--gray-50);
+    border-radius: 10px;
+    border-left: 3px solid var(--gray-300);
+    transition: all 0.2s;
   }
 
   .ranking-item:hover {
-    background: rgba(59,130,246,0.06);
-    border-radius: 6px;
+    background: var(--gray-100);
+    border-left-color: var(--primary-blue);
   }
 
-  .ranking-name {
-    font-size: 0.95rem;
+  .ranking-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .ranking-position {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
+    color: white;
+  }
+
+  .ranking-position.first { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
+  .ranking-position.second { background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%); }
+  .ranking-position.third { background: linear-gradient(135deg, #92400e 0%, #78350f 100%); }
+
+  .ranking-info h6 {
+    font-size: 15px;
     font-weight: 600;
-    color: #374151;
+    margin: 0 0 4px 0;
+    color: var(--gray-900);
+  }
+
+  .ranking-info p {
+    font-size: 13px;
+    margin: 0;
+    color: var(--gray-600);
   }
 
   .ranking-value {
+    font-size: 20px;
     font-weight: 700;
-    font-size: 1.1rem;
-    color: #2563eb;
+    color: var(--primary-blue);
+    font-variant-numeric: tabular-nums;
   }
 
-  /* Remove borda da última linha */
-  .ranking-item:last-child {
-    border-bottom: none;
+  /* Quick Actions */
+  .quick-action-card {
+    text-align: center;
+    padding: 32px 20px;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-dark) 100%);
+    border-radius: 12px;
+    color: white;
   }
 
-  /* ===========================
-       SEÇÃO DE FILTROS
-     =========================== */
-
-  .filtros-wrapper {
-    background: #fff;
-    padding: 1.7rem;
-    margin-top: 2rem;
-    border-radius: 14px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  .chart-placeholder {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    border: 8px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
   }
 
-  .filtros-wrapper h4 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 1.2rem;
-  }
-
-  /* Ajuste dos inputs */
-  .filtros-wrapper input,
-  .filtros-wrapper select {
-    border-radius: 10px !important;
-    height: 45px !important;
-  }
-
-  .btn-filtro {
-    height: 45px;
-    padding: 0 25px;
+  .quick-action-card h5 {
+    font-size: 18px;
     font-weight: 600;
-    border-radius: 10px;
+    margin-bottom: 8px;
+  }
+
+  /* Filters */
+  .filters-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+  }
+
+  .filters-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .filters-toggle:hover {
+    opacity: 0.8;
+  }
+
+  /* Table */
+  .table-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+
+  .table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .table {
+    margin-bottom: 0;
+  }
+
+  .table thead th {
+    border-bottom: 2px solid var(--gray-200);
+    color: var(--gray-700);
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 12px;
+  }
+
+  .table tbody td {
+    padding: 16px 12px;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--gray-100);
+  }
+
+  .table tbody tr:hover {
+    background-color: var(--gray-50);
+  }
+
+  /* Empty State */
+  .empty-state {
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .empty-state i {
+    font-size: 64px;
+    color: var(--gray-300);
+    margin-bottom: 16px;
+  }
+
+  .empty-state h5 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 8px;
+  }
+
+  .empty-state p {
+    color: var(--gray-600);
+    margin-bottom: 24px;
+  }
+
+  /* Utilities */
+  .text-link {
+    color: var(--primary-blue);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .text-link:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .kpi-value {
+      font-size: 24px;
+    }
+
+    .section-card {
+      padding: 16px;
+    }
+
+    .ranking-item {
+      padding: 12px;
+    }
   }
 </style>
+</head>
+<body>
+  <div class="container-fluid py-4">
+    <!-- KPI Cards Row -->
+    <div class="row g-3 mb-4">
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="kpi-card blue">
+          <div class="kpi-icon blue">
+            <i class="bi bi-currency-dollar"></i>
+          </div>
+          <div class="kpi-label">Meta Total do Mês</div>
+          <div class="kpi-value"><%= number_to_currency(@meta_total_mes || 0, unit: "R$ ", separator: ",", delimiter: ".") %></div>
+          <div class="kpi-meta">
+            <i class="bi bi-calendar3"></i>
+            <span><%= I18n.l(Date.current, format: "%B %Y") %></span>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="kpi-card green">
+          <div class="kpi-icon green">
+            <i class="bi bi-check-circle"></i>
+          </div>
+          <div class="kpi-label">Realizado no Mês</div>
+          <div class="kpi-value"><%= number_to_currency(@realizado_mes || 0, unit: "R$ ", separator: ",", delimiter: ".") %></div>
+          <div class="kpi-meta">
+            <i class="bi bi-arrow-up-right"></i>
+            <span>Atualizado hoje</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="kpi-card amber">
+          <div class="kpi-icon amber">
+            <i class="bi bi-graph-up"></i>
+          </div>
+          <div class="kpi-label">% Atingido</div>
+          <div class="kpi-value"><%= @percentual_atingido || 0 %>%</div>
+          <div class="kpi-meta">
+            <i class="bi bi-flag"></i>
+            <span>Do objetivo</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="kpi-card purple">
+          <div class="kpi-icon purple">
+            <i class="bi bi-lightning"></i>
+          </div>
+          <div class="kpi-label">Metas Ativas</div>
+          <div class="kpi-value"><%= @metas_ativas || 0 %></div>
+          <div class="kpi-meta">
+            <i class="bi bi-hourglass-split"></i>
+            <span>Em andamento</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Tabs Navigation -->
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview" type="button" role="tab">
+          <i class="bi bi-speedometer2"></i> Visão Geral
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="list-tab" data-bs-toggle="tab" data-bs-target="#list" type="button" role="tab">
+          <i class="bi bi-list-ul"></i> Lista Completa
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="ranking-tab" data-bs-toggle="tab" data-bs-target="#ranking" type="button" role="tab">
+          <i class="bi bi-trophy"></i> Ranking Completo
+        </button>
+      </li>
+    </ul>
+    <!-- Tab Content -->
+    <div class="tab-content">
+      <!-- OVERVIEW TAB -->
+      <div class="tab-pane fade show active" id="overview" role="tabpanel">
+        <div class="row g-4">
+          <!-- Top 3 Vendedores -->
+          <div class="col-12 col-lg-7">
+            <div class="section-card">
+              <div class="section-header">
+                <h5 class="section-title">
+                  <i class="bi bi-trophy"></i>
+                  Top 3 Vendedores
+                </h5>
+                <a href="#" class="text-link" data-bs-toggle="tab" data-bs-target="#ranking">
+                  Ver todos <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+              <div class="ranking-list">
+                <% top_3 = @ranking_vendedores&.take(3) || [] %>
+                <% if top_3.any? %>
+                  <% top_3.each_with_index do |vendedor, index| %>
+                    <div class="ranking-item">
+                      <div class="ranking-left">
+                        <div class="ranking-position <%= ['first', 'second', 'third'][index] %>">
+                          <%= index + 1 %>
+                        </div>
+                        <div class="ranking-info">
+                          <h6><%= vendedor.nome_completo %></h6>
+                          <p><%= index == 0 ? 'Melhor desempenho do mês' : "#{index + 1}º lugar" %></p>
+                        </div>
+                      </div>
+                      <div class="ranking-value">
+                        <%= number_to_currency(vendedor.total_vendas || 0, unit: "R$ ", separator: ",", delimiter: ".") %>
+                      </div>
+                    </div>
+                  <% end %>
+                <% else %>
+                  <div class="text-center text-muted py-4">
+                    <i class="bi bi-inbox" style="font-size: 48px; opacity: 0.3;"></i>
+                    <p class="mt-3 mb-0">Nenhuma venda registrada no mês</p>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <!-- Performance Card -->
+          <div class="col-12 col-lg-5">
+            <div class="section-card" style="height: 100%;">
+              <div class="section-header">
+                <h5 class="section-title">
+                  <i class="bi bi-lightning"></i>
+                  Performance do Mês
+                </h5>
+              </div>
+              <div class="quick-action-card">
+                <div class="chart-placeholder"></div>
+                <h5>Acompanhamento em Tempo Real</h5>
+                <p style="opacity: 0.9; font-size: 14px;">Visualize o progresso das metas cadastradas</p>
+                <a href="#" class="btn btn-light btn-sm" data-bs-toggle="tab" data-bs-target="#list">
+                  <i class="bi bi-search"></i> Buscar Metas
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- LIST TAB -->
+      <div class="tab-pane fade" id="list" role="tabpanel">
+        <!-- Filtros Colapsáveis -->
+        <div class="filters-card">
+          <div class="filters-toggle" data-bs-toggle="collapse" data-bs-target="#filtersCollapse">
+            <h5 class="section-title mb-0">
+              <i class="bi bi-funnel"></i>
+              Filtrar Metas
+            </h5>
+            <i class="bi bi-chevron-down"></i>
+          </div>
+          <div class="collapse show" id="filtersCollapse">
+            <hr class="my-3">
+            <%= form_tag(e_metas_path, method: :get, class: "row g-3") do %>
+              <div class="col-md-4">
+                <label class="form-label">Descrição da Meta</label>
+                <%= text_field_tag :descricao, params[:descricao], 
+                    class: "form-control", 
+                    placeholder: "Buscar meta por descrição..." %>
+              </div>
+              <div class="col-md-3">
+                <label class="form-label">Empresa</label>
+                <%= select_tag :empresa_id, 
+                    options_for_select([["Todas", ""]] + (@empresas&.map { |e| [e.razao_social, e.id] } || []), params[:empresa_id]),
+                    class: "form-select" %>
+              </div>
+              <div class="col-md-3">
+                <label class="form-label">Referência (Mês)</label>
+                <%= date_field_tag :referencia, params[:referencia], 
+                    class: "form-control" %>
+              </div>
+              <div class="col-md-2 d-flex align-items-end">
+                <%= submit_tag "Buscar", class: "btn btn-primary w-100" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <!-- Tabela de Metas -->
+        <div class="table-card">
+          <div class="table-header">
+            <div>
+              <h5 class="section-title mb-1">
+                <i class="bi bi-grid"></i>
+                Metas Cadastradas
+              </h5>
+              <p class="text-muted mb-0" style="font-size: 13px;">
+                <%= @e_metas&.count || 0 %> metas encontradas
+              </p>
+            </div>
+            <%= link_to new_e_meta_path, class: "btn btn-primary" do %>
+              <i class="bi bi-plus-lg"></i> Nova Meta
+            <% end %>
+          </div>
+          <% if @e_metas&.any? %>
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Ações</th>
+                    <th>Empresa</th>
+                    <th>Valor da Meta</th>
+                    <th>Referência</th>
+                    <th>Descrição</th>
+                    <th>Criado em</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @e_metas.each do |e_meta| %>
+                    <tr>
+                      <td>
+                        <div class="dropdown">
+                          <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-three-dots"></i>
+                          </button>
+                          <ul class="dropdown-menu">
+                            <li>
+                              <%= link_to e_meta_path(e_meta), class: "dropdown-item" do %>
+                                <i class="bi bi-eye"></i> Ver detalhes
+                              <% end %>
+                            </li>
+                            <li>
+                              <%= link_to edit_e_meta_path(e_meta), class: "dropdown-item" do %>
+                                <i class="bi bi-pencil"></i> Editar
+                              <% end %>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                              <%= link_to e_meta_path(e_meta), method: :delete, 
+                                  data: { confirm: "Tem certeza?" }, 
+                                  class: "dropdown-item text-danger" do %>
+                                <i class="bi bi-trash"></i> Excluir
+                              <% end %>
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                      <td><%= e_meta.e_empresa&.razao_social || "-" %></td>
+                      <td>
+                        <strong style="color: var(--primary-blue);">
+                          <%= number_to_currency(e_meta.valor_meta, unit: "R$ ", separator: ",", delimiter: ".") %>
+                        </strong>
+                      </td>
+                      <td><%= e_meta.referencia&.strftime("%m/%Y") || "-" %></td>
+                      <td><%= e_meta.descricao %></td>
+                      <td>
+                        <span class="text-muted" style="font-size: 13px;">
+                          <%= e_meta.created_at&.strftime("%d/%m/%Y") || "-" %>
+                        </span>
+                      </td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+          <% else %>
+            <div class="empty-state">
+              <i class="bi bi-inbox"></i>
+              <h5>Nenhuma meta encontrada</h5>
+              <p>Cadastre uma nova meta para começar a gerenciar seus objetivos.</p>
+              <%= link_to new_e_meta_path, class: "btn btn-primary" do %>
+                <i class="bi bi-plus-lg"></i> Cadastrar Primeira Meta
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <!-- RANKING TAB -->
+      <div class="tab-pane fade" id="ranking" role="tabpanel">
+        <div class="section-card">
+          <div class="section-header">
+            <h5 class="section-title">
+              <i class="bi bi-trophy"></i>
+              Ranking Completo de Vendedores
+            </h5>
+            <span class="badge bg-primary"><%= I18n.l(Date.current, format: "%B %Y") %></span>
+          </div>
+          <div class="ranking-list">
+            <% if @ranking_vendedores&.any? %>
+              <% @ranking_vendedores.each_with_index do |vendedor, index| %>
+                <div class="ranking-item">
+                  <div class="ranking-left">
+                    <div class="ranking-position <%= index < 3 ? ['first', 'second', 'third'][index] : '' %>" 
+                         style="<%= index >= 3 ? 'background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);' : '' %>">
+                      <%= index + 1 %>
+                    </div>
+                    <div class="ranking-info">
+                      <h6><%= vendedor.nome_completo %></h6>
+                      <p>
+                        <%= case index
+                              when 0 then 'Melhor desempenho do mês'
+                              when 1 then 'Segundo lugar'
+                              when 2 then 'Terceiro lugar'
+                              else "#{index + 1}º colocado"
+                              end %>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="ranking-value">
+                    <%= number_to_currency(vendedor.total_vendas || 0, unit: "R$ ", separator: ",", delimiter: ".") %>
+                  </div>
+                </div>
+              <% end %>
+            <% else %>
+              <div class="text-center text-muted py-5">
+                <i class="bi bi-inbox" style="font-size: 64px; opacity: 0.3;"></i>
+                <h5 class="mt-3">Nenhuma venda registrada</h5>
+                <p>Os vendedores aparecerão aqui quando houver comissões pagas no mês.</p>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -59,8 +59,8 @@
     </table>
   </div>
   <% if defined?(@pagy) %>
-    <div class="pagination-wrapper-fluid">
-      <%= pagy_bootstrap_nav(@pagy) %>
+    <div class="card-footer">
+      <%= pagy_bootstrap_nav(@pagy, link_extra: 'class="btn btn-outline-secondary btn-sm mx-1"').html_safe %>
     </div>
   <% end %>
 </div>
