@@ -47,4 +47,4 @@ Gemfile.lock
 docker-compose.yml
 /config/environments/production.rb
 
-/config/credentials/development.key
+/config/credentials/development.keylog/*.log
