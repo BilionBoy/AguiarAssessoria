@@ -3,17 +3,26 @@
   <head>
     <title>SimpliCONSIG</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Metadados  -->
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/layout/assets/img/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/layout/assets/img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/layout/assets/img/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/layout/assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/layout/assets/img/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/layout/assets/img/android-chrome-512x512.png">
+    <link rel="manifest" href="/layout/assets/img/site.webmanifest">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Metadados Rails -->
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <% # Dependências CSS %>
+    <!-- CSS -->
     <%= stylesheet_link_tag "/layout/assets/icons/phosphor/styles.min.css", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "/layout/assets/css/all.min.css",               "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "/layout/assets/css/animate.min.css",           "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag "devise",                                                         "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "devise",                                       "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    <% # App JS do projeto %>
   </head>
   <body>
     <%= yield %>

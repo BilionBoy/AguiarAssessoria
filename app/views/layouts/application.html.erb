@@ -3,38 +3,47 @@
   <head>
     <title>SimpliCONSIG</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/layout/assets/img/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/layout/assets/img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/layout/assets/img/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/layout/assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/layout/assets/img/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/layout/assets/img/android-chrome-512x512.png">
+    <link rel="manifest" href="/layout/assets/img/site.webmanifest">
+    <meta name="theme-color" content="#ffffff">
     <!-- Metadados  -->
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <% # Dependências CSS %>
-    <%= stylesheet_link_tag "/layout/assets/fonts/inter/inter.css",         "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag "/layout/assets/css/all.min.css",               "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag "/layout/assets/css/animate.min.css",           "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag "admin",                                  "data-turbo-track": "reload" %>
+    <!-- CSS -->
+    <%= stylesheet_link_tag "/layout/assets/fonts/inter/inter.css", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "/layout/assets/css/all.min.css", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "/layout/assets/css/animate.min.css", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "admin", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" %>
     <link rel="stylesheet" href="https://unpkg.com/phosphor-icons@1.4.2/src/css/icons.css">
-    <% # Fonts %>
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <% # App JS do projeto %>
-    <%= javascript_include_tag "/layout/assets/js/jquery/jquery.min.js",                                     "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/layout/assets/js/jquery/jquery.mask.min.js",                                "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/layout/assets/js/jquery/jquery.maskMoney.min.js",                           "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/layout/assets/js/bootstrap/bootstrap.bundle.min.js",                        "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/layout/assets/js/vendor/notifications/sweet_alert.min.js",                  "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/layout/assets/js/vendor/forms/selects/select2.min.js",                      "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/layout/assets/js/vendor/forms/wizards/steps.min.js",                        "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/layout/assets/js/vendor/tables/datatables/datatables.min.js",               "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/layout/assets/js/vendor/tables/datatables/extensions/responsive.min.js",    "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/layout/assets/js/vendor/pickers/datepicker.min.js",                         "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/layout/assets/js/vendor/pickers/daterangepicker.js",                        "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/layout/assets/js/app.js",                                                   "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/layout/assets/js/custom.js",                                                "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/layout/assets/js/vendor/notifications/noty.min.js",                         "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "cocoon",                                                                     "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/layout/assets/js/vendor/pickers/litepicker.js",                             "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/layout/assets/js/vendor/forms/selects/bootstrap_multiselect.js",            "data-turbo-track": "reload" %>
+    <!-- JS -->
+    <%= javascript_include_tag "/layout/assets/js/jquery/jquery.min.js", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "/layout/assets/js/jquery/jquery.mask.min.js", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "/layout/assets/js/jquery/jquery.maskMoney.min.js", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "/layout/assets/js/bootstrap/bootstrap.bundle.min.js", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "/layout/assets/js/vendor/notifications/sweet_alert.min.js", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "/layout/assets/js/vendor/forms/selects/select2.min.js", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "/layout/assets/js/vendor/forms/wizards/steps.min.js", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "/layout/assets/js/vendor/tables/datatables/datatables.min.js", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "/layout/assets/js/vendor/tables/datatables/extensions/responsive.min.js", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "/layout/assets/js/vendor/pickers/datepicker.min.js", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "/layout/assets/js/vendor/pickers/daterangepicker.js", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "/layout/assets/js/app.js", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "/layout/assets/js/custom.js", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "/layout/assets/js/vendor/notifications/noty.min.js", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "cocoon", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "/layout/assets/js/vendor/pickers/litepicker.js", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "/layout/assets/js/vendor/forms/selects/bootstrap_multiselect.js", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "/layout/assets/js/vendor/tables/datatables/extensions/fixed_columns.min.js", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "/layout/assets/js/vendor/visualization/echarts/echarts.min.js",              "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "/layout/assets/js/vendor/visualization/echarts/echarts.min.js", "data-turbo-track": "reload" %>
   </head>
   <body class="">
     <!-- Main navbar -->
