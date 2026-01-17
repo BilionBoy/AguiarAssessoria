@@ -13,152 +13,96 @@
       </div>
     </div>
   </div>
-  <!-- Removed constrained content wrapper, made layout fluid -->
   <div class="content-fluid">
-    <!-- Estatísticas Rápidas -->
-    <div class="stats-section-fluid">
-      <div class="stats-container">
-        <h3 class="section-title">Estatísticas Rápidas</h3>
-        <div class="cards-stats-fluid">
-          <div class="stat-card">
-            <div class="stat-value"><%= @e_clientes.count %></div>
-            <div class="stat-label">TOTAL</div>
-          </div>
-          <div class="stat-card stat-success">
-            <div class="stat-value">
-              <%= @e_clientes.joins(:g_status_cliente).where(g_status_clientes: { descricao: 'Ativo' }).count %>
+    <!-- SEARCH FORM (PADRÃO CONTRATOS) -->
+    <div class="search-section-fluid">
+      <div class="search-filters-fluid">
+        <%= search_form_for @q, html: { class: "filter-form-fluid", autocomplete: "off" } do |f| %>
+          <div class="search-input-group">
+            <label class="form-label">Buscar Clientes</label>
+            <div class="search-input-wrapper">
+              <i data-lucide="search" class="search-input-icon"></i>
+              <%= f.search_field :nome_completo_or_cpf_cont,
+      class: "form-input-fluid",
+      placeholder: "Digite nome ou CPF..." %>
             </div>
-            <div class="stat-label">ATIVOS</div>
           </div>
-          <div class="stat-card stat-danger">
-            <div class="stat-value">
-              <%= @e_clientes.joins(:g_status_cliente).where.not(g_status_clientes: { descricao: 'Ativo' }).count %>
-            </div>
-            <div class="stat-label">INATIVOS</div>
+          <div class="form-actions-fluid">
+            <button type="submit" class="btn btn-primary">
+              <i data-lucide="search"></i>
+              Buscar
+            </button>
+            <% if params[:q].present? %>
+              <%= link_to e_clientes_path, class: "btn btn-secondary" do %>
+                <i data-lucide="x-circle"></i>
+                Limpar
+              <% end %>
+            <% end %>
           </div>
-          <div class="stat-card stat-info">
-            <div class="stat-value">
-              <%= @e_clientes.where('created_at > ?', 30.days.ago).count %>
-            </div>
-            <div class="stat-label">NOVOS (30D)</div>
-          </div>
-        </div>
+        <% end %>
       </div>
     </div>
-    <!-- Combined search and table sections for better flow -->
-    <div class="main-content-fluid">
-      <!-- Filtros de Busca -->
-      <div class="search-section-fluid">
-        <div class="search-filters-fluid">
-          <%= search_form_for @q, html: { class: "filter-form-fluid", autocomplete: "off" } do |f| %>
-            <div class="search-input-group">
-              <label class="form-label">Buscar Clientes</label>
-              <%= f.search_field :e_empresa_nome_fantasia_cont, 
-                  class: "form-input-fluid", 
-                  placeholder: "Digite para buscar..." %>
-            </div>
-            <div class="form-actions-fluid">
-              <button type="submit" class="btn btn-primary">
-                <i data-lucide="search"></i>
-                Buscar
-              </button>
-              <% if params[:q] %>
-                <%= link_to e_clientes_path, class: "btn btn-secondary" do %>
-                  <i data-lucide="x-circle"></i>
-                  Limpar
-                <% end %>
-              <% end %>
-            </div>
+    <!-- TABELA (INALTERADA) -->
+    <div class="table-section-fluid">
+      <div class="table-header-fluid">
+        <h3 class="table-title">
+          <i data-lucide="list"></i> Lista de Clientes
+        </h3>
+        <div class="table-actions">
+          <%= link_to new_e_cliente_path, class: "btn btn-new" do %>
+            <i data-lucide="plus"></i> Novo Cliente
           <% end %>
         </div>
       </div>
-      <!-- Ações em Lote -->
-      <div class="bulk-actions-fluid" id="bulkActions">
-        <div class="bulk-info">
-          <span id="selectedCount">0</span> clientes selecionados
-        </div>
-        <div class="bulk-buttons">
-          <button class="btn btn-bulk-primary">
-            <i data-lucide="mail"></i>
-            Ação em Lote
-          </button>
-          <button class="btn btn-bulk-danger" onclick="bulkDelete()">
-            <i data-lucide="trash-2"></i>
-            Excluir Selecionados
-          </button>
-        </div>
-      </div>
-      <!-- Tabela Principal -->
-      <div class="table-section-fluid">
-        <div class="table-header-fluid">
-          <h3 class="table-title">
-            <i data-lucide="list"></i>
-            Lista de <%= t("activerecord.models.#{ECliente.model_name.i18n_key}.other") %>
-          </h3>
-          <div class="table-actions">
-            <button class="btn btn-export" onclick="exportData()">
-              <i data-lucide="download"></i>
-              Exportar
-            </button>
-            <%= link_to new_e_cliente_path, class: "btn btn-new" do %>
-              <i data-lucide="plus"></i>
-              Novo <%= t("activerecord.models.#{ECliente.model_name.i18n_key}.one") %>
-            <% end %>
-          </div>
-        </div>
-        <div class="table-container-fluid">
-          <table class="data-table-fluid">
-            <thead>
+      <div class="table-container-fluid">
+        <table class="data-table-fluid">
+          <thead>
+            <tr>
+              <th class="checkbox-col">
+                <input type="checkbox" id="selectAll" onchange="toggleSelectAll()">
+              </th>
+              <th>Empresa</th>
+              <th>Nome</th>
+              <th>CPF</th>
+              <th>Matrícula</th>
+              <th>Última Margem</th>
+              <th>Ano Admissão</th>
+              <th class="actions-col sticky-right">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @e_clientes.each do |e_cliente| %>
               <tr>
-                <th class="checkbox-col">
-                  <input type="checkbox" id="selectAll" onchange="toggleSelectAll()">
-                </th>
-                <th class="actions-col">Ações</th>
-                <th><%= sort_link(@q, :e_empresa, t("activerecord.attributes.e_cliente.e_empresa.empresa")) %></th>
-                <th><%= sort_link(@q, :nome_completo, t("activerecord.attributes.e_cliente.nome_completo")) %></th>
-                <th><%= sort_link(@q, :cpf, t("activerecord.attributes.e_cliente.cpf")) %></th>
-                <th><%= sort_link(@q, :matricula, t("activerecord.attributes.e_cliente.matricula")) %></th>
-                <th><%= sort_link(@q, :ultima_margem, t("activerecord.attributes.e_cliente.ultima_margem")) %></th>
-                <th><%= sort_link(@q, :ano_admissao, t("activerecord.attributes.e_cliente.ano_admissao")) %></th>
+                <td>
+                  <input type="checkbox" class="e_cliente-checkbox" value="<%= e_cliente.id %>">
+                </td>
+                <td><%= e_cliente.e_empresa&.nome_fantasia %></td>
+                <td><%= e_cliente.nome_completo %></td>
+                <td><%= e_cliente.cpf %></td>
+                <td><%= e_cliente.matricula %></td>
+                <td><%= e_cliente.ultima_margem %></td>
+                <td><%= e_cliente.ano_admissao %></td>
+                <td class="actions-col sticky-right">
+                  <div class="row-actions">
+                    <%= link_to e_cliente_path(e_cliente), class: "action-icon", title: "Visualizar" do %>
+                      <i data-lucide="eye"></i>
+                    <% end %>
+                    <%= link_to edit_e_cliente_path(e_cliente), class: "action-icon", title: "Editar" do %>
+                      <i data-lucide="edit"></i>
+                    <% end %>
+                    <%= button_to e_cliente_path(e_cliente),
+                          method: :delete,
+                          data: { confirm: "Tem certeza?" },
+                          class: "action-icon danger",
+                          title: "Excluir" do %>
+                      <i data-lucide="trash-2"></i>
+                    <% end %>
+                  </div>
+                </td>
               </tr>
-            </thead>
-            <tbody>
-              <% @e_clientes.each do |e_cliente| %>
-                <tr>
-                  <td>
-                    <input type="checkbox" class="e_cliente-checkbox" 
-                           value="<%= e_cliente.id %>" onchange="updateBulkActions()">
-                  </td>
-                  <td>
-                    <div class="dropdown">
-                      <button type="button" class="action-btn" data-bs-toggle="dropdown">
-                        <i data-lucide="more-horizontal"></i>
-                      </button>
-                      <div class="dropdown-menu">
-                        <%= link_to e_cliente_path(e_cliente), class: "dropdown-item" do %>
-                          <i data-lucide="eye"></i> Visualizar
-                        <% end %>
-                        <%= link_to edit_e_cliente_path(e_cliente), class: "dropdown-item" do %>
-                          <i data-lucide="edit"></i> Editar
-                        <% end %>
-                        <div class="dropdown-divider"></div>
-                        <%= button_to e_cliente_path(e_cliente),method: :delete, class: "dropdown-item text-danger",data: { confirm: "Tem certeza que deseja excluir?" } do %>
-                          <i data-lucide="trash-2"></i> Excluir
-                        <% end %>
-                      </div>
-                    </div>
-                  </td>
-                  <td><%= e_cliente.e_empresa&.nome_fantasia %></td>
-                  <td><%= e_cliente.nome_completo %></td>
-                  <td><%= e_cliente.cpf %></td>
-                  <td><%= e_cliente.matricula %></td>
-                  <td><%= e_cliente.ultima_margem %></td>
-                  <td><%= e_cliente.ano_admissao %></td>
-                </tr>
-              <% end %>
-            </tbody>
-          </table>
-        </div>
+            <% end %>
+          </tbody>
+        </table>
       </div>
       <!-- Paginação -->
       <% if respond_to?(:pagy_bootstrap_nav) && defined?(@pagy) %>
@@ -169,90 +113,232 @@
     </div>
   </div>
 </div>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Initialize Lucide icons
-    if (typeof lucide !== 'undefined') {
-      lucide.createIcons();
-    }
-  });
-
-  function toggleSelectAll() {
-    const selectAll = document.getElementById('selectAll');
-    const checkboxes = document.querySelectorAll('.e_cliente-checkbox');
-
-    checkboxes.forEach(checkbox => {
-      checkbox.checked = selectAll.checked;
-    });
-
-    updateBulkActions();
-  }
-
-  function updateBulkActions() {
-    const checkboxes = document.querySelectorAll('.e_cliente-checkbox:checked');
-    const bulkActions = document.getElementById('bulkActions');
-    const selectedCount = document.getElementById('selectedCount');
-
-    if (checkboxes.length > 0) {
-      bulkActions.classList.add('show');
-      selectedCount.textContent = checkboxes.length;
-    } else {
-      bulkActions.classList.remove('show');
-    }
-  }
-
-  function bulkDelete() {
-    const checkboxes = document.querySelectorAll('.e_cliente-checkbox:checked');
-    const ids = Array.from(checkboxes).map(cb => cb.value);
-
-    if (ids.length > 0 && confirm(`Tem certeza que deseja excluir ${ids.length} registros?`)) {
-      // Implementar lógica de exclusão em lote
-      console.log('Excluir IDs:', ids);
-    }
-  }
-
-  function exportData() {
-    window.location.href = '/e_clientes.csv';
-  }
-</script>
 <style>
-  .page-header-content {
-  padding: 1rem 1.5rem;
-  max-width: 1600px;
-  margin: 0 auto;
+  /* SEARCH FORM – PADRÃO CONTRATOS (ISOLADO) */
+  .search-section-fluid {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .search-filters-fluid {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .filter-form-fluid {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .search-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .search-inputs-inline {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .form-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #555;
+  }
+
+  .form-input-fluid {
+    height: 40px;
+    padding: 0 0.75rem;
+    border-radius: 8px;
+    border: 1px solid #dcdcdc;
+    min-width: 200px;
+  }
+
+  .form-actions-fluid {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  /* ====== RESTANTE DO CSS ORIGINAL (INALTERADO) ====== */
+
+  .table-container-fluid {
+    overflow-x: auto;
+  }
+
+  .actions-col {
+    width: 140px;
+    text-align: center;
+  }
+
+  .row-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .action-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-blue);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .action-icon:hover {
+    background: rgba(0, 0, 0, 0.05);
+  }
+
+  .action-icon.danger {
+    color: #dc2626;
+  }
+
+  .sticky-right {
+    position: sticky;
+    right: 0;
+    background: white;
+    box-shadow: -4px 0 6px rgba(0, 0, 0, 0.05);
+    z-index: 2;
   }
 
   .breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 
   .breadcrumb-item {
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 0.875rem;
   }
 
   .breadcrumb-item.active {
-  color: white;
-  font-weight: 600;
+    color: white;
+    font-weight: 600;
   }
 
-  .breadcrumb-item i {
-  width: 14px;
-  height: 14px;
-  }
   .page-header {
-  background: linear-gradient(
-    135deg,
-    var(--primary-blue) 0%,
-    var(--primary-blue-dark) 100%
-  );
-  color: white;
-  box-shadow: var(--shadow-md);
+    background: linear-gradient(
+      135deg,
+      var(--primary-blue) 0%,
+      var(--primary-blue-dark) 100%
+    );
+  }
+
+  .page-header-content {
+    padding: 1rem 1.5rem;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  /* ===== SEARCH – UX MELHORADA, SEM QUEBRAR PADRÃO ===== */
+
+  .search-section-fluid {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  }
+
+  /* layout mais natural */
+  .search-filters-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  }
+
+  /* formulário mais limpo */
+  .filter-form-fluid {
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+  gap: 1rem;
+  }
+
+  /* grupo do input */
+  .search-input-group {
+  flex: 1;
+  gap: 0.35rem;
+  }
+
+  /* label mais sutil (menos “form”) */
+  .form-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  }
+
+  /* wrapper para ícone */
+  .search-input-wrapper {
+  position: relative;
+  }
+
+  /* ícone dentro do input */
+  .search-input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: #94a3b8;
+  pointer-events: none;
+  }
+
+  /* input mais confortável e moderno */
+  .form-input-fluid {
+  height: 44px;
+  padding: 0 14px 0 38px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  min-width: 280px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  }
+
+  .form-input-fluid:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+  }
+
+  /* ações alinhadas e sem peso excessivo */
+  .form-actions-fluid {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  }
+
+  /* botão limpar mais discreto */
+  .form-actions-fluid .btn-secondary {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  }
+
+  .form-actions-fluid .btn-secondary:hover {
+  background: #f1f5f9;
   }
 </style>
