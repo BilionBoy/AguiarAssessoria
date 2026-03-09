@@ -8,22 +8,25 @@ module ValidacoesPorOrgao
   private
 
   def validacoes_por_orgao
-    return unless g_orgao&.descricao.present?
-
-    case g_orgao.descricao.strip.downcase
-    when 'Estado' then validar_estado!
-    when 'Inss'   then validar_inss!
+    g_orgaos.each do |orgao|
+      case orgao.descricao.strip.downcase
+      when 'estado'   then validar_estado!
+      when 'inss'     then validar_inss!
+      when 'federal'  then validar_federal!
+      end
     end
   end
 
   def validar_estado!
-    errors.add(:ano_admissao, :blank_estado) if ano_admissao.blank?
-    errors.add(:pensionista,  :blank_estado) if pensionista.nil?
+    errors.add(:data_admissao, :blank) if data_admissao.blank?
   end
 
   def validar_inss!
-    errors.add(:numero_beneficio, :blank_inss) if numero_beneficio.blank?
-    errors.add(:g_tipo_beneficio, :blank_inss) if g_tipo_beneficio_id.blank?
-    errors.add(:possui_representante_legal, :blank_inss) if possui_representante_legal.nil?
+    errors.add(:numero_beneficio, :blank) if numero_beneficio.blank?
+    errors.add(:g_tipo_beneficio, :blank) if g_tipo_beneficio_id.blank?
+  end
+
+  def validar_federal!
+    errors.add(:matricula, :blank) if matricula.blank?
   end
 end

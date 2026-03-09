@@ -142,9 +142,12 @@
                         <%= link_to edit_e_contrato_path(e_contrato), class: "dropdown-item" do %>
                           <i data-lucide="edit" style="width: 16px; height: 16px;"></i> Editar
                         <% end %>
+                        <%= link_to pdf_e_contrato_path(e_contrato), class: "dropdown-item", target: "_blank" do %>
+                          <i data-lucide="file-text" style="width: 16px; height: 16px;"></i> Ficha PDF
+                        <% end %>
                         <div class="dropdown-divider"></div>
-                        <%= button_to e_contrato_path(e_contrato), method: :delete, 
-                        class: "dropdown-item text-danger", 
+                        <%= button_to e_contrato_path(e_contrato), method: :delete,
+                        class: "dropdown-item text-danger",
                         data: { confirm: "Tem certeza que deseja excluir?" } do %>
                           <i data-lucide="trash-2" style="width: 16px; height: 16px;"></i> Excluir
                         <% end %>

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 9.5pt;
+      color: #1e293b;
+      background: #ffffff;
+    }
+
+    /* ── Page ── */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      padding: 0;
+      background: #fff;
+      position: relative;
+    }
+
+    /* ── Header ── */
+    .header {
+      position: relative;
+      padding: 20px 28px 16px;
+      border-bottom: 3px solid #c8442a;
+      overflow: hidden;
+    }
+    .header-deco {
+      position: absolute;
+      top: 0; right: 0;
+      width: 0; height: 0;
+      border-style: solid;
+      border-width: 0 90px 90px 0;
+      border-color: transparent #c8442a transparent transparent;
+    }
+    .header-inner {
+      display: table;
+      width: 100%;
+    }
+    .header-logo {
+      display: table-cell;
+      vertical-align: middle;
+      width: 160px;
+    }
+    .header-logo img {
+      height: 52px;
+      width: auto;
+    }
+    .header-title {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+    }
+    .header-title h1 {
+      font-size: 18pt;
+      font-weight: 700;
+      color: #c8442a;
+      letter-spacing: 0.5px;
+    }
+    .header-title p {
+      font-size: 7.5pt;
+      color: #64748b;
+      margin-top: 2px;
+    }
+    .header-meta {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: right;
+      width: 170px;
+    }
+    .header-meta .meta-line {
+      font-size: 8pt;
+      color: #475569;
+      margin-bottom: 4px;
+    }
+    .header-meta .meta-line span {
+      display: inline-block;
+      min-width: 100px;
+      border-bottom: 1px solid #94a3b8;
+      margin-left: 4px;
+      font-weight: 600;
+      color: #1e293b;
+    }
+
+    /* ── Número do contrato badge ── */
+    .contrato-badge {
+      background: #c8442a;
+      color: white;
+      text-align: center;
+      padding: 5px 0;
+      font-size: 8pt;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+    }
+
+    /* ── Body ── */
+    .body {
+      padding: 16px 28px 20px;
+    }
+
+    /* ── Section ── */
+    .section {
+      margin-bottom: 14px;
+    }
+    .section-header {
+      display: table;
+      width: 100%;
+      margin-bottom: 8px;
+    }
+    .section-icon {
+      display: table-cell;
+      vertical-align: middle;
+      width: 26px;
+    }
+    .section-icon .icon-circle {
+      width: 22px;
+      height: 22px;
+      background: #c8442a;
+      border-radius: 50%;
+    }
+    .section-header h2 {
+      display: table-cell;
+      vertical-align: middle;
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #c8442a;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      padding-left: 6px;
+      border-bottom: 1.5px solid #c8442a;
+      padding-bottom: 3px;
+    }
+
+    /* ── Field rows ── */
+    .field-row {
+      display: table;
+      width: 100%;
+      margin-bottom: 6px;
+    }
+    .field-row + .field-row {
+      margin-top: 0;
+    }
+    .field {
+      display: table-cell;
+      vertical-align: bottom;
+      padding-right: 12px;
+    }
+    .field:last-child {
+      padding-right: 0;
+    }
+    .field-label {
+      font-size: 7.5pt;
+      color: #64748b;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .field-value {
+      font-size: 9pt;
+      color: #0f172a;
+      font-weight: 500;
+      border-bottom: 1px solid #94a3b8;
+      padding-bottom: 2px;
+      min-height: 16px;
+      display: block;
+    }
+    .field-value.blank {
+      color: transparent;
+    }
+
+    /* checkbox inline */
+    .checkbox-group {
+      display: table-cell;
+      vertical-align: bottom;
+      padding-right: 12px;
+    }
+    .checkbox-label {
+      font-size: 7.5pt;
+      color: #64748b;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      display: block;
+      margin-bottom: 3px;
+    }
+    .checkbox-box {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border: 1.5px solid #475569;
+      vertical-align: middle;
+      background: #fff;
+      margin-right: 3px;
+    }
+    .checkbox-box.checked {
+      background: #c8442a;
+      border-color: #c8442a;
+    }
+    .checkbox-text {
+      font-size: 8.5pt;
+      color: #1e293b;
+      vertical-align: middle;
+    }
+
+    /* ── Operation card ── */
+    .op-card {
+      border: 1px solid #e2e8f0;
+      border-left: 3px solid #c8442a;
+      border-radius: 4px;
+      padding: 10px 12px;
+      margin-bottom: 8px;
+      background: #fafafa;
+    }
+    .op-card-title {
+      font-size: 8pt;
+      font-weight: 700;
+      color: #c8442a;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 7px;
+    }
+
+    /* ── Convênios pills ── */
+    .convenios-list {
+      padding: 4px 0 6px;
+    }
+    .convenio-pill {
+      display: inline-block;
+      background: #c8442a;
+      color: white;
+      font-size: 7.5pt;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-right: 4px;
+      margin-bottom: 2px;
+    }
+
+    /* ── Observações ── */
+    .obs-lines {
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      padding: 8px 10px;
+      min-height: 50px;
+      font-size: 9pt;
+      color: #1e293b;
+    }
+
+    /* ── Assinatura ── */
+    .assinatura-row {
+      display: table;
+      width: 100%;
+      margin-top: 24px;
+    }
+    .assinatura-col {
+      display: table-cell;
+      vertical-align: bottom;
+      width: 50%;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .assinatura-line {
+      border-top: 1px solid #475569;
+      margin-bottom: 4px;
+    }
+    .assinatura-label {
+      font-size: 7.5pt;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      border-top: 1px solid #e2e8f0;
+      padding: 8px 28px;
+      font-size: 7pt;
+      color: #94a3b8;
+      text-align: center;
+      background: #f8fafc;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="header-deco"></div>
+      <div class="header-inner">
+        <div class="header-logo">
+          <img src="file://<%= Rails.root.join('public/layout/assets/img/MenuxLogo.png') %>" alt="Aguiar Assessoria">
+        </div>
+        <div class="header-title">
+          <h1>Ficha de Cadastro</h1>
+          <p>Aguiar Assessoria &mdash; Crédito Consignado</p>
+        </div>
+        <div class="header-meta">
+          <div class="meta-line">Data: <span><%= Date.today.strftime("%d/%m/%Y") %></span></div>
+          <div class="meta-line">Corretor: <span><%= @e_contrato.user&.nome_completo&.split(' ')&.first(2)&.join(' ') || '—' %></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contrato badge -->
+    <div class="contrato-badge">
+      CONTRATO Nº <%= @e_contrato.numero_contrato %> &nbsp;·&nbsp; <%= @e_contrato.g_tipo_operacao&.descricao&.upcase || 'OPERAÇÃO' %> &nbsp;·&nbsp; Emitido em <%= @e_contrato.data_cadastro&.strftime("%d/%m/%Y") %>
+    </div>
+
+    <div class="body">
+
+      <!-- ══ SEÇÃO 1: DADOS PESSOAIS ══ -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon"><div class="icon-circle"></div></div>
+          <h2>Dados Pessoais</h2>
+        </div>
+
+        <div class="field-row">
+          <div class="field" style="width:55%">
+            <span class="field-label">Nome Completo</span>
+            <span class="field-value"><%= @e_contrato.e_cliente&.nome_completo %></span>
+          </div>
+          <div class="field" style="width:25%">
+            <span class="field-label">CPF</span>
+            <span class="field-value"><%= @e_contrato.e_cliente&.cpf %></span>
+          </div>
+          <div class="field" style="width:20%">
+            <span class="field-label">Data de Nascimento</span>
+            <span class="field-value"><%= @e_contrato.e_cliente&.data_nascimento&.strftime("%d/%m/%Y") %></span>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field" style="width:30%">
+            <span class="field-label">Matrícula</span>
+            <span class="field-value"><%= @e_contrato.e_cliente&.matricula %></span>
+          </div>
+          <div class="field" style="width:30%">
+            <span class="field-label">Telefone</span>
+            <span class="field-value"><%= @e_contrato.e_cliente&.telefone %></span>
+          </div>
+          <div class="field" style="width:40%">
+            <span class="field-label">E-mail</span>
+            <span class="field-value"><%= @e_contrato.e_cliente&.email %></span>
+          </div>
+        </div>
+
+        <div class="field-row">
+          <div class="field" style="width:60%">
+            <span class="field-label">Endereço</span>
+            <span class="field-value"><%= @e_contrato.e_cliente&.endereco %></span>
+          </div>
+          <div class="field" style="width:20%">
+            <span class="field-label">Cidade</span>
+            <span class="field-value"><%= @e_contrato.e_cliente&.g_cidade&.nome %></span>
+          </div>
+          <div class="field" style="width:20%">
+            <span class="field-label">Bairro</span>
+            <span class="field-value"><%= @e_contrato.e_cliente&.g_bairro&.nome %></span>
+          </div>
+        </div>
+
+        <!-- Convênios -->
+        <% if @e_contrato.e_cliente&.g_orgaos&.any? %>
+          <div class="field-row">
+            <div class="field" style="width:100%">
+              <span class="field-label">Convênio(s)</span>
+              <div class="convenios-list">
+                <% @e_contrato.e_cliente.g_orgaos.each do |orgao| %>
+                  <span class="convenio-pill"><%= orgao.descricao %></span>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+
+        <!-- Conta bancária -->
+        <div class="field-row">
+          <div class="field" style="width:35%">
+            <span class="field-label">Banco (do Contracheque)</span>
+            <span class="field-value"><%= @e_contrato.e_cliente&.g_banco&.nome_fantasia %></span>
+          </div>
+          <div class="field" style="width:15%">
+            <span class="checkbox-label">Poupança</span>
+            <%# campo poupanca pode ser adicionado futuramente %>
+            <span class="checkbox-box"></span>
+            <span class="checkbox-text">Sim</span>
+          </div>
+          <div class="field" style="width:25%">
+            <span class="field-label">Agência</span>
+            <span class="field-value"><%= @e_contrato.e_cliente&.agencia %></span>
+          </div>
+          <div class="field" style="width:25%">
+            <span class="field-label">Conta</span>
+            <span class="field-value"><%= @e_contrato.e_cliente&.conta %></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ SEÇÃO 2: OPERAÇÃO ══ -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon"><div class="icon-circle"></div></div>
+          <h2>Operação</h2>
+        </div>
+
+        <div class="op-card">
+          <div class="op-card-title">Operação Principal</div>
+          <div class="field-row">
+            <div class="field" style="width:30%">
+              <span class="field-label">Tipo de Operação</span>
+              <span class="field-value"><%= @e_contrato.g_tipo_operacao&.descricao %></span>
+            </div>
+            <div class="field" style="width:30%">
+              <span class="field-label">Banco</span>
+              <span class="field-value"><%= @e_contrato.g_banco&.nome_fantasia %></span>
+            </div>
+            <div class="field" style="width:20%">
+              <span class="field-label">Parcela (R$)</span>
+              <span class="field-value"><%= number_to_currency(@e_contrato.valor_parcela, unit: 'R$', separator: ',', delimiter: '.') %></span>
+            </div>
+            <div class="field" style="width:20%">
+              <span class="field-label">Prazo (meses)</span>
+              <span class="field-value"><%= @e_contrato.quantidade_parcelas %></span>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field" style="width:30%">
+              <span class="field-label">Produto / Tabela</span>
+              <span class="field-value"><%= @e_contrato.produto %></span>
+            </div>
+            <div class="field" style="width:25%">
+              <span class="field-label">Margem Tipo</span>
+              <span class="field-value"><%= @e_contrato.g_margem_tipo&.descricao %></span>
+            </div>
+            <div class="field" style="width:25%">
+              <span class="field-label">Valor Liberado (R$)</span>
+              <span class="field-value"><%= number_to_currency(@e_contrato.valor_total, unit: 'R$', separator: ',', delimiter: '.') %></span>
+            </div>
+            <div class="field" style="width:20%">
+              <span class="field-label">Comissão (R$)</span>
+              <span class="field-value"><%= number_to_currency(@e_contrato.valor_comissao, unit: 'R$', separator: ',', delimiter: '.') %></span>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field" style="width:30%">
+              <span class="field-label">Data de Pagamento</span>
+              <span class="field-value"><%= @e_contrato.data_pagamento&.strftime("%d/%m/%Y") %></span>
+            </div>
+            <div class="field" style="width:35%">
+              <span class="field-label">Status</span>
+              <span class="field-value"><%= @e_contrato.g_status_contrato&.descricao %></span>
+            </div>
+            <div class="field" style="width:35%">
+              <span class="field-label">Data de Cadastro</span>
+              <span class="field-value"><%= @e_contrato.data_cadastro&.strftime("%d/%m/%Y") %></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ SEÇÃO 3: ASSINATURA ══ -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon"><div class="icon-circle"></div></div>
+          <h2>Declaração e Assinatura</h2>
+        </div>
+        <div class="obs-lines" style="font-size:8pt; color:#475569; margin-bottom:16px;">
+          Declaro que as informações prestadas nesta ficha são verdadeiras e autorizo a Aguiar Assessoria a utilizar meus dados para fins de análise e contratação de crédito consignado, conforme a legislação vigente.
+        </div>
+        <div class="assinatura-row">
+          <div class="assinatura-col">
+            <div class="assinatura-line"></div>
+            <div class="assinatura-label">Assinatura do Cliente</div>
+            <div style="font-size:8pt; color:#475569; margin-top:2px;"><%= @e_contrato.e_cliente&.nome_completo %></div>
+          </div>
+          <div class="assinatura-col">
+            <div class="assinatura-line"></div>
+            <div class="assinatura-label">Corretor Responsável</div>
+            <div style="font-size:8pt; color:#475569; margin-top:2px;"><%= @e_contrato.user&.nome_completo %></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /body -->
+
+    <!-- FOOTER -->
+    <div class="footer">
+      Aguiar Assessoria &mdash; Crédito Consignado &nbsp;|&nbsp;
+      Ficha gerada automaticamente em <%= Time.current.strftime("%d/%m/%Y às %H:%M") %> &nbsp;|&nbsp;
+      Contrato Nº <%= @e_contrato.numero_contrato %>
+    </div>
+
+  </div><!-- /page -->
+</body>
+</html>

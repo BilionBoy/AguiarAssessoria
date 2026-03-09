@@ -20,7 +20,9 @@ Rails.application.routes.draw do
   resources :g_tipo_operacoes
   resources :g_bancos
   resources :g_status_users
-  resources :e_contratos
+  resources :e_contratos do
+    member { get :pdf }
+  end
   resources :e_empresas
   resources :e_clientes
   resources :e_metas

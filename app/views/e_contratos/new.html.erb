@@ -1,1 +1,21 @@
-<%= render "form" %> 
+<div class="modern-dashboard">
+  <div class="page-header e_contrato-header">
+    <div class="page-header-content">
+      <div class="breadcrumb-wrapper">
+        <div class="breadcrumb modern-breadcrumb">
+          <a href="/" class="breadcrumb-item"><i data-lucide="home"></i></a>
+          <%= link_to e_contratos_path, class: "breadcrumb-item" do %>
+            <%= t("activerecord.models.#{EContrato.model_name.i18n_key}.other") %>
+          <% end %>
+          <span class="breadcrumb-item active">Novo Contrato</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-fluid">
+    <div style="max-width: 960px; margin: 0 auto; padding: 0 16px 32px;">
+      <%= render "form" %>
+    </div>
+  </div>
+</div>
