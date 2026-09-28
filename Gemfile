@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Use a versão mais recente do Rails no branch principal: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails', '~> 7.2.2', '>= 7.2.2.1'
+gem 'rails', '~> 8.0.5', '>= 8.0.5.1'
 # O pipeline original de assets para Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 # Use o servidor web Puma [https://github.com/puma/puma]
