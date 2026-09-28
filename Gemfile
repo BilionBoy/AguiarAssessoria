@@ -29,6 +29,9 @@ gem 'tzinfo-data', platforms: %i[windows jruby]
 # Reduz os tempos de inicialização por meio de cache; necessário em config/boot.rb
 gem 'bootsnap', require: false
 
+# Throttle/blocklist de requisicoes (protege login contra brute force e rate limit geral)
+gem 'rack-attack'
+
 # Use variantes do Active Storage [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 

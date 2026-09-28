@@ -47,7 +47,7 @@ class UsersController < ApplicationController
   end
 
   def verify_admin
-    return if current_user&.g_tipo_usuario&.descricao == 'admin'
+    return if current_user&.admin?
 
     redirect_to root_path, alert: 'Acesso negado'
   end

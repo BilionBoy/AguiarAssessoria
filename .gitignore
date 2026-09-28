@@ -10,6 +10,7 @@
 # Ignore all environment files (except templates).
 /.env*
 !/.env*.erb
+!/.env*.example
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -44,7 +45,6 @@ stop.sh
 /coverage/
 Gemfile.lock
 .env
-docker-compose.yml
 /config/environments/production.rb
 
 /config/credentials/development.keylog/*.log

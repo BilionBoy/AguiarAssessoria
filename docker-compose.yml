@@ -1,0 +1,40 @@
+services:
+  app:
+    build: .
+    container_name: aguiarassessoria_app
+    restart: always
+    depends_on:
+      - db
+    env_file: .env.production
+    environment:
+      DATABASE_HOST: db
+    mem_limit: 1g
+    cpus: "1"
+    volumes:
+      - storage:/app/storage
+      - app_log:/app/log
+    networks:
+      - internal
+      - proxy
+
+  db:
+    image: postgres:16
+    container_name: aguiarassessoria_db
+    restart: always
+    env_file: .env.production
+    mem_limit: 1g
+    cpus: "1"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - internal
+
+volumes:
+  pgdata:
+  storage:
+  app_log:
+
+networks:
+  internal:
+  proxy:
+    external: true

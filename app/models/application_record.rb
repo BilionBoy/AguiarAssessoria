@@ -8,6 +8,7 @@ class ApplicationRecord < ActiveRecord::Base
       updated_at
       deleted_at
       created_by
+      codigo
 
       descricao
       nome

@@ -8,7 +8,7 @@ Rails.application.configure do
 
 
 # Store files on Amazon S3.
-config.active_storage.service = :amazon
+config.active_storage.service = :local
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers

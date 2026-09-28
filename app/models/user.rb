@@ -1,35 +1,19 @@
 class User < ApplicationRecord
-  devise :database_authenticatable,
-         :registerable,
-         :recoverable,
-         :rememberable,
-         :validatable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
 
   belongs_to :g_tipo_usuario
   belongs_to :g_status_user
   belongs_to :e_empresa, optional: true
 
-  # -------------------------------------------------------------------
-  # Scopes
-  # -------------------------------------------------------------------
-
   scope :ativos, lambda {
-    where(g_status_user_id: GStatusUser.find_by(descricao: 'Ativo')&.id)
+    joins(:g_status_user).where(g_status_users: { codigo: GStatusUser::ATIVO })
   }
 
   scope :inativos, lambda {
-    where(g_status_user_id: GStatusUser.find_by(descricao: 'Inativo')&.id)
+    joins(:g_status_user).where(g_status_users: { codigo: GStatusUser::INATIVO })
   }
 
-  # -------------------------------------------------------------------
-  # Callbacks
-  # -------------------------------------------------------------------
-
   before_validation :normalize_cpf
-
-  # -------------------------------------------------------------------
-  # Validations
-  # -------------------------------------------------------------------
 
   validates :nome_completo, presence: true, length: { minimum: 3 }
 
@@ -43,21 +27,13 @@ class User < ApplicationRecord
   validates :g_status_user,  presence: true
   validates :e_empresa,      presence: true, unless: :admin?
 
-  # -------------------------------------------------------------------
-  # Roles
-  # -------------------------------------------------------------------
-
   def admin?
-    g_tipo_usuario&.descricao.to_s.casecmp?('admin')
+    g_tipo_usuario&.codigo == GTipoUsuario::ADMIN
   end
 
   def gerente?
-    g_tipo_usuario&.descricao.to_s.casecmp?('gerente')
+    g_tipo_usuario&.codigo == GTipoUsuario::GERENTE
   end
-
-  # -------------------------------------------------------------------
-  # Private
-  # -------------------------------------------------------------------
 
   private
 
