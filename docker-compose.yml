@@ -10,6 +10,8 @@ services:
       DATABASE_HOST: db
     mem_limit: 1g
     cpus: "1"
+    ports:
+      - "127.0.0.1:3000:3000"
     volumes:
       - storage:/app/storage
       - app_log:/app/log
