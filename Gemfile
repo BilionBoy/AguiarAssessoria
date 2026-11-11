@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
 # Use a versão mais recente do Rails no branch principal: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails', '~> 8.0.5', '>= 8.0.5.1'
+gem 'rails', '~> 8.1.4', '>= 8.1.4.1'
 # O pipeline original de assets para Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 # Use o servidor web Puma [https://github.com/puma/puma]
-gem 'puma', '>= 5.0'
+gem 'puma', '~> 7.2', '>= 7.2.1'
 # Use JavaScript com mapas de importação ESM [https://github.com/rails/importmap-rails]
 gem 'importmap-rails'
 # Acelerador de páginas tipo SPA do Hotwire [https://turbo.hotwired.dev]
@@ -67,13 +67,13 @@ gem 'htmlbeautifier'
 gem 'rufo'
 
 # Login
-gem 'devise'
+gem 'devise', '~> 5.0', '>= 5.0.3'
 
 # Ransack
-gem 'ransack'
+gem 'ransack', '~> 4.4', '>= 4.4.4'
 
 # Paginação
-gem 'pagy'
+gem 'pagy', '~> 9.3' # 43.x muda toda a API; manter 9.x
 
 # Gerar PDF
 gem 'wicked_pdf'
