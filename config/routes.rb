@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  resource :troca_senha, only: %i[edit update], controller: 'troca_senha', path: 'trocar-senha'
 
   root 'admin#index'
   get  'admin/index'

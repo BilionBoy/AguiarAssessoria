@@ -23,6 +23,19 @@
 threads_count = ENV.fetch("RAILS_MAX_THREADS", 3)
 threads threads_count, threads_count
 
+# Workers: processos separados, que rodam em paralelo de verdade (sem disputar o
+# GVL) e isolam falhas — se um worker travar, o outro continua atendendo.
+# Capacidade total = WEB_CONCURRENCY × RAILS_MAX_THREADS requisições simultâneas.
+# Produção (1 vCPU, 1 GB no container): WEB_CONCURRENCY=2, RAILS_MAX_THREADS=3.
+# O pool do banco (database.yml) acompanha RAILS_MAX_THREADS, por worker.
+worker_count = ENV.fetch("WEB_CONCURRENCY", 0).to_i
+if worker_count.positive?
+  workers worker_count
+  # Carrega a aplicação antes de criar os workers: eles compartilham a memória
+  # do código (copy-on-write) e sobem mais rápido.
+  preload_app!
+end
+
 # Specifies the `port` that Puma will listen on to receive requests; default is 3000.
 port ENV.fetch("PORT", 3000)
 

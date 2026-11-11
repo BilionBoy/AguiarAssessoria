@@ -3,7 +3,9 @@
 puts '=== Iniciando seed logico do SimpliConsig ==='
 
 ADMIN_EMAIL = 'dhiogoandre26@gmail.com'
-ADMIN_PASSWORD = 'Dhiogo26122004'
+# Senha inicial do admin: vem de ADMIN_PASSWORD ou é gerada aleatoriamente e
+# impressa no fim do seed. O admin troca no primeiro acesso (must_change_password).
+ADMIN_PASSWORD = ENV.fetch('ADMIN_PASSWORD') { SecureRandom.alphanumeric(16) }
 ADMIN_CPF = '26122004000'
 LEGACY_WRONG_ADMIN_EMAIL = 'dhioganre26@gmail.com'
 
@@ -185,7 +187,8 @@ ActiveRecord::Base.transaction do
     g_status_user: status_user_ativo,
     e_empresa: empresa,
     password: ADMIN_PASSWORD,
-    password_confirmation: ADMIN_PASSWORD
+    password_confirmation: ADMIN_PASSWORD,
+    must_change_password: true
   )
   admin.save!
 

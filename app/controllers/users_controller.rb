@@ -13,6 +13,8 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    # A senha foi escolhida pelo admin: o usuário troca no primeiro acesso.
+    @user.must_change_password = true
 
     limpar_fks_vazias
 
@@ -27,8 +29,11 @@ class UsersController < ApplicationController
 
   def update
     limpar_fks_vazias
+    @user.assign_attributes(user_params)
+    # Admin redefiniu a senha de outra pessoa: ela troca no próximo acesso.
+    @user.must_change_password = true if @user.encrypted_password_changed? && @user != current_user
 
-    if @user.update(user_params)
+    if @user.save
       redirect_to users_path, notice: 'Usuário atualizado com sucesso'
     else
       render :edit, status: :unprocessable_entity

@@ -1,0 +1,45 @@
+<div class="auth-wrapper">
+  <div class="auth-background"></div>
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="auth-header">
+        <div class="auth-logo">
+          <img src="/layout/assets/img/android-chrome-192x192.png" alt="Aguiar Assessoria">
+        </div>
+        <h1 class="auth-title">Crie sua senha</h1>
+        <p class="auth-subtitle">
+          Por segurança, escolha uma senha pessoal antes de continuar.
+          Ela precisa ser diferente da senha que você recebeu.
+        </p>
+      </div>
+      <%= simple_form_for(@user, url: troca_senha_path, method: :patch,
+        html: { class: "auth-form", novalidate: true }) do |f| %>
+        <% if @user.errors.any? %>
+          <div class="auth-errors">
+            <strong>⚠️ Verifique os erros:</strong>
+            <ul>
+              <% @user.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div class="form-inputs">
+          <%= f.input :password, label: "Nova senha", required: true,
+            hint: "Mínimo de #{Devise.password_length.min} caracteres.",
+            input_html: { autocomplete: "new-password", placeholder: "Digite a nova senha", class: "auth-input" } %>
+          <%= f.input :password_confirmation, label: "Confirme a nova senha", required: true,
+            input_html: { autocomplete: "new-password", placeholder: "Repita a nova senha", class: "auth-input" } %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "Salvar nova senha",
+            class: "btn  btn-login",
+            data: { disable_with: "Salvando..." } %>
+        </div>
+      <% end %>
+      <div class="auth-footer">
+        <%= button_to "Sair", destroy_user_session_path, method: :delete, class: "btn btn-link" %>
+      </div>
+    </div>
+  </div>
+</div>
